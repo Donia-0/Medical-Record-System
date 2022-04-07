@@ -2,26 +2,38 @@ import React from "react";
 
 import section1 from "../../images/section1.png";
 import section2 from "../../images/light-color.png";
+import Cards from "./Cards";
 
 const Landing = () => {
   return (
     <div>
       {/** Welcome Area Start ** */}
-      <div class="welcome-area" id="welcome">
+      <div className="welcome-area" id="welcome">
         {/* <!-- ***** Header Text Start ***** --> */}
-        <div class="text">
-          <div class="container">
-            <div class="row">
-              <div class=" col-lg-12 col-md-12 col-sm-12">
+        <div className="text">
+          <div className="container">
+            <div className="row">
+              <div className=" col-lg-12 col-md-12 col-sm-12">
                 <h1>Electronic health record</h1>
                 <p>
                   welcome to our amazing technology, we'll help you Just add our
                   Simple Store and connect to PayPal or Stripe.
                 </p>
-                <div className="btn">
-                  <a href="#Register" class="main-button-slider">
-                    Create account
-                  </a>
+                <div className="row">
+                  <div className="col-lg-6">
+                    <div classNameName="btn1">
+                      <a href="#Register" className="register-btn">
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div classNameName="btn2">
+                      <a href="#Login" className="login-btn">
+                        Login
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -30,61 +42,52 @@ const Landing = () => {
         {/* <!-- ***** Header Text End ***** --> */}
       </div>
       {/* <!-- ***** Features Small Start ***** --> */}
-      <section class="section home-feature text-center">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="row">
+      <section className="section home-feature text-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="row">
                 {/* <!-- ***** Features Small Item Start ***** --> */}
                 <div
-                  class="col-lg-4 col-md-6 col-sm-6 col-12"
+                  className="col-lg-4 col-md-6 col-sm-6 col-12"
                   style={{ paddingRight: "20px" }}
-                  data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s"
                 >
-                  <div class="card">
-                    <div class="icon">
-                      <i>
-                        <img src="assets/images/featured-item-01.png" alt="" />
-                      </i>
-                    </div>
-                    <h5 class="title">Modern Strategy</h5>
+                  <div className="card">
+                    {/* <div className="icon">
+                      <i className="fa-solid fa-laptop-medical"></i>
+                    </div> */}
+                    {/* <h5 className="title">Modern Strategy</h5>
                     <p>
                       Customize anything in this template to fit your website
-                    </p>
+                    </p> */}
+                    <Cards
+                      title="Modern Strategy"
+                      text=" Customize anything in this template to fit your website"
+                    />
                   </div>
                 </div>
                 {/* <!-- ***** Features Small Item End ***** --> */}
 
                 {/* <!-- ***** Features Small Item Start ***** --> */}
                 <div
-                  class="col-lg-4 col-md-6 col-sm-6 col-12"
+                  className="col-lg-4 col-md-6 col-sm-6 col-12"
                   style={{ paddingRight: "20px" }}
-                  data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s"
                 >
-                  <div class="card">
-                    <div class="icon">
-                      <i>
-                        <img src="assets/images/featured-item-01.png" alt="" />
-                      </i>
+                  <div className="card">
+                    <div className="icon">
+                      <i class="fa-solid fa-laptop-medical"></i>
                     </div>
-                    <h5 class="title">Best Relationship</h5>
+                    <h3 class="title">Best Relationship</h3>
                     <p>Contact us immediately if you have a question in mind</p>
                   </div>
                 </div>
                 {/* <!-- ***** Features Small Item End ***** --> */}
 
                 {/* <!-- ***** Features Small Item Start ***** --> */}
-                <div
-                  class="col-lg-4 col-md-6 col-sm-6 col-12"
-                  data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s"
-                >
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div class="card">
-                    <div class="icon">
-                      <i>
-                        <img src="assets/images/featured-item-01.png" alt="" />
-                      </i>
-                    </div>
-                    <h5 class="title">Ultimate Marketing</h5>
+                    <div class="icon"></div>
+                    <h3 class="title">Ultimate Marketing</h3>
                     <p>
                       You just need to tell your friends about our free
                       templates
@@ -104,10 +107,7 @@ const Landing = () => {
         <section class="section ">
           <div class="container">
             <div class="row">
-              <div
-                class="col-lg-5 col-md-12 col-sm-12 align-self-center"
-                data-scroll-reveal="enter left move 30px over 0.6s after 0.4s"
-              >
+              <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">
                 <img
                   src={section2}
                   class="rounded img-fluid d-block mx-auto"
@@ -141,7 +141,7 @@ const Landing = () => {
         <section class="section ">
           <div class="container">
             <div class="row">
-              <div class="col-lg-6 col-md-12 col-sm-12 align-self-center mobile-bottom-fix">
+              <div class="col-lg-6 col-md-12 col-sm-12 section-text ">
                 <div class="left-heading">
                   <h2 class="section-title">
                     We can help you to grow your business
@@ -157,15 +157,8 @@ const Landing = () => {
                 </div>
               </div>
               <div class="col-lg-1"></div>
-              <div
-                class="col-lg-5 col-md-12 col-sm-12 align-self-center mobile-bottom-fix-big"
-                data-scroll-reveal="enter right move 30px over 0.6s after 0.4s"
-              >
-                <img
-                  src={section1}
-                  class="rounded img-fluid d-block mx-auto"
-                  alt="App"
-                />
+              <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">
+                <img src={section1} />
               </div>
             </div>
           </div>

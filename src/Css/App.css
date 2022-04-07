@@ -626,7 +626,17 @@
     margin-bottom: 40px;
   }
 }
-a.main-button-slider {
+a.register-btn {
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 15px;
+  padding: 21px 20px;
+  background-color: #10666a;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.25px;
+}
+a.login-btn {
   text-decoration: none;
   font-size: 18px;
   border-radius: 15px;
@@ -656,7 +666,7 @@ features
   background: #ffffff;
   box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1);
 
-  border-radius: 20px !important;
+  border-radius: 15px !important;
   padding: 30px;
 
   position: relative;

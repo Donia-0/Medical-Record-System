@@ -519,3 +519,229 @@
   color: #def2f3;
   font-weight: bold;
 }
+/*=============================================================== Donia-css ================================================================ */
+/* welcomearea */
+.welcome-area {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../images/card3.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.welcome-area .text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  text-align: center;
+  width: 100%;
+}
+
+.welcome-area .text h1 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 54px;
+  letter-spacing: 1.4px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.welcome-area .text p {
+  font-weight: 400;
+  font-size: 15px;
+  color: #fff;
+  line-height: 28px;
+  letter-spacing: 0.25px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .welcome-area .text {
+    top: 65% !important;
+    transform: perspective(1px) translateY(-60%) !important;
+    text-align: center;
+  }
+  .welcome-area .text h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  .welcome-area .text h1 span {
+    color: #fff;
+  }
+  .welcome-area .text p {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 820px) {
+  .welcome-area .text {
+    top: 65% !important;
+    transform: perspective(1px) translateY(-60%) !important;
+  }
+  .welcome-area .text h1 {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  .welcome-area .text p {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 765px) {
+  .welcome-area {
+    margin-bottom: 100px;
+  }
+  .welcome-area .text {
+    top: 50% !important;
+    transform: perspective(1px) translateY(-50%) !important;
+    text-align: center;
+  }
+  .welcome-area .text .buttons {
+    display: none;
+  }
+  .welcome-area .text h1 {
+    font-weight: 800px;
+    font-size: 24px !important;
+    line-height: 30px !important;
+    margin-bottom: 30px !important;
+  }
+  .welcome-area .text h1 span {
+    color: #fff;
+  }
+  .welcome-area .text p {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 40px;
+  }
+}
+a.main-button-slider {
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 15px;
+  padding: 21px 20px;
+  background-color: #10666a;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.25px;
+}
+.welcome-area::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 90%);
+}
+
+/* 
+---------------------------------------------
+features
+--------------------------------------------- 
+*/
+.card {
+  cursor: pointer;
+  height: 100%;
+  display: block;
+  background: #ffffff;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.1);
+
+  border-radius: 20px !important;
+  padding: 30px;
+
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.card:hover .icon {
+  background-color: #6dced4;
+}
+
+.card .icon {
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  margin: auto;
+  position: relative;
+  margin-bottom: 30px;
+  background: #389f90fc;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.card .icon i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.card .title {
+  font-weight: 500;
+  font-size: 18px;
+  color: #1e1e1e;
+  letter-spacing: 0.7px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.card p {
+  font-weight: 400;
+  font-size: 13px;
+  color: #777;
+  letter-spacing: 0.5px;
+  line-height: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* .card a {
+  float: right;
+  position: relative;
+  z-index: 2;
+} */
+
+.home-feature {
+  padding-bottom: 0px;
+  padding-top: 130px;
+  margin-top: -220px;
+  z-index: 9;
+}
+
+@media (max-width: 991px) {
+  .home-feature {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+    z-index: 9;
+  }
+}
+
+.section-container {
+  background-color: #238274;
+  margin: 65px;
+}
+.section-text {
+  align-self: center;
+}
+.section-title {
+  margin-bottom: 30px;
+  color: white;
+}
+.left-text {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--bs-gray-500);
+  line-height: 28px;
+  letter-spacing: 1px;
+}

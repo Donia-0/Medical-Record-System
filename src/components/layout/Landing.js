@@ -19,21 +19,10 @@ const Landing = () => {
                   welcome to our amazing technology, we'll help you Just add our
                   Simple Store and connect to PayPal or Stripe.
                 </p>
-                <div className="row">
-                  <div className="col-lg-6">
-                    <div classNameName="btn1">
-                      <a href="#Register" className="register-btn">
-                        Register
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div classNameName="btn2">
-                      <a href="#Login" className="login-btn">
-                        Login
-                      </a>
-                    </div>
-                  </div>
+                <div className="btn">
+                  <a href="#Register" class="main-button-slider">
+                    Create account
+                  </a>
                 </div>
               </div>
             </div>
@@ -53,13 +42,6 @@ const Landing = () => {
                   style={{ paddingRight: "20px" }}
                 >
                   <div className="card">
-                    {/* <div className="icon">
-                      <i className="fa-solid fa-laptop-medical"></i>
-                    </div> */}
-                    {/* <h5 className="title">Modern Strategy</h5>
-                    <p>
-                      Customize anything in this template to fit your website
-                    </p> */}
                     <Cards
                       title="Modern Strategy"
                       text=" Customize anything in this template to fit your website"
@@ -74,11 +56,10 @@ const Landing = () => {
                   style={{ paddingRight: "20px" }}
                 >
                   <div className="card">
-                    <div className="icon">
-                      <i class="fa-solid fa-laptop-medical"></i>
-                    </div>
-                    <h3 class="title">Best Relationship</h3>
-                    <p>Contact us immediately if you have a question in mind</p>
+                    <Cards
+                      title="Modern Strategy"
+                      text=" Customize anything in this template to fit your website"
+                    />
                   </div>
                 </div>
                 {/* <!-- ***** Features Small Item End ***** --> */}
@@ -86,12 +67,10 @@ const Landing = () => {
                 {/* <!-- ***** Features Small Item Start ***** --> */}
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div class="card">
-                    <div class="icon"></div>
-                    <h3 class="title">Ultimate Marketing</h3>
-                    <p>
-                      You just need to tell your friends about our free
-                      templates
-                    </p>
+                    <Cards
+                      title="Modern Strategy"
+                      text=" Customize anything in this template to fit your website"
+                    />
                   </div>
                 </div>
                 {/* <!-- ***** Features Small Item End ***** --> */}

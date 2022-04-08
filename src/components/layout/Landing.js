@@ -4,6 +4,7 @@ import section1 from "../../images/section1.png";
 import section2 from "../../images/light-color.png";
 import Cards from "./Cards";
 import {
+  faFolderPlus,
   faHeartPulse,
   faLaptopMedical,
   faUserDoctor,
@@ -55,9 +56,9 @@ const Landing = () => {
                 <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="card">
                     <Cards
-                      icon={faUserDoctor}
-                      title="Doctors"
-                      text="Doctors, also known as physicians, are licensed health professionals who maintain and restore human health through the practice of medicine. They examine patients, review their medical history."
+                      icon={faFolderPlus}
+                      title="History"
+                      text="The pulse is a bulge of an artery from waves of blood that course through the blood vessels each time the heart beats. The pulse is often taken at the wrist to estimate the heart rate"
                     />
                   </div>
                 </div>

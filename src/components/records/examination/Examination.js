@@ -1,63 +1,38 @@
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import ExaminationTable from "../ExaminationTable";
+import FilterModal from "./../FilterModal";
 
 const Examination = () => {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <div className="examination">
       <div className="row">
-        <div className="co-lg-12 col-md-12 col-sm-12">
+        <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="examination-filter">
-            <div>Examination</div>
-            <button
-              type="button"
-              className="btn btn-primary"
-              data-toggle="modal"
-              data-target="#exampleModalCenter"
-            >
-              Launch demo modal
-            </button>
-
-            <div
-              className="modal fade"
-              id="exampleModalCenter"
-              tabIndex="-1"
-              role="dialog"
-              aria-labelledby="exampleModalCenterTitle"
-              aria-hidden="true"
-            >
-              <div
-                className="modal-dialog modal-dialog-centered"
-                role="document"
+            <div className="examination-filter-header">Examination</div>
+            <div className="examination-filer-button">
+              <button
+                className="btn-primary"
+                onClick={() => setModalShow(true)}
               >
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLongTitle">
-                      Modal title
-                    </h5>
-                    <button
-                      type="button"
-                      className="close"
-                      data-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div className="modal-body">...</div>
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" className="btn btn-primary">
-                      Save changes
-                    </button>
-                  </div>
-                </div>
-              </div>
+                <FontAwesomeIcon icon={faFilter} /> Add filter
+              </button>
+
+              <FilterModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+              />
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12">
+          <div className="examination-table">
+            <ExaminationTable />
           </div>
         </div>
       </div>

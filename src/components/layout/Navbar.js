@@ -1,17 +1,12 @@
+import {
+  faCapsules,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import logo from "../../images/light-color.png";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authAction";
-import { clearCurrentProfile } from "../../actions/profileAction";
-import { useNavigate } from "react-router-dom";
-const Navbar = (props) => {
-  const navigate = useNavigate();
-  const onLogoutClick = (e) => {
-    e.preventDefault();
-    props.logoutUser(navigate);
-    props.clearCurrentProfile();
-  };
+
+const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
@@ -40,15 +35,19 @@ const Navbar = (props) => {
                 aria-current="page"
                 href="#billidentifier"
               >
-                Bill identifier
+                <FontAwesomeIcon
+                  icon={faCapsules}
+                  style={{ marginRight: "5px" }}
+                />
+                Pill identifier
               </a>
             </li>
             <li className="nav-item">
-              <a
-                style={{ cursor: "pointer" }}
-                onClick={onLogoutClick}
-                className="nav-link"
-              >
+              <a className="nav-link" aria-current="page" href="#logout">
+                <FontAwesomeIcon
+                  icon={faRightFromBracket}
+                  style={{ marginRight: "5px" }}
+                />
                 Log out
               </a>
             </li>
@@ -59,13 +58,4 @@ const Navbar = (props) => {
   );
 };
 
-Navbar.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-};
-const mapStateToProps = (state) => ({
-  auth: state.auth,
-});
-export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(
-  Navbar
-);
+export default Navbar;

@@ -749,3 +749,86 @@ features
   line-height: 28px;
   letter-spacing: 1px;
 }
+
+/* ==============================Zeinab CSS============================== */
+/* ===============Examination===================== */
+.examination .examination-filter {
+  /* text-align: center; */
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.examination .examination-filter .examination-filter-header {
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 10px;
+  color: #2a7f82;
+}
+
+.examination .examination-filter .examination-filer-button button {
+  background-color: transparent;
+  color: #2a7f82;
+  font-weight: bold;
+  padding: 8px 12px;
+  box-shadow: 0px 0px 4px 0px #2a7f82;
+  border-color: #2a7f82;
+  border-radius: 10px;
+  border: none;
+}
+
+.departments-filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.department-container .department-name {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.department-container .department-name span {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.popup-close {
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
+  /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
+}
+
+.examination .examination-filter .examination-filer-button button:focus,
+.popup-close:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
+}
+
+.examination .examination-table {
+  width: 97%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.examination .examination-table thead {
+  background-color: #3ea9ad;
+  color: white;
+}
+
+table.mdb-dataTable thead .sorting:after, table.mdb-dataTable thead .sorting_asc:after, table.mdb-dataTable thead .sorting_desc:after, table.mdb-dataTable thead .sorting_asc_disabled:after, table.mdb-dataTable thead .sorting_desc_disabled:after, table thead.mdb-dataTable-head .sorting:after, table thead.mdb-dataTable-head .sorting_asc:after, table thead.mdb-dataTable-head .sorting_desc:after, table thead.mdb-dataTable-head .sorting_asc_disabled:after, table thead.mdb-dataTable-head .sorting_desc_disabled:after {
+  left: -0.4rem;
+    font-family: "Font Awesome\ 5 Free";
+    font-size: 1rem;
+    font-weight: 900;
+    content: "\f063";
+}
+
+table.mdb-dataTable thead .sorting:before, table.mdb-dataTable thead .sorting_asc:before, table.mdb-dataTable thead .sorting_desc:before, table.mdb-dataTable thead .sorting_asc_disabled:before, table.mdb-dataTable thead .sorting_desc_disabled:before, table thead.mdb-dataTable-head .sorting:before, table thead.mdb-dataTable-head .sorting_asc:before, table thead.mdb-dataTable-head .sorting_desc:before, table thead.mdb-dataTable-head .sorting_asc_disabled:before, table thead.mdb-dataTable-head .sorting_desc_disabled:before {
+  left: -0.4rem;
+  font-family: 'Font Awesome 5 Free';
+  content: '\f10d';
+font-size: 1rem;
+font-weight: 900;
+}

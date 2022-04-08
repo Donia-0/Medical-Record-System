@@ -16,8 +16,8 @@ import Landing from "./layout/Landing";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
-import AddbloodP from "./records/bloodPressure/AddbloodP";
 import BloodPreasure from "./records/bloodPressure/BloodPreasure";
+import Examination from "./records/examination/Examination";
 
 //check for token
 if (localStorage.token) {
@@ -50,7 +50,8 @@ const App = () => {
           </Route>
           <Route path="/user" element={<Layout />}>
             <Route path="profile" element={<Profile />} />
-            <Route path="bloodpressure" element={<BloodPreasure />} />
+            <Route path="bloodpreasure" element={<BloodPreasure />} />
+            <Route path="examination" element={<Examination />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -3,6 +3,11 @@ import React from "react";
 import section1 from "../../images/section1.png";
 import section2 from "../../images/light-color.png";
 import Cards from "./Cards";
+import {
+  faHeartPulse,
+  faLaptopMedical,
+  faUserDoctor,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Landing = () => {
   return (
@@ -37,51 +42,41 @@ const Landing = () => {
             <div className="col-lg-12">
               <div className="row">
                 {/* <!-- ***** Features Small Item Start ***** --> */}
-                <div
-                  className="col-lg-4 col-md-6 col-sm-6 col-12"
-                  style={{ paddingRight: "20px" }}
-                >
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="card">
                     <Cards
-                      title="Modern Strategy"
-                      text=" Customize anything in this template to fit your website"
+                      icon={faHeartPulse}
+                      title="Heart Pulse"
+                      text="The pulse is a bulge of an artery from waves of blood that course through the blood vessels each time the heart beats. The pulse is often taken at the wrist to estimate the heart rate"
                     />
                   </div>
                 </div>
-                {/* <!-- ***** Features Small Item End ***** --> */}
 
-                {/* <!-- ***** Features Small Item Start ***** --> */}
-                <div
-                  className="col-lg-4 col-md-6 col-sm-6 col-12"
-                  style={{ paddingRight: "20px" }}
-                >
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div className="card">
                     <Cards
-                      title="Modern Strategy"
-                      text=" Customize anything in this template to fit your website"
+                      icon={faUserDoctor}
+                      title="Doctors"
+                      text="Doctors, also known as physicians, are licensed health professionals who maintain and restore human health through the practice of medicine. They examine patients, review their medical history."
                     />
                   </div>
                 </div>
-                {/* <!-- ***** Features Small Item End ***** --> */}
 
-                {/* <!-- ***** Features Small Item Start ***** --> */}
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                   <div class="card">
                     <Cards
-                      title="Modern Strategy"
-                      text=" Customize anything in this template to fit your website"
+                      icon={faLaptopMedical}
+                      title="Electronic health"
+                      text="e-health is an emerging field in the intersection of medical informatics, public health and business, referring to health services and information delivered or enhanced through the Internet and related technologies."
                     />
                   </div>
                 </div>
-                {/* <!-- ***** Features Small Item End ***** --> */}
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* <!-- ***** Features Small End ***** --> */}
 
-      {/* <!-- ***** Features Big Item Start ***** --> */}
       <div className="section-container">
         <section class="section ">
           <div class="container">

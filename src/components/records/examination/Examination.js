@@ -29,10 +29,19 @@ const Examination = () => {
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="examination-table">
-            <ExaminationTable />
+      <div className="examination-data">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="add-examination-btn">
+              <button type="button" className="btn btn-primary add-examination">
+                Add Examination
+              </button>
+            </div>
+          </div>
+          <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className="examination-table">
+              <ExaminationTable />
+            </div>
           </div>
         </div>
       </div>

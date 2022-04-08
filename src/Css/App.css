@@ -795,21 +795,23 @@ features
   cursor: pointer;
 }
 
-.popup-close {
+.popup-close,
+.add-examination {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
 }
 
 .examination .examination-filter .examination-filer-button button:focus,
-.popup-close:focus {
+.popup-close:focus,
+.add-examination:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
-.examination .examination-table {
+.examination .examination-data {
   width: 97%;
   margin: auto;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .examination .examination-table thead {
@@ -817,18 +819,8 @@ features
   color: white;
 }
 
-table.mdb-dataTable thead .sorting:after, table.mdb-dataTable thead .sorting_asc:after, table.mdb-dataTable thead .sorting_desc:after, table.mdb-dataTable thead .sorting_asc_disabled:after, table.mdb-dataTable thead .sorting_desc_disabled:after, table thead.mdb-dataTable-head .sorting:after, table thead.mdb-dataTable-head .sorting_asc:after, table thead.mdb-dataTable-head .sorting_desc:after, table thead.mdb-dataTable-head .sorting_asc_disabled:after, table thead.mdb-dataTable-head .sorting_desc_disabled:after {
-  left: -0.4rem;
-    font-family: "Font Awesome\ 5 Free";
-    font-size: 1rem;
-    font-weight: 900;
-    content: "\f063";
-}
-
-table.mdb-dataTable thead .sorting:before, table.mdb-dataTable thead .sorting_asc:before, table.mdb-dataTable thead .sorting_desc:before, table.mdb-dataTable thead .sorting_asc_disabled:before, table.mdb-dataTable thead .sorting_desc_disabled:before, table thead.mdb-dataTable-head .sorting:before, table thead.mdb-dataTable-head .sorting_asc:before, table thead.mdb-dataTable-head .sorting_desc:before, table thead.mdb-dataTable-head .sorting_asc_disabled:before, table thead.mdb-dataTable-head .sorting_desc_disabled:before {
-  left: -0.4rem;
-  font-family: 'Font Awesome 5 Free';
-  content: '\f10d';
-font-size: 1rem;
-font-weight: 900;
+.examination .examination-data .add-examination-btn {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 10px;
 }

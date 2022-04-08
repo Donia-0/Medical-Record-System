@@ -37,6 +37,7 @@ const BloodPreasure = (props) => {
       <div className="row blood-gluc-form">
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="bp-img-container">
+            <span className="bp-header">Blood Preasure</span>
             <div className="bp-img">
               <img src={bloodpreasure} />
             </div>

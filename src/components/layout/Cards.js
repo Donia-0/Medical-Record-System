@@ -3,8 +3,8 @@ import React from "react";
 const Cards = (props) => {
   return (
     <div>
-      <i> {props.icon} </i>
-      <h3>{props.title}</h3>
+      <div className="icon">icon</div>
+      <h5 className="title">{props.title}</h5>
       <p>{props.text}</p>
     </div>
   );

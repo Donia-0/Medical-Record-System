@@ -759,6 +759,100 @@ features
   line-height: 28px;
   letter-spacing: 1px;
 }
+/* -====================addprescription ======================*/
+
+.pres-img-container {
+  height: 110px;
+  background-color: #3ea9ad;
+  border-bottom: 2px solid #2a7f82;
+  position: relative;
+}
+
+/* .bp-img,
+.gluc-img {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  height: 100%;
+}
+
+.bp-img img,
+.gluc-img img {
+  height: 120px !important;
+}
+*/
+ /* .pres-img-container .pres-img img,
+.pres-container .gluc-img img {
+  height: 85%;
+}  */
+
+.pres-header {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+.add-prescription {
+  width: 70%;
+  margin: 25px auto;
+  background-color: whitesmoke;
+}
+
+.prescripton-form .pres-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.prescripton-form .form-group {
+  width: 45%;
+  margin-top: 30px;
+}
+.form-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.prescripton-form .form-control {
+  width: 80%;
+}
+
+.prescripton-form .form-control:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}
+
+.prescripton-form .formlabel {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.prescripton-form label {
+  color: #2a7f82;
+  font-weight: bold;
+}
+
+.prescripton-form .add-btn {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  left: 15%;
+  transform: translateX(-30%);
+  margin-bottom: 20px;
+}
+
+.prescripton-form button,
+.prescripton-form button:hover {
+  background-color: #2a7f82;
+  color: #def2f3;
+  border-color: #2a7f82;
+}
+
 
 /* ==============================Zeinab CSS============================== */
 /* ===============Examination===================== */

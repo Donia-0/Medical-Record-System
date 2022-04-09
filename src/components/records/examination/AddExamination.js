@@ -13,6 +13,12 @@ const AddExamination = () => {
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="add-examination-form">
             <form className="form-group">
+              <Fields
+                name="diagnosis"
+                labelName="Diagnosis"
+                type="input"
+                placeholder="Add diagnosis"
+              />
               <div className="row form-container">
                 <div className="formlabel col-lg-3">
                   <label htmlFor="symptoms">Symptoms:</label>
@@ -27,13 +33,6 @@ const AddExamination = () => {
                   ></textarea>
                 </div>
               </div>
-              <Fields
-                name="diagnosis"
-                labelName="Diagnosis"
-                type="input"
-                placeholder="Add diagnosis"
-              />
-              <Fields name="date" labelName="Date" type="date" />
               <div className="row form-container">
                 <div className="formlabel col-lg-3">
                   <label htmlFor="note">Note:</label>

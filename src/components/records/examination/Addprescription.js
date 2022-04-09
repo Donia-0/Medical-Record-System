@@ -45,8 +45,8 @@ const Addprescription = (props) => {
                 onChange={onInputChange}
                 name="drug"
                 labelName="drug"
-                type="number"
-                placeholder="120"
+                type="text"
+                placeholder="Enter drug name"
               />
               <Fields
                 value={form.dose}
@@ -54,7 +54,7 @@ const Addprescription = (props) => {
                 name="dose"
                 labelName="dose"
                 type="number"
-                placeholder="80"
+                placeholder="Enter dose "
               />
 
               <Fields
@@ -66,7 +66,7 @@ const Addprescription = (props) => {
               />
               <div className="row form-container">
                 <div className="formlabel col-lg-3">
-                  <label htmlFor="date">Note:</label>
+                  <label htmlFor="note">Note:</label>
                 </div>
                 <div className="col-lg-9">
                   <textarea

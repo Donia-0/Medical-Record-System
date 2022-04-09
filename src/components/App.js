@@ -18,7 +18,6 @@ import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 import BloodPreasure from "./records/bloodPressure/BloodPreasure";
 import Examination from "./records/examination/Examination";
-
 import Addprescription from "./records/examination/Addprescription";
 import AddExamination from "./records/examination/AddExamination";
 
@@ -56,6 +55,7 @@ const App = () => {
             <Route path="bloodpreasure" element={<BloodPreasure />} />
             <Route path="examination" element={<Examination />} />
             <Route path="addexamination" element={<AddExamination />} />
+            <Route path="addprescription" element={<Addprescription />} />
           </Route>
         </Routes>
       </BrowserRouter>

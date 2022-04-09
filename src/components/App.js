@@ -18,6 +18,7 @@ import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 import BloodPreasure from "./records/bloodPressure/BloodPreasure";
 import Examination from "./records/examination/Examination";
+import AddExamination from "./records/examination/AddExamination";
 
 //check for token
 if (localStorage.token) {
@@ -52,6 +53,7 @@ const App = () => {
             <Route path="profile" element={<Profile />} />
             <Route path="bloodpreasure" element={<BloodPreasure />} />
             <Route path="examination" element={<Examination />} />
+            <Route path="addexamination" element={<AddExamination />} />
           </Route>
         </Routes>
       </BrowserRouter>

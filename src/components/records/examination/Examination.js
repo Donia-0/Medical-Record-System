@@ -33,7 +33,7 @@ const Examination = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="add-examination-btn">
-              <button type="button" className="btn btn-primary add-examination">
+              <button type="button" className="btn btn-primary">
                 Add Examination
               </button>
             </div>

@@ -79,14 +79,14 @@ const BloodPreasure = (props) => {
               />
               <div className="row form-container">
                 <div className="formlabel col-lg-3">
-                  <label htmlFor="date">Note:</label>
+                  <label htmlFor="note">Note:</label>
                 </div>
                 <div className="col-lg-9">
                   <textarea
                     value={form.note}
                     onChange={onInputChange}
                     name="note"
-                    id="date"
+                    id="note"
                     className="form-control"
                     rows={3}
                     placeholder="Any notes !... "

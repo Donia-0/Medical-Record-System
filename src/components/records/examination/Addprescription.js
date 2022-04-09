@@ -56,78 +56,82 @@ const Addprescription = (props) => {
           </div>
         </div>
         <div className="col-lg-12 col-md-12 col-sm-12">
-          {inputList.map((x, i) => {
-            return (
-              <div className="pres-form">
-                <form className="form-group" onSubmit={onFormSubmit}>
-                  <Fields
-                    value={form.drug}
-                    onChange={onInputChange}
-                    name="drug"
-                    labelName="Drug"
-                    type="text"
-                    placeholder="Enter drug name"
-                  />
-                  <Fields
-                    value={form.dose}
-                    onChange={onInputChange}
-                    name="dose"
-                    labelName="Dose"
-                    type="number"
-                    placeholder="Enter dose "
-                  />
-                  <Fields
-                    value={form.date}
-                    onChange={onInputChange}
-                    name="date"
-                    labelName="Date"
-                    type="date"
-                  />
-                  <div className="row form-container">
-                    <div className="formlabel col-lg-3">
-                      <label htmlFor="note">Note:</label>
-                    </div>
-                    <div className="col-lg-9">
-                      <textarea
-                        value={form.note}
-                        onChange={onInputChange}
-                        name="note"
-                        id="date"
-                        className="form-control"
-                        rows={3}
-                        placeholder="Any notes !... "
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="add-btns">
-                      <div className="col-lg-12 col-md-12 col-sm-12 add-remove-pres">
-                        {inputList.length !== 1 && (
-                          <button
-                            className="btn btn-primary mb-2"
-                            onClick={() => handleRemoveClick(i)}
-                          >
-                            <FontAwesomeIcon icon={faTrash} />
-                          </button>
-                        )}
-                        {inputList.length - 1 === i && (
-                          <button
-                            onClick={handleAddClick}
-                            className="btn btn-primary mb-2"
-                          >
-                            <FontAwesomeIcon icon={faPlus} />
-                          </button>
-                        )}
+          <div className="pres-form">
+            <form className="form-group" onSubmit={onFormSubmit}>
+              {inputList.map((x, i) => {
+                return (
+                  <div>
+                    <Fields
+                      value={form.drug}
+                      onChange={onInputChange}
+                      name="drug"
+                      labelName="Drug"
+                      type="text"
+                      placeholder="Enter drug name"
+                    />
+                    <Fields
+                      value={form.dose}
+                      onChange={onInputChange}
+                      name="dose"
+                      labelName="Dose"
+                      type="number"
+                      placeholder="Enter dose "
+                    />
+                    <Fields
+                      value={form.date}
+                      onChange={onInputChange}
+                      name="date"
+                      labelName="Date"
+                      type="date"
+                    />
+                    <div className="row form-container">
+                      <div className="formlabel col-lg-3">
+                        <label htmlFor="note">Note:</label>
                       </div>
-                      <div className="col-lg-12 col-md-12 col-sm-12 submit-pres">
-                        <button className="btn btn-primary mb-2">Add</button>
+                      <div className="col-lg-9">
+                        <textarea
+                          value={form.note}
+                          onChange={onInputChange}
+                          name="note"
+                          id="date"
+                          className="form-control"
+                          rows={3}
+                          placeholder="Any notes !... "
+                        ></textarea>
                       </div>
                     </div>
+                    <div className="row">
+                      <div className="add-btns">
+                        <div className="col-lg-12 col-md-12 col-sm-12 add-remove-pres">
+                          {inputList.length !== 1 && (
+                            <button
+                              className="btn btn-primary mb-2"
+                              onClick={() => handleRemoveClick(i)}
+                            >
+                              <FontAwesomeIcon icon={faTrash} />
+                            </button>
+                          )}
+                          {inputList.length - 1 === i && (
+                            <button
+                              onClick={handleAddClick}
+                              className="btn btn-primary mb-2"
+                            >
+                              <FontAwesomeIcon icon={faPlus} />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </form>
+                );
+              })}
+              <div className="row">
+                <div className="col-lg-12 col-md-12 col-sm-12 submit-pres">
+                  <button className="btn btn-primary mb-2">Add</button>
+                </div>
               </div>
-            );
-          })}
+            </form>
+          </div>
         </div>
       </div>
     </div>

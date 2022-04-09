@@ -824,7 +824,7 @@ features
 }
 
 .prescripton-form .add-btns {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .prescripton-form .add-btns .add-remove-pres {
@@ -839,12 +839,13 @@ features
   margin-left: 10px;
 }
 
-.prescripton-form .add-btns .submit-pres{
+.pres-form .form-group .submit-pres{
   display: flex;
     justify-content: end;
     position: relative;
     left: 15%;
     transform: translateX(-30%);
+    margin-bottom: 5px;
 }
 
 .prescripton-form button,

@@ -161,6 +161,7 @@
 .sidenav a:hover,
 .dropdown-btn:hover {
   opacity: 100%;
+  color: white;
 }
 .sidenav .a-section::after,
 .dropdown-btn::after {

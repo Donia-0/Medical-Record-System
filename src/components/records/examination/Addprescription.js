@@ -9,7 +9,7 @@ import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Addprescription = (props) => {
   const [inputList, setInputList] = useState([
-    { drug: "", dose: "", date: "", note: "" },
+    { drug: "", dose: "", note: "" },
   ]);
 
   // handle click event of the Remove button
@@ -21,14 +21,13 @@ const Addprescription = (props) => {
 
   // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, { drug: "", dose: "", date: "", note: "" }]);
+    setInputList([...inputList, { drug: "", dose: "", note: "" }]);
   };
 
   const [form, setForm] = useState({
     drug: "",
     dose: "",
     note: "",
-    date: "",
   });
 
   const onInputChange = (evt) => {
@@ -77,13 +76,7 @@ const Addprescription = (props) => {
                       type="number"
                       placeholder="Enter dose "
                     />
-                    <Fields
-                      value={form.date}
-                      onChange={onInputChange}
-                      name="date"
-                      labelName="Date"
-                      type="date"
-                    />
+
                     <div className="row form-container">
                       <div className="formlabel col-lg-3">
                         <label htmlFor="note">Note:</label>

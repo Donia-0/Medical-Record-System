@@ -20,6 +20,7 @@ import BloodPreasure from "./records/bloodPressure/BloodPreasure";
 import Examination from "./records/examination/Examination";
 import Addprescription from "./records/examination/Addprescription";
 import AddExamination from "./records/examination/AddExamination";
+import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
 
 //check for token
 if (localStorage.token) {
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="/user" element={<Layout />}>
             <Route path="profile" element={<Profile />} />
             <Route path="bloodpreasure" element={<BloodPreasure />} />
+            <Route path="glucose" element={<GlucoseMeasure />} />
             <Route path="examination" element={<Examination />} />
             <Route path="addexamination" element={<AddExamination />} />
             <Route path="addprescription" element={<Addprescription />} />

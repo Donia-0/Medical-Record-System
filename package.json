@@ -31,7 +31,9 @@
     "mdbreact": "^5.2.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.2",
+    "react-data-table-component": "^7.4.7",
     "react-dom": "^17.0.2",
+    "react-minimal-pie-chart": "^8.2.0",
     "react-picker": "^1.2.17",
     "react-redux": "^7.2.6",
     "react-router": "^6.2.2",
@@ -42,6 +44,7 @@
     "react-toastify": "^8.2.0",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
+    "rumble-charts": "^4.0.0",
     "styled-components": "^5.3.5",
     "svgo": "^2.8.0",
     "web-vitals": "^2.1.4"

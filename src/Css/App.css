@@ -542,10 +542,10 @@
   color: white;
 }
 
-::-webkit-input-placeholder {
-  /* Edge */
+/* ::-webkit-input-placeholder {
+  /* Edge
   color: red;
-}
+} */
 
 .navbar {
   background-color: #3ea9ad;
@@ -949,7 +949,9 @@ features
 
 .examination .examination-filter .examination-filer-button button:focus,
 .popup-close:focus,
-.add-examination-form .add-btn button:focus {
+.add-examination-form .add-btn button:focus,
+.view-prescription-btn button:focus,
+.filter-examination-btn button:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
@@ -1004,4 +1006,44 @@ features
   left: 30%;
   transform: translateX(-30%);
   margin-bottom: 20px;
+}
+
+.view-prescription-btn button,
+.view-prescription-btn button:hover {
+  background-color: #2a7f82;
+  border-color: #2a7f82;
+  padding: 3px 10px;
+}
+.filter-examination-btn {
+  margin-left: 5px;
+}
+.filter-examination-btn button,
+.filter-examination-btn button:hover {
+  background-color: #2a7f82;
+  border-color: #2a7f82;
+}
+.filter-examination-input {
+    width: 25%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #2a7f82;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.filter-examination-input:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #2a7f82 !important;
+  outline: none;
+}
+
+.TUEFO {
+  padding-right: 0px !important;
 }

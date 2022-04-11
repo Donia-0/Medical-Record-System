@@ -74,7 +74,7 @@ const Layout = () => {
         </div>
         <div className="col-lg-10 col-md-12 col-sm-12">
           <div className="profile-content">
-            <Viewbloodpreasure />
+            <Outlet />
           </div>
         </div>
       </div>

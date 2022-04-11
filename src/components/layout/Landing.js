@@ -26,7 +26,7 @@ const Landing = () => {
                   Simple Store and connect to PayPal or Stripe.
                 </p>
                 <div className="btn">
-                  <a href="#Register" class="main-button-slider">
+                  <a href="#Register" className="main-button-slider">
                     Create account
                   </a>
                 </div>
@@ -63,8 +63,8 @@ const Landing = () => {
                   </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                  <div class="card">
+                <div className="col-lg-4 col-md-6 col-sm-6 col-12">
+                  <div className="card">
                     <Cards
                       icon={faLaptopMedical}
                       title="Electronic health"
@@ -79,22 +79,24 @@ const Landing = () => {
       </section>
 
       <div className="section-container">
-        <section class="section ">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">
+        <section className="section ">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-5 col-md-12 col-sm-12 align-self-center">
                 <img
                   src={section2}
-                  class="rounded img-fluid d-block mx-auto"
+                  className="rounded img-fluid d-block mx-auto"
                   alt="App"
                 />
               </div>
-              <div class="col-lg-1"></div>
-              <div class="col-lg-6 col-md-12 col-sm-12 section-text ">
-                <div class="left-heading">
-                  <h2 class="section-title">Let’s discuss about you project</h2>
+              <div className="col-lg-1"></div>
+              <div className="col-lg-6 col-md-12 col-sm-12 section-text ">
+                <div className="left-heading">
+                  <h2 className="section-title">
+                    Let’s discuss about you project
+                  </h2>
                 </div>
-                <div class="left-text">
+                <div className="left-text">
                   <p>
                     Nullam sit amet purus libero. Etiam ullamcorper nisl ut
                     augue blandit, at finibus leo efficitur. Nam gravida purus
@@ -113,16 +115,16 @@ const Landing = () => {
         {/* <!-- ***** Features Big Item End ***** --> */}
 
         {/* <!-- ***** Features Big Item Start ***** --> */}
-        <section class="section ">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 col-md-12 col-sm-12 section-text ">
-                <div class="left-heading">
-                  <h2 class="section-title">
+        <section className="section ">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6 col-md-12 col-sm-12 section-text ">
+                <div className="left-heading">
+                  <h2 className="section-title">
                     We can help you to grow your business
                   </h2>
                 </div>
-                <div class="left-text">
+                <div className="left-text">
                   <p>
                     Aenean pretium, ipsum et porttitor auctor, metus ipsum
                     iaculis nisi, a bibendum lectus libero vitae urna. Sed id
@@ -131,8 +133,8 @@ const Landing = () => {
                   </p>
                 </div>
               </div>
-              <div class="col-lg-1"></div>
-              <div class="col-lg-5 col-md-12 col-sm-12 align-self-center">
+              <div className="col-lg-1"></div>
+              <div className="col-lg-5 col-md-12 col-sm-12 align-self-center">
                 <img src={section1} />
               </div>
             </div>

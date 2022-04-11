@@ -29,21 +29,6 @@ const Examination = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-6 col-md-12 col-sm-12">
-                <div className="examination-filer-button">
-                  <button
-                    className="btn-primary"
-                    onClick={() => setModalShow(true)}
-                  >
-                    <FontAwesomeIcon icon={faFilter} /> Add record
-                  </button>
-
-                  <FilterModal
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                  />
-                </div>
-              </div>
             </div>
           </div>
         </div>

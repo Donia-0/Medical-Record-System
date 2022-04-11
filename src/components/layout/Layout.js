@@ -6,6 +6,7 @@ import Profile from "../user/Profile";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import Viewbloodpreasure from "../records/examination/Viewbloodpreasure";
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -73,7 +74,7 @@ const Layout = () => {
         </div>
         <div className="col-lg-10 col-md-12 col-sm-12">
           <div className="profile-content">
-            <Outlet />
+            <Viewbloodpreasure />
           </div>
         </div>
       </div>

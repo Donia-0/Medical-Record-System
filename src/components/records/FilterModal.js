@@ -31,7 +31,7 @@ const FilterModal = (props) => {
 
   const renderedDepartments = Departments.map((department) => {
     return (
-      <div className="department-container">
+      <div key={department} className="department-container">
         <div className="department-name">
           <span>
             {department}

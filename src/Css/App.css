@@ -766,7 +766,7 @@ features
 }
 
 .examination .examination-filter .examination-filer-button button {
-  background-color: transparent;
+  background-color: transparent !important;
   color: #2a7f82;
   font-weight: bold;
   padding: 8px 12px;
@@ -812,11 +812,6 @@ features
   width: 97%;
   margin: auto;
   margin-top: 15px;
-}
-
-.examination .examination-table thead {
-  background-color: #3ea9ad;
-  color: white;
 }
 
 .examination .examination-data .add-examination-btn {

@@ -2,50 +2,61 @@ import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
+import PrescriptionView from "./PrescriptionView";
 
 const ExaminationTable = (props) => {
+  const [modalShow, setModalShow] = React.useState(false);
+  const buttonPres = () => {
+    return (
+      <div className="view-prescription-btn">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => setModalShow(true)}
+        >
+          view
+        </button>
+        <PrescriptionView show={modalShow} onHide={() => setModalShow(false)} />
+      </div>
+    );
+  };
+
   const columns = [
     {
       name: "Symptoms",
-      selector: "name",
+      selector: (row) => row.name,
       sortable: true,
       grow: 2,
       wrap: true,
     },
     {
       name: "Diagnosis",
-      selector: "email",
+      selector: (row) => row.email,
       sortable: true,
       grow: 2,
       wrap: true,
     },
     {
       name: "Date",
-      selector: "website",
+      selector: (row) => row.website,
       sortable: true,
     },
     {
       name: "Note",
-      selector: "company.name",
+      selector: (row) => row.company.name,
       sortable: true,
     },
     {
       name: "Dr Name",
-      selector: "address.city",
+      selector: (row) => row.address.city,
       sortable: true,
     },
     {
       name: "Prescription",
       button: true,
-      cell: (row) => (
-        <>
-          <div className="view-prescription-btn">
-            <button type="button" className="btn btn-primary">
-              view
-            </button>
-          </div>
-        </>
-      ),
+      ignoreRowClick: true,
+      allowOverflow: true,
+      cell: buttonPres,
     },
   ];
 

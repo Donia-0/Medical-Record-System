@@ -18,6 +18,11 @@ import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 import BloodPreasure from "./records/bloodPressure/BloodPreasure";
 import Examination from "./records/examination/Examination";
+import Addprescription from "./records/examination/Addprescription";
+import AddExamination from "./records/examination/AddExamination";
+import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
+import Charts from "./Charts";
+import StackedArea from "./StackedArea";
 
 //check for token
 if (localStorage.token) {
@@ -44,6 +49,8 @@ const App = () => {
         {/* <Route path="/" element={<Landing />}></Route> */}
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/chart" element={<Charts />} />
+          {/* <Route path="/chart" element={<StackedArea />} /> */}
           <Route exact path="/auth" element={<Auth />}>
             <Route exact path="login" element={<Signin />} />
             <Route exact path="register" element={<Register />} />
@@ -51,7 +58,10 @@ const App = () => {
           <Route path="/user" element={<Layout />}>
             <Route path="profile" element={<Profile />} />
             <Route path="bloodpreasure" element={<BloodPreasure />} />
+            <Route path="glucose" element={<GlucoseMeasure />} />
             <Route path="examination" element={<Examination />} />
+            <Route path="addexamination" element={<AddExamination />} />
+            <Route path="addprescription" element={<Addprescription />} />
           </Route>
         </Routes>
       </BrowserRouter>

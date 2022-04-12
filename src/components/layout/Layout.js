@@ -6,7 +6,6 @@ import Profile from "../user/Profile";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
-import Viewbloodpreasure from "../records/examination/Viewbloodpreasure";
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {

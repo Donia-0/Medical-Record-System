@@ -4,6 +4,7 @@ import React from "react";
 import ExaminationTable from "../ExaminationTable";
 import FilterModal from "./../FilterModal";
 import data from "../data";
+import { Link } from "react-router-dom";
 
 const Examination = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -40,9 +41,13 @@ const Examination = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="add-examination-btn">
-              <button type="button" className="btn btn-primary">
+              <Link
+                to="/records/addexamination"
+                type="button"
+                className="btn btn-primary"
+              >
                 Add Examination
-              </button>
+              </Link>
             </div>
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">

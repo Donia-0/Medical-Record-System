@@ -412,20 +412,23 @@
 }
 
 .blood-gluc-form .form-control:focus,
-.add-examination-form .form-control:focus {
+.add-examination-form .form-control:focus,
+.prescription-view .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
 
 .blood-gluc-form .formlabel,
-.add-examination-form .formlabel {
+.add-examination-form .formlabel,
+.prescription-view .formlabel {
   display: flex;
   justify-content: start;
   /* align-items: center; */
 }
 
 .blood-gluc-form label,
-.add-examination-form label {
+.add-examination-form label,
+.prescription-view .formlabel label {
   color: #2a7f82;
   font-weight: bold;
 }
@@ -911,7 +914,7 @@ features
 }
 
 .examination .examination-filter .examination-filer-button button {
-  background-color: transparent;
+  background-color: transparent !important;
   color: #2a7f82;
   font-weight: bold;
   padding: 8px 12px;
@@ -941,7 +944,7 @@ features
 }
 
 .popup-close,
-.add-examination-btn button {
+.add-examination-btn a {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
@@ -951,7 +954,8 @@ features
 .popup-close:focus,
 .add-examination-form .add-btn button:focus,
 .view-prescription-btn button:focus,
-.filter-examination-btn button:focus {
+.filter-examination-btn button:focus,
+.add-examination-btn a:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
@@ -959,11 +963,6 @@ features
   width: 97%;
   margin: auto;
   margin-top: 15px;
-}
-
-.examination .examination-table thead {
-  background-color: #3ea9ad;
-  color: white;
 }
 
 .examination .examination-data .add-examination-btn {
@@ -1047,3 +1046,12 @@ features
 .TUEFO {
   padding-right: 0px !important;
 }
+.prescription-view {
+  width: 90%;
+  margin: auto;
+}
+.prescription-view .prescription-container {
+  display: flex;
+}
+
+.prescription-view .form-control {width: 90%;}

@@ -56,7 +56,32 @@ const ExaminationTable = (props) => {
       button: true,
       ignoreRowClick: true,
       allowOverflow: true,
-      cell: buttonPres,
+      cell: (row) => {
+        return (
+          <div className="view-prescription-btn">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                row.showModal = true;
+                setModalShow(true);
+              }}
+            >
+              view
+            </button>
+            {row.showModal ? (
+              <PrescriptionView
+                show={modalShow}
+                onHide={() => {
+                  row.showModal = false;
+
+                  setModalShow(false);
+                }}
+              />
+            ) : null}
+          </div>
+        );
+      },
     },
   ];
 

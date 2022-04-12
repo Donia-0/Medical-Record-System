@@ -22,6 +22,7 @@ const data = [
       bs: "harness real-time e-markets",
     },
     showButtons: true,
+    showModal: false,
   },
   {
     id: 2,
@@ -46,6 +47,7 @@ const data = [
       bs: "synergize scalable supply-chains",
     },
     showButtons: true,
+    showModal: false,
   },
   {
     id: 3,
@@ -70,6 +72,7 @@ const data = [
       bs: "e-enable strategic applications",
     },
     showButtons: false,
+    showModal: false,
   },
   {
     id: 4,
@@ -94,6 +97,7 @@ const data = [
       bs: "transition cutting-edge web services",
     },
     showButtons: true,
+    showModal: false,
   },
   {
     id: 5,
@@ -118,6 +122,7 @@ const data = [
       bs: "revolutionize end-to-end systems",
     },
     showButtons: false,
+    showModal: false,
   },
   {
     id: 6,
@@ -142,6 +147,7 @@ const data = [
       bs: "e-enable innovative applications",
     },
     showButtons: true,
+    showModal: false,
   },
   {
     id: 7,
@@ -166,6 +172,7 @@ const data = [
       bs: "generate enterprise e-tailers",
     },
     showButtons: true,
+    showModal: false,
   },
   {
     id: 8,
@@ -190,6 +197,7 @@ const data = [
       bs: "e-enable extensible e-tailers",
     },
     showButtons: false,
+    showModal: false,
   },
   {
     id: 9,
@@ -214,6 +222,7 @@ const data = [
       bs: "aggregate real-time technologies",
     },
     showButtons: true,
+    showModal: false,
   },
   {
     id: 10,
@@ -238,6 +247,7 @@ const data = [
       bs: "target end-to-end models",
     },
     showButtons: false,
+    showModal: false,
   },
   {
     id: 11,
@@ -262,6 +272,7 @@ const data = [
       bs: "target end-to-end models",
     },
     showButtons: true,
+    showModal: false,
   },
   {
     id: 12,
@@ -286,6 +297,7 @@ const data = [
       bs: "target end-to-end models",
     },
     showButtons: false,
+    showModal: false,
   },
 ];
 

@@ -6,20 +6,6 @@ import PrescriptionView from "./PrescriptionView";
 
 const ExaminationTable = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
-  const buttonPres = () => {
-    return (
-      <div className="view-prescription-btn">
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={() => setModalShow(true)}
-        >
-          view
-        </button>
-        <PrescriptionView show={modalShow} onHide={() => setModalShow(false)} />
-      </div>
-    );
-  };
 
   const columns = [
     {

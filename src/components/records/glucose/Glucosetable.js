@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
+import FilterComponent from "../FilterComponent";
 
 const Glucosetable = (props) => {
   const columns = [
@@ -48,13 +49,13 @@ const Glucosetable = (props) => {
       }
     };
 
-    return;
-    //   <FilterComponent
-    //     onFilter={(e) => setFilterText(e.target.value)}
-    //     onClear={handleClear}
-    //     filterText={filterText}
-    //   />
-    // );
+    return (
+      <FilterComponent
+        onFilter={(e) => setFilterText(e.target.value)}
+        onClear={handleClear}
+        filterText={filterText}
+      />
+    );
   }, [filterText, resetPaginationToggle]);
 
   return (

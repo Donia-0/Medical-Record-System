@@ -159,7 +159,8 @@
   transition: all 500ms;
 }
 .sidenav a:hover,
-.dropdown-btn:hover {
+.dropdown-btn:hover,
+.sidenav .active {
   opacity: 100%;
   color: white !important;
   background-color: #3ea9ad80;

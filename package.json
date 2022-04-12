@@ -15,12 +15,8 @@
     "@mui/icons-material": "^5.6.0",
     "@mui/material": "^5.6.0",
     "@mui/utils": "^5.6.0",
-<<<<<<< HEAD
-    "@mui/x-data-grid": "^5.8.0",
-=======
     "@nivo/bar": "^0.79.1",
     "@nivo/core": "^0.79.0",
->>>>>>> 4831389d24b70d0635d81b4b67942c3831717e19
     "@progress/kendo-react-inputs": "^5.1.0",
     "@styled-icons/fa-solid": "^10.34.0",
     "@testing-library/jest-dom": "^5.16.2",

@@ -1,4 +1,3 @@
-
 import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
@@ -57,7 +56,32 @@ const ExaminationTable = (props) => {
       button: true,
       ignoreRowClick: true,
       allowOverflow: true,
-      cell: buttonPres,
+      cell: (row) => {
+        return (
+          <div className="view-prescription-btn">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                row.showModal = true;
+                setModalShow(true);
+              }}
+            >
+              view
+            </button>
+            {row.showModal ? (
+              <PrescriptionView
+                show={modalShow}
+                onHide={() => {
+                  row.showModal = false;
+
+                  setModalShow(false);
+                }}
+              />
+            ) : null}
+          </div>
+        );
+      },
     },
   ];
 
@@ -90,5 +114,17 @@ const ExaminationTable = (props) => {
     );
   }, [filterText, resetPaginationToggle]);
 
+  return (
+    <DataTable
+      columns={columns}
+      data={filteredItems}
+      defaultSortField="name"
+      striped
+      pagination
+      subHeader
+      subHeaderComponent={subHeaderComponent}
+    />
+  );
+};
 
-  export default ExaminationTable
+export default ExaminationTable;

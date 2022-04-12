@@ -2,6 +2,8 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
 function PrescriptionView(props) {
+  console.log("Hello");
+
   return (
     <Modal
       {...props}

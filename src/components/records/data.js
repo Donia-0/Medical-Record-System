@@ -121,7 +121,7 @@ const data = [
       catchPhrase: "User-centric fault-tolerant solution",
       bs: "revolutionize end-to-end systems",
     },
-    showButtons: false,
+    showButtons: true,
     showModal: false,
   },
   {
@@ -196,7 +196,7 @@ const data = [
       catchPhrase: "Implemented secondary concept",
       bs: "e-enable extensible e-tailers",
     },
-    showButtons: false,
+    showButtons: true,
     showModal: false,
   },
   {
@@ -246,7 +246,7 @@ const data = [
       catchPhrase: "Centralized empowering task-force",
       bs: "target end-to-end models",
     },
-    showButtons: false,
+    showButtons: true,
     showModal: false,
   },
   {
@@ -296,7 +296,7 @@ const data = [
       catchPhrase: "Centralized empowering task-force",
       bs: "target end-to-end models",
     },
-    showButtons: false,
+    showButtons: true,
     showModal: false,
   },
 ];

@@ -26,7 +26,7 @@ const Landing = () => {
                   Simple Store and connect to PayPal or Stripe.
                 </p>
                 <div className="btn">
-                  <a href="#Register" className="main-button-slider">
+                  <a href="/auth/register" className="main-button-slider">
                     Create account
                   </a>
                 </div>

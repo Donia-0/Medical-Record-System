@@ -25,6 +25,7 @@ import Charts from "./Charts";
 import StackedArea from "./StackedArea";
 import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
+import BarChart from "./BarChart";
 
 //check for token
 if (localStorage.token) {
@@ -51,7 +52,7 @@ const App = () => {
         {/* <Route path="/" element={<Landing />}></Route> */}
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/chart" element={<Charts />} />
+          <Route path="/chart" element={<BarChart />} />
           {/* <Route path="/chart" element={<StackedArea />} /> */}
           <Route exact path="/auth" element={<Auth />}>
             <Route exact path="login" element={<Signin />} />

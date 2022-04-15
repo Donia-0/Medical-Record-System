@@ -5,5 +5,7 @@ export const LOG_OUT = "LOG_OUT";
 export const PROFILE_LOADING = "PROFILE_LOADING";
 export const PROFILE_NOT_FOUND = "PROFILE_NOT_FOUND";
 export const CLEAR_CURRENT_PROFILE = "CLEAR_CURRENT_PROFILE";
-
+export const GET_BLOODPRESSURE = "GET_BLOODPRESSURE";
+export const LOADING = "LOADING";
+export const ADD_EXAMINATION = "ADD_EXAMINATION";
 //bloodPressure

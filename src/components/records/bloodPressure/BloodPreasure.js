@@ -4,9 +4,8 @@ import Fields from "../Fields";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addBloodPressure } from "./../../../actions/records/bloodPressureAction";
-import { toast } from "react-toastify";
-
 const BloodPreasure = (props) => {
+  const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     systolic: "",
     diastolic: "",
@@ -31,7 +30,18 @@ const BloodPreasure = (props) => {
       note: form.note,
     };
     props.addBloodPressure(data);
+    setForm({
+      systolic: "",
+      diastolic: "",
+      pulse: "",
+      note: "",
+      date: "",
+    });
   };
+  useEffect(() => {
+    setErrors({});
+    setErrors(props.errors);
+  }, [props.errors]);
   return (
     <div className="add-bloodp-gluc">
       <div className="row blood-gluc-form">
@@ -53,6 +63,7 @@ const BloodPreasure = (props) => {
                 labelName="Systolic"
                 type="number"
                 placeholder="120"
+                err={errors.systolic}
               />
               <Fields
                 value={form.diastolic}
@@ -61,6 +72,7 @@ const BloodPreasure = (props) => {
                 labelName="Diastolic"
                 type="number"
                 placeholder="80"
+                err={errors.diastolic}
               />
               <Fields
                 value={form.pulse}
@@ -69,6 +81,7 @@ const BloodPreasure = (props) => {
                 labelName="Pulse"
                 type="number"
                 placeholder="0"
+                err={errors.pulse}
               />
               <Fields
                 value={form.date}
@@ -108,6 +121,8 @@ const BloodPreasure = (props) => {
 
 BloodPreasure.prototype = {
   addBloodPressure: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,

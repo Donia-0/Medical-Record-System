@@ -23,6 +23,7 @@ import AddExamination from "./records/examination/AddExamination";
 import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
 import Charts from "./Charts";
 import StackedArea from "./StackedArea";
+import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 
 //check for token
 if (localStorage.token) {
@@ -60,6 +61,8 @@ const App = () => {
           </Route>
           <Route path="/records" element={<Layout />}>
             <Route path="bloodpreasure" element={<BloodPreasure />} />
+            <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
+
             <Route path="glucose" element={<GlucoseMeasure />} />
             <Route path="examination" element={<Examination />} />
             <Route path="addexamination" element={<AddExamination />} />

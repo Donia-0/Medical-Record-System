@@ -1,6 +1,15 @@
 import React from "react";
+import classnames from "classnames";
 
-const Fields = ({ labelName, type, placeholder, name, onChange, value }) => {
+const Fields = ({
+  labelName,
+  type,
+  placeholder,
+  name,
+  onChange,
+  value,
+  err,
+}) => {
   return (
     <div className="row form-container">
       <div className="formlabel col-lg-3 col-md-12 col-sm-12">
@@ -11,10 +20,13 @@ const Fields = ({ labelName, type, placeholder, name, onChange, value }) => {
           value={value}
           onChange={onChange}
           name={name}
-          className="form-control"
+          className={classnames("form-control", {
+            "is-invalid": err,
+          })}
           type={type}
           placeholder={placeholder}
         />
+        {err && <div className="invalid-feedback">{err}</div>}
       </div>
     </div>
   );

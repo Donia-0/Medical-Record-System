@@ -319,33 +319,100 @@
 }
 
 /* addbloodp */
-@media (min-width: 768px) {
+@media screen and (max-width: 995px) {
   .add-bloodp-gluc {
-    width: 95%;
-    margin: 20px auto;
+    width: 95% !important;
+    margin: 20px auto !important;
   }
-  .bp-header, .gluc-header {
-    top: 68%;
-    left: 26%;
-    font-size: 22px;
-}
-  .bp-img, .gluc-img {
-    top: 48%;
-    left: 5%;
-  }
-  .bp-img img, .gluc-img img {
-    height: 95px !important;
-}
+  /* .bp-header, .gluc-header {
+    top: 68% !important;
+    left: 26% !important;
+    font-size: 22px !important;
+} */
   .blood-gluc-form .form-group {
-    left: 15%;
+    left: 15% !important;
   }
-  .blood-gluc-form .form-control {
-    width: 95%;
+  
+}
+@media screen and (min-width: 416px) and (max-width: 550px) {
+  .bp-img, .gluc-img {
+    top: 54% !important;
+    left: 5% !important;
+  }
+  /* .gluc-img {
+    top: 60% !important;
+    left: 5% !important;
+  } */
+  .bp-img img, .gluc-img img {
+    /* height: 95px !important; */
+    height: 90% !important;
   }
   .blood-gluc-form .add-btn {
-    left: 25%;
+    left: 10% !important;
+}
+}
+@media screen and (min-width: 550px) and (max-width: 680px) {
+  .bp-header, .gluc-header {
+    top: 66% !important;
+    left: 28% !important;
+    font-size: 25px !important;
+}
+.bp-img, .gluc-img {
+  top: 48% !important;
+  left: 7% !important;
+}
+.blood-gluc-form .add-btn {
+  left: 10% !important;
+}
+}
+@media screen and (min-width: 680px) and (max-width: 805px) {
+.bp-img, .gluc-img {
+  top: 48% !important;
+  left: 7% !important;
+}
+/* .blood-gluc-form .form-control {
+  width: 95% !important;
+} */
+.blood-gluc-form .add-btn {
+  left: 10% !important;
+}
+}
+@media screen and (min-width: 805px) and (max-width: 995px) {
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
   }
 }
+@media screen and (max-width: 415px) {
+  .bp-img, .gluc-img {
+    top: 67% !important;
+    left: 11% !important;
+
+  }
+  .bp-img img, .gluc-img img {
+    height: 65% !important;
+  }
+  .blood-gluc-form .form-control {
+    width: 100% !important;
+  }
+  .bp-header, .gluc-header {
+    top: 72% !important;
+    left: 31% !important;
+    font-size: 20px !important;
+}
+.blood-gluc-form .add-btn {
+  left: 30% !important;
+}
+}
+
+@media screen and (min-width: 995px) and (max-width: 1250px) {
+  .bp-img, .gluc-img {
+    position: absolute !important;
+    top: 48% !important;
+    left: 9% !important;
+    height: 100% !important;
+}
+}
+
 .bp-img-container,
 .gluc-img-container {
   height: 110px;
@@ -357,19 +424,19 @@
 .bp-img,
 .gluc-img {
   position: absolute;
-  top: 40%;
-  left: 12%;
+  top: 48%;
+  left: 13%;
   height: 100%;
 }
 
-.bp-img img,
+/* .bp-img img,
 .gluc-img img {
   height: 120px !important;
-}
+} */
 
 .bp-img-container .bp-img img,
 .gluc-img-container .gluc-img img {
-  height: 85%;
+  height: 100%;
 }
 
 .bp-header,
@@ -454,7 +521,7 @@
 /* addglucose */
 .blood-gluc-form .form-group {
   position: relative;
-  left: 20%;
+  left: 18%;
   margin-top: 35px;
   transform: translateX(-30%);
 }

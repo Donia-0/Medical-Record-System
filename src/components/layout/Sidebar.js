@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="sidenav">
-      <NavLink to="/profile" className="a-section">
+      <NavLink to="/user/profile" className="a-section">
         Profile
       </NavLink>
       <button
@@ -21,8 +21,14 @@ const Sidebar = () => {
         Daily <FontAwesomeIcon icon={faCaretDown} />
       </button>
       <div className="collapse" id="daily">
-        <a href="#">Blood pressure</a>
-        <a href="#">Glucose</a>
+        {/* <a href="/records/viewbloodp">Blood pressure</a>
+        <a href="/records/viewglucose">Glucose</a> */}
+        <NavLink to="/records/viewbloodp" className="a-section">
+          Blood pressure
+        </NavLink>
+        <NavLink to="/records/viewglucose" className="a-section">
+          Glucose
+        </NavLink>
       </div>
       <a href="#surgery" className="a-section">
         Surgery
@@ -30,9 +36,12 @@ const Sidebar = () => {
       <a href="#allergy" className="a-section">
         Allergy
       </a>
-      <a href="#examination" className="a-section">
+      {/* <a href="#examination" className="a-section">
         Examination
-      </a>
+      </a> */}
+      <NavLink to="/records/examination" className="a-section">
+        Examination
+      </NavLink>
     </div>
   );
 };

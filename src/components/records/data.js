@@ -22,7 +22,7 @@ const data = [
       bs: "harness real-time e-markets",
     },
     showButtons: true,
-    showModal: true,
+    showModal: false,
   },
   {
     id: 2,

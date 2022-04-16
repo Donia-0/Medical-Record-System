@@ -25,7 +25,7 @@ const Addprescription = (props) => {
   };
 
   const [form, setForm] = useState({
-    drug: "",
+    drugName: "",
     dose: "",
     note: "",
   });
@@ -40,7 +40,7 @@ const Addprescription = (props) => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     const data = {
-      drug: form.drug,
+      drugName: form.drugName,
       dose: form.dose,
       note: form.note,
     };
@@ -63,7 +63,7 @@ const Addprescription = (props) => {
                     <Fields
                       value={form.drug}
                       onChange={onInputChange}
-                      name="drug"
+                      name="drugName"
                       labelName="Drug"
                       type="text"
                       placeholder="Enter drug name"

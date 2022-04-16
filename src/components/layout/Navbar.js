@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <a className="navbar-brand">
           <img src={logo} />
           <div className="site-name">
             <span>Medical Record</span>
@@ -43,7 +43,7 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#logout">
+              <a className="nav-link" aria-current="page" href="/">
                 <FontAwesomeIcon
                   icon={faRightFromBracket}
                   style={{ marginRight: "5px" }}

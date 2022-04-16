@@ -11,7 +11,7 @@ const ProfileEditInput = ({ type, labelName, labelFor, name, value, edit }) => {
         name={name}
         value={value}
         className="input form-control"
-        disabled={edit === false ? "true" : ""}
+        disabled={edit === false ? true : ""}
       />
     </div>
   );

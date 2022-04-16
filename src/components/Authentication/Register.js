@@ -63,7 +63,7 @@ const Register = (props) => {
 
   useEffect(() => {
     if (props.auth.isAuhtenticated) {
-      navigate("/profile");
+      navigate("/user/profile");
     }
   }, [props.auth.isAuhtenticated]);
   const onFormSubmit = async (evt) => {

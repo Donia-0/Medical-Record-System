@@ -29,7 +29,6 @@ export const getBloodPressure = () => async (dispatch) => {
   } catch (error) {}
 };
 
-// profile loading
 export const loading = () => {
   return {
     type: LOADING,

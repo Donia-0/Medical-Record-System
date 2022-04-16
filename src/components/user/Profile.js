@@ -6,18 +6,7 @@ import { PropTypes } from "prop-types";
 import { getCurrentProfile } from "./../../actions/profileAction";
 import Switch from "react-switch";
 import ProfileEditInput from "./ProfileEditInput";
-
-function formatDate(date) {
-  var d = new Date(date),
-    month = "" + (d.getMonth() + 1),
-    day = "" + d.getDate(),
-    year = d.getFullYear();
-
-  if (month.length < 2) month = "0" + month;
-  if (day.length < 2) day = "0" + day;
-
-  return [year, month, day].join("/");
-}
+import dateFormat from "../../utils/dateFormat";
 
 const Profile = (props) => {
   const [form, setFrom] = useState({
@@ -108,7 +97,7 @@ const Profile = (props) => {
                 </div>
                 <div className="col-lg-12 col-md-8 col-sm-12">
                   <ProfileEditInput
-                    value={formatDate(form.birthdate)}
+                    value={dateFormat(form.birthdate)}
                     name="brithdate"
                     labelFor="brithdate"
                     labelName="Brithdate"

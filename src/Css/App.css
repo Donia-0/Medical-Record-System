@@ -159,10 +159,11 @@
   transition: all 500ms;
 }
 .sidenav a:hover,
-.dropdown-btn:hover {
+.dropdown-btn:hover,
+.sidenav .active {
   opacity: 100%;
   color: white !important;
-  background-color: #3ea9ad80;
+  background-color: #3ea9ad80 !important;
 }
 .sidenav .a-section::after,
 .dropdown-btn::after {
@@ -318,31 +319,34 @@
 }
 
 /* addbloodp */
-@media (min-width: 768px) {
+@media screen and (max-width: 720px) {
   .add-bloodp-gluc {
-    width: 95%;
-    margin: 20px auto;
+    width: 95% !important;
+    margin: 20px auto !important;
   }
-  .bp-header, .gluc-header {
-    top: 68%;
-    left: 26%;
-    font-size: 22px;
-}
-  .bp-img, .gluc-img {
-    top: 48%;
-    left: 5%;
+  .bp-header,
+  .gluc-header {
+    top: 68% !important;
+    left: 26% !important;
+    font-size: 22px !important;
   }
-  .bp-img img, .gluc-img img {
+  .bp-img,
+  .gluc-img {
+    top: 48% !important;
+    left: 5% !important;
+  }
+  .bp-img img,
+  .gluc-img img {
     height: 95px !important;
-}
+  }
   .blood-gluc-form .form-group {
-    left: 15%;
+    left: 15% !important;
   }
   .blood-gluc-form .form-control {
-    width: 95%;
+    width: 95% !important;
   }
   .blood-gluc-form .add-btn {
-    left: 25%;
+    left: 25% !important;
   }
 }
 .bp-img-container,
@@ -388,8 +392,7 @@
 }
 
 .blood-gluc-form .bloodp-gluc-form,
-.add-examination-form
- {
+.add-examination-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -412,20 +415,23 @@
 }
 
 .blood-gluc-form .form-control:focus,
-.add-examination-form .form-control:focus {
+.add-examination-form .form-control:focus,
+.prescription-view .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
 
 .blood-gluc-form .formlabel,
-.add-examination-form .formlabel {
+.add-examination-form .formlabel,
+.prescription-view .formlabel {
   display: flex;
   justify-content: start;
   /* align-items: center; */
 }
 
 .blood-gluc-form label,
-.add-examination-form label {
+.add-examination-form label,
+.prescription-view .formlabel label {
   color: #2a7f82;
   font-weight: bold;
 }
@@ -696,9 +702,8 @@ a.main-button-slider {
   color: #fff;
   letter-spacing: 0.25px;
 }
-a:hover{
+a:hover {
   color: white !important;
-  
 }
 
 /* 
@@ -793,8 +798,7 @@ features
   line-height: 28px;
   letter-spacing: 1px;
 }
-/* -====================addprescription ======================*/
-
+/* -==========================================addprescription ========================================*/
 
 .pres-container {
   display: flex;
@@ -873,13 +877,13 @@ features
   margin-left: 10px;
 }
 
-.pres-form .form-group .submit-pres{
+.pres-form .form-group .submit-pres {
   display: flex;
-    justify-content: end;
-    position: relative;
-    left: 15%;
-    transform: translateX(-30%);
-    margin-bottom: 5px;
+  justify-content: end;
+  position: relative;
+  left: 15%;
+  transform: translateX(-30%);
+  margin-bottom: 5px;
 }
 
 .prescripton-form button,
@@ -893,7 +897,118 @@ features
 .submit-pres button:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
+/* ===============================bloodpreasure============================= */
+.preasureview {
+  /* text-align: center; */
+  margin-top: 20px;
+  margin-left: 20px;
+}
 
+.preasureview .preasureview-header {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 10px;
+  color: #2a7f82;
+}
+.preasureview-table {
+  margin-left: -18px;
+}
+
+.preasureview .preasureview-header img {
+  width: 60px;
+  margin-right: 15px;
+}
+.preasureview .preasureview-button button {
+  background-color: transparent !important;
+  color: #2a7f82;
+  font-weight: bold;
+  padding: 8px 12px;
+  box-shadow: 0px 0px 4px 0px #2a7f82;
+  border-color: #2a7f82;
+  border-radius: 10px;
+  border: none;
+}
+
+.add-preasureview-btn a {
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
+  /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
+}
+
+.preasureview .preasureview-data {
+  width: 97%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.preasureview .preasureview-data .add-preasureview-btn {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 10px;
+}
+
+.gZWIKX {
+  background-color: #3ea9ad !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+/* ================================Glucose====================================== */
+.glucoseview {
+  /* text-align: center; */
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.glucoseview .glucoseview-header {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 10px;
+  color: #2a7f82;
+}
+.glucoseview-table {
+  margin-left: -18px;
+}
+
+.glucoseview .glucoseview-header img {
+  width: 60px;
+  margin-right: 15px;
+}
+.glucoseview .glucoseview-button button {
+  background-color: transparent !important;
+  color: #2a7f82;
+  font-weight: bold;
+  padding: 8px 12px;
+  box-shadow: 0px 0px 4px 0px #2a7f82;
+  border-color: #2a7f82;
+  border-radius: 10px;
+  border: none;
+}
+
+.add-glucoseview-btn a {
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
+  /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
+}
+
+.glucoseview .glucoseview-data {
+  width: 97%;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.glucoseview .glucoseview-data .add-glucoseview-btn {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 10px;
+}
+
+/* ============================================================================================================== */
 
 /* ==============================Zeinab CSS============================== */
 /* ===============Examination===================== */
@@ -941,7 +1056,7 @@ features
 }
 
 .popup-close,
-.add-examination-btn button {
+.add-examination-btn a {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
@@ -951,7 +1066,8 @@ features
 .popup-close:focus,
 .add-examination-form .add-btn button:focus,
 .view-prescription-btn button:focus,
-.filter-examination-btn button:focus {
+.filter-examination-btn button:focus,
+.add-examination-btn a:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
@@ -966,7 +1082,6 @@ features
   justify-content: end;
   padding-bottom: 10px;
 }
-
 
 .examination-container {
   display: flex;
@@ -1014,23 +1129,23 @@ features
 }
 .filter-examination-btn button,
 .filter-examination-btn button:hover {
-  background-color: #2a7f82;
-  border-color: #2a7f82;
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
 }
 .filter-examination-input {
-    width: 25%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #2a7f82;
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  width: 25%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #2a7f82;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .filter-examination-input:focus {
@@ -1041,4 +1156,30 @@ features
 
 .TUEFO {
   padding-right: 0px !important;
+}
+.prescription-view {
+  width: 90%;
+  margin: auto;
+}
+.prescription-view .prescription-container {
+  display: flex;
+}
+
+.prescription-view .form-control {
+  width: 90%;
+}
+
+.loadingPage {
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media screen and (max-width: 480px) {
+  .profile .profile-info {
+    background-color: lightgreen;
+  }
 }

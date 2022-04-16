@@ -8,4 +8,5 @@ export const CLEAR_CURRENT_PROFILE = "CLEAR_CURRENT_PROFILE";
 export const GET_BLOODPRESSURE = "GET_BLOODPRESSURE";
 export const LOADING = "LOADING";
 export const ADD_EXAMINATION = "ADD_EXAMINATION";
+export const GET_GLUCOSE = "GET_GLUCOSE";
 //bloodPressure

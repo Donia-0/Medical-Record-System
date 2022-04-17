@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS } from "./../types";
+import { GET_BLOODPRESSURE, GET_ERRORS, LOADING } from "./../types";
 import { toast } from "react-toastify";
 toast.configure();
 export const addBloodPressure = (userData, navigate) => async (dispatch) => {
@@ -15,4 +15,22 @@ export const addBloodPressure = (userData, navigate) => async (dispatch) => {
       payload: error.response.data.errors,
     });
   }
+};
+export const getBloodPressure = () => async (dispatch) => {
+  dispatch(loading());
+  try {
+    const response = await axios.get(
+      "http://localhost:5000/records/BloodPressure"
+    );
+    dispatch({
+      type: GET_BLOODPRESSURE,
+      payload: response.data,
+    });
+  } catch (error) {}
+};
+
+export const loading = () => {
+  return {
+    type: LOADING,
+  };
 };

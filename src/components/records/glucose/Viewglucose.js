@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Glucose from "../../../images/glucose.png";
 import data from "../data";
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getGlucose } from "../../../actions/records/glucoseAction";
 import Glucosetable from "./Glucosetable";
 
-const Viewglucose = () => {
+const Viewglucose = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const clickhandler = (name) => console.log("delete", name);
-
+  const { glucose } = props.glucose;
+  useEffect(() => {
+    props.getGlucose();
+  }, []);
   return (
     <div className="container">
       <div className="glucoseview">
@@ -37,7 +42,7 @@ const Viewglucose = () => {
             <div className="col-lg-12 col-md-12 col-sm-12">
               <div className="glucoseview-table">
                 {/* <ExaminationTable /> */}
-                <Glucosetable data={data} click={clickhandler} />
+                <Glucosetable data={glucose} click={clickhandler} />
               </div>
             </div>
           </div>
@@ -46,5 +51,12 @@ const Viewglucose = () => {
     </div>
   );
 };
-
-export default Viewglucose;
+Viewglucose.propTypes = {
+  auth: PropTypes.object.isRequired,
+  glucose: PropTypes.object.isRequired,
+};
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  glucose: state.glucose,
+});
+export default connect(mapStateToProps, { getGlucose })(Viewglucose);

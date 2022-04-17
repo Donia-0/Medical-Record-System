@@ -1,33 +1,34 @@
 import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
+import dateFormat from "../../../utils/dateFormat";
 import FilterComponent from "../FilterComponent";
 
 const Bloodptable = (props) => {
   const columns = [
     {
       name: "Systolic",
-      selector: (row) => row.name,
+      selector: (row) => row.systolic,
       sortable: true,
     },
     {
       name: "Diastolic",
-      selector: (row) => row.email,
+      selector: (row) => row.diastolic,
       sortable: true,
     },
     {
       name: "Pulse",
-      selector: (row) => row.website,
+      selector: (row) => row.pulse,
       sortable: true,
     },
     {
       name: "Date",
-      selector: (row) => row.address.city,
+      selector: (row) => dateFormat(row.date),
       sortable: true,
     },
     {
       name: "Note",
-      selector: (row) => row.company.name,
+      selector: (row) => row.note,
       sortable: true,
       grow: 1,
       wrap: true,

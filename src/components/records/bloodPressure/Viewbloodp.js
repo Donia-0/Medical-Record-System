@@ -1,21 +1,25 @@
-import React from "react";
-import bloodpreasure from "../../../images/records/bloodpressure/bloodp.png";
+import React, { useEffect, useState } from "react";
+import bloodpreasureImage from "../../../images/records/bloodpressure/bloodp.png";
 import data from "../data";
 import { Link } from "react-router-dom";
-
 import Bloodptable from "./Bloodptable";
-
-const Viewbloodp = () => {
-  const [modalShow, setModalShow] = React.useState(false);
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getBloodPressure } from "./../../../actions/records/bloodPressureAction";
+const Viewbloodp = (props) => {
   const clickhandler = (name) => console.log("delete", name);
-
+  const { bloodPressure, loading } = props.bloodpressures;
+  useEffect(() => {
+    props.getBloodPressure();
+  }, []);
+  const centerText = <h1>There's no data yet</h1>;
   return (
     <div className="container">
       <div className="preasureview">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="preasureview-header">
-              <img src={bloodpreasure} /> Blood Preasure Measurements
+              <img src={bloodpreasureImage} /> Blood Preasure Measurements
             </div>
             <div className="row"></div>
           </div>
@@ -37,7 +41,12 @@ const Viewbloodp = () => {
             <div className="col-lg-12 col-md-12 col-sm-12">
               <div className="preasureview-table">
                 {/* <ExaminationTable /> */}
-                <Bloodptable data={data} click={clickhandler} />
+                {/* {bloodPressure.length !== 0 ? (
+                  <div className="text-center">{centerText}</div>
+                ) : (
+                  ""
+                )} */}
+                <Bloodptable data={bloodPressure} click={clickhandler} />
               </div>
             </div>
           </div>
@@ -47,4 +56,8 @@ const Viewbloodp = () => {
   );
 };
 
-export default Viewbloodp;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  bloodpressures: state.bloodpressures,
+});
+export default connect(mapStateToProps, { getBloodPressure })(Viewbloodp);

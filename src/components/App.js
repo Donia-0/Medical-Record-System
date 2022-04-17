@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../store";
@@ -23,10 +23,13 @@ import AddExamination from "./records/examination/AddExamination";
 import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
 import Charts from "./Charts";
 import StackedArea from "./StackedArea";
+import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
 import BarChart from "./BarChart";
-
+import ClipLoader from "react-spinners/ClipLoader";
+import AddSurgery from "./records/surgery/AddSurgery";
+import Surgery from "./records/surgery/Surgery";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -47,32 +50,38 @@ if (localStorage.token) {
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        {/* <Route path="/" element={<Landing />}></Route> */}
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/chart" element={<BarChart />} />
-          {/* <Route path="/chart" element={<StackedArea />} /> */}
-          <Route exact path="/auth" element={<Auth />}>
-            <Route exact path="login" element={<Signin />} />
-            <Route exact path="register" element={<Register />} />
-          </Route>
-          <Route path="/user" element={<Layout />}>
-            <Route path="profile" element={<Profile />} />
-          </Route>
-          <Route path="/records" element={<Layout />}>
-            <Route path="bloodpreasure" element={<BloodPreasure />} />
-            <Route path="glucose" element={<GlucoseMeasure />} />
-            <Route path="examination" element={<Examination />} />
-            <Route path="addexamination" element={<AddExamination />} />
-            <Route path="addprescription" element={<Addprescription />} />
-            <Route path="Viewbloodp" element={<Viewbloodp />} />
-            <Route path="Viewglucose" element={<Viewglucose />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+    <div className="app">
+      <Provider store={store}>
+        <BrowserRouter>
+          {/* <Route path="/" element={<Landing />}></Route> */}
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/chart" element={<BarChart />} />
+            {/* <Route path="/chart" element={<StackedArea />} /> */}
+            <Route exact path="/auth" element={<Auth />}>
+              <Route exact path="login" element={<Signin />} />
+              <Route exact path="register" element={<Register />} />
+            </Route>
+            <Route path="/user" element={<Layout />}>
+              <Route path="profile" element={<Profile />} />
+            </Route>
+            <Route path="/records" element={<Layout />}>
+              <Route path="bloodpreasure" element={<BloodPreasure />} />
+              <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
+
+              <Route path="glucose" element={<GlucoseMeasure />} />
+              <Route path="examination" element={<Examination />} />
+              <Route path="addexamination" element={<AddExamination />} />
+              <Route path="addprescription" element={<Addprescription />} />
+              <Route path="Viewbloodp" element={<Viewbloodp />} />
+              <Route path="Viewglucose" element={<Viewglucose />} />
+              <Route path="addsurgery" element={<AddSurgery />} />
+              <Route path="surgery" element={<Surgery />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
 };
 

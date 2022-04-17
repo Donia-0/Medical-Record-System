@@ -35,7 +35,7 @@ const Signin = (props) => {
 
   useEffect(() => {
     if (props.auth.isAuhtenticated) {
-      navigate("/profile");
+      navigate("/user/profile");
     }
   }, [props.auth.isAuhtenticated]);
   return (

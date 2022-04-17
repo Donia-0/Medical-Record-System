@@ -6,6 +6,8 @@ import Profile from "../user/Profile";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import Loading from "../Loading";
+import { useSpring } from "react-spring";
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -14,6 +16,14 @@ function getWindowDimensions() {
   };
 }
 const Layout = () => {
+  const [load, setload] = useState(false);
+
+  useEffect(() => {
+    setload(true);
+    setTimeout(() => {
+      setload(false);
+    }, 2700);
+  }, []);
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
@@ -25,59 +35,64 @@ const Layout = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(windowDimensions.width);
   return (
-    <div className="layout">
-      <Navbar />
-      <div className="row">
-        <div
-          className={
-            windowDimensions.width > 995
-              ? "col-lg-6 col-md-12 col-sm-3 dis-none align-right "
-              : "col-lg-6 col-md-12 col-sm-3 align-right "
-          }
-        >
-          <input
-            type="text"
-            className="form-control"
-            style={{ width: "86%", display: "inline-block" }}
-            placeholder="Search Term"
-          />
-          <button
-            className="div-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#sidebar"
-            aria-controls="sidebar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="btn-toggle">
-              <FontAwesomeIcon icon={faSort} />
-            </span>
-          </button>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-2 col-md-6 col-sm-6">
-          <div
-            className={
-              windowDimensions.width < 995
-                ? "sidebar collapse remove-fixed"
-                : "sidebar add-fixed"
-            }
-            id="sidebar"
-          >
-            <Sidebar />
+    <div className="">
+      {load ? (
+        <Loading loading={load} />
+      ) : (
+        <div className="layout">
+          <Navbar />
+          <div className="row">
+            <div
+              className={
+                windowDimensions.width > 995
+                  ? "col-lg-6 col-md-12 col-sm-3 dis-none align-right "
+                  : "col-lg-6 col-md-12 col-sm-3 align-right "
+              }
+            >
+              <input
+                type="text"
+                className="form-control"
+                style={{ width: "86%", display: "inline-block" }}
+                placeholder="Search Term"
+              />
+              <button
+                className="div-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#sidebar"
+                aria-controls="sidebar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="btn-toggle">
+                  <FontAwesomeIcon icon={faSort} />
+                </span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="col-lg-10 col-md-12 col-sm-12">
-          <div className="profile-content">
-            <Outlet />
+          <div className="row">
+            <div className="col-lg-2 col-md-6 col-sm-6">
+              <div
+                className={
+                  windowDimensions.width < 995
+                    ? "sidebar collapse remove-fixed"
+                    : "sidebar add-fixed"
+                }
+                id="sidebar"
+              >
+                <Sidebar />
+              </div>
+            </div>
+            <div className="col-lg-10 col-md-12 col-sm-12">
+              <div className="profile-content">
+                <Outlet />
+              </div>
+            </div>
           </div>
+          {/* <Footer /> */}
         </div>
-      </div>
-      {/* <Footer /> */}
+      )}
     </div>
   );
 };

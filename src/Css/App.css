@@ -163,7 +163,7 @@
 .sidenav .active {
   opacity: 100%;
   color: white !important;
-  background-color: #3ea9ad80;
+  background-color: #3ea9ad80 !important;
 }
 .sidenav .a-section::after,
 .dropdown-btn::after {
@@ -319,6 +319,7 @@
 }
 
 /* addbloodp */
+
 @media screen and (max-width: 995px) {
   .add-bloodp-gluc {
     width: 95% !important;
@@ -381,6 +382,30 @@
   .blood-gluc-form .add-btn {
     left: 10% !important;
   }
+  .bp-header,
+  .gluc-header {
+    top: 68% !important;
+    left: 26% !important;
+    font-size: 22px !important;
+  }
+  .bp-img,
+  .gluc-img {
+    top: 48% !important;
+    left: 5% !important;
+  }
+  /* .bp-img img,
+  .gluc-img img {
+    height: 95px !important;
+  } */
+  .blood-gluc-form .form-group {
+    left: 15% !important;
+  }
+  /* .blood-gluc-form .form-control {
+    width: 95% !important;
+  } */
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
+}
 }
 @media screen and (max-width: 415px) {
   .bp-img, .gluc-img {
@@ -449,15 +474,16 @@
   color: white;
 }
 .add-bloodp-gluc,
-.add-examination {
+.add-examination,
+.add-surgery {
   width: 70%;
   margin: 75px auto;
   background-color: whitesmoke;
 }
 
 .blood-gluc-form .bloodp-gluc-form,
-.add-examination-form
- {
+.add-examination-form,
+.add-surgery-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -465,7 +491,8 @@
 }
 
 .blood-gluc-form .form-group,
-.add-examination-form .form-group {
+.add-examination-form .form-group,
+.add-surgery-form .form-group {
   width: 45%;
 }
 
@@ -481,14 +508,16 @@
 
 .blood-gluc-form .form-control:focus,
 .add-examination-form .form-control:focus,
-.prescription-view .form-control:focus {
+.prescription-view .form-control:focus,
+.add-surgery-form .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
 
 .blood-gluc-form .formlabel,
 .add-examination-form .formlabel,
-.prescription-view .formlabel {
+.prescription-view .formlabel,
+.add-surgery-form .formlabel {
   display: flex;
   justify-content: start;
   /* align-items: center; */
@@ -496,7 +525,8 @@
 
 .blood-gluc-form label,
 .add-examination-form label,
-.prescription-view .formlabel label {
+.prescription-view .formlabel label,
+.add-surgery-form label {
   color: #2a7f82;
   font-weight: bold;
 }
@@ -513,7 +543,9 @@
 .blood-gluc-form button,
 .blood-gluc-form button:hover,
 .add-examination-form button,
-.add-examination-form button:hover {
+.add-examination-form button:hover,
+.add-surgery-form button,
+.add-surgery-form button:hover {
   background-color: #2a7f82;
   color: #def2f3;
   border-color: #2a7f82;
@@ -767,9 +799,8 @@ a.main-button-slider {
   color: #fff;
   letter-spacing: 0.25px;
 }
-a:hover{
+a:hover {
   color: white !important;
-  
 }
 
 /* 
@@ -866,7 +897,6 @@ features
 }
 /* -==========================================addprescription ========================================*/
 
-
 .pres-container {
   display: flex;
   align-items: end;
@@ -944,13 +974,13 @@ features
   margin-left: 10px;
 }
 
-.pres-form .form-group .submit-pres{
+.pres-form .form-group .submit-pres {
   display: flex;
-    justify-content: end;
-    position: relative;
-    left: 15%;
-    transform: translateX(-30%);
-    margin-bottom: 5px;
+  justify-content: end;
+  position: relative;
+  left: 15%;
+  transform: translateX(-30%);
+  margin-bottom: 5px;
 }
 
 .prescripton-form button,
@@ -971,23 +1001,25 @@ features
   margin-left: 20px;
 }
 
-.preasureview  .preasureview-header {
+.preasureview .preasureview-header,
+.surgery .surgery-filter {
   display: flex;
   justify-content: center;
   font-weight: bold;
   font-size: 40px;
   padding-bottom: 10px;
   color: #2a7f82;
+  margin-top: 20px;
 }
-.preasureview-table{
+.preasureview-table {
   margin-left: -18px;
 }
 
-.preasureview  .preasureview-header img{
+.preasureview .preasureview-header img {
   width: 60px;
   margin-right: 15px;
 }
-.preasureview  .preasureview-button button {
+.preasureview .preasureview-button button {
   background-color: transparent !important;
   color: #2a7f82;
   font-weight: bold;
@@ -1004,7 +1036,6 @@ features
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
 }
 
-
 .preasureview .preasureview-data {
   width: 97%;
   margin: auto;
@@ -1015,11 +1046,9 @@ features
   display: flex;
   justify-content: end;
   padding-bottom: 10px;
- 
-  
 }
 
-.gZWIKX{
+.gZWIKX {
   background-color: #3ea9ad !important;
   font-size: 15px !important;
   font-weight: 500 !important;
@@ -1033,7 +1062,7 @@ features
   margin-left: 20px;
 }
 
-.glucoseview  .glucoseview-header {
+.glucoseview .glucoseview-header {
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -1041,15 +1070,15 @@ features
   padding-bottom: 10px;
   color: #2a7f82;
 }
-.glucoseview-table{
+.glucoseview-table {
   margin-left: -18px;
 }
 
-.glucoseview  .glucoseview-header img{
+.glucoseview .glucoseview-header img {
   width: 60px;
   margin-right: 15px;
 }
-.glucoseview  .glucoseview-button button {
+.glucoseview .glucoseview-button button {
   background-color: transparent !important;
   color: #2a7f82;
   font-weight: bold;
@@ -1060,15 +1089,11 @@ features
   border: none;
 }
 
-
-
-
 .add-glucoseview-btn a {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
 }
-
 
 .glucoseview .glucoseview-data {
   width: 97%;
@@ -1080,10 +1105,7 @@ features
   display: flex;
   justify-content: end;
   padding-bottom: 10px;
-
-  
 }
-
 
 /* ============================================================================================================== */
 
@@ -1133,7 +1155,8 @@ features
 }
 
 .popup-close,
-.add-examination-btn a {
+.add-examination-btn a,
+.add-surgery-btn a {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
@@ -1144,24 +1167,28 @@ features
 .add-examination-form .add-btn button:focus,
 .view-prescription-btn button:focus,
 .filter-examination-btn button:focus,
-.add-examination-btn a:focus {
+.add-examination-btn a:focus,
+.add-surgery-form .add-btn button:focus,
+.add-surgery-btn a:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
-.examination .examination-data {
+.examination .examination-data,
+.surgery .surgery-data {
   width: 97%;
   margin: auto;
   margin-top: 15px;
 }
 
-.examination .examination-data .add-examination-btn {
+.examination .examination-data .add-examination-btn,
+.surgery .surgery-data .add-surgery-btn {
   display: flex;
   justify-content: end;
   padding-bottom: 10px;
 }
 
-
-.examination-container {
+.examination-container,
+.surgery-container {
   display: flex;
   align-items: end;
   height: 100px;
@@ -1169,7 +1196,8 @@ features
   border-bottom: 2px solid #2a7f82;
 }
 
-.add-examination-header {
+.add-examination-header,
+.add-surgery-header {
   display: flex;
   align-content: baseline;
   font-weight: bold;
@@ -1179,15 +1207,18 @@ features
   font-size: 25px;
 }
 
-.add-examination .form-group {
+.add-examination .form-group,
+.add-surgery .form-group {
   margin-top: 35px;
 }
 
-.add-examination-form .form-control {
+.add-examination-form .form-control,
+.add-surgery-form .form-control {
   width: 100%;
 }
 
-.add-examination-form .add-btn {
+.add-examination-form .add-btn,
+.add-surgery-form .add-btn {
   display: flex;
   justify-content: end;
   position: relative;
@@ -1207,23 +1238,23 @@ features
 }
 .filter-examination-btn button,
 .filter-examination-btn button:hover {
-  background-color: #2a7f82;
-  border-color: #2a7f82;
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
 }
 .filter-examination-input {
-    width: 25%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #2a7f82;
-    -webkit-appearance: none;
-    appearance: none;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  width: 25%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #2a7f82;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .filter-examination-input:focus {
@@ -1243,4 +1274,21 @@ features
   display: flex;
 }
 
-.prescription-view .form-control {width: 90%;}
+.prescription-view .form-control {
+  width: 90%;
+}
+
+.loadingPage {
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media screen and (max-width: 480px) {
+  .profile .profile-info {
+    background-color: lightgreen;
+  }
+}

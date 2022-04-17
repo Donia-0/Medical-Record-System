@@ -1,32 +1,30 @@
 import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
+import dateFormat from "../../../utils/dateFormat";
 import FilterComponent from "../FilterComponent";
-import dateFormat from "./../../../utils/dateFormat";
 
-const Glucosetable = (props) => {
+const SurgeryTable = (props) => {
   const columns = [
     {
-      name: "Type",
-      selector: (row) => row.type,
+      name: "Name",
+      selector: (row) => row.name,
       sortable: true,
     },
     {
-      name: "Result",
-      selector: (row) => row.result,
+      name: "Dr Name",
+      selector: (row) => row.doctorName,
+      sortable: true,
+    },
+    {
+      name: "Location",
+      selector: (row) => row.location,
       sortable: true,
     },
     {
       name: "Date",
       selector: (row) => dateFormat(row.date),
       sortable: true,
-    },
-    {
-      name: "Note",
-      selector: (row) => row.note,
-      sortable: true,
-      grow: 1,
-      wrap: true,
     },
   ];
 
@@ -72,4 +70,4 @@ const Glucosetable = (props) => {
   );
 };
 
-export default Glucosetable;
+export default SurgeryTable;

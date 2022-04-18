@@ -53,11 +53,8 @@ const GlucoseMeasure = (props) => {
                   <label>Type: </label>
                 </div>
                 <div className="col-lg-9 col-sm-12">
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                  >
-                    <option selected>Choose</option>
+                  <select className="form-select">
+                    <option>Choose</option>
                     <option value="rabdom-bs">Random blood suger</option>
                     <option value="fasting-bs">Fasting blood suger</option>
                     <option value="post-prandial-bs">

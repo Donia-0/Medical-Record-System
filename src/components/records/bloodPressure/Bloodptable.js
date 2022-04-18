@@ -28,9 +28,8 @@ const Bloodptable = (props) => {
     },
     {
       name: "Note",
-      selector: (row) => row.note,
-      sortable: true,
-      grow: 1,
+      selector: (row) => row.note || "There  is no note",
+      grow: 2,
       wrap: true,
     },
   ];

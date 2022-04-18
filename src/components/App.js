@@ -21,15 +21,14 @@ import Examination from "./records/examination/Examination";
 import Addprescription from "./records/examination/Addprescription";
 import AddExamination from "./records/examination/AddExamination";
 import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
-import Charts from "./Charts";
-import StackedArea from "./StackedArea";
+
 import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
 import BarChart from "./BarChart";
-import ClipLoader from "react-spinners/ClipLoader";
 import AddSurgery from "./records/surgery/AddSurgery";
 import Surgery from "./records/surgery/Surgery";
+import Chart from "./records/Chart";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -68,7 +67,6 @@ const App = () => {
             <Route path="/records" element={<Layout />}>
               <Route path="bloodpreasure" element={<BloodPreasure />} />
               <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
-
               <Route path="glucose" element={<GlucoseMeasure />} />
               <Route path="examination" element={<Examination />} />
               <Route path="addexamination" element={<AddExamination />} />
@@ -77,6 +75,7 @@ const App = () => {
               <Route path="Viewglucose" element={<Viewglucose />} />
               <Route path="addsurgery" element={<AddSurgery />} />
               <Route path="surgery" element={<Surgery />} />
+              <Route path="Graph" element={<Chart />} />
             </Route>
           </Routes>
         </BrowserRouter>

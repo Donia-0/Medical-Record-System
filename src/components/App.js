@@ -29,6 +29,7 @@ import BarChart from "./BarChart";
 import AddSurgery from "./records/surgery/AddSurgery";
 import Surgery from "./records/surgery/Surgery";
 import Chart from "./records/Chart";
+import BloodChart from "./records/bloodPressure/BloodChart";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -75,7 +76,9 @@ const App = () => {
               <Route path="Viewglucose" element={<Viewglucose />} />
               <Route path="addsurgery" element={<AddSurgery />} />
               <Route path="surgery" element={<Surgery />} />
-              <Route path="Graph" element={<Chart />} />
+              <Route path="graph">
+                <Route path="blood" element={<BloodChart />} />
+              </Route>
             </Route>
           </Routes>
         </BrowserRouter>

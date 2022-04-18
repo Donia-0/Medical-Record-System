@@ -333,10 +333,10 @@
   .blood-gluc-form .form-group {
     left: 15% !important;
   }
-  
 }
 @media screen and (min-width: 416px) and (max-width: 550px) {
-  .bp-img, .gluc-img {
+  .bp-img,
+  .gluc-img {
     top: 54% !important;
     left: 5% !important;
   }
@@ -344,39 +344,43 @@
     top: 60% !important;
     left: 5% !important;
   } */
-  .bp-img img, .gluc-img img {
+  .bp-img img,
+  .gluc-img img {
     /* height: 95px !important; */
     height: 90% !important;
   }
   .blood-gluc-form .add-btn {
     left: 10% !important;
-}
+  }
 }
 @media screen and (min-width: 550px) and (max-width: 680px) {
-  .bp-header, .gluc-header {
+  .bp-header,
+  .gluc-header {
     top: 66% !important;
     left: 28% !important;
     font-size: 25px !important;
-}
-.bp-img, .gluc-img {
-  top: 48% !important;
-  left: 7% !important;
-}
-.blood-gluc-form .add-btn {
-  left: 10% !important;
-}
+  }
+  .bp-img,
+  .gluc-img {
+    top: 48% !important;
+    left: 7% !important;
+  }
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
+  }
 }
 @media screen and (min-width: 680px) and (max-width: 805px) {
-.bp-img, .gluc-img {
-  top: 48% !important;
-  left: 7% !important;
-}
-/* .blood-gluc-form .form-control {
+  .bp-img,
+  .gluc-img {
+    top: 48% !important;
+    left: 7% !important;
+  }
+  /* .blood-gluc-form .form-control {
   width: 95% !important;
 } */
-.blood-gluc-form .add-btn {
-  left: 10% !important;
-}
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
+  }
 }
 @media screen and (min-width: 805px) and (max-width: 995px) {
   .blood-gluc-form .add-btn {
@@ -405,37 +409,40 @@
   } */
   .blood-gluc-form .add-btn {
     left: 10% !important;
-}
+  }
 }
 @media screen and (max-width: 415px) {
-  .bp-img, .gluc-img {
+  .bp-img,
+  .gluc-img {
     top: 67% !important;
     left: 11% !important;
-
   }
-  .bp-img img, .gluc-img img {
+  .bp-img img,
+  .gluc-img img {
     height: 65% !important;
   }
   .blood-gluc-form .form-control {
     width: 100% !important;
   }
-  .bp-header, .gluc-header {
+  .bp-header,
+  .gluc-header {
     top: 72% !important;
     left: 31% !important;
     font-size: 20px !important;
-}
-.blood-gluc-form .add-btn {
-  left: 30% !important;
-}
+  }
+  .blood-gluc-form .add-btn {
+    left: 30% !important;
+  }
 }
 
 @media screen and (min-width: 995px) and (max-width: 1250px) {
-  .bp-img, .gluc-img {
+  .bp-img,
+  .gluc-img {
     position: absolute !important;
     top: 48% !important;
     left: 9% !important;
     height: 100% !important;
-}
+  }
 }
 
 .bp-img-container,
@@ -1297,8 +1304,18 @@ features
   height: 100vh;
 }
 
-@media screen and (max-width: 480px) {
-  .profile .profile-info {
-    background-color: lightgreen;
-  }
+/*===Hussein====*/
+.graph-title {
+  color: #8e8e8e;
+  text-transform: uppercase;
+}
+.graph-link a {
+  border-radius: 4px;
+  text-decoration: none;
+  color: #238274;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.graph-link a:hover {
+  color: #10666a !important;
 }

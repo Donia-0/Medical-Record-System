@@ -502,11 +502,13 @@
   justify-content: center;
 }
 
-.blood-gluc-form .form-control {
+.blood-gluc-form .form-control,
+.blood-gluc-form .form-select {
   width: 80%;
 }
 
 .blood-gluc-form .form-control:focus,
+.blood-gluc-form .form-select:focus,
 .add-examination-form .form-control:focus,
 .prescription-view .form-control:focus,
 .add-surgery-form .form-control:focus {
@@ -1001,15 +1003,13 @@ features
   margin-left: 20px;
 }
 
-.preasureview .preasureview-header,
-.surgery .surgery-filter {
+.preasureview .preasureview-header {
   display: flex;
   justify-content: center;
   font-weight: bold;
   font-size: 40px;
   padding-bottom: 10px;
   color: #2a7f82;
-  margin-top: 20px;
 }
 .preasureview-table {
   margin-left: -18px;
@@ -1276,6 +1276,16 @@ features
 
 .prescription-view .form-control {
   width: 90%;
+}
+
+.surgery .surgery-filter {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 10px;
+  color: #2a7f82;
+  margin-top: 20px;
 }
 
 .loadingPage {

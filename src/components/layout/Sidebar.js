@@ -23,14 +23,14 @@ const Sidebar = () => {
       <div className="collapse" id="daily">
         {/* <a href="/records/viewbloodp">Blood pressure</a>
         <a href="/records/viewglucose">Glucose</a> */}
-        <NavLink to="viewbloodp" className="a-section">
+        <NavLink to="/records/viewbloodp" className="a-section">
           Blood pressure
         </NavLink>
-        <NavLink to="viewglucose" className="a-section">
+        <NavLink to="/records/viewglucose" className="a-section">
           Glucose
         </NavLink>
       </div>
-      <NavLink to="surgery" className="a-section">
+      <NavLink to="/records/surgery" className="a-section">
         Surgery
       </NavLink>
       <a href="#allergy" className="a-section">

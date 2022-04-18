@@ -48,21 +48,27 @@ const GlucoseMeasure = (props) => {
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="bloodp-gluc-form">
             <form className="form-group" onSubmit={onFormSubmit}>
-              <Fields
-                value={form.type}
-                onChange={onInputChange}
-                name="type"
-                labelName="Type"
-                type="text"
-                placeholder="Enter type"
-                err={errors.type}
-              />
+              <div className="row form-container">
+                <div className="formlabel col-lg-3 col-md-12 col-sm-12">
+                  <label>Type: </label>
+                </div>
+                <div className="col-lg-9 col-sm-12">
+                  <select className="form-select">
+                    <option>Choose</option>
+                    <option value="rabdom-bs">Random blood suger</option>
+                    <option value="fasting-bs">Fasting blood suger</option>
+                    <option value="post-prandial-bs">
+                      Post prandial blood suger (2hr)
+                    </option>
+                  </select>
+                </div>
+              </div>
               <Fields
                 value={form.result}
                 onChange={onInputChange}
                 name="result"
                 labelName="Result"
-                type="text"
+                type="number"
                 err={errors.result}
                 placeholder="Enter result"
               />

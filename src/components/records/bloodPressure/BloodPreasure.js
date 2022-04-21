@@ -4,16 +4,18 @@ import Fields from "../Fields";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addBloodPressure } from "./../../../actions/records/bloodPressureAction";
+import moment from "moment-timezone";
 const BloodPreasure = (props) => {
   const [errors, setErrors] = useState({});
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const currentTime = moment().tz(timezone).format("yyyy-MM-DDThh:mm");
   const [form, setForm] = useState({
     systolic: "",
     diastolic: "",
     pulse: "",
     note: "",
-    date: "",
+    date: currentTime,
   });
-
   const onInputChange = (evt) => {
     const value = evt.target.value;
     setForm({
@@ -36,13 +38,14 @@ const BloodPreasure = (props) => {
       diastolic: "",
       pulse: "",
       note: "",
-      date: "",
+      date: currentTime,
     });
   };
   useEffect(() => {
     setErrors({});
     setErrors(props.errors);
   }, [props.errors]);
+
   return (
     <div className="add-bloodp-gluc">
       <div className="row blood-gluc-form">
@@ -89,7 +92,7 @@ const BloodPreasure = (props) => {
                 onChange={onInputChange}
                 name="date"
                 labelName="Date"
-                type="date"
+                type="datetime-local"
               />
               <div className="row form-container">
                 <div className="formlabel col-lg-3">

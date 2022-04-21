@@ -9,6 +9,7 @@ const Fields = ({
   onChange,
   value,
   err,
+  pattern,
 }) => {
   return (
     <div className="row form-container">
@@ -25,6 +26,7 @@ const Fields = ({
           })}
           type={type}
           placeholder={placeholder}
+          pattern={pattern}
         />
         {err && <div className="invalid-feedback">{err}</div>}
       </div>

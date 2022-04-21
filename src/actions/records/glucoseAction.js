@@ -10,6 +10,10 @@ export const addGlucose = (userData) => async (dispatch) => {
       userData
     );
     toast.success("Successfully");
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
   } catch (error) {
     dispatch({
       type: GET_ERRORS,

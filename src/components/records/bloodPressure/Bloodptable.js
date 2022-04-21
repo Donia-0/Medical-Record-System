@@ -1,3 +1,4 @@
+import moment from "moment-timezone";
 import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
@@ -23,7 +24,11 @@ const Bloodptable = (props) => {
     },
     {
       name: "Date",
-      selector: (row) => dateFormat(row.date),
+      selector: (row) =>
+        moment(row.date).format("yyyy-MM-DD") +
+        " at " +
+        moment(row.date).format("hh:mm A"),
+
       sortable: true,
     },
     {

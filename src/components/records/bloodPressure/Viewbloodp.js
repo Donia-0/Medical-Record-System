@@ -6,6 +6,8 @@ import Bloodptable from "./Bloodptable";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getBloodPressure } from "./../../../actions/records/bloodPressureAction";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChartBar } from "@fortawesome/free-solid-svg-icons";
 const Viewbloodp = (props) => {
   const clickhandler = (name) => console.log("delete", name);
   const { bloodPressure, loading } = props.bloodpressures;
@@ -21,13 +23,21 @@ const Viewbloodp = (props) => {
             <div className="preasureview-header">
               <img src={bloodpreasureImage} /> Blood Preasure Measurements
             </div>
+
             <div className="row"></div>
           </div>
         </div>
 
         <div className="preasureview-data">
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-lg-6">
+              <div className="text-left graph-link">
+                <Link to="/records/graph/blood">
+                  <FontAwesomeIcon icon={faChartBar} /> Go to graph view
+                </Link>
+              </div>
+            </div>
+            <div className="col-lg-6">
               <div className="add-preasureview-btn">
                 <Link
                   to="/records/BloodPreasure"

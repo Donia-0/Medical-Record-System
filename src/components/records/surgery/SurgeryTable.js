@@ -4,33 +4,27 @@ import DataTable from "react-data-table-component";
 import dateFormat from "../../../utils/dateFormat";
 import FilterComponent from "../FilterComponent";
 
-const Bloodptable = (props) => {
+const SurgeryTable = (props) => {
   const columns = [
     {
-      name: "Systolic",
-      selector: (row) => row.systolic,
+      name: "Name",
+      selector: (row) => row.name,
       sortable: true,
     },
     {
-      name: "Diastolic",
-      selector: (row) => row.diastolic,
+      name: "Dr Name",
+      selector: (row) => row.doctorName,
       sortable: true,
     },
     {
-      name: "Pulse",
-      selector: (row) => row.pulse,
+      name: "Location",
+      selector: (row) => row.location,
       sortable: true,
     },
     {
       name: "Date",
       selector: (row) => dateFormat(row.date),
       sortable: true,
-    },
-    {
-      name: "Note",
-      selector: (row) => row.note || "There  is no note",
-      grow: 2,
-      wrap: true,
     },
   ];
 
@@ -76,4 +70,4 @@ const Bloodptable = (props) => {
   );
 };
 
-export default Bloodptable;
+export default SurgeryTable;

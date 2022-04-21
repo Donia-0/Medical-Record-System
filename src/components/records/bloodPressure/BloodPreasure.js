@@ -28,6 +28,7 @@ const BloodPreasure = (props) => {
       diastolic: form.diastolic,
       pulse: form.pulse,
       note: form.note,
+      date: form.date,
     };
     props.addBloodPressure(data);
     setForm({

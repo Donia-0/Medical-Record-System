@@ -30,9 +30,9 @@ const Sidebar = () => {
           Glucose
         </NavLink>
       </div>
-      <a href="#surgery" className="a-section">
+      <NavLink to="/records/surgery" className="a-section">
         Surgery
-      </a>
+      </NavLink>
       <a href="#allergy" className="a-section">
         Allergy
       </a>

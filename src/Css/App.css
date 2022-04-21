@@ -319,10 +319,72 @@
 }
 
 /* addbloodp */
-@media screen and (max-width: 720px) {
+
+@media screen and (max-width: 995px) {
   .add-bloodp-gluc {
     width: 95% !important;
     margin: 20px auto !important;
+  }
+  /* .bp-header, .gluc-header {
+    top: 68% !important;
+    left: 26% !important;
+    font-size: 22px !important;
+} */
+  .blood-gluc-form .form-group {
+    left: 15% !important;
+  }
+}
+@media screen and (min-width: 416px) and (max-width: 550px) {
+  .bp-img,
+  .gluc-img {
+    top: 54% !important;
+    left: 5% !important;
+  }
+  /* .gluc-img {
+    top: 60% !important;
+    left: 5% !important;
+  } */
+  .bp-img img,
+  .gluc-img img {
+    /* height: 95px !important; */
+    height: 90% !important;
+  }
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
+  }
+}
+@media screen and (min-width: 550px) and (max-width: 680px) {
+  .bp-header,
+  .gluc-header {
+    top: 66% !important;
+    left: 28% !important;
+    font-size: 25px !important;
+  }
+  .bp-img,
+  .gluc-img {
+    top: 48% !important;
+    left: 7% !important;
+  }
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
+  }
+}
+@media screen and (min-width: 680px) and (max-width: 805px) {
+  .bp-img,
+  .gluc-img {
+    top: 48% !important;
+    left: 7% !important;
+  }
+  /* .blood-gluc-form .form-control {
+  width: 95% !important;
+} */
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
+  }
+}
+@media screen and (min-width: 805px) and (max-width: 995px) {
+  .blood-gluc-form .add-btn {
+    left: 10% !important;
   }
   .bp-header,
   .gluc-header,
@@ -337,6 +399,7 @@
     top: 48% !important;
     left: 5% !important;
   }
+
   .bp-img img,
   .gluc-img img,
   .allergy-img img {
@@ -345,13 +408,52 @@
   .blood-gluc-form, .allergy-form .form-group {
     left: 15% !important;
   }
-  .blood-gluc-form, .allergy-form .form-control {
-    width: 95% !important;
+
+  .blood-gluc-form .form-group, .allergy-form .form-control {
+    left: 15% !important;
   }
+  /* .blood-gluc-form .form-control {
+>>>>>>> 1933c5e0bbcbb773989442e2ff81b6bdc98ebb61
+    width: 95% !important;
+  } */
   .blood-gluc-form .add-btn {
-    left: 25% !important;
+    left: 10% !important;
   }
 }
+@media screen and (max-width: 415px) {
+  .bp-img,
+  .gluc-img {
+    top: 67% !important;
+    left: 11% !important;
+  }
+  .bp-img img,
+  .gluc-img img {
+    height: 65% !important;
+  }
+  .blood-gluc-form .form-control {
+    width: 100% !important;
+  }
+  .bp-header,
+  .gluc-header {
+    top: 72% !important;
+    left: 31% !important;
+    font-size: 20px !important;
+  }
+  .blood-gluc-form .add-btn {
+    left: 30% !important;
+  }
+}
+
+@media screen and (min-width: 995px) and (max-width: 1250px) {
+  .bp-img,
+  .gluc-img {
+    position: absolute !important;
+    top: 48% !important;
+    left: 9% !important;
+    height: 100% !important;
+  }
+}
+
 .bp-img-container,
 .gluc-img-container,
 .allergy-img-container {
@@ -365,23 +467,19 @@
 .gluc-img,
 .allergy-img {
   position: absolute;
-  top: 40%;
-  left: 12%;
+  top: 48%;
+  left: 13%;
   height: 100%;
 }
 
-.bp-img img,
-.gluc-img img,
-.allergy-img {
-  height: 120px !important;
-}
 
-.bp-img-container .bp-img img,
+
+
+
 .gluc-img-container .gluc-img img,
 .allergy-img-container .allergy-img img {
   height: 85%;
 }
-
 .bp-header,
 .gluc-header,
 .allergy-header {
@@ -394,7 +492,8 @@
 }
 .add-bloodp-gluc,
 .add-examination,
-.add-allergy {
+.add-allergy,
+.add-surgery {
   width: 70%;
   margin: 75px auto;
   background-color: whitesmoke;
@@ -402,7 +501,9 @@
 
 .blood-gluc-form .bloodp-gluc-form,
 .add-examination-form,
-.allergy-form {
+
+.allergy-form,
+.add-surgery-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,7 +512,10 @@
 
 .blood-gluc-form .form-group,
 .add-examination-form .form-group,
-.allergy-form .form-group {
+
+.allergy-form .form-group,
+.add-surgery-form .form-group {
+
   width: 45%;
 }
 
@@ -422,21 +526,27 @@
 }
 
 .blood-gluc-form .form-control,
-.allergy-form .form-control {
+
+.allergy-form .form-control ,
+.blood-gluc-form .form-select {
+
   width: 80%;
 }
 
 .blood-gluc-form .form-control:focus,
+.blood-gluc-form .form-select:focus,
 .add-examination-form .form-control:focus,
 .prescription-view .form-control:focus,
-.allergy-form .form-control:focus {
+.allergy-form .form-control:focus,
+.add-surgery-form .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
 
 .blood-gluc-form .formlabel,
 .add-examination-form .formlabel,
-.prescription-view .formlabel {
+.prescription-view .formlabel,
+.add-surgery-form .formlabel {
   display: flex;
   justify-content: start;
   /* align-items: center; */
@@ -446,7 +556,8 @@
 .blood-gluc-form label,
 .add-examination-form label,
 .prescription-view .formlabel label,
-.allergy-form label {
+.allergy-form label,
+.add-surgery-form label {
   color: #2a7f82;
   font-weight: bold;
 }
@@ -470,7 +581,9 @@
 .add-examination-form button,
 .add-examination-form button:hover,
 .allergy-form button,
-.allergy-form button:hover {
+.allergy-form button:hover,
+.add-surgery-form button,
+.add-surgery-form button:hover {
   background-color: #2a7f82;
   color: #def2f3;
   border-color: #2a7f82;
@@ -479,7 +592,7 @@
 .blood-gluc-form .form-group,
 .allergy-form .form-group {
   position: relative;
-  left: 20%;
+  left: 18%;
   margin-top: 35px;
   transform: translateX(-30%);
 }
@@ -1112,7 +1225,8 @@ features
 }
 
 .popup-close,
-.add-examination-btn a {
+.add-examination-btn a,
+.add-surgery-btn a {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
@@ -1123,23 +1237,28 @@ features
 .add-examination-form .add-btn button:focus,
 .view-prescription-btn button:focus,
 .filter-examination-btn button:focus,
-.add-examination-btn a:focus {
+.add-examination-btn a:focus,
+.add-surgery-form .add-btn button:focus,
+.add-surgery-btn a:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
-.examination .examination-data {
+.examination .examination-data,
+.surgery .surgery-data {
   width: 97%;
   margin: auto;
   margin-top: 15px;
 }
 
-.examination .examination-data .add-examination-btn {
+.examination .examination-data .add-examination-btn,
+.surgery .surgery-data .add-surgery-btn {
   display: flex;
   justify-content: end;
   padding-bottom: 10px;
 }
 
-.examination-container {
+.examination-container,
+.surgery-container {
   display: flex;
   align-items: end;
   height: 100px;
@@ -1147,7 +1266,8 @@ features
   border-bottom: 2px solid #2a7f82;
 }
 
-.add-examination-header {
+.add-examination-header,
+.add-surgery-header {
   display: flex;
   align-content: baseline;
   font-weight: bold;
@@ -1157,15 +1277,18 @@ features
   font-size: 25px;
 }
 
-.add-examination .form-group {
+.add-examination .form-group,
+.add-surgery .form-group {
   margin-top: 35px;
 }
 
-.add-examination-form .form-control {
+.add-examination-form .form-control,
+.add-surgery-form .form-control {
   width: 100%;
 }
 
-.add-examination-form .add-btn {
+.add-examination-form .add-btn,
+.add-surgery-form .add-btn {
   display: flex;
   justify-content: end;
   position: relative;
@@ -1225,6 +1348,16 @@ features
   width: 90%;
 }
 
+.surgery .surgery-filter {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 10px;
+  color: #2a7f82;
+  margin-top: 20px;
+}
+
 .loadingPage {
   height: 100%;
   background-color: white;
@@ -1234,8 +1367,18 @@ features
   height: 100vh;
 }
 
-@media screen and (max-width: 480px) {
-  .profile .profile-info {
-    background-color: lightgreen;
-  }
+/*===Hussein====*/
+.graph-title {
+  color: #8e8e8e;
+  text-transform: uppercase;
+}
+.graph-link a {
+  border-radius: 4px;
+  text-decoration: none;
+  color: #238274;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.graph-link a:hover {
+  color: #10666a !important;
 }

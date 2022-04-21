@@ -26,6 +26,11 @@ import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
 import BarChart from "./BarChart";
+
+import ClipLoader from "react-spinners/ClipLoader";
+import AddAllergy from "./records/Allergy/AddAllergy";
+import Allergyview from "./records/Allergy/Allergyview";
+import Admin from "./Admin/Admin";
 import AddSurgery from "./records/surgery/AddSurgery";
 import Surgery from "./records/surgery/Surgery";
 import Chart from "./records/Chart";
@@ -74,12 +79,15 @@ const App = () => {
               <Route path="addprescription" element={<Addprescription />} />
               <Route path="Viewbloodp" element={<Viewbloodp />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
+              <Route path="allergy" element={<AddAllergy />} />
+              <Route path="viewallergy" element={<Allergyview />} />
               <Route path="addsurgery" element={<AddSurgery />} />
               <Route path="surgery" element={<Surgery />} />
               <Route path="graph">
                 <Route path="blood" element={<BloodChart />} />
               </Route>
             </Route>
+            <Route path="admin" element={<Admin />} />
           </Routes>
         </BrowserRouter>
       </Provider>

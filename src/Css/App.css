@@ -325,24 +325,27 @@
     margin: 20px auto !important;
   }
   .bp-header,
-  .gluc-header {
+  .gluc-header,
+  .allergy-header {
     top: 68% !important;
     left: 26% !important;
     font-size: 22px !important;
   }
   .bp-img,
-  .gluc-img {
+  .gluc-img,
+  .allergy-img {
     top: 48% !important;
     left: 5% !important;
   }
   .bp-img img,
-  .gluc-img img {
+  .gluc-img img,
+  .allergy-img img {
     height: 95px !important;
   }
-  .blood-gluc-form .form-group {
+  .blood-gluc-form, .allergy-form .form-group {
     left: 15% !important;
   }
-  .blood-gluc-form .form-control {
+  .blood-gluc-form, .allergy-form .form-control {
     width: 95% !important;
   }
   .blood-gluc-form .add-btn {
@@ -350,7 +353,8 @@
   }
 }
 .bp-img-container,
-.gluc-img-container {
+.gluc-img-container,
+.allergy-img-container {
   height: 110px;
   background-color: #3ea9ad;
   border-bottom: 2px solid #2a7f82;
@@ -358,7 +362,8 @@
 }
 
 .bp-img,
-.gluc-img {
+.gluc-img,
+.allergy-img {
   position: absolute;
   top: 40%;
   left: 12%;
@@ -366,17 +371,20 @@
 }
 
 .bp-img img,
-.gluc-img img {
+.gluc-img img,
+.allergy-img {
   height: 120px !important;
 }
 
 .bp-img-container .bp-img img,
-.gluc-img-container .gluc-img img {
+.gluc-img-container .gluc-img img,
+.allergy-img-container .allergy-img img {
   height: 85%;
 }
 
 .bp-header,
-.gluc-header {
+.gluc-header,
+.allergy-header {
   position: absolute;
   top: 65%;
   left: 28%;
@@ -385,14 +393,16 @@
   color: white;
 }
 .add-bloodp-gluc,
-.add-examination {
+.add-examination,
+.add-allergy {
   width: 70%;
   margin: 75px auto;
   background-color: whitesmoke;
 }
 
 .blood-gluc-form .bloodp-gluc-form,
-.add-examination-form {
+.add-examination-form,
+.allergy-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -400,7 +410,8 @@
 }
 
 .blood-gluc-form .form-group,
-.add-examination-form .form-group {
+.add-examination-form .form-group,
+.allergy-form .form-group {
   width: 45%;
 }
 
@@ -410,13 +421,15 @@
   justify-content: center;
 }
 
-.blood-gluc-form .form-control {
+.blood-gluc-form .form-control,
+.allergy-form .form-control {
   width: 80%;
 }
 
 .blood-gluc-form .form-control:focus,
 .add-examination-form .form-control:focus,
-.prescription-view .form-control:focus {
+.prescription-view .form-control:focus,
+.allergy-form .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
@@ -429,14 +442,21 @@
   /* align-items: center; */
 }
 
+
 .blood-gluc-form label,
 .add-examination-form label,
-.prescription-view .formlabel label {
+.prescription-view .formlabel label,
+.allergy-form label {
   color: #2a7f82;
   font-weight: bold;
 }
-
-.blood-gluc-form .add-btn {
+.allergy-form label{
+  margin-left: -20px;
+  margin-top: 5px;
+  
+}
+.blood-gluc-form .add-btn,
+.allergy-form .add-btn {
   display: flex;
   justify-content: end;
   position: relative;
@@ -448,13 +468,16 @@
 .blood-gluc-form button,
 .blood-gluc-form button:hover,
 .add-examination-form button,
-.add-examination-form button:hover {
+.add-examination-form button:hover,
+.allergy-form button,
+.allergy-form button:hover {
   background-color: #2a7f82;
   color: #def2f3;
   border-color: #2a7f82;
 }
 /* addglucose */
-.blood-gluc-form .form-group {
+.blood-gluc-form .form-group,
+.allergy-form .form-group {
   position: relative;
   left: 20%;
   margin-top: 35px;
@@ -589,7 +612,7 @@
   background-image: url(../images/card3.jpg);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: cover; 
   height: 100vh;
 }
 .welcome-area::before {
@@ -781,8 +804,9 @@ features
 }
 
 .section-container {
-  background-color: #238274;
-  margin: 65px;
+  background-color: darkcyan;
+  margin-top: 90px;
+  margin-bottom: 70px;
 }
 .section-text {
   align-self: center;
@@ -1007,8 +1031,40 @@ features
   justify-content: end;
   padding-bottom: 10px;
 }
+/* ======================================Allergy============================================ */
 
-/* ============================================================================================================== */
+.data-container{
+  height: 585px;
+  display: flex;
+  align-items: center
+}
+.allergy-table{
+  margin-right: 35px;
+}
+/* ========================================Admin========================================== */
+.content .table{
+  padding: 0 70px;
+}
+.content .request-table{
+  margin-top: 100px;
+}
+.show-request-btn button,
+.accept-request-btn button,
+.decline-request-btn button,
+.show-request-btn button:hover,
+.accept-request-btn button:hover,
+.decline-request-btn button:hover {
+  background-color: #2a7f82;
+  border-color: #2a7f82;
+  padding: 3px 10px;
+}
+
+.show-request-btn a:focus,
+.accept-request-btn a:focus,
+.decline-request-btn a:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
+}
+/* ======================================================================================================================================= */
 
 /* ==============================Zeinab CSS============================== */
 /* ===============Examination===================== */

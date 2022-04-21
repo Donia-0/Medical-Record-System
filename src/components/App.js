@@ -28,6 +28,9 @@ import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
 import BarChart from "./BarChart";
 import ClipLoader from "react-spinners/ClipLoader";
+import AddAllergy from "./records/Allergy/AddAllergy";
+import Allergyview from "./records/Allergy/Allergyview";
+import Admin from "./Admin/Admin";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -66,14 +69,16 @@ const App = () => {
             <Route path="/records" element={<Layout />}>
               <Route path="bloodpreasure" element={<BloodPreasure />} />
               <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
-
               <Route path="glucose" element={<GlucoseMeasure />} />
               <Route path="examination" element={<Examination />} />
               <Route path="addexamination" element={<AddExamination />} />
               <Route path="addprescription" element={<Addprescription />} />
               <Route path="Viewbloodp" element={<Viewbloodp />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
+              <Route path="allergy" element={<AddAllergy />} />
+              <Route path="viewallergy" element={<Allergyview />} />
             </Route>
+            <Route path="admin" element={<Admin />} />
           </Routes>
         </BrowserRouter>
       </Provider>

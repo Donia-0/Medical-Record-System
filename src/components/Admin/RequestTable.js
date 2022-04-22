@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import DataTable from "react-data-table-component";
 import FilterComponent from "../records/FilterComponent";
+import RequestsView from "./RequestsView";
 // import PrescriptionView from "../records/PrescriptionView";
 
 const RequestTable = (props) => {
@@ -54,6 +55,16 @@ const RequestTable = (props) => {
             >
               Show
             </button>
+            {row.showModal ? (
+              <RequestsView
+                show={modalShow}
+                onHide={() => {
+                  row.showModal = false;
+
+                  setModalShow(false);
+                }}
+              />
+            ) : null}
           </div>
         );
       },

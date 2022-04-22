@@ -541,7 +541,8 @@
 .blood-gluc-form .formlabel,
 .add-examination-form .formlabel,
 .prescription-view .formlabel,
-.add-surgery-form .formlabel {
+.add-surgery-form .formlabel,
+.requests-view .formlabel {
   display: flex;
   justify-content: start;
   /* align-items: center; */
@@ -551,7 +552,8 @@
 .add-examination-form label,
 .prescription-view .formlabel label,
 .allergy-form label,
-.add-surgery-form label {
+.add-surgery-form label,
+.requests-view .formlabel label {
   color: #2a7f82;
   font-weight: bold;
 }
@@ -1165,9 +1167,9 @@ features
   padding: 3px 10px;
 }
 
-.show-request-btn a:focus,
-.accept-request-btn a:focus,
-.decline-request-btn a:focus {
+.show-request-btn button:focus,
+.accept-request-btn button:focus,
+.decline-request-btn button:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 /* ======================================================================================================================================= */
@@ -1329,7 +1331,8 @@ features
 .TUEFO {
   padding-right: 0px !important;
 }
-.prescription-view {
+.prescription-view,
+.requests-view {
   width: 90%;
   margin: auto;
 }
@@ -1337,7 +1340,8 @@ features
   display: flex;
 }
 
-.prescription-view .form-control {
+.prescription-view .form-control,
+.requests-view .form-control {
   width: 90%;
 }
 
@@ -1379,4 +1383,19 @@ features
 }
 .graph-link a:hover {
   color: #10666a !important;
+}
+
+.requests-view .form-container {
+  display: flex;
+  justify-content: start;
+}
+
+.requests-view .requests-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.requests-imgs .card {
+  margin-bottom: 0px;
+  padding: 15px;
 }

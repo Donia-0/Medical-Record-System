@@ -23,9 +23,15 @@ const Viewbloodp = (props) => {
             <div className="preasureview-header">
               <img src={bloodpreasureImage} /> Blood Preasure Measurements
             </div>
-
-            <div className="row"></div>
           </div>
+          {/* <div className="col-lg-12">
+            <div className="text-center graph-link ">
+              <Link to="/records/graph/blood">
+                <FontAwesomeIcon icon={faChartBar} /> Go to graph view
+              </Link>
+            </div>
+          </div> */}
+          <div className="row"></div>
         </div>
 
         <div className="preasureview-data">

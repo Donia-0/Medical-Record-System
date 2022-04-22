@@ -1309,6 +1309,11 @@ features
   color: #8e8e8e;
   text-transform: uppercase;
 }
+/* .graph-link {
+  position: relative;
+  top: 60px;
+  z-index: 10;
+} */
 .graph-link a {
   border-radius: 4px;
   text-decoration: none;

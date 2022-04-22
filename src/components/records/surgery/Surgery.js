@@ -1,14 +1,19 @@
-import { faFilter } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import SurgeryTable from "./SurgeryTable";
-import FilterModal from "./../FilterModal";
 import data from "../data";
 import { Link } from "react-router-dom";
+import { getAllSurgery } from "../../../actions/records/surgeryAction";
+import Loading from "./../../Loading";
+import { PropTypes } from "prop-types";
+import { connect } from "react-redux";
 
-const Surgery = () => {
-  const [modalShow, setModalShow] = React.useState(false);
+const Surgery = (props) => {
+  const { surgeries, loading } = props.surgery;
+  useEffect(() => {
+    props.getAllSurgery();
+  }, []);
 
+  const centerText = <h1>There's no data yet</h1>;
   return (
     <div className="surgery">
       <div className="row">
@@ -35,7 +40,8 @@ const Surgery = () => {
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="surgery-table">
               {/* <ExaminationTable /> */}
-              <SurgeryTable data={data} />
+
+              <SurgeryTable data={surgeries} />
             </div>
           </div>
         </div>
@@ -44,4 +50,13 @@ const Surgery = () => {
   );
 };
 
-export default Surgery;
+Surgery.propTypes = {
+  auth: PropTypes.object.isRequired,
+  getAllSurgery: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  surgery: state.surgery,
+});
+export default connect(mapStateToProps, { getAllSurgery })(Surgery);

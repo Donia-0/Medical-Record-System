@@ -1,50 +1,49 @@
 import React, { useMemo } from "react";
-
 import DataTable from "react-data-table-component";
-import FilterComponent from "./FilterComponent";
-import PrescriptionView from "./PrescriptionView";
+import FilterComponent from "../records/FilterComponent";
+// import PrescriptionView from "../records/PrescriptionView";
 
-const ExaminationTable = (props) => {
+const RequestTable = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
 
   const columns = [
     {
-      name: "Systolic",
+      name: "Name",
       selector: (row) => row.name,
       sortable: true,
-      grow: 2,
+      grow: 1,
       wrap: true,
     },
     {
-      name: "Diagnosis",
-      selector: (row) => row.email,
+      name: "Specialization",
+      selector: (row) => row.name,
       sortable: true,
-      grow: 2,
+      grow: 1,
       wrap: true,
     },
     {
-      name: "Date",
-      selector: (row) => row.website,
+      name: "Email",
+      selector: (row) => row.name,
       sortable: true,
+      grow: 1,
+      wrap: true,
     },
     {
-      name: "Note",
-      selector: (row) => row.company.name,
+      name: "Phone",
+      selector: (row) => row.name,
       sortable: true,
+      grow: 1,
+      wrap: true,
     },
     {
-      name: "Dr Name",
-      selector: (row) => row.address.city,
-      sortable: true,
-    },
-    {
-      name: "Prescription",
+      name: " ",
       button: true,
       ignoreRowClick: true,
       allowOverflow: true,
+
       cell: (row) => {
         return (
-          <div className="view-prescription-btn">
+          <div className="show-request-btn">
             <button
               type="button"
               className="btn btn-primary"
@@ -53,18 +52,54 @@ const ExaminationTable = (props) => {
                 setModalShow(true);
               }}
             >
-              view
+              Show
             </button>
-            {row.showModal ? (
-              <PrescriptionView
-                show={modalShow}
-                onHide={() => {
-                  row.showModal = false;
+          </div>
+        );
+      },
+    },
+    {
+      name: " ",
+      button: true,
+      ignoreRowClick: true,
+      allowOverflow: true,
 
-                  setModalShow(false);
-                }}
-              />
-            ) : null}
+      cell: (row) => {
+        return (
+          <div className="accept-request-btn">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                row.showModal = true;
+                setModalShow(true);
+              }}
+            >
+              Accept
+            </button>
+          </div>
+        );
+      },
+    },
+    {
+      name: " ",
+      button: true,
+      ignoreRowClick: true,
+      allowOverflow: true,
+
+      cell: (row) => {
+        return (
+          <div className="decline-request-btn">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                row.showModal = true;
+                setModalShow(true);
+              }}
+            >
+              Decline
+            </button>
           </div>
         );
       },
@@ -113,4 +148,4 @@ const ExaminationTable = (props) => {
   );
 };
 
-export default ExaminationTable;
+export default RequestTable;

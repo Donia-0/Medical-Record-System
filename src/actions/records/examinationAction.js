@@ -13,6 +13,10 @@ export const addExamination = (userData) => async (dispatch) => {
       payload: response.data,
     });
     toast.success("Successfully");
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
   } catch (error) {
     dispatch({
       type: GET_ERRORS,

@@ -3,7 +3,6 @@ import Fields from "../Fields";
 import { connect } from "react-redux";
 import { addSurgery } from "../../../actions/records/surgeryAction";
 import { PropTypes } from "prop-types";
-import classnames from "classnames";
 
 const AddSurgery = (props) => {
   const [form, setForm] = useState({
@@ -29,7 +28,6 @@ const AddSurgery = (props) => {
       date: form.date,
     };
     props.addSurgery(newSurgery);
-    console.log(newSurgery);
   };
   useEffect(() => {
     setErrors({});

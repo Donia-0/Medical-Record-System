@@ -5,6 +5,7 @@ import profileReducer from "./profileReducer";
 import bloodpressureReducer from "./records/bloodpressureReducer";
 import examinationReducer from "./records/examinationReducer";
 import glucoseReducer from "./records/glucoseReducer";
+import surgeryReducer from "./records/surgeryReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
   bloodpressures: bloodpressureReducer,
   newExamination: examinationReducer,
   glucose: glucoseReducer,
+  surgery: surgeryReducer,
 });

@@ -86,7 +86,6 @@ const Landing = () => {
                 <img
                   src={section2}
                   className="rounded img-fluid d-block mx-auto"
-                  alt="App"
                 />
               </div>
               <div className="col-lg-1"></div>
@@ -105,16 +104,16 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            {/* <div class="row">
-            <div class="col-lg-12">
-              <div class="hr"></div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="hr"></div>
+              </div>
             </div>
-          </div> */}
           </div>
         </section>
-        {/* <!-- ***** Features Big Item End ***** --> */}
+        {/* <!-- ***** Features Big Item End ***** -->
 
-        {/* <!-- ***** Features Big Item Start ***** --> */}
+        <!-- ***** Features Big Item Start ***** --> */}
         <section className="section ">
           <div className="container">
             <div className="row">
@@ -135,14 +134,19 @@ const Landing = () => {
               </div>
               <div className="col-lg-1"></div>
               <div className="col-lg-5 col-md-12 col-sm-12 align-self-center">
-                <img src={section1} />
+                <img
+                  src={section1}
+                  className="rounded img-fluid d-block mx-auto"
+                />
               </div>
             </div>
           </div>
         </section>
       </div>
 
-      {/* <!-- ***** Features Big Item End ***** --> */}
+      {/* <!-- ***** Features Big Item End ***** -->
+
+      {/* ////////////////////////////////////////////////////////////////////////////////// */}
     </div>
   );
 };

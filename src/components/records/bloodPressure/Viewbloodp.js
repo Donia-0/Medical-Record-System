@@ -72,6 +72,11 @@ const Viewbloodp = (props) => {
   );
 };
 
+Viewbloodp.propTypes = {
+  auth: PropTypes.object.isRequired,
+  getBloodPressure: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (state) => ({
   auth: state.auth,
   bloodpressures: state.bloodpressures,

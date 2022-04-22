@@ -8,11 +8,11 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 
 const Surgery = (props) => {
-  const [modalShow, setModalShow] = React.useState(false);
   const { surgeries, loading } = props.surgery;
   useEffect(() => {
     props.getAllSurgery();
   }, []);
+
   const centerText = <h1>There's no data yet</h1>;
   return (
     <div className="surgery">

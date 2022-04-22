@@ -1,24 +1,23 @@
-import { GET_SURGERY, LOADING } from "../../actions/types";
+import { LOADING, GET_SURGERY } from "./../../actions/types";
 
 const initialState = {
+  surgeries: [],
   loading: false,
-  suregries: {},
 };
 
-export default function name(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
-    case GET_SURGERY:
-      return {
-        ...state,
-        loading: false,
-        suregries: action.payload,
-      };
     case LOADING:
       return {
         ...state,
         loading: true,
       };
-
+    case GET_SURGERY:
+      return {
+        ...state,
+        loading: false,
+        surgeries: action.payload,
+      };
     default:
       return state;
   }

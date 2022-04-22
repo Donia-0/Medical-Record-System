@@ -405,11 +405,13 @@
   .allergy-img img {
     height: 95px !important;
   }
-  .blood-gluc-form, .allergy-form .form-group {
+  .blood-gluc-form,
+  .allergy-form .form-group {
     left: 15% !important;
   }
 
-  .blood-gluc-form .form-group, .allergy-form .form-control {
+  .blood-gluc-form .form-group,
+  .allergy-form .form-control {
     left: 15% !important;
   }
   /* .blood-gluc-form .form-control {
@@ -420,6 +422,7 @@
     left: 10% !important;
   }
 }
+
 @media screen and (max-width: 415px) {
   .bp-img,
   .gluc-img {
@@ -472,10 +475,7 @@
   height: 100%;
 }
 
-
-
-
-
+.bp-img-container .bp-img img,
 .gluc-img-container .gluc-img img,
 .allergy-img-container .allergy-img img {
   height: 85%;
@@ -501,7 +501,6 @@
 
 .blood-gluc-form .bloodp-gluc-form,
 .add-examination-form,
-
 .allergy-form,
 .add-surgery-form {
   display: flex;
@@ -512,10 +511,8 @@
 
 .blood-gluc-form .form-group,
 .add-examination-form .form-group,
-
 .allergy-form .form-group,
 .add-surgery-form .form-group {
-
   width: 45%;
 }
 
@@ -526,10 +523,8 @@
 }
 
 .blood-gluc-form .form-control,
-
-.allergy-form .form-control ,
+.allergy-form .form-control,
 .blood-gluc-form .form-select {
-
   width: 80%;
 }
 
@@ -552,7 +547,6 @@
   /* align-items: center; */
 }
 
-
 .blood-gluc-form label,
 .add-examination-form label,
 .prescription-view .formlabel label,
@@ -561,10 +555,9 @@
   color: #2a7f82;
   font-weight: bold;
 }
-.allergy-form label{
+.allergy-form label {
   margin-left: -20px;
   margin-top: 5px;
-  
 }
 .blood-gluc-form .add-btn,
 .allergy-form .add-btn {
@@ -725,7 +718,7 @@
   background-image: url(../images/card3.jpg);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; 
+  background-size: cover;
   height: 100vh;
 }
 .welcome-area::before {
@@ -1146,19 +1139,19 @@ features
 }
 /* ======================================Allergy============================================ */
 
-.data-container{
+.data-container {
   height: 585px;
   display: flex;
-  align-items: center
+  align-items: center;
 }
-.allergy-table{
+.allergy-table {
   margin-right: 35px;
 }
 /* ========================================Admin========================================== */
-.content .table{
+.content .table {
   padding: 0 70px;
 }
-.content .request-table{
+.content .request-table {
   margin-top: 100px;
 }
 .show-request-btn button,

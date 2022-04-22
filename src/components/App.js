@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import store from "../store";
 import Layout from "./layout/Layout";
 import Auth from "./Authentication/Auth";
-import "../Css/App.css";
 import Register from "./Authentication/Register";
 import Signin from "./Authentication/Signin";
 import { logoutUser, setCurrentUser } from "./../actions/authAction";
@@ -13,28 +12,25 @@ import setAuthToken from "./../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import Profile from "./user/Profile";
 import Landing from "./layout/Landing";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "jquery/dist/jquery.min.js";
-import "bootstrap/dist/js/bootstrap.min.js";
 import BloodPreasure from "./records/bloodPressure/BloodPreasure";
 import Examination from "./records/examination/Examination";
 import Addprescription from "./records/examination/Addprescription";
 import AddExamination from "./records/examination/AddExamination";
 import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
-
 import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
 import BarChart from "./BarChart";
-
-import ClipLoader from "react-spinners/ClipLoader";
 import AddAllergy from "./records/Allergy/AddAllergy";
 import Allergyview from "./records/Allergy/Allergyview";
 import Admin from "./Admin/Admin";
 import AddSurgery from "./records/surgery/AddSurgery";
 import Surgery from "./records/surgery/Surgery";
-import Chart from "./records/Chart";
 import BloodChart from "./records/bloodPressure/BloodChart";
+import "../Css/App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "jquery/dist/jquery.min.js";
+import "bootstrap/dist/js/bootstrap.min.js";
 //check for token
 if (localStorage.token) {
   //set auth token header auth

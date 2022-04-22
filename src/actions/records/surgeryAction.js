@@ -21,11 +21,11 @@ export const addSurgery = (userData) => async (dispatch) => {
   }
 };
 export const getAllSurgery = () => async (dispatch) => {
+  dispatch({
+    type: LOADING,
+  });
   try {
-    dispatch({
-      type: LOADING,
-    });
-    const response = axios.get("http://localhost:5000/records/addSurgery");
+    const response = await axios.get("http://localhost:5000/records/surgeries");
     dispatch({
       type: GET_SURGERY,
       payload: response.data,

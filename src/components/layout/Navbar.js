@@ -16,6 +16,18 @@ const Navbar = () => {
             <span>Medical Record</span>
           </div>
         </a>
+
+        <div class="container-fluid">
+          <form class="search">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+
         <button
           className="navbar-toggler collapsed"
           type="button"

@@ -709,6 +709,14 @@
   color: #def2f3;
   font-weight: bold;
 }
+.container-fluid{
+  display: flex;
+  justify-content: end;
+}
+.search{
+  width: 220px;
+  margin-right: 12px;
+}
 /*=============================================================== Donia-css ================================================================ */
 /* welcomearea */
 .welcome-area {

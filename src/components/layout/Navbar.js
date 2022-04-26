@@ -17,17 +17,6 @@ const Navbar = () => {
           </div>
         </a>
 
-        <div class="container-fluid">
-          <form class="search">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-        </div>
-
         <button
           className="navbar-toggler collapsed"
           type="button"
@@ -41,6 +30,18 @@ const Navbar = () => {
         </button>
         <div className="navbar-collapse collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <div className="nav-link">
+                <form class="search">
+                  <input
+                    class="form-control"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                </form>
+              </div>
+            </li>
             <li className="nav-item">
               <a
                 className="nav-link"

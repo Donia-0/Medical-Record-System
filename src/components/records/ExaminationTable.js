@@ -1,11 +1,15 @@
+import { faEdit, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
 import PrescriptionView from "./PrescriptionView";
+import RequestAccessPatient from "../RequestAccessPatient";
 
 const ExaminationTable = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
+  const [editShow, setEditShow] = React.useState(false);
 
   const columns = [
     {
@@ -65,6 +69,49 @@ const ExaminationTable = (props) => {
                 }}
               />
             ) : null}
+          </div>
+        );
+      },
+    },
+    {
+      name: "Action",
+      button: true,
+      ignoreRowClick: true,
+      allowOverflow: true,
+      cell: (row) => {
+        return (
+          <div className="edit-delete-btns">
+            <div className="edit-btn">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => {
+                  row.showModal = true;
+                  setEditShow(true);
+                }}
+              >
+                <FontAwesomeIcon icon={faEdit} />
+              </button>
+              {row.showModal ? (
+                <RequestAccessPatient
+                  show={editShow}
+                  onHide={() => {
+                    row.showModal = false;
+
+                    setEditShow(false);
+                  }}
+                />
+              ) : null}
+            </div>
+            <div className="delete-btn">
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={() => {}}
+              >
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+            </div>
           </div>
         );
       },

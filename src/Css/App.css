@@ -1221,7 +1221,8 @@ features
 
 .popup-close,
 .add-examination-btn a,
-.add-surgery-btn a {
+.add-surgery-btn a,
+.edit-delete-btns .edit-btn button {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
@@ -1234,7 +1235,8 @@ features
 .filter-examination-btn button:focus,
 .add-examination-btn a:focus,
 .add-surgery-form .add-btn button:focus,
-.add-surgery-btn a:focus {
+.add-surgery-btn a:focus,
+.edit-delete-btns .edit-btn button:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
@@ -1398,4 +1400,57 @@ features
 .requests-imgs .card {
   margin-bottom: 0px;
   padding: 15px;
+}
+
+.request-access-view .request-access-header {
+  background-color: #2a7f82;
+  color: white;
+  padding: 10px;
+  border: 2px solid gray;
+}
+
+/* .request-access-view .request-access-body {
+  padding: 10px;
+  border-width: 0px 2px 2px;
+  border-color: gray;
+  border-style: solid;
+} */
+
+.request-access-view .request-access-body div {
+  margin-bottom: 10px;
+}
+
+.request-access-view .request-access-body .request-access-btn {
+  background-color: #2a7f82;
+  border-color: #2a7f82;
+  padding: 5px 10px;
+  /* margin-top: 10px; */
+}
+
+.request-access-modal-title {
+  display: flex;
+}
+
+.request-access-modal-title .form-control:focus{
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}
+
+.request-access-modal-title .search-patient-btn {
+  margin-left: 5px;
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
+}
+
+.request-access-modal-title .search-patient-btn:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
+}
+
+.edit-delete-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-delete-btns div {
+  margin-left: 5px;
 }

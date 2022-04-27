@@ -31,6 +31,8 @@ import "../Css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
+import Search from "./user/Search";
+import TestHu from "./user/TestHu";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -65,6 +67,7 @@ const App = () => {
             </Route>
             <Route path="/user" element={<Layout />}>
               <Route path="profile" element={<Profile />} />
+              <Route path="test/:nationalId" element={<TestHu />} />
             </Route>
             <Route path="/records" element={<Layout />}>
               <Route path="bloodpreasure" element={<BloodPreasure />} />

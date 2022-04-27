@@ -1,10 +1,13 @@
 import {
   faCapsules,
   faRightFromBracket,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import logo from "../../images/light-color.png";
+import Search from "../user/Search";
+import SearchBar from "../user/SearchBar";
 
 const Navbar = () => {
   return (
@@ -16,18 +19,7 @@ const Navbar = () => {
             <span>Medical Record</span>
           </div>
         </a>
-
-        <div class="container-fluid">
-          <form class="search">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-        </div>
-
+        <Search />
         <button
           className="navbar-toggler collapsed"
           type="button"

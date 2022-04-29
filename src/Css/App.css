@@ -360,6 +360,11 @@
     left: 28% !important;
     font-size: 25px !important;
   }
+  .edit-examination-header{
+    top: 66% !important;
+    left: 2% !important;
+    font-size: 25px !important;
+  }
   .bp-img,
   .gluc-img {
     top: 48% !important;
@@ -393,6 +398,11 @@
     left: 26% !important;
     font-size: 22px !important;
   }
+  .edit-examination-header{
+    top: 66% !important;
+    left: 2% !important;
+    font-size: 25px !important;
+  }
   .bp-img,
   .gluc-img,
   .allergy-img {
@@ -411,14 +421,16 @@
   }
 
   .blood-gluc-form .form-group,
-  .allergy-form .form-control {
+  .allergy-form .form-group,
+  .edit-examination-form .form-group {
     left: 15% !important;
   }
   /* .blood-gluc-form .form-control {
 >>>>>>> 1933c5e0bbcbb773989442e2ff81b6bdc98ebb61
     width: 95% !important;
   } */
-  .blood-gluc-form .add-btn {
+  .blood-gluc-form .add-btn,
+  .edit-examination-form .add-btn {
     left: 10% !important;
   }
 }
@@ -433,7 +445,8 @@
   .gluc-img img {
     height: 65% !important;
   }
-  .blood-gluc-form .form-control {
+  .blood-gluc-form .form-control,
+  .edit-examination-form .form-control {
     width: 100% !important;
   }
   .bp-header,
@@ -442,7 +455,13 @@
     left: 31% !important;
     font-size: 20px !important;
   }
-  .blood-gluc-form .add-btn {
+  .edit-examination-header{
+    top: 66% !important;
+    left: 2% !important;
+    font-size: 25px !important;
+  }
+  .blood-gluc-form .add-btn,
+  .edit-examination-form .add-btn {
     left: 30% !important;
   }
 }
@@ -459,7 +478,8 @@
 
 .bp-img-container,
 .gluc-img-container,
-.allergy-img-container {
+.allergy-img-container,
+.edit-examination-container {
   height: 110px;
   background-color: #3ea9ad;
   border-bottom: 2px solid #2a7f82;
@@ -490,10 +510,19 @@
   font-weight: bold;
   color: white;
 }
+.edit-examination-header{
+  position: absolute;
+  top: 66% !important;
+  left: 2% !important;
+  font-size: 25px !important;
+  font-weight: bold;
+  color: white;
+}
 .add-bloodp-gluc,
 .add-examination,
 .add-allergy,
-.add-surgery {
+.add-surgery,
+.edit-examination {
   width: 70%;
   margin: 75px auto;
   background-color: whitesmoke;
@@ -502,7 +531,9 @@
 .blood-gluc-form .bloodp-gluc-form,
 .add-examination-form,
 .allergy-form,
-.add-surgery-form {
+.add-surgery-form,
+.edit-examination-form,
+.edit-exam-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,7 +543,8 @@
 .blood-gluc-form .form-group,
 .add-examination-form .form-group,
 .allergy-form .form-group,
-.add-surgery-form .form-group {
+.add-surgery-form .form-group,
+.edit-examination-form .form-group {
   width: 45%;
 }
 
@@ -524,6 +556,7 @@
 
 .blood-gluc-form .form-control,
 .allergy-form .form-control,
+.edit-examination-form .form-control
 .blood-gluc-form .form-select {
   width: 80%;
 }
@@ -533,7 +566,8 @@
 .add-examination-form .form-control:focus,
 .prescription-view .form-control:focus,
 .allergy-form .form-control:focus,
-.add-surgery-form .form-control:focus {
+.add-surgery-form .form-control:focus,
+.edit-examination-form .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
@@ -542,7 +576,8 @@
 .add-examination-form .formlabel,
 .prescription-view .formlabel,
 .add-surgery-form .formlabel,
-.requests-view .formlabel {
+.requests-view .formlabel,
+.edit-examination-form .form-label {
   display: flex;
   justify-content: start;
   /* align-items: center; */
@@ -553,7 +588,8 @@
 .prescription-view .formlabel label,
 .allergy-form label,
 .add-surgery-form label,
-.requests-view .formlabel label {
+.requests-view .formlabel label,
+.edit-examination-form label {
   color: #2a7f82;
   font-weight: bold;
 }
@@ -570,7 +606,14 @@
   transform: translateX(-30%);
   margin-bottom: 20px;
 }
-
+.edit-examination-form .add-btn {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  left: 45%;
+  transform: translateX(-30%);
+  margin-bottom: 20px;
+}
 .blood-gluc-form button,
 .blood-gluc-form button:hover,
 .add-examination-form button,
@@ -578,14 +621,16 @@
 .allergy-form button,
 .allergy-form button:hover,
 .add-surgery-form button,
-.add-surgery-form button:hover {
+.add-surgery-form button:hover,
+.edit-examination-form button:hover {
   background-color: #2a7f82;
   color: #def2f3;
   border-color: #2a7f82;
 }
 /* addglucose */
 .blood-gluc-form .form-group,
-.allergy-form .form-group {
+.allergy-form .form-group,
+.edit-examination-form .form-group {
   position: relative;
   left: 18%;
   margin-top: 35px;
@@ -1227,12 +1272,15 @@ features
 .popup-close,
 .add-examination-btn a,
 .add-surgery-btn a,
-.edit-delete-btns .edit-btn button {
+.edit-exam-form button {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
 }
-
+.edit-delete-btns .edit-btn a{
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
+}
 .examination .examination-filter .examination-filer-button button:focus,
 .popup-close:focus,
 .add-examination-form .add-btn button:focus,

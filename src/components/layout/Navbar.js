@@ -30,7 +30,7 @@ const Navbar = () => {
         </button>
         <div className="navbar-collapse collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <div className="nav-link">
                 <form class="search">
                   <input
@@ -41,7 +41,7 @@ const Navbar = () => {
                   />
                 </form>
               </div>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a
                 className="nav-link"

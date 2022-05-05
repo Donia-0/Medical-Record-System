@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { prescriptionAdd } from "./../../../actions/records/pescriptionaction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import AdditioningField from "../../AdditioningField";
+import AdditioningField from "../AdditioningField";
 
 const Addprescription = (props) => {
   const [inputList, setInputList] = useState([

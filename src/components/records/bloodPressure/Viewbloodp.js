@@ -46,7 +46,7 @@ const Viewbloodp = (props) => {
             <div className="col-lg-6">
               <div className="add-preasureview-btn">
                 <Link
-                  to="/records/BloodPreasure"
+                  to="/records/bloodpreasure/addbloodp"
                   type="button"
                   className="btn btn-primary"
                 >

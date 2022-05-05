@@ -31,7 +31,7 @@ const Viewglucose = (props) => {
             <div className="col-lg-12">
               <div className="add-glucoseview-btn">
                 <Link
-                  to="/records/glucose"
+                  to="/records/glucose/addglucose"
                   type="button"
                   className="btn btn-primary"
                 >

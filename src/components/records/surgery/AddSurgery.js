@@ -3,10 +3,13 @@ import Fields from "../Fields";
 import { connect } from "react-redux";
 import { addSurgery } from "../../../actions/records/surgeryAction";
 import { PropTypes } from "prop-types";
-import AdditioningField from "../../AdditioningField";
+import AdditioningField from "../AdditioningField";
 import style from "../../../Css/records/Record.module.css";
+import { useParams } from "react-router";
 
 const AddSurgery = (props) => {
+  const { surgeryId } = useParams();
+
   const [form, setForm] = useState({
     name: "",
     doctorName: "",
@@ -41,7 +44,7 @@ const AddSurgery = (props) => {
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className={style.record_container_header}>
-              <span className={style.add_record_header}>Add Surgery</span>
+              <span className={style.add_record_header}>{props.header}</span>
             </div>
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">

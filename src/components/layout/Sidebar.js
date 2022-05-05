@@ -23,14 +23,14 @@ const Sidebar = () => {
       <div className="collapse" id="daily">
         <NavLink
           activeClassName="active-link"
-          to="/records/viewbloodp"
+          to="/records/bloodpreasure"
           className={style.a_section}
         >
           Blood pressure
         </NavLink>
         <NavLink
           activeClassName="active-link"
-          to="/records/viewglucose"
+          to="/records/glucose"
           className={style.a_section}
         >
           Glucose

@@ -69,14 +69,16 @@
   margin-top: 15.1px;
 }
 .profile .profile_form .edit_input .edit_label {
-  margin-bottom: 2px;
+  margin-bottom: 5px;
+  color: #2a7f82;
+  font-weight: bold;
 }
 
 .profile .profile_form .btn_edit {
   margin-top: 20px;
 }
 .profile .profile_form .btn_edit button {
-  background-color: #024959;
+  background-color: #307b8c;
   position: relative;
   color: white;
   transition: all 0.5s;

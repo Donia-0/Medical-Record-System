@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: #def2f3cf;
   border-radius: 0px 0px 15px 15px;
 }
 .add_btn button {
@@ -59,4 +59,10 @@
   width: 45%;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.add_record_form form input:focus,
+.add_record_form form textarea:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
 }

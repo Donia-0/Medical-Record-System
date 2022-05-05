@@ -7,6 +7,7 @@ import { PropTypes } from "prop-types";
 import AdditioningField from "../../AdditioningField";
 import NoteField from "../../NoteField";
 import style from "../../../Css/records/Record.module.css";
+import image from "../../../images/records/bloodpressure/bloodp.png";
 const AddExamination = (props) => {
   const [form, setForm] = useState({
     diagnosis: "",

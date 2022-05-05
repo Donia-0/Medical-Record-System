@@ -68,7 +68,7 @@ const Profile = (props) => {
             <span className={style.edit_switch_btn}>
               <label className="" style={{ backgroundColor: "none" }}>
                 <Switch
-                  onColor="#012e40"
+                  onColor="#307b8c"
                   offColor="#3ca6a6"
                   onChange={handleToggleChange}
                   checked={toggleChecked}

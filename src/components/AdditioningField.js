@@ -14,7 +14,7 @@ const AdditioningField = ({
   return (
     <div className={`row ${style.field}`}>
       <div className="col-lg-12 col-md-12 col-sm-12">
-        <label className={style.formlabel}>{labelName}: </label>
+        <label className={style.formlabel}>{labelName}</label>
       </div>
       <div className="col-lg-12 col-sm-12">
         <input

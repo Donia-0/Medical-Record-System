@@ -949,7 +949,11 @@ features
 
 .additions-container {
   height: calc(100vh - 61.7px);
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .add-prescription,
@@ -960,11 +964,15 @@ features
   background-color: whitesmoke; */
   width: 60%;
   /* margin: 25px auto; */
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
   transform: translate(-50%, -50%);
   /* background-color: whitesmoke;
+=======
+  transform: translate(-50%, -50%); */
+    /* background-color: whitesmoke;
     border-radius: 15px; */
 }
 
@@ -1496,6 +1504,7 @@ features
   margin-left: 5px;
 }
 
+<<<<<<< HEAD
 .view-prescription-btn .tooltiptext {
   visibility: hidden;
   width: 120px;
@@ -1529,3 +1538,9 @@ features
   visibility: visible;
   opacity: 1;
 }
+=======
+.child-height {
+  height: max-content;
+  margin: 20px 0px;
+}
+>>>>>>> d267bfa44f87bfd4bac0474d737e6e16ae645f26

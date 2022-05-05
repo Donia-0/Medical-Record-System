@@ -1001,7 +1001,11 @@ features
 
 .additions-container {
   height: calc(100vh - 61.7px);
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .add-prescription,
@@ -1012,10 +1016,10 @@ features
   background-color: whitesmoke; */
   width: 60%;
   /* margin: 25px auto; */
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
     /* background-color: whitesmoke;
     border-radius: 15px; */
 }
@@ -1540,4 +1544,9 @@ features
 
 .edit-delete-btns div {
   margin-left: 5px;
+}
+
+.child-height {
+  height: max-content;
+  margin: 20px 0px;
 }

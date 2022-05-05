@@ -48,7 +48,13 @@ const Addprescription = (props) => {
     props.prescriptionAdd(data);
   };
   return (
-    <div className="additions-container">
+    <div
+      className={
+        inputList.length > 1
+          ? "additions-container child-height"
+          : "additions-container"
+      }
+    >
       <div className="add-prescription">
         <div className="row prescripton-form">
           <div className="col-lg-12 col-md-12 col-sm-12">

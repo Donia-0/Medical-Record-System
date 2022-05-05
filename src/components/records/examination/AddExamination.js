@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Fields from "../Fields";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { connect } from "react-redux";
 import { addExamination } from "../../../actions/records/examinationAction";
 import { PropTypes } from "prop-types";
@@ -14,6 +16,9 @@ const AddExamination = (props) => {
     note: "",
   });
   const [errors, setErrors] = useState({});
+  useEffect(() => {
+    AOS.init();
+  });
   const onInputChange = (e) => {
     const value = e.target.value;
     setForm({
@@ -46,7 +51,16 @@ const AddExamination = (props) => {
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="add-examination-form">
-              <form className="form-group" onSubmit={onFormSubmit}>
+              <form
+                className="form-group"
+                // data-aos="flip-down"
+                // data-aos-duration="500"
+                data-aos="fade-right"
+                // data-aos="zoom-out"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+                onSubmit={onFormSubmit}
+              >
                 <AdditioningField
                   value={form.diagnosis}
                   onChange={onInputChange}

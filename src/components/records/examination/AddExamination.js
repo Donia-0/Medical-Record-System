@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { addExamination } from "../../../actions/records/examinationAction";
 import { PropTypes } from "prop-types";
 import classnames from "classnames";
+import AdditioningField from "../../AdditioningField";
+import NoteField from "../../NoteField";
 
 const AddExamination = (props) => {
   const [form, setForm] = useState({
@@ -34,68 +36,53 @@ const AddExamination = (props) => {
     setErrors(props.errors);
   }, [props.errors]);
   return (
-    <div className="add-examination">
-      <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="examination-container">
-            <span className="add-examination-header">Add Examination</span>
+    <div className="additions-container">
+      <div className="add-examination">
+        <div className="row">
+          <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className="examination-container">
+              <span className="add-examination-header">Add Examination</span>
+            </div>
           </div>
-        </div>
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="add-examination-form">
-            <form className="form-group" onSubmit={onFormSubmit}>
-              <Fields
-                value={form.diagnosis}
-                onChange={onInputChange}
-                name="diagnosis"
-                labelName="Diagnosis"
-                type="input"
-                placeholder="Add diagnosis"
-                err={errors.diagnosis}
-              />
-              <div className="row form-container">
-                <div className="formlabel col-lg-3">
-                  <label htmlFor="symptoms">Symptoms:</label>
+          <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className="add-examination-form">
+              <form className="form-group" onSubmit={onFormSubmit}>
+                <AdditioningField
+                  value={form.diagnosis}
+                  onChange={onInputChange}
+                  name="diagnosis"
+                  labelName="Diagnosis"
+                  type="input"
+                  placeholder="Add diagnosis"
+                  err={errors.diagnosis}
+                />
+                <NoteField
+                  labelName="Symptoms"
+                  value={form.symptoms}
+                  onChange={onInputChange}
+                  name="symptoms"
+                  id="symptoms"
+                  rows={3}
+                  placeholder="Add Symptoms... "
+                  err={errors.symptoms}
+                />
+                <NoteField
+                  labelName="Note"
+                  value={form.symptoms}
+                  onChange={onInputChange}
+                  name="note"
+                  id="note"
+                  rows={3}
+                  placeholder="Any notes !..."
+                  err={errors.note}
+                />
+                <div className="row">
+                  <div className="col-lg-12 add-btn">
+                    <button className="btn btn-primary mb-2">Add</button>
+                  </div>
                 </div>
-                <div className="col-lg-9">
-                  <textarea
-                    value={form.symptoms}
-                    onChange={onInputChange}
-                    name="symptoms"
-                    id="symptoms"
-                    className={classnames("form-control", {
-                      "is-invalid": errors.symptoms,
-                    })}
-                    rows={3}
-                    placeholder="Add Symptoms... "
-                  ></textarea>
-                  {errors.symptoms && (
-                    <div className="invalid-feedback">{errors.symptoms}</div>
-                  )}
-                </div>
-              </div>
-              <div className="row form-container">
-                <div className="formlabel col-lg-3">
-                  <label htmlFor="note">Note:</label>
-                </div>
-                <div className="col-lg-9">
-                  <textarea
-                    value={form.note}
-                    onChange={onInputChange}
-                    name="note"
-                    id="note"
-                    className="form-control"
-                    rows={3}
-                    placeholder="Any notes !... "
-                  ></textarea>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-lg-12 add-btn">
-                  <button className="btn btn-primary mb-2">Add</button>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>

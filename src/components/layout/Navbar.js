@@ -17,7 +17,7 @@ const Navbar = () => {
           </div>
         </a>
 
-        <div class="container-fluid">
+        {/* <div class="container-fluid">
           <form class="search">
             <input
               class="form-control"
@@ -26,7 +26,7 @@ const Navbar = () => {
               aria-label="Search"
             />
           </form>
-        </div>
+        </div> */}
 
         <button
           className="navbar-toggler collapsed"

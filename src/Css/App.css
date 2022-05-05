@@ -190,7 +190,8 @@
   padding-right: 8px;
 }
 .add-fixed {
-  height: 97vh;
+  /* height: 97vh; */
+  height: calc(100vh - 61.7px);
   width: 16.66666%;
   position: fixed;
   top: 61px;
@@ -491,18 +492,14 @@
   color: white;
 }
 .add-bloodp-gluc,
-.add-examination,
-.add-allergy,
-.add-surgery {
+.add-allergy {
   width: 70%;
   margin: 75px auto;
   background-color: whitesmoke;
 }
 
 .blood-gluc-form .bloodp-gluc-form,
-.add-examination-form,
-.allergy-form,
-.add-surgery-form {
+.allergy-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -510,9 +507,7 @@
 }
 
 .blood-gluc-form .form-group,
-.add-examination-form .form-group,
-.allergy-form .form-group,
-.add-surgery-form .form-group {
+.allergy-form .form-group {
   width: 45%;
 }
 
@@ -539,9 +534,6 @@
 }
 
 .blood-gluc-form .formlabel,
-.add-examination-form .formlabel,
-.prescription-view .formlabel,
-.add-surgery-form .formlabel,
 .requests-view .formlabel {
   display: flex;
   justify-content: start;
@@ -940,38 +932,65 @@ features
 }
 /* -==========================================addprescription ========================================*/
 
-.pres-container {
+.pres-container,
+.examination-container,
+.surgery-container {
   display: flex;
-  align-items: end;
-  height: 100px;
-  background-color: #3ea9ad;
-  border-bottom: 2px solid #2a7f82;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    border-radius: 15px 15px 0px 0px;
+    background-color: #3ea9ad;
 }
 
-.pres-header {
-  display: flex;
-  align-content: baseline;
+.pres-header,
+.add-examination-header,
+.add-surgery-header {
   font-weight: bold;
   color: white;
-  margin-left: 20px;
-  margin-bottom: 5px;
+  /* margin-left: 20px;
+  margin-bottom: 5px; */
   font-size: 25px;
 }
 
-.add-prescription {
-  width: 70%;
-  margin: 25px auto;
-  background-color: whitesmoke;
+.additions-container {
+  height: calc(100vh - 61.7px);
+  position: relative;
 }
 
-.prescripton-form .pres-form {
+.add-prescription,
+.add-examination,
+.add-surgery {
+  /* width: 70%;
+  margin: 25px auto;
+  background-color: whitesmoke; */
+  width: 60%;
+  /* margin: 25px auto; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    /* background-color: whitesmoke;
+    border-radius: 15px; */
+}
+
+.prescripton-form .pres-form,
+.add-examination .add-examination-form,
+.add-surgery .add-surgery-form {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: whitesmoke;
+  border-radius: 0px 0px 15px 15px;
   /* height: 100%; */
+  /* width: 90%;
+  margin: auto; */
+
 }
 
-.prescripton-form .form-group {
+.prescripton-form .form-group,
+.add-examination .add-examination-form .form-group,
+.add-surgery .add-surgery-form .form-group {
   width: 45%;
   margin-top: 30px;
 }
@@ -981,19 +1000,24 @@ features
   justify-content: center;
 }
 
-.prescripton-form .form-control {
+/* .prescripton-form .form-control {
   width: 80%;
-}
+} */
 
 .prescripton-form .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
 
-.prescripton-form .formlabel {
+.prescripton-form .formlabel,
+.add-examination .add-examination-form .formlabel,
+.add-surgery .add-surgery-form .formlabel {
+  /* display: flex;
+  justify-content: start; */
+  /* align-items: center; */
   display: flex;
   justify-content: start;
-  /* align-items: center; */
+  margin-bottom: 10px;
 }
 
 .prescripton-form label {
@@ -1002,28 +1026,37 @@ features
 }
 
 .prescripton-form .add-btns {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.prescripton-form .add-btns .add-remove-pres {
+/* .prescripton-form .add-btns .add-remove-pres {
   display: flex;
   justify-content: end;
   position: relative;
   left: 15%;
   transform: translateX(-30%);
-}
+} */
 
 .prescripton-form .add-btns .add-remove-pres button {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.pres-form .form-group .submit-pres {
-  display: flex;
+.pres-form .form-group .submit-pres,
+.add-examination .add-examination-form .add-btn,
+.add-surgery .add-surgery-form .add-btn {
+  /* display: flex;
   justify-content: end;
   position: relative;
   left: 15%;
   transform: translateX(-30%);
-  margin-bottom: 5px;
+  margin-bottom: 5px; */
+  margin-bottom: 30px;
+}
+
+.pres-form .form-group .submit-pres button,
+.add-examination .add-examination-form .add-btn button,
+.add-surgery .add-surgery-form .add-btn button {
+  width: 100%;
 }
 
 .prescripton-form button,
@@ -1262,8 +1295,7 @@ features
   padding-bottom: 10px;
 }
 
-.examination-container,
-.surgery-container {
+/* .surgery-container {
   display: flex;
   align-items: end;
   height: 100px;
@@ -1271,7 +1303,6 @@ features
   border-bottom: 2px solid #2a7f82;
 }
 
-.add-examination-header,
 .add-surgery-header {
   display: flex;
   align-content: baseline;
@@ -1280,7 +1311,7 @@ features
   margin-left: 20px;
   margin-bottom: 5px;
   font-size: 25px;
-}
+} */
 
 .add-examination .form-group,
 .add-surgery .form-group {
@@ -1292,15 +1323,14 @@ features
   width: 100%;
 }
 
-.add-examination-form .add-btn,
-.add-surgery-form .add-btn {
+/* .add-surgery-form .add-btn {
   display: flex;
   justify-content: end;
   position: relative;
   left: 30%;
   transform: translateX(-30%);
   margin-bottom: 20px;
-}
+} */
 
 .view-prescription-btn button,
 .view-prescription-btn button:hover {

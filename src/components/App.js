@@ -33,6 +33,7 @@ import "../Css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
+import PrescriptionView from "./records/PrescriptionView";
 
 //check for token
 if (localStorage.token) {
@@ -85,6 +86,7 @@ const App = () => {
               <Route path="editexamination" element={<EditExamination />} />
               <Route path="addprescription" element={<Addprescription />} />
               <Route path="Viewbloodp" element={<Viewbloodp />} />
+              <Route path="viewprescription" element={<PrescriptionView />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
               <Route path="addsurgery" element={<AddSurgery />} />
               <Route path="surgery" element={<Surgery />} />

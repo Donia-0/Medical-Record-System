@@ -188,7 +188,8 @@
   padding-right: 8px;
 }
 .add-fixed {
-  height: 97vh;
+  /* height: 97vh; */
+  height: calc(100vh - 61.7px);
   width: 16.66666%;
   position: fixed;
   top: 61px;
@@ -358,6 +359,11 @@
     left: 28% !important;
     font-size: 25px !important;
   }
+  .edit-examination-header {
+    top: 66% !important;
+    left: 2% !important;
+    font-size: 25px !important;
+  }
   .bp-img,
   .gluc-img {
     top: 48% !important;
@@ -391,6 +397,11 @@
     left: 26% !important;
     font-size: 22px !important;
   }
+  .edit-examination-header {
+    top: 66% !important;
+    left: 2% !important;
+    font-size: 25px !important;
+  }
   .bp-img,
   .gluc-img,
   .allergy-img {
@@ -409,10 +420,13 @@
   }
 
   .blood-gluc-form .form-group,
-  .allergy-form .form-control {
+  .allergy-form .form-group,
+  .edit-examination-form .form-group {
     left: 15% !important;
   }
-  .blood-gluc-form .add-btn {
+
+  .blood-gluc-form .add-btn,
+  .edit-examination-form .add-btn {
     left: 10% !important;
   }
 }
@@ -427,7 +441,8 @@
   .gluc-img img {
     height: 65% !important;
   }
-  .blood-gluc-form .form-control {
+  .blood-gluc-form .form-control,
+  .edit-examination-form .form-control {
     width: 100% !important;
   }
   .bp-header,
@@ -436,7 +451,13 @@
     left: 31% !important;
     font-size: 20px !important;
   }
-  .blood-gluc-form .add-btn {
+  .edit-examination-header {
+    top: 66% !important;
+    left: 2% !important;
+    font-size: 25px !important;
+  }
+  .blood-gluc-form .add-btn,
+  .edit-examination-form .add-btn {
     left: 30% !important;
   }
 }
@@ -453,7 +474,8 @@
 
 .bp-img-container,
 .gluc-img-container,
-.allergy-img-container {
+.allergy-img-container,
+.edit-examination-container {
   height: 110px;
   background-color: #3ea9ad;
   border-bottom: 2px solid #2a7f82;
@@ -484,19 +506,27 @@
   font-weight: bold;
   color: white;
 }
+.edit-examination-header {
+  position: absolute;
+  top: 66% !important;
+  left: 2% !important;
+  font-size: 25px !important;
+  font-weight: bold;
+  color: white;
+}
 .add-bloodp-gluc,
-.add-examination,
 .add-allergy,
-.add-surgery {
+.edit-examination {
   width: 70%;
   margin: 75px auto;
   background-color: whitesmoke;
 }
 
 .blood-gluc-form .bloodp-gluc-form,
-.add-examination-form,
 .allergy-form,
-.add-surgery-form {
+.allergy-form,
+.edit-examination-form,
+.edit-exam-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -504,9 +534,9 @@
 }
 
 .blood-gluc-form .form-group,
-.add-examination-form .form-group,
 .allergy-form .form-group,
-.add-surgery-form .form-group {
+.allergy-form .form-group,
+.edit-examination-form .form-group {
   width: 45%;
 }
 
@@ -518,6 +548,7 @@
 
 .blood-gluc-form .form-control,
 .allergy-form .form-control,
+.edit-examination-form .form-control,
 .blood-gluc-form .form-select {
   width: 80%;
 }
@@ -527,16 +558,17 @@
 .add-examination-form .form-control:focus,
 .prescription-view .form-control:focus,
 .allergy-form .form-control:focus,
-.add-surgery-form .form-control:focus {
+.add-surgery-form .form-control:focus,
+.edit-examination-form .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
 
 .blood-gluc-form .formlabel,
-.add-examination-form .formlabel,
+.requests-view .formlabel,
 .prescription-view .formlabel,
-.add-surgery-form .formlabel,
-.requests-view .formlabel {
+.requests-view .formlabel,
+.edit-examination-form .form-label {
   display: flex;
   justify-content: start;
   /* align-items: center; */
@@ -547,7 +579,8 @@
 .prescription-view .formlabel label,
 .allergy-form label,
 .add-surgery-form label,
-.requests-view .formlabel label {
+.requests-view .formlabel label,
+.edit-examination-form label {
   color: #2a7f82;
   font-weight: bold;
 }
@@ -564,7 +597,14 @@
   transform: translateX(-30%);
   margin-bottom: 20px;
 }
-
+.edit-examination-form .add-btn {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  left: 45%;
+  transform: translateX(-30%);
+  margin-bottom: 20px;
+}
 .blood-gluc-form button,
 .blood-gluc-form button:hover,
 .add-examination-form button,
@@ -572,14 +612,16 @@
 .allergy-form button,
 .allergy-form button:hover,
 .add-surgery-form button,
-.add-surgery-form button:hover {
+.add-surgery-form button:hover,
+.edit-examination-form button:hover {
   background-color: #2a7f82;
   color: #def2f3;
   border-color: #2a7f82;
 }
 /* addglucose */
 .blood-gluc-form .form-group,
-.allergy-form .form-group {
+.allergy-form .form-group,
+.edit-examination-form .form-group {
   position: relative;
   left: 18%;
   margin-top: 35px;
@@ -640,6 +682,7 @@
 .has-search .form-control {
   padding-left: 2.375rem;
 }
+
 .has-search .form-control-navbar {
   position: absolute;
   z-index: 2;
@@ -650,6 +693,15 @@
   text-align: center;
   pointer-events: none;
   color: #aaa;
+}
+.navbar .navbar-brand span {
+  color: #def2f3;
+  font-weight: bold;
+}
+
+.search {
+  width: 220px;
+  margin-right: 15px;
 }
 /*=============================================================== Donia-css ================================================================ */
 /* welcomearea */
@@ -874,38 +926,64 @@ features
 }
 /* -==========================================addprescription ========================================*/
 
-.pres-container {
-  display: flex;
-  align-items: end;
-  height: 100px;
-  background-color: #3ea9ad;
-  border-bottom: 2px solid #2a7f82;
-}
-
-.pres-header {
-  display: flex;
-  align-content: baseline;
-  font-weight: bold;
-  color: white;
-  margin-left: 20px;
-  margin-bottom: 5px;
-  font-size: 25px;
-}
-
-.add-prescription {
-  width: 70%;
-  margin: 25px auto;
-  background-color: whitesmoke;
-}
-
-.prescripton-form .pres-form {
+.pres-container,
+.examination-container,
+.surgery-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100%; */
+  height: 55px;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #3ea9ad;
 }
 
-.prescripton-form .form-group {
+.pres-header,
+.add-examination-header,
+.add-surgery-header {
+  font-weight: bold;
+  color: white;
+  /* margin-left: 20px;
+  margin-bottom: 5px; */
+  font-size: 25px;
+}
+
+.additions-container {
+  height: calc(100vh - 61.7px);
+  position: relative;
+}
+
+.add-prescription,
+.add-examination,
+.add-surgery {
+  /* width: 70%;
+  margin: 25px auto;
+  background-color: whitesmoke; */
+  width: 60%;
+  /* margin: 25px auto; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: whitesmoke;
+    border-radius: 15px; */
+}
+
+.prescripton-form .pres-form,
+.add-examination .add-examination-form,
+.add-surgery .add-surgery-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 0px 0px 15px 15px;
+  /* height: 100%; */
+  /* width: 90%;
+  margin: auto; */
+}
+
+.prescripton-form .form-group,
+.add-examination .add-examination-form .form-group,
+.add-surgery .add-surgery-form .form-group {
   width: 45%;
   margin-top: 30px;
 }
@@ -915,19 +993,24 @@ features
   justify-content: center;
 }
 
-.prescripton-form .form-control {
+/* .prescripton-form .form-control {
   width: 80%;
-}
+} */
 
 .prescripton-form .form-control:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
 
-.prescripton-form .formlabel {
+.prescripton-form .formlabel,
+.add-examination .add-examination-form .formlabel,
+.add-surgery .add-surgery-form .formlabel {
+  /* display: flex;
+  justify-content: start; */
+  /* align-items: center; */
   display: flex;
   justify-content: start;
-  /* align-items: center; */
+  margin-bottom: 10px;
 }
 
 .prescripton-form label {
@@ -936,28 +1019,37 @@ features
 }
 
 .prescripton-form .add-btns {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.prescripton-form .add-btns .add-remove-pres {
+/* .prescripton-form .add-btns .add-remove-pres {
   display: flex;
   justify-content: end;
   position: relative;
   left: 15%;
   transform: translateX(-30%);
-}
+} */
 
 .prescripton-form .add-btns .add-remove-pres button {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.pres-form .form-group .submit-pres {
-  display: flex;
+.pres-form .form-group .submit-pres,
+.add-examination .add-examination-form .add-btn,
+.add-surgery .add-surgery-form .add-btn {
+  /* display: flex;
   justify-content: end;
   position: relative;
   left: 15%;
   transform: translateX(-30%);
-  margin-bottom: 5px;
+  margin-bottom: 5px; */
+  margin-bottom: 30px;
+}
+
+.pres-form .form-group .submit-pres button,
+.add-examination .add-examination-form .add-btn button,
+.add-surgery .add-surgery-form .add-btn button {
+  width: 100%;
 }
 
 .prescripton-form button,
@@ -1164,12 +1256,15 @@ features
 .popup-close,
 .add-examination-btn a,
 .add-surgery-btn a,
-.edit-delete-btns .edit-btn button {
+.edit-exam-form button {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
   /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
 }
-
+.edit-delete-btns .edit-btn a {
+  background-color: #2a7f82 !important;
+  border-color: #2a7f82 !important;
+}
 .examination .examination-filter .examination-filer-button button:focus,
 .popup-close:focus,
 .add-examination-form .add-btn button:focus,
@@ -1196,8 +1291,7 @@ features
   padding-bottom: 10px;
 }
 
-.examination-container,
-.surgery-container {
+/* .surgery-container {
   display: flex;
   align-items: end;
   height: 100px;
@@ -1205,7 +1299,6 @@ features
   border-bottom: 2px solid #2a7f82;
 }
 
-.add-examination-header,
 .add-surgery-header {
   display: flex;
   align-content: baseline;
@@ -1214,7 +1307,7 @@ features
   margin-left: 20px;
   margin-bottom: 5px;
   font-size: 25px;
-}
+} */
 
 .add-examination .form-group,
 .add-surgery .form-group {
@@ -1226,15 +1319,14 @@ features
   width: 100%;
 }
 
-.add-examination-form .add-btn,
-.add-surgery-form .add-btn {
+/* .add-surgery-form .add-btn {
   display: flex;
   justify-content: end;
   position: relative;
   left: 30%;
   transform: translateX(-30%);
   margin-bottom: 20px;
-}
+} */
 
 .view-prescription-btn button,
 .view-prescription-btn button:hover {

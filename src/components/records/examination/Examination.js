@@ -5,6 +5,8 @@ import ExaminationTable from "../ExaminationTable";
 import FilterModal from "./../FilterModal";
 import data from "../data";
 import { Link } from "react-router-dom";
+import Addprescription from "./Addprescription";
+import EditExamination from "./EditExamination";
 
 const Examination = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -42,7 +44,7 @@ const Examination = () => {
           <div className="col-lg-12">
             <div className="add-examination-btn">
               <Link
-                to="/records/addexamination"
+                to="./addExamination"
                 type="button"
                 className="btn btn-primary"
               >

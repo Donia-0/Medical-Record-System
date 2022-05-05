@@ -1,0 +1,14 @@
+.Sidebar_sidenav__qwHpy .active {
+  opacity: 100%;
+  color: #2a7f82 !important;
+  font-weight: bold;
+  background-color: white !important;
+  border-radius: 8px;
+  margin-left: 6px;
+}
+
+.Auth_auth_link__dotrO .active {
+  border-bottom: 2px solid #2a7f82 !important;
+  color: #2a7f82 !important;
+  padding-bottom: 2px;
+}

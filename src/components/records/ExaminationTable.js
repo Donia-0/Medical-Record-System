@@ -8,6 +8,9 @@ import RequestAccessPatient from "../RequestAccessPatient";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getExaminations } from "../../actions/records/examinationAction";
+import EditExamination from "./examination/EditExamination";
+import { Link } from "react-router-dom";
+
 const ExaminationTable = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const [editShow, setEditShow] = React.useState(false);
@@ -86,7 +89,14 @@ const ExaminationTable = (props) => {
         return (
           <div className="edit-delete-btns">
             <div className="edit-btn">
-              <button
+              <Link
+                to="/records/editExamination"
+                type="button"
+                className="btn btn-primary"
+              >
+                <FontAwesomeIcon icon={faEdit} />
+              </Link>
+              {/* <button
                 type="button"
                 className="btn btn-primary"
                 onClick={() => {
@@ -97,7 +107,7 @@ const ExaminationTable = (props) => {
                 <FontAwesomeIcon icon={faEdit} />
               </button>
               {row.showModal ? (
-                <RequestAccessPatient
+                <EditExamination
                   show={editShow}
                   onHide={() => {
                     row.showModal = false;
@@ -105,7 +115,7 @@ const ExaminationTable = (props) => {
                     setEditShow(false);
                   }}
                 />
-              ) : null}
+              ) : null} */}
             </div>
             <div className="delete-btn">
               <button

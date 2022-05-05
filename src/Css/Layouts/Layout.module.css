@@ -28,6 +28,6 @@
   width: 16.66666%;
   position: fixed;
   top: 61px;
-  background-color: #024959;
+  background: linear-gradient(to bottom, #012e40, #3ca6a6);
   padding-top: 10px;
 }

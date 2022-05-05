@@ -4,7 +4,6 @@
   text-decoration: none;
   font-size: 20px;
   color: #f1f1f1;
-  opacity: 0.7;
   display: block;
   border: none;
   background: none;
@@ -15,12 +14,12 @@
   position: relative;
   transition: all 500ms;
 }
-.sidenav a:hover,
-.dropdown_btn:hover,
-.sidenav .active {
-  opacity: 100%;
-  color: white !important;
-  background-color: #026773 !important;
+.sidenav a:hover {
+  color: #2a7f82 !important;
+  font-weight: bold;
+  background-color: white !important;
+  border-radius: 8px;
+  margin-left: 6px;
 }
 .sidenav .a_section::after,
 .dropdown_btn::after {

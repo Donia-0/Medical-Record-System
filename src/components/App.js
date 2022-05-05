@@ -27,12 +27,13 @@ import Admin from "./Admin/Admin";
 import AddSurgery from "./records/surgery/AddSurgery";
 import Surgery from "./records/surgery/Surgery";
 import BloodChart from "./records/bloodPressure/BloodChart";
+import EditExamination from "./records/examination/EditExamination";
+import "../Css/ActiveClass.css";
 import "../Css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
-import Search from "./user/Search";
-import TestHu from "./user/TestHu";
+
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -67,14 +68,17 @@ const App = () => {
             </Route>
             <Route path="/user" element={<Layout />}>
               <Route path="profile" element={<Profile />} />
-              <Route path="test/:nationalId" element={<TestHu />} />
             </Route>
             <Route path="/records" element={<Layout />}>
               <Route path="bloodpreasure" element={<BloodPreasure />} />
               <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
               <Route path="glucose" element={<GlucoseMeasure />} />
               <Route path="examination" element={<Examination />} />
-              <Route path="addexamination" element={<AddExamination />} />
+              <Route
+                path="examination/addExamination"
+                element={<AddExamination />}
+              />
+              <Route path="editexamination" element={<EditExamination />} />
               <Route path="addprescription" element={<Addprescription />} />
               <Route path="Viewbloodp" element={<Viewbloodp />} />
               <Route path="Viewglucose" element={<Viewglucose />} />

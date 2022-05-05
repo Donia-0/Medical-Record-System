@@ -110,13 +110,13 @@
 .authentication {
   padding: 2px;
 }
-.auth_link .active {
-  border-bottom: 2px solid #2a7f82 !important;
-  color: #2a7f82 !important;
-  padding-bottom: 2px;
-}
 
 .auth_link a {
+  text-decoration: none;
+  color: #3ea9ad !important;
+  font-weight: bold;
+}
+.auth_link a:hover {
   text-decoration: none;
   color: #3ea9ad !important;
   font-weight: bold;
@@ -127,9 +127,6 @@
   border-color: #3ea9ad !important;
   color: white !important;
   text-align: right;
-}
-.btns_auth_steps:hover {
-  color: white;
 }
 
 .welcome_div {

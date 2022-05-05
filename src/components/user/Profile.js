@@ -8,7 +8,10 @@ import Switch from "react-switch";
 import ProfileEditInput from "./ProfileEditInput";
 import dateFormat from "../../utils/dateFormat";
 import style from "../../Css/User/Profile.module.css";
+import ChangePassword from "./ChangePassword";
 const Profile = (props) => {
+  const [modalShow, setModalShow] = React.useState(false);
+
   const [form, setFrom] = useState({
     name: "",
     email: "",
@@ -144,6 +147,15 @@ const Profile = (props) => {
     );
   }
   return <div className={style.profile}>{profileContent}</div>;
+  // return (
+  //   <div className={style.profile}>
+  //     <button className="btn-primary" onClick={() => setModalShow(true)}>
+  //       Change Password
+  //     </button>
+
+  //     <ChangePassword show={modalShow} onHide={() => setModalShow(false)} />
+  //   </div>
+  // );
 };
 
 Profile.prototypes = {

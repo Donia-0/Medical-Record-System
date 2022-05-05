@@ -1,7 +1,15 @@
 import React from "react";
 import style from "../../Css/User/Profile.module.css";
 
-const ProfileEditInput = ({ type, labelName, labelFor, name, value, edit }) => {
+const ProfileEditInput = ({
+  type,
+  labelName,
+  labelFor,
+  name,
+  value,
+  edit,
+  placeholder,
+}) => {
   return (
     <div className={style.edit_input}>
       <label className={style.edit_label} htmlFor={labelFor}>
@@ -13,6 +21,7 @@ const ProfileEditInput = ({ type, labelName, labelFor, name, value, edit }) => {
         value={value}
         className="input form-control"
         disabled={edit === false ? true : ""}
+        placeholder={placeholder}
       />
     </div>
   );

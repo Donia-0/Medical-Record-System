@@ -959,21 +959,7 @@ features
 .add-prescription,
 .add-examination,
 .add-surgery {
-  /* width: 70%;
-  margin: 25px auto;
-  background-color: whitesmoke; */
   width: 60%;
-  /* margin: 25px auto; */
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-<<<<<<< HEAD
-  transform: translate(-50%, -50%);
-  /* background-color: whitesmoke;
-=======
-  transform: translate(-50%, -50%); */
-    /* background-color: whitesmoke;
-    border-radius: 15px; */
 }
 
 .prescripton-form .pres-form,
@@ -1504,7 +1490,6 @@ features
   margin-left: 5px;
 }
 
-<<<<<<< HEAD
 .view-prescription-btn .tooltiptext {
   visibility: hidden;
   width: 120px;
@@ -1538,9 +1523,7 @@ features
   visibility: visible;
   opacity: 1;
 }
-=======
 .child-height {
   height: max-content;
   margin: 20px 0px;
 }
->>>>>>> d267bfa44f87bfd4bac0474d737e6e16ae645f26

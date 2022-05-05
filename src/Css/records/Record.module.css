@@ -1,0 +1,62 @@
+.add_record_form_container {
+  height: calc(100vh - 61.7px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.add_record {
+  width: 60%;
+}
+.record_container_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #307b8c;
+  position: relative;
+}
+.add_record_header {
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+}
+
+.add_record_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 0px 0px 15px 15px;
+}
+.add_btn button {
+  width: 100%;
+  background-color: #307b8c;
+  color: #def2f3;
+  border-color: #307b8c;
+  transition: all 1s;
+  font-weight: bold;
+}
+.add_btn button:hover {
+  background-color: white;
+  color: #2a7f82;
+  border-color: #3ea9ad;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+.field .formlabel {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 10px;
+  color: #2a7f82;
+  font-weight: bold;
+}
+
+.add_record_form form {
+  width: 45%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

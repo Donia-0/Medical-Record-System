@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-
+import style from "../Css/records/Record.module.css";
 const AdditioningField = ({
   labelName,
   placeholder,
@@ -12,9 +12,9 @@ const AdditioningField = ({
   rows,
 }) => {
   return (
-    <div className="row form-container">
-      <div className="formlabel col-lg-12">
-        <label htmlFor={id}>{labelName}:</label>
+    <div className={`row ${style.field}`}>
+      <div className="col-lg-12">
+        <label className={style.formlabel}>{labelName}: </label>
       </div>
       <div className="col-lg-12">
         <textarea

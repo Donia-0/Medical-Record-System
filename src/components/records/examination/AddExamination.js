@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Fields from "../Fields";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { connect } from "react-redux";
 import { addExamination } from "../../../actions/records/examinationAction";
 import { PropTypes } from "prop-types";
-import classnames from "classnames";
 import AdditioningField from "../../AdditioningField";
 import NoteField from "../../NoteField";
-
+import style from "../../../Css/records/Record.module.css";
 const AddExamination = (props) => {
   const [form, setForm] = useState({
     diagnosis: "",
@@ -41,22 +39,19 @@ const AddExamination = (props) => {
     setErrors(props.errors);
   }, [props.errors]);
   return (
-    <div className="additions-container">
-      <div className="add-examination">
+    <div className={style.add_record_form_container}>
+      <div className={style.add_record}>
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
-            <div className="examination-container">
-              <span className="add-examination-header">Add Examination</span>
+            <div className={style.record_container_header}>
+              <span className={style.add_record_header}>Add Examination</span>
             </div>
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">
-            <div className="add-examination-form">
+            <div className={style.add_record_form}>
               <form
                 className="form-group"
-                // data-aos="flip-down"
-                // data-aos-duration="500"
                 data-aos="fade-right"
-                // data-aos="zoom-out"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="1000"
                 onSubmit={onFormSubmit}
@@ -91,8 +86,10 @@ const AddExamination = (props) => {
                   err={errors.note}
                 />
                 <div className="row">
-                  <div className="col-lg-12 add-btn">
-                    <button className="btn btn-primary mb-2">Add</button>
+                  <div className="col-lg-12">
+                    <div className={style.add_btn}>
+                      <button className="btn btn-primary mb-2">Submit</button>
+                    </div>
                   </div>
                 </div>
               </form>

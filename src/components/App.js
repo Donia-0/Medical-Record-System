@@ -78,8 +78,6 @@ const App = () => {
               <Route path="addprescription" element={<Addprescription />} />
               <Route path="Viewbloodp" element={<Viewbloodp />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
-              <Route path="allergy" element={<AddAllergy />} />
-              <Route path="viewallergy" element={<Allergyview />} />
               <Route path="addsurgery" element={<AddSurgery />} />
               <Route path="surgery" element={<Surgery />} />
               <Route path="graph">

@@ -7,7 +7,7 @@ import { getCurrentProfile } from "./../../actions/profileAction";
 import Switch from "react-switch";
 import ProfileEditInput from "./ProfileEditInput";
 import dateFormat from "../../utils/dateFormat";
-
+import style from "../../Css/User/Profile.module.css";
 const Profile = (props) => {
   const [form, setFrom] = useState({
     name: "",
@@ -51,28 +51,31 @@ const Profile = (props) => {
   } else if (profile !== null) {
     profileContent = (
       <div>
-        <div className="profile-img">
-          <span className="profile-span-img">
+        <div className={style.profile_img}>
+          <span className={style.profile_span_img}>
             <img src={form.gender === "female" ? female : male} />
           </span>
-          <span className="profile-span-name">{form.name}</span>
+          <span className={style.profile_span_name}>{form.name}</span>
           {profile.myProfile.role === 1 ? (
-            <span className="profile-span-spec"> / {form.specialization}</span>
+            <span className={style.profile_span_spec}>
+              {" "}
+              / {form.specialization}
+            </span>
           ) : null}
         </div>
-        <div className="profile-info">
-          <div className="profile-form">
-            <span className="edit-switch-btn">
+        <div className={style.profile_info}>
+          <div className={style.profile_form}>
+            <span className={style.edit_switch_btn}>
               <label className="" style={{ backgroundColor: "none" }}>
                 <Switch
-                  onColor="#3ea9ad"
-                  offColor="#2a7f82"
+                  onColor="#012e40"
+                  offColor="#3ca6a6"
                   onChange={handleToggleChange}
                   checked={toggleChecked}
                 />
               </label>
             </span>
-            <span className="edit-switch-note">Switch To Edit</span>
+            <span className={style.edit_switch_note}>Switch To Edit</span>
             <form action="">
               <div className="row">
                 <div className="col-lg-12 col-md-8 col-sm-12">
@@ -116,18 +119,18 @@ const Profile = (props) => {
                   />
                 </div>
                 <div className="col-lg-12 col-md-8 col-sm-12">
-                  <div className="row btn-edit">
+                  <div className={`row ${style.btn_edit}`}>
                     <div className="col-lg-6">
-                      <div className="btn-edit-change-password">
+                      <div className={style.btn_edit_change_password}>
                         {edit === true ? (
                           <button className="btn">Change Password</button>
                         ) : null}
                       </div>
                     </div>
                     <div className="col-lg-6">
-                      <div className="btn-edit-save">
+                      <div className={style.btn_edit_save}>
                         {edit === true ? (
-                          <button className="btn ">Save</button>
+                          <button className="btn">Save</button>
                         ) : null}
                       </div>
                     </div>
@@ -140,7 +143,7 @@ const Profile = (props) => {
       </div>
     );
   }
-  return <div className="profile">{profileContent}</div>;
+  return <div className={style.profile}>{profileContent}</div>;
 };
 
 Profile.prototypes = {

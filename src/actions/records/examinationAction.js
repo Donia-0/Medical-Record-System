@@ -1,5 +1,10 @@
 import axios from "axios";
-import { GET_ERRORS, ADD_EXAMINATION } from "./../types";
+import {
+  GET_ERRORS,
+  ADD_EXAMINATION,
+  LOADING,
+  GET_EXAMINATION,
+} from "./../types";
 import { toast } from "react-toastify";
 toast.configure();
 export const addExamination = (userData) => async (dispatch) => {
@@ -23,4 +28,19 @@ export const addExamination = (userData) => async (dispatch) => {
       payload: error.response.data.errors,
     });
   }
+};
+
+export const getExaminations = () => async (dispatch) => {
+  dispatch({
+    type: LOADING,
+  });
+  try {
+    const response = await axios.get(
+      "http://localhost:5000/records/examinations"
+    );
+    dispatch({
+      type: GET_EXAMINATION,
+      payload: response.data,
+    });
+  } catch (error) {}
 };

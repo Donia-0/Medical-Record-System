@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCaretDown, faSort } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "./Sidebar";
-import Profile from "../user/Profile";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import Loading from "../Loading";
-import { useSpring } from "react-spring";
+import style from "../../Css/Layouts/Layout.module.css";
+import common from "../../Css/Common.module.css";
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -36,19 +35,19 @@ const Layout = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="">
+    <div>
       {load ? (
         <Loading loading={load} />
       ) : (
-        <div className="layout">
+        <div className={style.layout}>
           <Navbar />
           <div className="row">
             <div
-              className={
+              className={`col-lg-6 col-md-12 col-sm-3 ${
                 windowDimensions.width > 995
-                  ? "col-lg-6 col-md-12 col-sm-3 dis-none align-right "
-                  : "col-lg-6 col-md-12 col-sm-3 align-right "
-              }
+                  ? `${common.dis_none} ${style.alin_right}`
+                  : `${style.alin_right}`
+              }`}
             >
               <input
                 type="text"
@@ -57,7 +56,7 @@ const Layout = () => {
                 placeholder="Search Term"
               />
               <button
-                className="div-toggler"
+                className={style.div_toggler}
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#sidebar"
@@ -65,7 +64,7 @@ const Layout = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span className="btn-toggle">
+                <span className={style.btn_toggle}>
                   <FontAwesomeIcon icon={faSort} />
                 </span>
               </button>
@@ -74,23 +73,22 @@ const Layout = () => {
           <div className="row">
             <div className="col-lg-2 col-md-6 col-sm-6">
               <div
-                className={
+                className={`${
                   windowDimensions.width < 995
-                    ? "sidebar collapse remove-fixed"
-                    : "sidebar add-fixed"
-                }
+                    ? `collapse ${style.remove_fixed}`
+                    : `${style.sidenav}`
+                }`}
                 id="sidebar"
               >
                 <Sidebar />
               </div>
             </div>
             <div className="col-lg-10 col-md-12 col-sm-12">
-              <div className="profile-content">
+              <div className="layout-content">
                 <Outlet />
               </div>
             </div>
           </div>
-          {/* <Footer /> */}
         </div>
       )}
     </div>

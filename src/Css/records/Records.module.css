@@ -1,0 +1,92 @@
+.record_img_container {
+  height: 110px;
+  background-color: #3ea9ad;
+  border-bottom: 2px solid #2a7f82;
+  position: relative;
+  margin: inherit;
+}
+
+.record_img {
+  position: absolute;
+  top: 48%;
+  left: 13%;
+  height: 100%;
+}
+
+.record_img_container .record_img img {
+  height: 85%;
+}
+.record_header {
+  position: absolute;
+  top: 65%;
+  left: 28%;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+}
+.add_record {
+  width: 70%;
+  margin: 75px auto;
+  background-color: whitesmoke;
+}
+
+.record_form form {
+  width: 45%;
+}
+
+.form_container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.record_form textarea,
+.record_form input,
+.record_form select {
+  width: 80%;
+}
+
+.record_form input:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}
+
+.record_form .formlabel {
+  display: flex;
+  justify-content: start;
+}
+
+.record_form label {
+  color: #2a7f82;
+  font-weight: bold;
+}
+
+.record_form {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.record_form button,
+.record_form button:hover {
+  background-color: #2a7f82;
+  color: #def2f3;
+  border-color: #2a7f82;
+}
+/* addglucose */
+.record_form form {
+  position: relative;
+  left: 18%;
+  margin-top: 35px;
+  transform: translateX(-30%);
+}
+
+.record_form .add_btn {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  left: 15%;
+  transform: translateX(-30%);
+  margin-bottom: 20px;
+}

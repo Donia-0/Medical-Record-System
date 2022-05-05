@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addBloodPressure } from "./../../../actions/records/bloodPressureAction";
 import moment from "moment-timezone";
+import style from "../../../Css/records/Records.module.css";
 const BloodPreasure = (props) => {
   const [errors, setErrors] = useState({});
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -47,18 +48,18 @@ const BloodPreasure = (props) => {
   }, [props.errors]);
 
   return (
-    <div className="add-bloodp-gluc">
-      <div className="row blood-gluc-form">
+    <div className={style.add_record}>
+      <div className={`${style.record_form} row`}>
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="bp-img-container">
-            <span className="bp-header">Blood Preasure</span>
-            <div className="bp-img">
+          <div className={style.record_img_container}>
+            <span className={style.record_header}>Blood Preasure</span>
+            <div className={style.record_img}>
               <img src={bloodpreasure} />
             </div>
           </div>
         </div>
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="bloodp-gluc-form">
+          <div className={style.record_form}>
             <form className="form-group" onSubmit={onFormSubmit}>
               <Fields
                 value={form.systolic}
@@ -94,8 +95,8 @@ const BloodPreasure = (props) => {
                 labelName="Date"
                 type="datetime-local"
               />
-              <div className="row form-container">
-                <div className="formlabel col-lg-3">
+              <div className={`row ${style.form_container}`}>
+                <div className={`${style.formlabel} col-lg-3`}>
                   <label htmlFor="note">Note:</label>
                 </div>
                 <div className="col-lg-9">
@@ -111,7 +112,7 @@ const BloodPreasure = (props) => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-lg-12 add-btn">
+                <div className={`col-lg-12 ${style.add_btn}`}>
                   <button className="btn btn-primary mb-2">Add</button>
                 </div>
               </div>

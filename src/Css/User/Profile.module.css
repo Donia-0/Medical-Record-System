@@ -1,0 +1,97 @@
+.profile .profile_img {
+  height: 100px;
+  border-bottom: 1px solid black;
+  position: relative;
+  margin-bottom: 40px;
+}
+.profile_img .profile_span_img {
+  position: absolute;
+  bottom: -50px;
+  width: 10%;
+  background-color: white;
+  left: 180px;
+}
+.profile_img .profile_span_img img {
+  width: 100%;
+}
+.profile_img .profile_span_name {
+  position: absolute;
+  bottom: 0;
+  width: 10%;
+  left: 330px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 20%;
+  color: #2a7f82;
+}
+.profile_img .profile_span_spec {
+  position: absolute;
+  bottom: 0;
+  width: 10%;
+  left: 490px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 20%;
+  color: #3ea9ad;
+}
+.profile .profile_info {
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+  padding: 10px;
+}
+.profile .profile_info .profile_form {
+  width: 40%;
+  border: 2px solid #3ea9ad4f;
+  border-radius: 10px;
+  position: relative;
+}
+.profile .profile_info .profile_form .edit_switch_btn {
+  background-color: white;
+  position: absolute;
+  right: 20px;
+  top: -15px;
+}
+.profile .profile_info .profile_form .edit_switch_note {
+  background-color: white;
+  position: absolute;
+  right: 90px;
+  top: -15px;
+  color: rgb(158, 156, 156);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.profile .profile_form form {
+  margin: 40px 20px;
+}
+.profile .profile_form .edit_input {
+  margin-top: 15.1px;
+}
+.profile .profile_form .edit_input .edit_label {
+  margin-bottom: 2px;
+}
+
+.profile .profile_form .btn_edit {
+  margin-top: 20px;
+}
+.profile .profile_form .btn_edit button {
+  background-color: #024959;
+  position: relative;
+  color: white;
+  transition: all 0.5s;
+}
+.profile .profile_form .btn_edit button:focus {
+  box-shadow: 0 0 0 0.15rem #3ca6a6;
+}
+.profile .profile_form .btn_edit button:hover {
+  background-color: #3ca6a6;
+}
+.profile .profile_form .btn_edit .btn_edit_save {
+  text-align: end;
+}
+
+.profile .profile_form form input,
+.profile .profile_form form input:disabled {
+  transition: all 1s;
+}

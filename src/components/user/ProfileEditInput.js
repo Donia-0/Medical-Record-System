@@ -1,9 +1,10 @@
 import React from "react";
+import style from "../../Css/User/Profile.module.css";
 
 const ProfileEditInput = ({ type, labelName, labelFor, name, value, edit }) => {
   return (
-    <div className="edit-input">
-      <label className="edit-label" htmlFor={labelFor}>
+    <div className={style.edit_input}>
+      <label className={style.edit_label} htmlFor={labelFor}>
         {labelName}
       </label>
       <input

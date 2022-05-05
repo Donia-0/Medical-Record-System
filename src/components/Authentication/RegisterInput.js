@@ -1,18 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import style from "../../Css/Authentication/Auth.module.css";
 
 const RegisterInput = (props) => {
   return (
     <div>
       <div className="mb-4">
-        {/* <label htmlFor={props.labelFor} className="form-label">
-          <FontAwesomeIcon icon={props.icon} />
-          {props.labelName}
-        </label> */}
-        <div className="input-div">
+        <div className={style.input_div}>
           {props.isHasIcon === "yes" ? (
-            <FontAwesomeIcon icon={props.icon} />
+            <FontAwesomeIcon icon={props.icon} className={style.highlight} />
           ) : null}
           <input
             name={props.name}

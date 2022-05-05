@@ -12,7 +12,7 @@ export default combineReducers({
   errors: errorReducer,
   profile: profileReducer,
   bloodpressures: bloodpressureReducer,
-  newExamination: examinationReducer,
+  examination: examinationReducer,
   glucose: glucoseReducer,
   surgery: surgeryReducer,
 });

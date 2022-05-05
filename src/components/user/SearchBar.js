@@ -1,13 +1,12 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
-import isEmpty from "./../../validation/isEmpty";
-import PrescriptionView from "../records/PrescriptionView";
+import RequestAccessPatient from "../RequestAccessPatient";
+import style from "../../Css/Navbar.module.css";
 
 export default function SearchBar() {
   const [searchItem, setSearchItem] = React.useState("");
-  const [modalShow, setModalShow] = React.useState(false);
+  const [SearchModelShow, setSearchModelShow] = React.useState(false);
 
   const onInputChane = (e) => {
     setSearchItem(e.target.value);
@@ -17,27 +16,27 @@ export default function SearchBar() {
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    setModalShow(true);
+    setSearchModelShow(true);
   };
   return (
-    <div className="search-user">
+    <div className={style.search_user}>
       <form onSubmit={onFormSubmit}>
-        <div class="form-group has-search">
-          <span class="fa fa-search form-control-navbar">
+        <div className={`form-group ${style.has_search}`}>
+          <span className={`fa fa-search ${style.form_control_navbar}`}>
             <FontAwesomeIcon icon={faSearch} />
           </span>
           <input
             onChange={onInputChane}
             name="nationalId"
             type="text"
-            class="form-control"
-            placeholder="Search"
+            className="form-control"
+            placeholder="Search Patient"
           />
         </div>
-        <PrescriptionView
-          show={modalShow}
+        <RequestAccessPatient
+          show={SearchModelShow}
           onHide={() => {
-            setModalShow(false);
+            setSearchModelShow(false);
           }}
         />
       </form>

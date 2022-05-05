@@ -10,4 +10,5 @@ export const LOADING = "LOADING";
 export const ADD_EXAMINATION = "ADD_EXAMINATION";
 export const GET_GLUCOSE = "GET_GLUCOSE";
 export const GET_SURGERY = "GET_SURGERY";
+export const GET_EXAMINATION = "GET_EXAMINATION";
 //bloodPressure

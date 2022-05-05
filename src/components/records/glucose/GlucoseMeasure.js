@@ -1,10 +1,11 @@
-import { fromUnixTime } from "date-fns";
 import React, { useState, useEffect } from "react";
 import Glucose from "../../../images/glucose.png";
 import Fields from "../Fields";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addGlucose } from "../../../actions/records/glucoseAction";
+import style from "../../../Css/records/Records.module.css";
+
 const GlucoseMeasure = (props) => {
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
@@ -35,20 +36,20 @@ const GlucoseMeasure = (props) => {
     props.addGlucose(newGlucose);
   };
   return (
-    <div className="add-bloodp-gluc">
-      <div className="row blood-gluc-form">
+    <div className={style.add_record}>
+      <div className={`${style.record_form} row`}>
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="gluc-img-container">
-            <span className="gluc-header">Glucose</span>
-            <div className="gluc-img">
+          <div className={style.record_img_container}>
+            <span className={style.record_header}>Blood Preasure</span>
+            <div className={style.record_img}>
               <img src={Glucose} />
             </div>
           </div>
         </div>
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="bloodp-gluc-form">
+          <div className={style.record_form}>
             <form className="form-group" onSubmit={onFormSubmit}>
-              <div className="row form-container">
+              <div className={`${style.form_container} row`}>
                 <div className="formlabel col-lg-3 col-md-12 col-sm-12">
                   <label>Type: </label>
                 </div>
@@ -79,8 +80,8 @@ const GlucoseMeasure = (props) => {
                 labelName="Date"
                 type="date"
               />
-              <div className="row form-container">
-                <div className="formlabel col-lg-3">
+              <div className={`${style.form_container} row`}>
+                <div className={`${style.formlabel} col-lg-3`}>
                   <label htmlFor="note">Note:</label>
                 </div>
                 <div className="col-lg-9">
@@ -96,7 +97,7 @@ const GlucoseMeasure = (props) => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-lg-12 add-btn">
+                <div className={`col-lg-12 ${style.add_btn}`}>
                   <button type="submit" className="btn btn-primary mb-2">
                     Add
                   </button>

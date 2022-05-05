@@ -1,0 +1,33 @@
+.layout {
+  margin-top: 60px;
+}
+
+.div_toggler {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+}
+.btn_toggle {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.remove_fixed {
+  width: 100%;
+  top: 61px;
+  background-color: #2a7f82;
+  overflow-x: hidden;
+}
+.sidenav {
+  height: 97vh;
+  width: 16.66666%;
+  position: fixed;
+  top: 61px;
+  background-color: #024959;
+  padding-top: 10px;
+}

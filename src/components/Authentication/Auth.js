@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import layout_img from "../../images/maxresdefault.jpg";
-import Register from "./Register";
 import { Outlet, NavLink } from "react-router-dom";
 import Loading from "./../Loading";
+import style from "../../Css/Authentication/Auth.module.css";
 const Auth = () => {
   const [load, setload] = useState(false);
 
@@ -13,31 +13,31 @@ const Auth = () => {
     }, 3000);
   }, []);
   return (
-    <div className="auth-layout">
+    <div className={style.auth_layout}>
       {load ? (
         <Loading loading={load} />
       ) : (
-        <div className="row main-layout container">
+        <div className={`row ${style.main_layout} container`}>
           <div className="col-lg-6 col-md-12 col-sm-12">
-            <div className="auth-layout-link">
-              <span className="auth-link">
+            <div className={style.auth_layout_link}>
+              <span className={style.auth_link}>
                 <NavLink to="/auth/login">Login</NavLink>
               </span>
-              <span className="auth-link">
+              <span className={style.auth_link}>
                 <NavLink to="/auth/register">Register</NavLink>
               </span>
             </div>
-            <div className="form-container">
-              <div className="form-layout">
-                <div className="form-div">
+            <div className={style.form_container}>
+              <div className={style.form_layout}>
+                <div className={style.form_div}>
                   <Outlet />
                 </div>
               </div>
             </div>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12">
-            <div className="image-layout">
-              <div className="img-div">
+            <div className={style.image_layout}>
+              <div className={style.img_div}>
                 <img src={layout_img} />
               </div>
             </div>

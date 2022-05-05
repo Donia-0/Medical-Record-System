@@ -1,0 +1,142 @@
+.auth_layout {
+  height: 100vh;
+  background-color: #def2f3;
+}
+
+.auth_layout {
+  height: 100vh;
+  background-color: #def2f3;
+}
+.main_layout {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  color: white;
+}
+.form_layout {
+  width: 100%;
+  margin: 0 auto;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: relative;
+}
+.image_layout {
+  position: relative;
+  height: 70vh;
+}
+
+.auth_layout .form_container {
+  height: 70vh;
+  width: 65%;
+  background-color: red;
+  border-radius: 45px;
+  box-shadow: #1cced687 7px 6px 5px 1px;
+  background-color: white;
+  padding: 20px;
+}
+.form_div {
+  height: fit-content;
+  width: 100%;
+  padding: 20px;
+}
+.img_div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.img_div img {
+  width: 100%;
+  height: 70%;
+  border-radius: 15%;
+}
+.auth_layout_link {
+  width: 65%;
+  text-align: center;
+}
+.auth_layout_link a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.form_layout input {
+  outline: 0;
+  border-width: 0px 0 1px;
+  border-color: rgba(0, 0, 0, 0.295);
+  border-radius: 0;
+  padding: 5px;
+}
+.form_layout form input:focus {
+  box-shadow: none;
+  box-shadow: #1cced687 0px 3px 5px 1px;
+}
+.form_layout .input_div {
+  position: relative;
+}
+.form_layout .input_div .test {
+  background-color: red;
+}
+
+.form_layout .input_div .highlight {
+  position: absolute;
+  top: 11px;
+  opacity: 0.3;
+  right: 4px;
+  color: #3ea9ad !important;
+}
+.input_div input::placeholder {
+  font-size: 0.9em;
+}
+.auth_layout .form_check_label {
+  color: black;
+  padding-bottom: 4px;
+}
+.auth_layout .form_check_input {
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  margin-right: 2px;
+  padding-top: 5px;
+}
+
+.auth_layout .form_label {
+  color: black !important;
+}
+
+.authentication {
+  padding: 2px;
+}
+.auth_link .active {
+  border-bottom: 2px solid #2a7f82 !important;
+  color: #2a7f82 !important;
+  padding-bottom: 2px;
+}
+
+.auth_link a {
+  text-decoration: none;
+  color: #3ea9ad !important;
+  font-weight: bold;
+}
+
+.btns_auth_steps {
+  background-color: #3ea9ad !important;
+  border-color: #3ea9ad !important;
+  color: white !important;
+  text-align: right;
+}
+.btns_auth_steps:hover {
+  color: white;
+}
+
+.welcome_div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -350%) !important;
+  color: #2a7f82;
+  text-transform: uppercase;
+}

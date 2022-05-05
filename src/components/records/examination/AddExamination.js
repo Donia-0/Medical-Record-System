@@ -109,7 +109,7 @@ AddExamination.prototype = {
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  newExamination: state.newExamination,
+  examination: state.examination,
   errors: state.errors,
 });
 export default connect(mapStateToProps, { addExamination })(AddExamination);

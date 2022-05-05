@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { faKey, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import RegisterInput from "./RegisterInput";
 import ProtoTypes from "prop-types";
@@ -7,7 +6,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authAction";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import style from "../../Css/Authentication/Auth.module.css";
 toast.configure();
 
 const Signin = (props) => {
@@ -40,12 +39,12 @@ const Signin = (props) => {
   }, [props.auth.isAuhtenticated]);
   return (
     <React.Fragment>
-      <div className="text-center welcome-div">
+      <div className={style.welcome_div}>
         <h1>Welcome</h1>
       </div>
       <form onSubmit={onFormSubmit}>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">
+          <label htmlFor="email" className={style.form_label}>
             Email address
           </label>
           <RegisterInput
@@ -60,7 +59,7 @@ const Signin = (props) => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="password" className="form-label">
+          <label htmlFor="password" className={style.form_label}>
             Password
           </label>
           <RegisterInput
@@ -75,7 +74,7 @@ const Signin = (props) => {
           />
         </div>
         <div className="form-btn" style={{ textAlign: "right" }}>
-          <button type="submit" className="btn btns-registers-steps">
+          <button type="submit" className={`btn ${style.btns_auth_steps}`}>
             Submit
           </button>
         </div>

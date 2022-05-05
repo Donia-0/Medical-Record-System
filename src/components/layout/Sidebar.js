@@ -1,16 +1,16 @@
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-
+import style from "../../Css/Layouts/Sidebar.module.css";
 const Sidebar = () => {
   return (
-    <div className="sidenav">
-      <NavLink to="/user/profile" className="a-section">
+    <div className={style.sidenav}>
+      <NavLink to="/user/profile" className={style.a_section}>
         Profile
       </NavLink>
       <button
-        className="dropdown-btn"
+        className={style.dropdown_btn}
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#daily"
@@ -21,25 +21,21 @@ const Sidebar = () => {
         Daily <FontAwesomeIcon icon={faCaretDown} />
       </button>
       <div className="collapse" id="daily">
-        {/* <a href="/records/viewbloodp">Blood pressure</a>
-        <a href="/records/viewglucose">Glucose</a> */}
-        <NavLink to="/records/viewbloodp" className="a-section">
+        <NavLink to="/records/viewbloodp" className={style.a_section}>
           Blood pressure
         </NavLink>
-        <NavLink to="/records/viewglucose" className="a-section">
+        <NavLink to="/records/viewglucose" className={style.a_section}>
           Glucose
         </NavLink>
       </div>
-      <NavLink to="/records/surgery" className="a-section">
+      <NavLink to="/records/surgery" className={style.a_section}>
         Surgery
       </NavLink>
-      <a href="#allergy" className="a-section">
+      <a href="#allergy" className={style.a_section}>
         Allergy
       </a>
-      {/* <a href="#examination" className="a-section">
-        Examination
-      </a> */}
-      <NavLink to="/records/examination" className="a-section">
+
+      <NavLink to="/records/examination" className={style.a_section}>
         Examination
       </NavLink>
     </div>

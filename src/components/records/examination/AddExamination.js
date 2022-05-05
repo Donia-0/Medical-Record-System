@@ -8,16 +8,21 @@ import AdditioningField from "../../AdditioningField";
 import NoteField from "../../NoteField";
 import style from "../../../Css/records/Record.module.css";
 import image from "../../../images/records/bloodpressure/bloodp.png";
+import { useParams } from "react-router";
+import isEmpty from "./../../../validation/isEmpty";
 const AddExamination = (props) => {
+  const { examId } = useParams();
+
   const [form, setForm] = useState({
     diagnosis: "",
     symptoms: "",
     note: "",
   });
+
   const [errors, setErrors] = useState({});
   useEffect(() => {
     AOS.init();
-  });
+  }, []);
   const onInputChange = (e) => {
     const value = e.target.value;
     setForm({
@@ -45,7 +50,7 @@ const AddExamination = (props) => {
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className={style.record_container_header}>
-              <span className={style.add_record_header}>Add Examination</span>
+              <span className={style.add_record_header}>{props.header}</span>
             </div>
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">

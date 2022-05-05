@@ -76,7 +76,11 @@ const App = () => {
               <Route path="examination" element={<Examination />} />
               <Route
                 path="examination/addExamination"
-                element={<AddExamination />}
+                element={<AddExamination header="Add Exam" />}
+              />
+              <Route
+                path="examination/:examId"
+                element={<AddExamination header="Update Exam" />}
               />
               <Route path="editexamination" element={<EditExamination />} />
               <Route path="addprescription" element={<Addprescription />} />

@@ -12,6 +12,32 @@ import EditExamination from "./examination/EditExamination";
 import { Link } from "react-router-dom";
 
 const ExaminationTable = (props) => {
+  const examTest = [
+    {
+      symptoms: "Hello",
+      diagnosis: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Ahmed",
+      id: 3,
+    },
+    {
+      symptoms: "Hello",
+      diagnosis: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Ahmed",
+      id: 1,
+    },
+    {
+      symptoms: "Hello",
+      diagnosis: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Hussein",
+      id: 2,
+    },
+  ];
   const [modalShow, setModalShow] = React.useState(false);
   const [editShow, setEditShow] = React.useState(false);
   React.useEffect(() => {
@@ -19,32 +45,32 @@ const ExaminationTable = (props) => {
   }, []);
   const columns = [
     {
-      name: "Systolic",
-      selector: (row) => row.name,
+      name: "Diagnosis",
+      selector: (row) => row.diagnosis,
       sortable: true,
       grow: 2,
       wrap: true,
     },
     {
-      name: "Diagnosis",
-      selector: (row) => row.email,
+      name: "Symptoms",
+      selector: (row) => row.symptoms,
       sortable: true,
       grow: 2,
       wrap: true,
     },
     {
       name: "Date",
-      selector: (row) => row.website,
+      selector: (row) => row.date,
       sortable: true,
     },
     {
       name: "Note",
-      selector: (row) => row.company.name,
+      selector: (row) => row.note,
       sortable: true,
     },
     {
       name: "Dr Name",
-      selector: (row) => row.address.city,
+      selector: (row) => row.DrName,
       sortable: true,
     },
     {
@@ -90,32 +116,12 @@ const ExaminationTable = (props) => {
           <div className="edit-delete-btns">
             <div className="edit-btn">
               <Link
-                to="/records/editExamination"
+                to={`./${row.id}`}
                 type="button"
                 className="btn btn-primary"
               >
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
-              {/* <button
-                type="button"
-                className="btn btn-primary"
-                onClick={() => {
-                  row.showModal = true;
-                  setEditShow(true);
-                }}
-              >
-                <FontAwesomeIcon icon={faEdit} />
-              </button>
-              {row.showModal ? (
-                <EditExamination
-                  show={editShow}
-                  onHide={() => {
-                    row.showModal = false;
-
-                    setEditShow(false);
-                  }}
-                />
-              ) : null} */}
             </div>
             <div className="delete-btn">
               <button
@@ -161,7 +167,7 @@ const ExaminationTable = (props) => {
   return (
     <DataTable
       columns={columns}
-      data={filteredItems}
+      data={examTest}
       defaultSortField="name"
       striped
       pagination

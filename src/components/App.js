@@ -33,7 +33,9 @@ import "../Css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
-import PrescriptionView from "./records/PrescriptionView";
+import Viewallpres from "./records/examination/Viewallpres";
+
+import Updateprescription from "./records/examination/Updateprescription";
 
 //check for token
 if (localStorage.token) {
@@ -71,25 +73,48 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
             </Route>
             <Route path="/records" element={<Layout />}>
-              <Route path="bloodpreasure" element={<BloodPreasure />} />
+              <Route path="bloodpreasure" element={<Viewbloodp />} />
+              <Route
+                path="bloodpreasure/addbloodp"
+                element={<BloodPreasure />}
+              />
+              <Route
+                path="bloodpreasure/:bloodpId"
+                element={<BloodPreasure />}
+              />
               <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
-              <Route path="glucose" element={<GlucoseMeasure />} />
+              <Route path="glucose" element={<Viewglucose />} />
+              <Route path="glucose/addglucose" element={<GlucoseMeasure />} />
+              <Route path="glucose/:glucoseId" element={<GlucoseMeasure />} />
               <Route path="examination" element={<Examination />} />
               <Route
                 path="examination/addExamination"
-                element={<AddExamination header="Add Exam" />}
+                element={<AddExamination header="Add Examination" />}
               />
               <Route
                 path="examination/:examId"
-                element={<AddExamination header="Update Exam" />}
+                element={<AddExamination header="Update Examination" />}
               />
               <Route path="editexamination" element={<EditExamination />} />
               <Route path="addprescription" element={<Addprescription />} />
+              <Route
+                path="updateprescription"
+                element={<Updateprescription />}
+              />
               <Route path="Viewbloodp" element={<Viewbloodp />} />
-              <Route path="viewprescription" element={<PrescriptionView />} />
+              <Route path="viewall" element={<Viewallpres />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
               <Route path="addsurgery" element={<AddSurgery />} />
+
               <Route path="surgery" element={<Surgery />} />
+              <Route
+                path="surgery/addsurgery"
+                element={<AddSurgery header="Add Surgery" />}
+              />
+              <Route
+                path="surgery/:surgeryId"
+                element={<AddSurgery header="Update Surgery" />}
+              />
               <Route path="graph">
                 <Route path="blood" element={<BloodChart />} />
               </Route>

@@ -74,6 +74,12 @@
   font-weight: bold;
 }
 
+.edit_input .edit_label {
+  margin-bottom: 8px;
+  color: #2a7f82;
+  font-weight: bold;
+}
+
 .profile .profile_form .btn_edit {
   margin-top: 20px;
 }
@@ -96,4 +102,19 @@
 .profile .profile_form form input,
 .profile .profile_form form input:disabled {
   transition: all 1s;
+}
+
+.edit_input input {
+  margin-bottom: 15px;
+}
+
+.edit_input input:focus{
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}
+
+
+.change_password {
+  width: 90%;
+  margin: auto;
 }

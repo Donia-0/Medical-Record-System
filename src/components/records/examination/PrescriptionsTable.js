@@ -3,35 +3,73 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useMemo } from "react";
 import DataTable from "react-data-table-component";
 import FilterComponent from "../FilterComponent";
-import PrescriptionView from "../PrescriptionView";
-// import RequestAccessPatient from "../RequestAccessPatient";
-// import { connect } from "react-redux";
-// import PropTypes from "prop-types";
-// import { getExaminations } from "../../actions/records/examinationAction";
-// import EditExamination from "./examination/EditExamination";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getExaminations } from "../../../actions/records/examinationAction";
+
 import { Link } from "react-router-dom";
 
-const PrescriptionTable = (props) => {
+const PrescriptionsTable = (props) => {
   const prescriptionTest = [
     {
-      symptoms: "Hello",
-      diagnosis: "No",
+      drug: "panadol",
+      dose: "No",
       date: "sadasd",
       note: "yaraaab",
       DrName: "Ahmed",
       id: 3,
     },
     {
-      symptoms: "Hello",
-      diagnosis: "No",
+      drug: "panadol",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Ahmed",
+      id: 3,
+    },
+    {
+      drug: "panadol",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Ahmed",
+      id: 3,
+    },
+    {
+      drug: "brufin",
+      dose: "No",
       date: "sadasd",
       note: "yaraaab",
       DrName: "Ahmed",
       id: 1,
     },
     {
-      symptoms: "Hello",
-      diagnosis: "No",
+      drug: "brufin",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Ahmed",
+      id: 1,
+    },
+    {
+      drug: "brufin",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Ahmed",
+      id: 1,
+    },
+    {
+      drug: "ay nela",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Hussein",
+      id: 2,
+    },
+    {
+      drug: "ay nela",
+      dose: "No",
       date: "sadasd",
       note: "yaraaab",
       DrName: "Hussein",
@@ -45,17 +83,16 @@ const PrescriptionTable = (props) => {
   }, []);
   const columns = [
     {
-      name: "Diagnosis",
-      selector: (row) => row.diagnosis,
+      name: "Drug",
+      selector: (row) => row.drug,
       sortable: true,
-      grow: 2,
+      grow: 1,
       wrap: true,
     },
     {
-      name: "Symptoms",
-      selector: (row) => row.symptoms,
+      name: "Dose",
+      selector: (row) => row.dose,
       sortable: true,
-      grow: 2,
       wrap: true,
     },
     {
@@ -64,48 +101,18 @@ const PrescriptionTable = (props) => {
       sortable: true,
     },
     {
-      name: "Note",
-      selector: (row) => row.note,
-      sortable: true,
-    },
-    {
       name: "Dr Name",
       selector: (row) => row.DrName,
       sortable: true,
     },
     {
-      name: "Prescription",
-      button: true,
-      ignoreRowClick: true,
-      allowOverflow: true,
-      cell: (row) => {
-        return (
-          <div className="view-prescription-btn">
-            <span className="tooltiptext">Click To Show Prescription</span>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => {
-                row.showModal = true;
-                setModalShow(true);
-              }}
-            >
-              <FontAwesomeIcon icon={faEye} />
-            </button>
-            {row.showModal ? (
-              <PrescriptionView
-                show={modalShow}
-                onHide={() => {
-                  row.showModal = false;
-
-                  setModalShow(false);
-                }}
-              />
-            ) : null}
-          </div>
-        );
-      },
+      name: "Note",
+      selector: (row) => row.note,
+      sortable: true,
+      grow: 1,
+      wrap: true,
     },
+
     {
       name: "Action",
       button: true,
@@ -116,7 +123,7 @@ const PrescriptionTable = (props) => {
           <div className="edit-delete-btns">
             <div className="edit-btn">
               <Link
-                to={`./${row.id}`}
+                to={`/records/updateprescription`}
                 type="button"
                 className="btn btn-primary"
               >
@@ -176,5 +183,14 @@ const PrescriptionTable = (props) => {
     />
   );
 };
-
-export default PrescriptionTable;
+PrescriptionsTable.propTypes = {
+  auth: PropTypes.object.isRequired,
+  getExaminations: PropTypes.func.isRequired,
+};
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  examination: state.examination,
+});
+export default connect(mapStateToProps, { getExaminations })(
+  PrescriptionsTable
+);

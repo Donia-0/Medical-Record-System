@@ -40,7 +40,7 @@ const GlucoseMeasure = (props) => {
       <div className={`${style.record_form} row`}>
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className={style.record_img_container}>
-            <span className={style.record_header}>Blood Preasure</span>
+            <span className={style.record_header}>Glucose</span>
             <div className={style.record_img}>
               <img src={Glucose} />
             </div>

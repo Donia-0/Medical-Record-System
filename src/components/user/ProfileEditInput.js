@@ -8,6 +8,7 @@ const ProfileEditInput = ({
   name,
   value,
   edit,
+  onChange,
   placeholder,
 }) => {
   return (
@@ -19,6 +20,7 @@ const ProfileEditInput = ({
         type={type}
         name={name}
         value={value}
+        onChange={onChange}
         className="input form-control"
         disabled={edit === false ? true : ""}
         placeholder={placeholder}

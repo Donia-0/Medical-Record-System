@@ -6,10 +6,9 @@ import Chart from "../Chart";
 import dateFormat from "../../../utils/dateFormat";
 import getDayName from "../../../utils/getDateByName";
 import bloodpreasureImage from "../../../images/records/bloodpressure/bloodp.png";
-import { faChartColumn } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar } from "@fortawesome/free-regular-svg-icons";
-
+import style from "../../../Css/records/ViewRecord.module.css";
 const BloodChart = (props) => {
   const { bloodPressure, loading } = props.bloodpressures;
   useEffect(() => {
@@ -20,7 +19,7 @@ const BloodChart = (props) => {
   var systolic = [];
   var diastolic = [];
   var pulse = [];
-  const arr = bloodPressure.slice(0, 7).sort();
+  const arr = bloodPressure.sort().slice(0, 7);
   arr.forEach((element) => {
     const found = days.find(
       (day) => day === getDayName(dateFormat(element.date))
@@ -60,13 +59,13 @@ const BloodChart = (props) => {
   };
 
   return (
-    <div className="preasureview">
+    <div className={style.view}>
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className="preasureview-header">
+          <div className={style.view_header}>
             <img src={bloodpreasureImage} /> Blood Preasure Measurements
           </div>
-          <div className="text-center graph-title graph-link">
+          <div className={style.graph_title}>
             <FontAwesomeIcon icon={faChartBar} /> Graph for the last seven days
           </div>
           <div className="row"></div>

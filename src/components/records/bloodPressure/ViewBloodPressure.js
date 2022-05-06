@@ -6,7 +6,6 @@ const ViewBloodPressure = (props) => {
     props.getBloodPressure();
   }, []);
   const { bloodPressure, loading } = props.bloodpressure;
-  console.log(bloodPressure);
   return <div>ViewBloodPressure</div>;
 };
 

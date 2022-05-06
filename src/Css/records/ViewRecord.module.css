@@ -1,0 +1,79 @@
+.view {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.view .view_header {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 10px;
+  color: #2a7f82;
+}
+
+.view .view_header img {
+  width: 60px;
+  margin-right: 15px;
+}
+
+.view_data {
+  width: 97%;
+  margin: auto;
+  margin-top: 15px;
+}
+.view_table {
+  margin-left: -18px;
+}
+
+.add_view_btn {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 10px;
+}
+
+.add_view_btn a {
+  background-color: #307b8c !important;
+  border-color: #307b8c !important;
+  width: 10%;
+}
+
+.edit_delete_btns {
+  display: flex;
+  justify-content: center;
+}
+
+.edit_delete_btns .edit_btn a {
+  background-color: #307b8c !important;
+  border-color: #307b8c !important;
+  padding: 0.2px 4px;
+  color: white;
+
+  margin-right: 5px;
+}
+.edit_delete_btns .delete_btn button {
+  background-color: #bb0f15;
+  border-color: #bb0f15;
+  color: white;
+  padding: 0.2px 6px;
+}
+
+.graph_title {
+  color: #8e8e8e;
+  text-transform: uppercase;
+  text-align: center;
+}
+.graph_link {
+  text-align: center;
+  width: 100%;
+}
+.graph_link a {
+  border-radius: 4px;
+  text-decoration: none;
+  color: #238274;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.graph_link a:hover {
+  color: #10666a !important;
+}

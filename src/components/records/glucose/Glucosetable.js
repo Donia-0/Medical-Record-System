@@ -1,7 +1,7 @@
 import { faEdit, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useMemo } from "react";
-
+import style from "../../../Css/records/ViewRecord.module.css";
 import DataTable from "react-data-table-component";
 import { Link } from "react-router-dom";
 import FilterComponent from "../FilterComponent";
@@ -38,22 +38,14 @@ const Glucosetable = (props) => {
       allowOverflow: true,
       cell: (row) => {
         return (
-          <div className="edit-delete-btns">
-            <div className="edit-btn">
-              <Link
-                to={`./${row.id}`}
-                type="button"
-                className="btn btn-primary"
-              >
+          <div className={style.edit_delete_btns}>
+            <div className={style.edit_btn}>
+              <Link to={`./edit/${row._id}`} type="button" className="btn">
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
             </div>
-            <div className="delete-btn">
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={() => {}}
-              >
+            <div className={style.delete_btn}>
+              <button type="button" className="btn">
                 <FontAwesomeIcon icon={faXmark} />
               </button>
             </div>

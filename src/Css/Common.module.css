@@ -1,5 +1,6 @@
 .dis_none {
   display: none;
+  transition: "all 10s";
 }
 .align_right {
   text-align: center;
@@ -8,4 +9,5 @@
 }
 .remove_dis_none {
   display: "";
+  transition: "all 10s";
 }

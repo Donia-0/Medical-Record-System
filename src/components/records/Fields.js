@@ -10,6 +10,7 @@ const Fields = ({
   value,
   err,
   pattern,
+  disabled,
 }) => {
   return (
     <div className={`row ${style.field}`}>
@@ -27,6 +28,7 @@ const Fields = ({
           type={type}
           placeholder={placeholder}
           pattern={pattern}
+          disabled={disabled}
         />
         {err && <div className="invalid-feedback">{err}</div>}
       </div>

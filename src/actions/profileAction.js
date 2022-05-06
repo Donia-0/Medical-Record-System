@@ -33,3 +33,16 @@ export const clearCurrentProfile = () => {
     type: CLEAR_CURRENT_PROFILE,
   };
 };
+export const updateUser = (userData) => async (dispatch) => {
+  try {
+    const response = await axios.patch(
+      "http://localhost:5000/user/update",
+      userData
+    );
+  } catch (error) {
+    dispatch({
+      type: GET_ERRORS,
+      payload: error.response.data.errors,
+    });
+  }
+};

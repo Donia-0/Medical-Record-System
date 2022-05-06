@@ -1,8 +1,13 @@
-import { LOADING, GET_BLOODPRESSURE } from "./../../actions/types";
+import {
+  LOADING,
+  GET_BLOODPRESSURE,
+  GET_DETAIL_BLOODPRESSURE,
+} from "./../../actions/types";
 
 const initialState = {
   bloodPressure: [],
   loading: false,
+  bloodPressureDetail: {},
 };
 
 export default function (state = initialState, action) {
@@ -17,6 +22,12 @@ export default function (state = initialState, action) {
         ...state,
         loading: false,
         bloodPressure: action.payload,
+      };
+    case GET_DETAIL_BLOODPRESSURE:
+      return {
+        ...state,
+        loading: false,
+        bloodPressureDetail: action.payload,
       };
     default:
       return state;

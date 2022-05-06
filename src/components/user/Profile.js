@@ -3,17 +3,18 @@ import male from "../../images/male.png";
 import female from "../../images/female.png";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
-import { getCurrentProfile } from "./../../actions/profileAction";
+import { getCurrentProfile, updateUser } from "./../../actions/profileAction";
 import Switch from "react-switch";
 import ProfileEditInput from "./ProfileEditInput";
-import dateFormat from "../../utils/dateFormat";
 import style from "../../Css/User/Profile.module.css";
+import dateFormat from "./../../utils/dateFormat";
+import moment from "moment-timezone";
 const Profile = (props) => {
   const [form, setFrom] = useState({
     name: "",
     email: "",
     phone: "",
-    birthdate: "",
+    birthdate: new Date(),
     gender: "",
     specialization: "",
   });
@@ -24,9 +25,31 @@ const Profile = (props) => {
     setToggleChecked(checked);
     setEdit(!edit);
   };
+  const onSaveClick = (e) => {
+    e.preventDefault();
+    var update = {
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      gender: form.gender,
+    };
+    if (form.birthdate !== "") {
+      update = { ...update, birthdate: form.birthdate };
+    }
+    console.log(update);
+    props.updateUser(update);
+  };
+  const onInputChange = (evt) => {
+    const value = evt.target.value;
+    setFrom({
+      ...form,
+      [evt.target.name]: value,
+    });
+  };
   useEffect(() => {
     props.getCurrentProfile();
   }, []);
+
   useEffect(() => {
     if (profile !== null) {
       setFrom({
@@ -34,7 +57,6 @@ const Profile = (props) => {
         email: profile.myProfile.email,
         phone: profile.myProfile.phone,
         gender: profile.myProfile.gender,
-        birthdate: profile.myProfile.birthdate,
         specialization: profile.myProfile.specialization,
       });
     }
@@ -86,6 +108,7 @@ const Profile = (props) => {
                     labelName="Email"
                     edit={edit}
                     type="email"
+                    onChange={onInputChange}
                   />
                 </div>
                 <div className="col-lg-12 col-md-8 col-sm-12">
@@ -96,16 +119,24 @@ const Profile = (props) => {
                     labelName="Phone"
                     edit={edit}
                     type="text"
+                    onChange={onInputChange}
                   />
                 </div>
                 <div className="col-lg-12 col-md-8 col-sm-12">
                   <ProfileEditInput
-                    value={dateFormat(form.birthdate)}
-                    name="brithdate"
-                    labelFor="brithdate"
+                    value={
+                      edit === false
+                        ? moment(profile.myProfile.birthdate).format(
+                            "MMM Do YY"
+                          )
+                        : form.birthdate
+                    }
+                    name="birthdate"
+                    labelFor="birthdate"
                     labelName="Brithdate"
                     edit={edit}
                     type={edit === false ? "text" : "date"}
+                    onChange={onInputChange}
                   />
                 </div>
                 <div className="col-lg-12 col-md-8 col-sm-12">
@@ -116,6 +147,7 @@ const Profile = (props) => {
                     labelName="Gender"
                     edit={edit}
                     type="text"
+                    onChange={onInputChange}
                   />
                 </div>
                 <div className="col-lg-12 col-md-8 col-sm-12">
@@ -130,7 +162,9 @@ const Profile = (props) => {
                     <div className="col-lg-6">
                       <div className={style.btn_edit_save}>
                         {edit === true ? (
-                          <button className="btn">Save</button>
+                          <button onClick={onSaveClick} className="btn">
+                            Save
+                          </button>
                         ) : null}
                       </div>
                     </div>
@@ -143,6 +177,7 @@ const Profile = (props) => {
       </div>
     );
   }
+
   return <div className={style.profile}>{profileContent}</div>;
 };
 
@@ -155,4 +190,6 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
   profile: state.profile,
 });
-export default connect(mapStateToProps, { getCurrentProfile })(Profile);
+export default connect(mapStateToProps, { getCurrentProfile, updateUser })(
+  Profile
+);

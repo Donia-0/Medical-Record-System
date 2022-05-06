@@ -29,7 +29,7 @@ const Surgery = (props) => {
           <div className="col-lg-12">
             <div className="add-surgery-btn">
               <Link
-                to="/records/addsurgery"
+                to="/records/surgery/addsurgery"
                 type="button"
                 className="btn btn-primary"
               >

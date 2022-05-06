@@ -1200,6 +1200,31 @@ features
 .decline-request-btn button:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
+
+
+/* ======================================================all prescriptions===================================================== */
+
+
+.Prescriptions  .prescriptions-header {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 10px;
+  color: #2a7f82;
+  margin-top: 20px;
+  
+}
+.prescriptions .allprescriptions-data {
+  width: 97%;
+  margin: auto;
+  margin-top: 15px;
+}
+.allprescriptions-table{
+  margin: 20px;
+}
+
+
 /* ======================================================================================================================================= */
 
 /* ==============================Zeinab CSS============================== */

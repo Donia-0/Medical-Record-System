@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "../../Css/Layouts/Sidebar.module.css";
+import Viewallpres from "./../records/examination/Viewallpres";
 const Sidebar = () => {
   return (
     <div className={`${style.sidenav}`}>
@@ -23,14 +24,14 @@ const Sidebar = () => {
       <div className="collapse" id="daily">
         <NavLink
           activeClassName="active-link"
-          to="/records/viewbloodp"
+          to="/records/bloodpreasure"
           className={style.a_section}
         >
           Blood pressure
         </NavLink>
         <NavLink
           activeClassName="active-link"
-          to="/records/viewglucose"
+          to="/records/glucose"
           className={style.a_section}
         >
           Glucose
@@ -57,6 +58,13 @@ const Sidebar = () => {
         className={style.a_section}
       >
         Examination
+      </NavLink>
+      <NavLink
+        activeClassName="active-link"
+        to="/records/viewall"
+        className={style.a_section}
+      >
+        Prescriptions
       </NavLink>
     </div>
   );

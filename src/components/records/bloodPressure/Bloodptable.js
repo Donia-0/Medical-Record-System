@@ -1,7 +1,10 @@
+import { faEdit, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment-timezone";
 import React, { useMemo } from "react";
 
 import DataTable from "react-data-table-component";
+import { Link } from "react-router-dom";
 import dateFormat from "../../../utils/dateFormat";
 import FilterComponent from "../FilterComponent";
 
@@ -36,6 +39,36 @@ const Bloodptable = (props) => {
       selector: (row) => row.note || "There  is no note",
       grow: 2,
       wrap: true,
+    },
+    {
+      name: "Action",
+      button: true,
+      ignoreRowClick: true,
+      allowOverflow: true,
+      cell: (row) => {
+        return (
+          <div className="edit-delete-btns">
+            <div className="edit-btn">
+              <Link
+                to={`./${row.id}`}
+                type="button"
+                className="btn btn-primary"
+              >
+                <FontAwesomeIcon icon={faEdit} />
+              </Link>
+            </div>
+            <div className="delete-btn">
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={() => {}}
+              >
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+            </div>
+          </div>
+        );
+      },
     },
   ];
 

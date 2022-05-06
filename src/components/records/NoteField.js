@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import style from "../Css/records/Record.module.css";
+import style from "../../Css/records/Record.module.css";
 const AdditioningField = ({
   labelName,
   placeholder,

@@ -21,8 +21,6 @@ import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
 import BarChart from "./BarChart";
-import AddAllergy from "./records/Allergy/AddAllergy";
-import Allergyview from "./records/Allergy/Allergyview";
 import Admin from "./Admin/Admin";
 import AddSurgery from "./records/surgery/AddSurgery";
 import Surgery from "./records/surgery/Surgery";
@@ -30,6 +28,7 @@ import BloodChart from "./records/bloodPressure/BloodChart";
 import EditExamination from "./records/examination/EditExamination";
 import "../Css/ActiveClass.css";
 import "../Css/App.css";
+import "../Css/Style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -79,7 +78,7 @@ const App = () => {
                 element={<BloodPreasure />}
               />
               <Route
-                path="bloodpreasure/:bloodpId"
+                path="bloodpreasure/edit/:bloodpId"
                 element={<BloodPreasure />}
               />
               <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />

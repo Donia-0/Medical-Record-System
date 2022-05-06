@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getGlucose } from "../../../actions/records/glucoseAction";
 import Glucosetable from "./Glucosetable";
-
+import style from "../../../Css/records/ViewRecord.module.css";
 const Viewglucose = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const clickhandler = (name) => console.log("delete", name);
@@ -15,35 +15,33 @@ const Viewglucose = (props) => {
     props.getGlucose();
   }, []);
   return (
-    <div className="container">
-      <div className="glucoseview">
-        <div className="row">
-          <div className="col-lg-12 col-md-12 col-sm-12">
-            <div className="glucoseview-header">
-              <img src={Glucose} /> Glucose Measurements
-            </div>
-            <div className="row"></div>
+    <div className={style.view}>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-12">
+          <div className={style.view_header}>
+            <img src={Glucose} /> Glucose Measurements
           </div>
+          <div className="row"></div>
         </div>
+      </div>
 
-        <div className="glucoseview-data">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="add-glucoseview-btn">
-                <Link
-                  to="/records/glucose/addglucose"
-                  type="button"
-                  className="btn btn-primary"
-                >
-                  Add
-                </Link>
-              </div>
+      <div className={style.view_data}>
+        <div className="row">
+          <div className="col-lg-12">
+            <div className={style.add_view_btn}>
+              <Link
+                to="/records/glucose/addglucose"
+                type="button"
+                className="btn btn-primary"
+              >
+                Add
+              </Link>
             </div>
-            <div className="col-lg-12 col-md-12 col-sm-12">
-              <div className="glucoseview-table">
-                {/* <ExaminationTable /> */}
-                <Glucosetable data={glucose} click={clickhandler} />
-              </div>
+          </div>
+          <div className="col-lg-12 col-md-12 col-sm-12">
+            <div className={style.view_table}>
+              {/* <ExaminationTable /> */}
+              <Glucosetable data={glucose} click={clickhandler} />
             </div>
           </div>
         </div>

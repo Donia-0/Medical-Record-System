@@ -3,12 +3,15 @@ import bloodpreasure from "../../../images/records/bloodpressure/bloodp.png";
 import Fields from "../Fields";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addBloodPressure } from "./../../../actions/records/bloodPressureAction";
+import {
+  addBloodPressure,
+  getBloodPressureDetailById,
+} from "./../../../actions/records/bloodPressureAction";
 import moment from "moment-timezone";
 import style from "../../../Css/records/Records.module.css";
 import { useParams } from "react-router";
 const BloodPreasure = (props) => {
-  const { bloodpId } = useParams();
+  const { bloodpId, name } = useParams();
   const [errors, setErrors] = useState({});
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const currentTime = moment().tz(timezone).format("yyyy-MM-DDThh:mm");
@@ -19,6 +22,30 @@ const BloodPreasure = (props) => {
     note: "",
     date: currentTime,
   });
+  const [bloodDetail, setBloodDetail] = useState({});
+
+  useEffect(() => {
+    setErrors({});
+    setErrors(props.errors);
+  }, [props.errors]);
+
+  useEffect(() => {
+    props.getBloodPressureDetailById(bloodpId);
+  }, []);
+
+  const { bloodPressureDetail } = props.bloodpressures;
+  console.log(bloodPressureDetail);
+  useEffect(() => {
+    if (bloodPressureDetail && bloodpId) {
+      setForm({
+        systolic: bloodPressureDetail.systolic,
+        diastolic: bloodPressureDetail.diastolic,
+        pulse: bloodPressureDetail.pulse,
+        note: bloodPressureDetail.note,
+        date: moment(bloodPressureDetail.date).format("MMMM Do YYYY"),
+      });
+    }
+  }, [bloodPressureDetail]);
   const onInputChange = (evt) => {
     const value = evt.target.value;
     setForm({
@@ -44,10 +71,6 @@ const BloodPreasure = (props) => {
       date: currentTime,
     });
   };
-  useEffect(() => {
-    setErrors({});
-    setErrors(props.errors);
-  }, [props.errors]);
 
   return (
     <div className={style.add_record}>
@@ -95,7 +118,8 @@ const BloodPreasure = (props) => {
                 onChange={onInputChange}
                 name="date"
                 labelName="Date"
-                type="datetime-local"
+                type={bloodPressureDetail ? "text" : "datetime-local"}
+                disabled={true}
               />
               <div className={`row ${style.form_container}`}>
                 <div className={`${style.formlabel} col-lg-3`}>
@@ -130,9 +154,14 @@ BloodPreasure.prototype = {
   addBloodPressure: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
+  getBloodPressureDetailById: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors,
+  bloodpressures: state.bloodpressures,
 });
-export default connect(mapStateToProps, { addBloodPressure })(BloodPreasure);
+export default connect(mapStateToProps, {
+  addBloodPressure,
+  getBloodPressureDetailById,
+})(BloodPreasure);

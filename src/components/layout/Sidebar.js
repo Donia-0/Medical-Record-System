@@ -22,48 +22,24 @@ const Sidebar = () => {
         Daily <FontAwesomeIcon icon={faCaretDown} />
       </button>
       <div className="collapse" id="daily">
-        <NavLink
-          activeClassName="active-link"
-          to="/records/bloodpreasure"
-          className={style.a_section}
-        >
+        <NavLink to="/records/bloodpreasure" className={style.a_section}>
           Blood pressure
         </NavLink>
-        <NavLink
-          activeClassName="active-link"
-          to="/records/glucose"
-          className={style.a_section}
-        >
+        <NavLink to="/records/glucose" className={style.a_section}>
           Glucose
         </NavLink>
       </div>
-      <NavLink
-        activeClassName="active-link"
-        to="/records/surgery"
-        className={style.a_section}
-      >
+      <NavLink to="/records/surgery" className={style.a_section}>
         Surgery
       </NavLink>
 
-      <NavLink
-        activeClassName="active-link"
-        to="/records/allergy"
-        className={style.a_section}
-      >
+      <NavLink to="/records/allergy" className={style.a_section}>
         Allergy
       </NavLink>
-      <NavLink
-        activeClassName="active-link"
-        to="/records/examination"
-        className={style.a_section}
-      >
+      <NavLink to="/records/examination" className={style.a_section}>
         Examination
       </NavLink>
-      <NavLink
-        activeClassName="active-link"
-        to="/records/viewall"
-        className={style.a_section}
-      >
+      <NavLink to="/records/viewall" className={style.a_section}>
         Prescriptions
       </NavLink>
     </div>

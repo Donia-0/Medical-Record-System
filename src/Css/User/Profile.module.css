@@ -37,7 +37,7 @@
 .profile .profile_info {
   display: flex;
   justify-content: center;
-  height: 60vh;
+  height: 63vh;
   padding: 10px;
 }
 .profile .profile_info .profile_form {
@@ -105,14 +105,13 @@
 }
 
 .edit_input input {
-  margin-bottom: 15px;
+  margin-bottom: 2px;
 }
 
-.edit_input input:focus{
+.edit_input input:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }
-
 
 .change_password {
   width: 90%;

@@ -1059,7 +1059,6 @@ features
 }
 /* ===============================bloodpreasure============================= */
 .preasureview {
-  /* text-align: center; */
   margin-top: 20px;
   margin-left: 20px;
 }
@@ -1094,7 +1093,6 @@ features
 .add-preasureview-btn a {
   background-color: #2a7f82 !important;
   border-color: #2a7f82 !important;
-  /* box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important; */
 }
 
 .preasureview .preasureview-data {
@@ -1107,13 +1105,6 @@ features
   display: flex;
   justify-content: end;
   padding-bottom: 10px;
-}
-
-.gZWIKX {
-  background-color: #3ea9ad !important;
-  font-size: 15px !important;
-  font-weight: 500 !important;
-  color: white !important;
 }
 
 /* ================================Glucose====================================== */
@@ -1201,11 +1192,9 @@ features
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
 }
 
-
 /* ======================================================all prescriptions===================================================== */
 
-
-.Prescriptions  .prescriptions-header {
+.Prescriptions .prescriptions-header {
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -1213,17 +1202,15 @@ features
   padding-bottom: 10px;
   color: #2a7f82;
   margin-top: 20px;
-  
 }
 .prescriptions .allprescriptions-data {
   width: 97%;
   margin: auto;
   margin-top: 15px;
 }
-.allprescriptions-table{
+.allprescriptions-table {
   margin: 20px;
 }
-
 
 /* ======================================================================================================================================= */
 

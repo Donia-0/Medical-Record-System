@@ -22,6 +22,24 @@
   color: white;
   font-size: 25px;
 }
+/* .record_img_container {
+  height: 110px;
+
+  border-bottom: 2px solid #2a7f82;
+  position: relative;
+  margin: inherit;
+} */
+
+.record_img {
+  position: absolute;
+  top: 48%;
+  left: 13%;
+  height: 100%;
+}
+
+.record_img_container .record_img img {
+  height: 90%;
+}
 
 .add_record_form {
   display: flex;

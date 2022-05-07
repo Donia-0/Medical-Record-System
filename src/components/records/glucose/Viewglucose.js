@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import { getGlucose } from "../../../actions/records/glucoseAction";
 import Glucosetable from "./Glucosetable";
 import style from "../../../Css/records/ViewRecord.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 const Viewglucose = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const clickhandler = (name) => console.log("delete", name);
@@ -34,7 +36,7 @@ const Viewglucose = (props) => {
                 type="button"
                 className="btn btn-primary"
               >
-                Add
+                <FontAwesomeIcon icon={faPlus} /> Add
               </Link>
             </div>
           </div>

@@ -9,6 +9,7 @@ import {
 } from "./../../../actions/records/bloodPressureAction";
 import moment from "moment-timezone";
 import style from "../../../Css/records/Records.module.css";
+import styleRecord from "../../../Css/records/Record.module.css";
 import { useParams } from "react-router";
 const BloodPreasure = (props) => {
   const { bloodpId, name } = useParams();

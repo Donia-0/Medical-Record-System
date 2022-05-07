@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import { getExaminations } from "../../actions/records/examinationAction";
 import EditExamination from "./examination/EditExamination";
 import { Link } from "react-router-dom";
+import style from "../../Css/records/ViewRecord.module.css";
 
 const ExaminationTable = (props) => {
   const examTest = [
@@ -80,8 +81,10 @@ const ExaminationTable = (props) => {
       allowOverflow: true,
       cell: (row) => {
         return (
-          <div className="view-prescription-btn">
-            <span className="tooltiptext">Click To Show Prescription</span>
+          <div className={style.view_prescription_btn}>
+            <span className={style.tooltiptext}>
+              Click To Show Prescription
+            </span>
             <button
               type="button"
               className="btn btn-primary"
@@ -113,22 +116,14 @@ const ExaminationTable = (props) => {
       allowOverflow: true,
       cell: (row) => {
         return (
-          <div className="edit-delete-btns">
-            <div className="edit-btn">
-              <Link
-                to={`./${row.id}`}
-                type="button"
-                className="btn btn-primary"
-              >
+          <div className={style.edit_delete_btns}>
+            <div className={style.edit_btn}>
+              <Link to={`./edit/${row._id}`} type="button" className="btn">
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
             </div>
-            <div className="delete-btn">
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={() => {}}
-              >
+            <div className={style.delete_btn}>
+              <button type="button" className="btn">
                 <FontAwesomeIcon icon={faXmark} />
               </button>
             </div>

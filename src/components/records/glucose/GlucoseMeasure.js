@@ -372,7 +372,7 @@ const GlucoseMeasure = (props) => {
                       color: "#2a7f82",
                     }}
                   >
-                    Type:{" "}
+                    Type{" "}
                   </label>
                 </div>
                 <div className="col-lg-9 col-sm-12">

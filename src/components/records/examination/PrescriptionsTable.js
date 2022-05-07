@@ -75,6 +75,30 @@ const PrescriptionsTable = (props) => {
       DrName: "Hussein",
       id: 2,
     },
+    {
+      drug: "ay nela",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Hussein",
+      id: 2,
+    },
+    {
+      drug: "ay nela",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Hussein",
+      id: 2,
+    },
+    {
+      drug: "ay nela",
+      dose: "No",
+      date: "sadasd",
+      note: "yaraaab",
+      DrName: "Hussein",
+      id: 2,
+    },
   ];
   const [modalShow, setModalShow] = React.useState(false);
   const [editShow, setEditShow] = React.useState(false);

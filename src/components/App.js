@@ -75,7 +75,7 @@ const App = () => {
               <Route path="bloodpreasure" element={<Viewbloodp />} />
               <Route
                 path="bloodpreasure/addbloodp"
-                element={<BloodPreasure />}
+                element={<BloodPreasure header="Add Blood Preasure" />}
               />
               <Route
                 path="bloodpreasure/edit/:bloodpId"
@@ -83,7 +83,10 @@ const App = () => {
               />
               <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
               <Route path="glucose" element={<Viewglucose />} />
-              <Route path="glucose/addglucose" element={<GlucoseMeasure />} />
+              <Route
+                path="glucose/addglucose"
+                element={<GlucoseMeasure header="Add Glucose Measurement" />}
+              />
               <Route path="glucose/:glucoseId" element={<GlucoseMeasure />} />
               <Route path="examination" element={<Examination />} />
               <Route

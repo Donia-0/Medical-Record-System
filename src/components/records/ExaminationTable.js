@@ -4,11 +4,9 @@ import React, { useMemo } from "react";
 import DataTable from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
 import PrescriptionView from "./PrescriptionView";
-import RequestAccessPatient from "../RequestAccessPatient";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getExaminations } from "../../actions/records/examinationAction";
-import EditExamination from "./examination/EditExamination";
 import { Link } from "react-router-dom";
 import style from "../../Css/records/ViewRecord.module.css";
 

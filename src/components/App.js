@@ -12,13 +12,12 @@ import setAuthToken from "./../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import Profile from "./user/Profile";
 import Landing from "./layout/Landing";
-import BloodPreasure from "./records/bloodPressure/BloodPreasure";
+import AddBloodPressure from "./records/bloodPressure/AddBloodPressure";
 import Examination from "./records/examination/Examination";
 import Addprescription from "./records/examination/Addprescription";
 import AddExamination from "./records/examination/AddExamination";
 import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
 import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
-import Viewbloodp from "./records/bloodPressure/Viewbloodp";
 import Viewglucose from "./records/glucose/Viewglucose";
 import BarChart from "./BarChart";
 import Admin from "./Admin/Admin";
@@ -72,16 +71,15 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
             </Route>
             <Route path="/records" element={<Layout />}>
-              <Route path="bloodpreasure" element={<Viewbloodp />} />
+              <Route path="bloodpreasure" element={<ViewBloodPressure />} />
               <Route
                 path="bloodpreasure/addbloodp"
-                element={<BloodPreasure header="Add Blood Preasure" />}
+                element={<AddBloodPressure header="Add blood pressure" />}
               />
               <Route
                 path="bloodpreasure/edit/:bloodpId"
-                element={<BloodPreasure />}
+                element={<AddBloodPressure header="Update blood pressure" />}
               />
-              <Route path="viewbloodpreasure" element={<ViewBloodPressure />} />
               <Route path="glucose" element={<Viewglucose />} />
               <Route
                 path="glucose/addglucose"
@@ -103,7 +101,7 @@ const App = () => {
                 path="updateprescription"
                 element={<Updateprescription />}
               />
-              <Route path="Viewbloodp" element={<Viewbloodp />} />
+              <Route path="ViewBloodPressure" element={<ViewBloodPressure />} />
               <Route path="viewall" element={<Viewallpres />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
               <Route path="addsurgery" element={<AddSurgery />} />

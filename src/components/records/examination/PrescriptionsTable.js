@@ -6,7 +6,7 @@ import FilterComponent from "../FilterComponent";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getExaminations } from "../../../actions/records/examinationAction";
-
+import style from "../../../Css/records/ViewRecord.module.css";
 import { Link } from "react-router-dom";
 
 const PrescriptionsTable = (props) => {
@@ -100,11 +100,7 @@ const PrescriptionsTable = (props) => {
       id: 2,
     },
   ];
-  const [modalShow, setModalShow] = React.useState(false);
-  const [editShow, setEditShow] = React.useState(false);
-  React.useEffect(() => {
-    props.getExaminations();
-  }, []);
+
   const columns = [
     {
       name: "Drug",
@@ -144,22 +140,14 @@ const PrescriptionsTable = (props) => {
       allowOverflow: true,
       cell: (row) => {
         return (
-          <div className="edit-delete-btns">
-            <div className="edit-btn">
-              <Link
-                to={`/records/updateprescription`}
-                type="button"
-                className="btn btn-primary"
-              >
+          <div className={style.edit_delete_btns}>
+            <div className={style.edit_btn}>
+              <Link to={`./edit/${row._id}`} type="button" className="btn">
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
             </div>
-            <div className="delete-btn">
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={() => {}}
-              >
+            <div className={style.delete_btn}>
+              <button type="button" className="btn">
                 <FontAwesomeIcon icon={faXmark} />
               </button>
             </div>

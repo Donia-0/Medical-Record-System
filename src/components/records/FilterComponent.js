@@ -33,13 +33,6 @@ const ClearButton = styled.button`
 
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
   <>
-    {/* <Input
-      id="search"
-      type="text"
-      placeholder="Filter table data..."
-      value={filterText}
-      onChange={onFilter}
-    /> */}
     <input
       className="filter-examination-input"
       id="search"

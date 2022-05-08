@@ -147,7 +147,7 @@ const PrescriptionsTable = (props) => {
           <div className="edit-delete-btns">
             <div className="edit-btn">
               <Link
-                to={`/records/updateprescription`}
+                to={`./${row.id}`}
                 type="button"
                 className="btn btn-primary"
               >

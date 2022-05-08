@@ -2,13 +2,13 @@ import { faEdit, faEye, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useMemo } from "react";
 import DataTable from "react-data-table-component";
-import FilterComponent from "./FilterComponent";
+import FilterComponent from "../FilterComponent";
 import PrescriptionView from "./PrescriptionView";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getExaminations } from "../../actions/records/examinationAction";
+import { getExaminations } from "../../../actions/records/examinationAction";
 import { Link } from "react-router-dom";
-import style from "../../Css/records/ViewRecord.module.css";
+import style from "../../../Css/records/ViewRecord.module.css";
 
 const ExaminationTable = (props) => {
   const examTest = [
@@ -116,7 +116,7 @@ const ExaminationTable = (props) => {
         return (
           <div className={style.edit_delete_btns}>
             <div className={style.edit_btn}>
-              <Link to={`./edit/${row._id}`} type="button" className="btn">
+              <Link to={`./${row.id}`} type="button" className="btn">
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
             </div>

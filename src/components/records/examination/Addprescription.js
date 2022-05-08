@@ -7,8 +7,10 @@ import { prescriptionAdd } from "./../../../actions/records/pescriptionaction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import AdditioningField from "../AdditioningField";
+import { useParams } from "react-router";
 
 const Addprescription = (props) => {
+  const { prescriptionId } = useParams();
   const [inputList, setInputList] = useState([
     { drug: "", dose: "", note: "" },
   ]);
@@ -59,7 +61,7 @@ const Addprescription = (props) => {
         <div className="row prescripton-form">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className="pres-container">
-              <span className="pres-header">Add Prescription</span>
+              <span className="pres-header">{props.header}</span>
             </div>
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">

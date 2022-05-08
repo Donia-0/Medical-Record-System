@@ -184,7 +184,6 @@ import {
 } from "./../../../actions/records/bloodPressureAction";
 import bloodpreasure from "../../../images/records/bloodpressure/bloodp.png";
 import moment from "moment-timezone";
-import style from "../../../Css/records/Records.module.css";
 import styleRecord from "../../../Css/records/Record.module.css";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";

@@ -19,7 +19,6 @@ import AddExamination from "./records/examination/AddExamination";
 import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
 import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 import Viewglucose from "./records/glucose/Viewglucose";
-import BarChart from "./BarChart";
 import Admin from "./Admin/Admin";
 import AddSurgery from "./records/surgery/AddSurgery";
 import Surgery from "./records/surgery/Surgery";
@@ -61,7 +60,6 @@ const App = () => {
           {/* <Route path="/" element={<Landing />}></Route> */}
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/chart" element={<BarChart />} />
             {/* <Route path="/chart" element={<StackedArea />} /> */}
             <Route exact path="/auth" element={<Auth />}>
               <Route exact path="login" element={<Signin />} />
@@ -96,13 +94,23 @@ const App = () => {
                 element={<AddExamination header="Update Examination" />}
               />
               <Route path="editexamination" element={<EditExamination />} />
-              <Route path="addprescription" element={<Addprescription />} />
               <Route
+                path="addprescription"
+                element={<Addprescription header="Add Prescription" />}
+              />
+              <Route
+                path="viewallprescriptions/:prescriptionId"
+                element={<Addprescription header="Update Prescription" />}
+              />
+              {/* <Route
                 path="updateprescription"
                 element={<Updateprescription />}
               />
               <Route path="ViewBloodPressure" element={<ViewBloodPressure />} />
               <Route path="viewall" element={<Viewallpres />} />
+              /> */}
+              <Route path="Viewbloodp" element={<Viewbloodp />} />
+              <Route path="viewallprescriptions" element={<Viewallpres />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
               <Route path="addsurgery" element={<AddSurgery />} />
 

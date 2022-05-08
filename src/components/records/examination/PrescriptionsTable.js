@@ -140,9 +140,19 @@ const PrescriptionsTable = (props) => {
       allowOverflow: true,
       cell: (row) => {
         return (
+<<<<<<< HEAD
           <div className={style.edit_delete_btns}>
             <div className={style.edit_btn}>
               <Link to={`./edit/${row._id}`} type="button" className="btn">
+=======
+          <div className="edit-delete-btns">
+            <div className="edit-btn">
+              <Link
+                to={`./${row.id}`}
+                type="button"
+                className="btn btn-primary"
+              >
+>>>>>>> 990d7ec1a09069ee99c8233685b695ffa5520bc2
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
             </div>

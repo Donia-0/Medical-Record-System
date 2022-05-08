@@ -1,7 +1,7 @@
 import { faFilter, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import ExaminationTable from "../ExaminationTable";
+import ExaminationTable from "./ExaminationTable";
 import FilterModal from "./../FilterModal";
 import data from "../data";
 import { Link } from "react-router-dom";

@@ -39,7 +39,7 @@ const Sidebar = () => {
       <NavLink to="/records/examination" className={style.a_section}>
         Examination
       </NavLink>
-      <NavLink to="/records/viewall" className={style.a_section}>
+      <NavLink to="/records/viewallprescriptions" className={style.a_section}>
         Prescriptions
       </NavLink>
     </div>

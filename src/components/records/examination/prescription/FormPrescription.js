@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Fields from "../Fields";
+import Fields from "../../Fields";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
-import { prescriptionAdd } from "./../../../actions/records/pescriptionaction";
+import { prescriptionAdd } from "../../../../actions/records/pescriptionaction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import AdditioningField from "../AdditioningField";
+import AdditioningField from "../../AdditioningField";
 import { useParams } from "react-router";
 
-const Addprescription = (props) => {
+const FormPrescription = (props) => {
   const { prescriptionId } = useParams();
   const [inputList, setInputList] = useState([
     { drug: "", dose: "", note: "" },
@@ -168,11 +168,11 @@ const Addprescription = (props) => {
   );
 };
 
-Addprescription.prototype = {
+FormPrescription.prototype = {
   prescriptionAdd: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors,
 });
-export default connect(mapStateToProps, { prescriptionAdd })(Addprescription);
+export default connect(mapStateToProps, { prescriptionAdd })(FormPrescription);

@@ -12,7 +12,7 @@ import NoteField from "../NoteField";
 import style from "../../../Css/records/Record.module.css";
 import { useParams } from "react-router";
 
-const AddBloodPressure = (props) => {
+const FormBloodPressure = (props) => {
   const { bloodpId, name } = useParams();
   const [errors, setErrors] = useState({});
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -148,7 +148,7 @@ const AddBloodPressure = (props) => {
     </div>
   );
 };
-AddBloodPressure.prototype = {
+FormBloodPressure.prototype = {
   addBloodPressure: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
@@ -162,4 +162,4 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   addBloodPressure,
   getBloodPressureDetailById,
-})(AddBloodPressure);
+})(FormBloodPressure);

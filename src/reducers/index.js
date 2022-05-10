@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import authReducer from "./authReducer";
 import errorReducer from "./errorReducer";
+import patientReducer from "./patientReducer";
 import profileReducer from "./profileReducer";
 import bloodpressureReducer from "./records/bloodpressureReducer";
 import examinationReducer from "./records/examinationReducer";
@@ -15,4 +16,5 @@ export default combineReducers({
   examination: examinationReducer,
   glucose: glucoseReducer,
   surgery: surgeryReducer,
+  patient: patientReducer,
 });

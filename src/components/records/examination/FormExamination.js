@@ -7,10 +7,8 @@ import { PropTypes } from "prop-types";
 import AdditioningField from "../AdditioningField";
 import NoteField from "../NoteField";
 import style from "../../../Css/records/Record.module.css";
-import image from "../../../images/records/bloodpressure/bloodp.png";
 import { useParams } from "react-router";
-import isEmpty from "./../../../validation/isEmpty";
-const AddExamination = (props) => {
+const FormExamination = (props) => {
   const { examId } = useParams();
 
   const [form, setForm] = useState({
@@ -106,7 +104,7 @@ const AddExamination = (props) => {
     </div>
   );
 };
-AddExamination.prototype = {
+FormExamination.prototype = {
   addExamination: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
@@ -116,4 +114,4 @@ const mapStateToProps = (state) => ({
   examination: state.examination,
   errors: state.errors,
 });
-export default connect(mapStateToProps, { addExamination })(AddExamination);
+export default connect(mapStateToProps, { addExamination })(FormExamination);

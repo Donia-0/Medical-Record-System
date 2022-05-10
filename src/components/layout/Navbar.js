@@ -1,14 +1,12 @@
+import React from "react";
+import logo from "../../images/light-color.png";
+import SearchBar from "../user/SearchBar";
+import style from "../../Css/Navbar.module.css";
 import {
   faCapsules,
   faRightFromBracket,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import logo from "../../images/light-color.png";
-import Search from "../user/Search";
-import SearchBar from "../user/SearchBar";
-import style from "../../Css/Navbar.module.css";
 const Navbar = () => {
   return (
     <nav
@@ -23,7 +21,7 @@ const Navbar = () => {
         </a>
       </div>
       <div className={`container-fluid`}>
-        <Search />
+        <SearchBar />
       </div>
 
       <button

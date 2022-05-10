@@ -2,10 +2,10 @@ import { faEdit, faEye, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useMemo } from "react";
 import DataTable from "react-data-table-component";
-import FilterComponent from "../FilterComponent";
+import FilterComponent from "../../FilterComponent";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getExaminations } from "../../../actions/records/examinationAction";
+import { getExaminations } from "../../../../actions/records/examinationAction";
 import style from "../../../Css/records/ViewRecord.module.css";
 import { Link } from "react-router-dom";
 
@@ -140,19 +140,9 @@ const PrescriptionsTable = (props) => {
       allowOverflow: true,
       cell: (row) => {
         return (
-<<<<<<< HEAD
           <div className={style.edit_delete_btns}>
             <div className={style.edit_btn}>
               <Link to={`./edit/${row._id}`} type="button" className="btn">
-=======
-          <div className="edit-delete-btns">
-            <div className="edit-btn">
-              <Link
-                to={`./${row.id}`}
-                type="button"
-                className="btn btn-primary"
-              >
->>>>>>> 990d7ec1a09069ee99c8233685b695ffa5520bc2
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
             </div>

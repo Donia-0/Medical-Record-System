@@ -1,40 +1,41 @@
 import { faEdit, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment-timezone";
-import React, { useMemo } from "react";
-import style from "../../../Css/records/ViewRecord.module.css";
+import React from "react";
+import style from "../../../../Css/records/ViewRecord.module.css";
 import { Link } from "react-router-dom";
-const columns = (onClick) => [
+
+const columns = [
   {
-    name: "Systolic",
-    selector: (row) => row.systolic,
+    name: "Drug",
+    selector: (row) => row.drug,
     sortable: true,
+    grow: 1,
+    wrap: true,
   },
   {
-    name: "Diastolic",
-    selector: (row) => row.diastolic,
+    name: "Dose",
+    selector: (row) => row.dose,
     sortable: true,
-  },
-  {
-    name: "Pulse",
-    selector: (row) => row.pulse,
-    sortable: true,
+    wrap: true,
   },
   {
     name: "Date",
-    selector: (row) =>
-      moment(row.date).format("yyyy-MM-DD") +
-      " at " +
-      moment(row.date).format("hh:mm A"),
-
+    selector: (row) => row.date,
+    sortable: true,
+  },
+  {
+    name: "Dr Name",
+    selector: (row) => row.DrName,
     sortable: true,
   },
   {
     name: "Note",
-    selector: (row) => row.note || "There  is no note",
-    grow: 2,
+    selector: (row) => row.note,
+    sortable: true,
+    grow: 1,
     wrap: true,
   },
+
   {
     name: "Action",
     button: true,
@@ -49,7 +50,7 @@ const columns = (onClick) => [
             </Link>
           </div>
           <div className={style.delete_btn}>
-            <button onClick={onClick} type="button" className="btn">
+            <button type="button" className="btn">
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>

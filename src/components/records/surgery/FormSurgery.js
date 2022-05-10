@@ -7,7 +7,7 @@ import AdditioningField from "../AdditioningField";
 import style from "../../../Css/records/Record.module.css";
 import { useParams } from "react-router";
 
-const AddSurgery = (props) => {
+const FormSurgery = (props) => {
   const { surgeryId } = useParams();
 
   const [form, setForm] = useState({
@@ -100,7 +100,7 @@ const AddSurgery = (props) => {
     </div>
   );
 };
-AddSurgery.prototype = {
+FormSurgery.prototype = {
   addSurgery: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
@@ -110,4 +110,4 @@ const mapStateToProps = (state) => ({
   newSurgery: state.newSurgery,
   errors: state.errors,
 });
-export default connect(mapStateToProps, { addSurgery })(AddSurgery);
+export default connect(mapStateToProps, { addSurgery })(FormSurgery);

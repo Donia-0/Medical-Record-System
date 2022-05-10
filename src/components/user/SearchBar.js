@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import RequestAccessPatient from "../RequestAccessPatient";
 import style from "../../Css/Navbar.module.css";
+import axios from "axios";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import {
+  searchPatient,
+  clearPatientProfile,
+} from "./../../actions/PatientAction";
+const SearchBar = (props) => {
+  const [searchItem, setSearchItem] = useState("");
 
-export default function SearchBar() {
-  const [searchItem, setSearchItem] = React.useState("");
-  const [SearchModelShow, setSearchModelShow] = React.useState(false);
+  const [SearchModelShow, setSearchModelShow] = useState(false);
 
   const onInputChane = (e) => {
     setSearchItem(e.target.value);
   };
-  const x = () => {
-    return <div style={{ background: "red", width: "100%" }}>Hello</div>;
-  };
-  const onFormSubmit = (e) => {
+  const [patient, setPatient] = useState({});
+  const onFormSubmit = async (e) => {
     e.preventDefault();
     setSearchModelShow(true);
+    const search = {
+      nationalId: searchItem,
+    };
+    props.searchPatient(search);
   };
+  const { patientProfile } = props.patient;
   return (
     <div className={style.search_user}>
       <form onSubmit={onFormSubmit}>
@@ -34,12 +44,26 @@ export default function SearchBar() {
           />
         </div>
         <RequestAccessPatient
+          user={patientProfile}
           show={SearchModelShow}
           onHide={() => {
             setSearchModelShow(false);
+            props.clearPatientProfile();
           }}
         />
       </form>
     </div>
   );
-}
+};
+SearchBar.propTypes = {
+  patient: PropTypes.object.isRequired,
+  searchPatient: PropTypes.func.isRequired,
+  clearPatientProfile: PropTypes.func.isRequired,
+};
+const mapStateToProps = (state) => ({
+  patient: state.patient,
+});
+export default connect(mapStateToProps, {
+  searchPatient,
+  clearPatientProfile,
+})(SearchBar);

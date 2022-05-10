@@ -1,38 +1,31 @@
 import { faEdit, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment-timezone";
 import React, { useMemo } from "react";
 import style from "../../../Css/records/ViewRecord.module.css";
 import { Link } from "react-router-dom";
-const columns = (onClick) => [
+import dateFormat from "./../../../utils/dateFormat";
+
+const columns = [
   {
-    name: "Systolic",
-    selector: (row) => row.systolic,
+    name: "Type",
+    selector: (row) => row.type,
     sortable: true,
   },
   {
-    name: "Diastolic",
-    selector: (row) => row.diastolic,
-    sortable: true,
-  },
-  {
-    name: "Pulse",
-    selector: (row) => row.pulse,
+    name: "Result",
+    selector: (row) => row.result,
     sortable: true,
   },
   {
     name: "Date",
-    selector: (row) =>
-      moment(row.date).format("yyyy-MM-DD") +
-      " at " +
-      moment(row.date).format("hh:mm A"),
-
+    selector: (row) => dateFormat(row.date),
     sortable: true,
   },
   {
     name: "Note",
-    selector: (row) => row.note || "There  is no note",
-    grow: 2,
+    selector: (row) => row.note,
+    sortable: true,
+    grow: 1,
     wrap: true,
   },
   {
@@ -49,7 +42,7 @@ const columns = (onClick) => [
             </Link>
           </div>
           <div className={style.delete_btn}>
-            <button onClick={onClick} type="button" className="btn">
+            <button type="button" className="btn">
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>

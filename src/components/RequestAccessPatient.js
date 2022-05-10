@@ -12,49 +12,44 @@ function RequestsView(props) {
       centered
     >
       <Modal.Header closeButton>
-        {/* <Modal.Title id="contained-modal-title-vcenter">
-          Request Access
-        </Modal.Title> */}
         <Modal.Title
           id="contained-modal-title-vcenter"
           className="request-access-modal-title"
         >
-          <FontAwesomeIcon icon={faUser} /> Hussein Salah
-          {/* <input type="text" className="form-control" />
-          <Button className="search-patient-btn">Search</Button> */}
+          {!props.user ? (
+            "User not found"
+          ) : (
+            <span>
+              <FontAwesomeIcon icon={faUser} />
+              {props.user.name}
+            </span>
+          )}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <div className="request-access-view">
-          <div className="row">
-            {/* <div className="col-lg-12 col-md-12 col-sm-12">
-              <div className="request-access-header">
-                <h4>Hussein Salah</h4>
-              </div>
-            </div> */}
-            <div className="col-lg-12 col-md-12 col-sm-12">
-              <div className="request-access-body">
-                <div>E-mail: husseinsalah@gmail.com</div>
-                <div>Age: 22</div>
-                {/* <button className="btn btn-primary mb-2 request-access-btn">
-                  Request
-                </button> */}
+      {!props.user ? null : (
+        <div>
+          <Modal.Body>
+            <div className="request-access-view">
+              <div className="row">
+                <div className="col-lg-12 col-md-12 col-sm-12">
+                  <div className="request-access-body">
+                    <div>E-mail: {props.user.email}</div>
+                    <div>Age: {props.user.date}</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className="popup-close" onClick={props.onHide}>
+              Request
+            </Button>
+            <Button className="popup-close" onClick={props.onHide}>
+              Decline
+            </Button>
+          </Modal.Footer>
         </div>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button className="popup-close" onClick={props.onHide}>
-          Request
-        </Button>
-        <Button className="popup-close" onClick={props.onHide}>
-          Decline
-        </Button>
-        {/* <Button className="popup-close" onClick={props.onHide}>
-          Close
-        </Button> */}
-      </Modal.Footer>
+      )}
     </Modal>
   );
 }

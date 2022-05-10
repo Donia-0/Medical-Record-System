@@ -12,16 +12,16 @@ import setAuthToken from "./../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import Profile from "./user/Profile";
 import Landing from "./layout/Landing";
-import AddBloodPressure from "./records/bloodPressure/AddBloodPressure";
+import FormBloodPressure from "./records/bloodPressure/FormBloodPressure";
 import Examination from "./records/examination/Examination";
-import Addprescription from "./records/examination/Addprescription";
-import AddExamination from "./records/examination/AddExamination";
-import GlucoseMeasure from "./records/glucose/GlucoseMeasure";
+import FormPrescription from "./records/examination/prescription/FormPrescription";
+import FormExamination from "./records/examination/FormExamination";
+import FormGlucoseMeasure from "./records/glucose/FormGlucoseMeasure";
 import ViewBloodPressure from "./records/bloodPressure/ViewBloodPressure";
 import Viewglucose from "./records/glucose/Viewglucose";
 import Admin from "./Admin/Admin";
-import AddSurgery from "./records/surgery/AddSurgery";
-import Surgery from "./records/surgery/Surgery";
+import FormSurgery from "./records/surgery/FormSurgery";
+import ViewSurgery from "./records/surgery/ViewSurgery";
 import BloodChart from "./records/bloodPressure/BloodChart";
 import EditExamination from "./records/examination/EditExamination";
 import "../Css/ActiveClass.css";
@@ -30,9 +30,7 @@ import "../Css/Style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
-import Viewallpres from "./records/examination/Viewallpres";
-
-import Updateprescription from "./records/examination/Updateprescription";
+import ViewPrescription from "./records/examination/prescription/ViewPrescription";
 
 //check for token
 if (localStorage.token) {
@@ -57,10 +55,8 @@ const App = () => {
     <div className="app">
       <Provider store={store}>
         <BrowserRouter>
-          {/* <Route path="/" element={<Landing />}></Route> */}
           <Routes>
             <Route path="/" element={<Landing />} />
-            {/* <Route path="/chart" element={<StackedArea />} /> */}
             <Route exact path="/auth" element={<Auth />}>
               <Route exact path="login" element={<Signin />} />
               <Route exact path="register" element={<Register />} />
@@ -71,60 +67,68 @@ const App = () => {
             <Route path="/records" element={<Layout />}>
               <Route path="bloodpreasure" element={<ViewBloodPressure />} />
               <Route
-                path="bloodpreasure/addbloodp"
-                element={<AddBloodPressure header="Add blood pressure" />}
+                path="bloodpreasure/addbloodpressure"
+                element={<FormBloodPressure header="Add blood pressure" />}
               />
               <Route
                 path="bloodpreasure/edit/:bloodpId"
-                element={<AddBloodPressure header="Update blood pressure" />}
+                element={<FormBloodPressure header="Update blood pressure" />}
               />
               <Route path="glucose" element={<Viewglucose />} />
               <Route
                 path="glucose/addglucose"
-                element={<GlucoseMeasure header="Add Glucose Measurement" />}
+                element={
+                  <FormGlucoseMeasure header="Add Glucose Measurement" />
+                }
               />
-              <Route path="glucose/:glucoseId" element={<GlucoseMeasure />} />
+              <Route
+                path="glucose/edit/:glucoseID"
+                element={
+                  <FormGlucoseMeasure header="Update Glucose Measurement" />
+                }
+              />
+
               <Route path="examination" element={<Examination />} />
               <Route
                 path="examination/addExamination"
-                element={<AddExamination header="Add Examination" />}
+                element={<FormExamination header="Add Examination" />}
               />
               <Route
                 path="examination/:examId"
-                element={<AddExamination header="Update Examination" />}
+                element={<FormExamination header="Update Examination" />}
               />
               <Route path="editexamination" element={<EditExamination />} />
               <Route
-                path="addprescription"
-                element={<Addprescription header="Add Prescription" />}
+                path="prescriptions/addprescription"
+                element={<FormPrescription header="Add Prescription" />}
               />
               <Route
-                path="viewallprescriptions/:prescriptionId"
-                element={<Addprescription header="Update Prescription" />}
+                path="prescriptions/edit/:prescriptionId"
+                element={<FormPrescription header="Update Prescription" />}
               />
               {/* <Route
                 path="updateprescription"
                 element={<Updateprescription />}
               />
               <Route path="ViewBloodPressure" element={<ViewBloodPressure />} />
-              <Route path="viewall" element={<Viewallpres />} />
+              <Route path="viewall" element={<ViewPrescription />} />
               /> */}
-              <Route path="Viewbloodp" element={<Viewbloodp />} />
-              <Route path="viewallprescriptions" element={<Viewallpres />} />
+              <Route path="prescriptions" element={<ViewPrescription />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
-              <Route path="addsurgery" element={<AddSurgery />} />
-
-              <Route path="surgery" element={<Surgery />} />
+              <Route path="addsurgery" element={<FormSurgery />} />
+              <Route path="surgery" element={<ViewSurgery />} />
               <Route
                 path="surgery/addsurgery"
-                element={<AddSurgery header="Add Surgery" />}
+                element={<FormSurgery header="Add Surgery" />}
               />
               <Route
                 path="surgery/:surgeryId"
-                element={<AddSurgery header="Update Surgery" />}
+                element={<FormSurgery header="Update Surgery" />}
               />
-              <Route path="graph">
-                <Route path="blood" element={<BloodChart />} />
+              <Route path="bloodpreasure">
+                <Route path="graph">
+                  <Route path="blood" element={<BloodChart />} />
+                </Route>
               </Route>
             </Route>
             <Route path="admin" element={<Admin />} />

@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "../../Css/Layouts/Sidebar.module.css";
-import Viewallpres from "./../records/examination/Viewallpres";
 const Sidebar = () => {
   return (
     <div className={`${style.sidenav}`}>
@@ -39,7 +38,7 @@ const Sidebar = () => {
       <NavLink to="/records/examination" className={style.a_section}>
         Examination
       </NavLink>
-      <NavLink to="/records/viewallprescriptions" className={style.a_section}>
+      <NavLink to="/records/prescriptions" className={style.a_section}>
         Prescriptions
       </NavLink>
     </div>

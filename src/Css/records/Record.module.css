@@ -48,6 +48,21 @@
   background-color: #def2f3cf;
   border-radius: 0px 0px 15px 15px;
 }
+.allergy_list_container {
+  display: flex;
+  background-color: #def2f3cf;
+  border-radius: 0px 0px 15px 15px;
+  padding: 20px 20px 10px;
+}
+.allergy_list_container div {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.allergy_list_container .allergy_icon {
+  margin-right: 5px;
+}
 .add_btn button {
   width: 100%;
   background-color: #307b8c;

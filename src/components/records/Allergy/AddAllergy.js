@@ -30,34 +30,32 @@ const AddAllergy = (props) => {
     setErrors(props.errors);
   }, [props.errors]);
   return (
-    <div className={style.add_record} style={{ marginTop: "20px" }}>
-      <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className={style.record_container_header}>
-            <span className={style.add_record_header}>Add Allergy</span>
-          </div>
+    <div className="row">
+      <div className="col-lg-12 col-md-12 col-sm-12">
+        <div className={style.record_container_header}>
+          <span className={style.add_record_header}>Add Allergy</span>
         </div>
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className={style.add_record_form}>
-            <form className="form-group" onSubmit={onFormSubmit}>
-              <AdditioningField
-                value={form.name}
-                onChange={onInputChange}
-                name="name"
-                labelName="Name"
-                type="input"
-                placeholder="Add allergy name"
-                err={errors.name}
-              />
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className={style.add_btn}>
-                    <button className="btn btn-primary mb-2">Submit</button>
-                  </div>
+      </div>
+      <div className="col-lg-12 col-md-12 col-sm-12">
+        <div className={style.add_record_form}>
+          <form className="form-group" onSubmit={onFormSubmit}>
+            <AdditioningField
+              value={form.name}
+              onChange={onInputChange}
+              name="name"
+              labelName="Name"
+              type="input"
+              placeholder="Add allergy name"
+              err={errors.name}
+            />
+            <div className="row">
+              <div className="col-lg-12">
+                <div className={style.add_btn}>
+                  <button className="btn btn-primary mb-2">Submit</button>
                 </div>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

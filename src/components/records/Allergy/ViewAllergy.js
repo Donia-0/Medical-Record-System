@@ -24,19 +24,17 @@ const ViewAllergy = (props) => {
     );
   });
   return (
-    <div className={style.add_record} style={{ marginTop: "20px" }}>
-      <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className={style.record_container_header}>
-            <span className={style.add_record_header}>
-              <FontAwesomeIcon icon={faList} /> List Of Allergies
-            </span>
-          </div>
+    <div className="row">
+      <div className="col-lg-12 col-md-12 col-sm-12">
+        <div className={style.record_container_header}>
+          <span className={style.add_record_header}>
+            <FontAwesomeIcon icon={faList} /> List Of Allergies
+          </span>
         </div>
-        <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className={`row ${style.allergy_list_container}`}>
-            {renderedAllergies}
-          </div>
+      </div>
+      <div className="col-lg-12 col-md-12 col-sm-12">
+        <div className={`row ${style.allergy_list_container}`}>
+          {renderedAllergies}
         </div>
       </div>
     </div>

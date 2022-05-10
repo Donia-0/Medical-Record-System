@@ -34,6 +34,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Viewallpres from "./records/examination/Viewallpres";
 
 import Updateprescription from "./records/examination/Updateprescription";
+import AddAllergy from "./records/Allergy/AddAllergy";
 
 //check for token
 if (localStorage.token) {
@@ -125,6 +126,7 @@ const App = () => {
               <Route path="graph">
                 <Route path="blood" element={<BloodChart />} />
               </Route>
+              <Route path="allergy" element={<AddAllergy />} />
             </Route>
             <Route path="admin" element={<Admin />} />
           </Routes>

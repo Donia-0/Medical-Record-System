@@ -12,13 +12,12 @@ import {
 } from "./../../actions/PatientAction";
 const SearchBar = (props) => {
   const [searchItem, setSearchItem] = useState("");
-
   const [SearchModelShow, setSearchModelShow] = useState(false);
+  const [sentRequest, setSentRequest] = useState(false);
 
   const onInputChane = (e) => {
     setSearchItem(e.target.value);
   };
-  const [patient, setPatient] = useState({});
   const onFormSubmit = async (e) => {
     e.preventDefault();
     setSearchModelShow(true);
@@ -46,9 +45,22 @@ const SearchBar = (props) => {
         <RequestAccessPatient
           user={patientProfile}
           show={SearchModelShow}
+          sent={sentRequest.toString()}
           onHide={() => {
             setSearchModelShow(false);
+            setSentRequest(false);
             props.clearPatientProfile();
+          }}
+          onClickRequest={() => {
+            setSentRequest(true);
+            const req = {
+              id: patientProfile._id,
+            };
+            const res = axios.post(
+              "http://localhost:5000/doctor/sendmail",
+              req
+            );
+            console.log(res.data);
           }}
         />
       </form>

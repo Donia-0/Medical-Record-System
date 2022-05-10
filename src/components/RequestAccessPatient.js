@@ -1,9 +1,26 @@
+import React, { useState } from "react";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import { ConstructionOutlined } from "@mui/icons-material";
+import axios from "axios";
 
 function RequestsView(props) {
+  const [submit, setSubmit] = useState("");
+  const [verified, setVerified] = useState(false);
+  const onCheckCode = async () => {
+    const req = {
+      id: props.user._id,
+      check: submit,
+    };
+
+    const response = await axios.post(
+      "http://localhost:5000/doctor/verify",
+      req
+    );
+    setVerified(response.data.verify);
+  };
+  console.log(verified);
   return (
     <Modal
       {...props}
@@ -41,12 +58,33 @@ function RequestsView(props) {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button className="popup-close" onClick={props.onHide}>
-              Request
-            </Button>
-            <Button className="popup-close" onClick={props.onHide}>
-              Decline
-            </Button>
+            {props.sent === "true" ? (
+              <div className="row">
+                <div className="col-lg-6">
+                  <input
+                    onChange={(e) => {
+                      setSubmit(e.target.value);
+                    }}
+                    value={submit}
+                    type="text"
+                    className="form-control"
+                  />
+                </div>
+                <div className="col-lg-6">
+                  <Button
+                    onClick={onCheckCode}
+                    placeholder="Write code here"
+                    className="popup-close"
+                  >
+                    submit
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <Button onClick={props.onClickRequest} className="popup-close">
+                Request
+              </Button>
+            )}
           </Modal.Footer>
         </div>
       )}

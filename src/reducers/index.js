@@ -3,6 +3,7 @@ import authReducer from "./authReducer";
 import errorReducer from "./errorReducer";
 import patientReducer from "./patientReducer";
 import profileReducer from "./profileReducer";
+import allergyReducer from "./records/allergyReducer";
 import bloodpressureReducer from "./records/bloodpressureReducer";
 import examinationReducer from "./records/examinationReducer";
 import glucoseReducer from "./records/glucoseReducer";
@@ -17,4 +18,5 @@ export default combineReducers({
   glucose: glucoseReducer,
   surgery: surgeryReducer,
   patient: patientReducer,
+  allergy: allergyReducer,
 });

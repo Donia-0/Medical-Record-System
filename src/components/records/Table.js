@@ -1,12 +1,16 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import DataTable from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
 import style from "../../Css/records/ViewRecord.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChartBar, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Table = (props) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const [filterText, setFilterText] = React.useState("");
   const [resetPaginationToggle, setResetPaginationToggle] =
     React.useState(false);
@@ -35,7 +39,12 @@ const Table = (props) => {
   }, [filterText, resetPaginationToggle]);
 
   return (
-    <div className={style.view}>
+    <div
+      className={style.view}
+      data-aos="zoom-in-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="1000"
+    >
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className={style.view_header}>

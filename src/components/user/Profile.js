@@ -38,8 +38,8 @@ const Profile = (props) => {
     if (form.birthdate !== "") {
       update = { ...update, birthdate: form.birthdate };
     }
-    console.log(update);
     props.updateUser(update);
+    window.location.reload();
   };
   const onInputChange = (evt) => {
     const value = evt.target.value;
@@ -157,9 +157,21 @@ const Profile = (props) => {
                     <div className="col-lg-6">
                       <div className={style.btn_edit_change_password}>
                         {edit === true ? (
-                          <button className="btn">Change Password</button>
+                          <button
+                            className="btn"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setModalShow(true);
+                            }}
+                          >
+                            Change Password
+                          </button>
                         ) : null}
                       </div>
+                      <ChangePassword
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                      />
                     </div>
                     <div className="col-lg-6">
                       <div className={style.btn_edit_save}>

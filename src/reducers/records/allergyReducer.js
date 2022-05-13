@@ -1,39 +1,28 @@
-import {
-  ADD_EXAMINATION,
-  CLEAR_RECORDS,
-  GET_EXAMINATION,
-  LOADING,
-} from "./../../actions/types";
+import { CLEAR_RECORDS, GET_ALLERGIES, LOADING } from "../../actions/types";
 
 const initialState = {
-  newExamination: {},
-  Examination: [],
+  allergies: [],
   loading: false,
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case ADD_EXAMINATION:
+    case GET_ALLERGIES:
       return {
         ...state,
-        newExamination: action.payload,
+        allergies: action.payload,
+        loading: false,
       };
     case LOADING:
       return {
         ...state,
         loading: true,
       };
-    case GET_EXAMINATION:
-      return {
-        ...state,
-        Examination: action.payload,
-      };
     case CLEAR_RECORDS:
       return {
         ...state,
-        Examination: [],
+        allergies: [],
         loading: false,
-        newExamination: {},
       };
     default:
       return state;

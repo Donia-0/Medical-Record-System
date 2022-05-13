@@ -43,7 +43,7 @@ function RequestsView(props) {
           )}
         </Modal.Title>
       </Modal.Header>
-      {!props.user ? null : (
+      {!props.user && !props.loading ? null : (
         <div>
           <Modal.Body>
             <div className="request-access-view">

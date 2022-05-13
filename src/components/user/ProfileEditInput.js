@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import style from "../../Css/User/Profile.module.css";
 
@@ -10,6 +11,7 @@ const ProfileEditInput = ({
   edit,
   onChange,
   placeholder,
+  err,
 }) => {
   return (
     <div className={style.edit_input}>
@@ -21,10 +23,13 @@ const ProfileEditInput = ({
         name={name}
         value={value}
         onChange={onChange}
-        className="input form-control"
+        className={classNames("input form-control", {
+          "is-invalid": err,
+        })}
         disabled={edit === false ? true : ""}
         placeholder={placeholder}
       />
+      {err && <div className="invalid-feedback">{err}</div>}
     </div>
   );
 };

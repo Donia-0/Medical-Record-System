@@ -1,4 +1,4 @@
-import { GET_GLUCOSE, LOADING } from "./../../actions/types";
+import { CLEAR_RECORDS, GET_GLUCOSE, LOADING } from "./../../actions/types";
 
 const initialState = {
   glucose: [],
@@ -17,6 +17,12 @@ export default function (state = initialState, action) {
         ...state,
         loading: false,
         glucose: action.payload,
+      };
+    case CLEAR_RECORDS:
+      return {
+        ...state,
+        glucose: [],
+        loading: false,
       };
     default:
       return state;

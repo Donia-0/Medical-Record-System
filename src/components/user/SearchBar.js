@@ -26,7 +26,7 @@ const SearchBar = (props) => {
     };
     props.searchPatient(search);
   };
-  const { patientProfile } = props.patient;
+  const { patientProfile, loading } = props.patient;
   return (
     <div className={style.search_user}>
       <form onSubmit={onFormSubmit}>

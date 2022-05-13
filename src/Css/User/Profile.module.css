@@ -37,7 +37,6 @@
 .profile .profile_info {
   display: flex;
   justify-content: center;
-  height: 63vh;
   padding: 10px;
 }
 .profile .profile_info .profile_form {
@@ -63,10 +62,9 @@
 }
 
 .profile .profile_form form {
-  margin: 40px 20px;
+  margin: 30px 20px;
 }
 .profile .profile_form .edit_input {
-  margin-top: 15.1px;
 }
 .profile .profile_form .edit_input .edit_label {
   margin-bottom: 5px;
@@ -75,9 +73,9 @@
 }
 
 .edit_input .edit_label {
-  margin-bottom: 8px;
   color: #2a7f82;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .profile .profile_form .btn_edit {
@@ -92,7 +90,8 @@
 .profile .profile_form .btn_edit button:focus {
   box-shadow: 0 0 0 0.15rem #3ca6a6;
 }
-.profile .profile_form .btn_edit button:hover {
+.profile .profile_form .btn_edit button:hover,
+.change_password button:hover {
   background-color: #3ca6a6;
 }
 .profile .profile_form .btn_edit .btn_edit_save {
@@ -116,4 +115,17 @@
 .change_password {
   width: 90%;
   margin: auto;
+}
+.change_password label {
+  margin-bottom: 10px;
+}
+.change_password_submit button {
+  width: 100%;
+  background-color: #307b8c;
+  margin-top: 15px;
+}
+.change_password_submit button:focus {
+  box-shadow: 0 0 0 0.15rem #3ca6a6 !important;
+  background-color: #3ca6a6 !important;
+  border-color: #3ca6a6 !important;
 }

@@ -7,7 +7,20 @@ import {
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Navbar = () => {
+import { clearCurrentProfile } from "./../../actions/profileAction";
+import { logoutUser } from "./../../actions/authAction";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+const Navbar = (props) => {
+  const navigate = useNavigate();
+
+  const onLogoutClick = (e) => {
+    e.preventDefault();
+    props.logoutUser(navigate);
+    props.clearCurrentProfile();
+  };
   return (
     <nav
       className={`${style.navbar_own_style} navbar navbar-expand-lg navbar-light`}
@@ -54,8 +67,8 @@ const Navbar = () => {
           <li className={`nav-item ${style.width_nav_item}`}>
             <a
               className={`nav-link ${style.nav_link_own_style}`}
-              aria-current="page"
-              href="/"
+              href="/auth/login"
+              onClick={onLogoutClick}
             >
               <FontAwesomeIcon
                 icon={faRightFromBracket}
@@ -70,4 +83,10 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(
+  Navbar
+);

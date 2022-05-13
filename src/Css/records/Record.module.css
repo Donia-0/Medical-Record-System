@@ -60,8 +60,18 @@
   justify-content: center;
   align-items: center;
 }
+.single_allergy {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  font-size: 20px;
+  align-items: center;
+}
+
 .allergy_list_container .allergy_icon {
   margin-right: 5px;
+  margin-top: 5px;
+  font-size: 12px;
 }
 .add_btn button {
   width: 100%;

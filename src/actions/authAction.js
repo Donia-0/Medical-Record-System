@@ -1,10 +1,10 @@
 import axios from "axios";
-import { GET_ERRORS, LOG_OUT, SET_CURRENT_USER } from "./types";
+import { CLEAR_RECORDS, GET_ERRORS, LOG_OUT, SET_CURRENT_USER } from "./types";
 import setAuthToken from "./../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import { toast } from "react-toastify";
-toast.configure();
 
+toast.configure();
 //register
 export const registerUser = (userData, navigate) => async (dispatch) => {
   try {
@@ -76,7 +76,8 @@ export const logoutUser = (navigate) => async (dispatch) => {
     setAuthToken(false);
     //set current user to {} which will set isAuthenticated to false
     dispatch(setCurrentUser({}));
-    navigate("/auth/login");
+    dispatch({ type: CLEAR_RECORDS });
+    navigate("/");
     return {
       type: LOG_OUT,
     };

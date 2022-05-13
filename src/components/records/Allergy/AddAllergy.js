@@ -19,11 +19,14 @@ const AddAllergy = (props) => {
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
+    setErrors({});
     const newAllergy = {
       name: form.name,
     };
     props.addAllergy(newAllergy);
-    console.log(newAllergy);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
   useEffect(() => {
     setErrors({});

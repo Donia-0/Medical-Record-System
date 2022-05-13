@@ -33,6 +33,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import ViewPrescription from "./records/examination/prescription/ViewPrescription";
 import AddAllergy from "./records/Allergy/AddAllergy";
 import Allergy from "./records/Allergy/Allergy";
+import PillIdentifier from "./Pill/PillIdentifier";
 
 //check for token
 if (localStorage.token) {
@@ -135,6 +136,9 @@ const App = () => {
               <Route path="allergy" element={<Allergy />} />
             </Route>
             <Route path="admin" element={<Admin />} />
+            <Route path="/" element={<Layout />}>
+              <Route path="pillidentifier" element={<PillIdentifier />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </Provider>

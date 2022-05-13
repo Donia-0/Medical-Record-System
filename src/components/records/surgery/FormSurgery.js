@@ -6,8 +6,13 @@ import { PropTypes } from "prop-types";
 import AdditioningField from "../AdditioningField";
 import style from "../../../Css/records/Record.module.css";
 import { useParams } from "react-router";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FormSurgery = (props) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const { surgeryId } = useParams();
 
   const [form, setForm] = useState({
@@ -49,7 +54,13 @@ const FormSurgery = (props) => {
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className={style.add_record_form}>
-              <form className="form-group" onSubmit={onFormSubmit}>
+              <form
+                data-aos="fade-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+                className="form-group"
+                onSubmit={onFormSubmit}
+              >
                 <AdditioningField
                   value={form.name}
                   onChange={onInputChange}

@@ -11,8 +11,13 @@ import AdditioningField from "../AdditioningField";
 import NoteField from "../NoteField";
 import style from "../../../Css/records/Record.module.css";
 import { useParams } from "react-router";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FormGlucoseMeasure = (props) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     type: "",
@@ -54,7 +59,13 @@ const FormGlucoseMeasure = (props) => {
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className={style.add_record_form}>
-              <form className="form-group" onSubmit={onFormSubmit}>
+              <form
+                data-aos="fade-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+                className="form-group"
+                onSubmit={onFormSubmit}
+              >
                 <div className="formlabel col-lg-3 col-md-12 col-sm-12">
                   <label
                     style={{

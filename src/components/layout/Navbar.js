@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clearCurrentProfile } from "./../../actions/profileAction";
 import { logoutUser } from "./../../actions/authAction";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = (props) => {
@@ -52,7 +52,8 @@ const Navbar = (props) => {
       <div className="navbar-collapse collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto">
           <li className={`nav-item ${style.width_nav_item}`}>
-            <a
+            <Link
+              to="/pillIdentifier"
               className={`nav-link ${style.nav_link_own_style}`}
               aria-current="page"
               href="#billidentifier"
@@ -62,7 +63,7 @@ const Navbar = (props) => {
                 style={{ marginRight: "5px" }}
               />
               Pill identifier
-            </a>
+            </Link>
           </li>
           <li className={`nav-item ${style.width_nav_item}`}>
             <a

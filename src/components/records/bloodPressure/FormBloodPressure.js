@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import {
   addBloodPressure,
   getBloodPressureDetailById,
+  updateBloodPressure,
 } from "../../../actions/records/bloodPressureAction";
 import moment from "moment-timezone";
-
+import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
 import AdditioningField from "../AdditioningField";
@@ -15,10 +16,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const FormBloodPressure = (props) => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init();
   }, []);
-  const { bloodpId, name } = useParams();
+  const { bloodpId } = useParams();
   const [errors, setErrors] = useState({});
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const currentTime = moment().tz(timezone).format("yyyy-MM-DDThh:mm");
@@ -29,19 +32,17 @@ const FormBloodPressure = (props) => {
     note: "",
     date: currentTime,
   });
-  const [bloodDetail, setBloodDetail] = useState({});
-
   useEffect(() => {
     setErrors({});
     setErrors(props.errors);
   }, [props.errors]);
 
   useEffect(() => {
+    setErrors({});
     props.getBloodPressureDetailById(bloodpId);
   }, []);
 
   const { bloodPressureDetail } = props.bloodpressures;
-  console.log(bloodPressureDetail);
   useEffect(() => {
     if (bloodPressureDetail && bloodpId) {
       setForm({
@@ -49,7 +50,7 @@ const FormBloodPressure = (props) => {
         diastolic: bloodPressureDetail.diastolic,
         pulse: bloodPressureDetail.pulse,
         note: bloodPressureDetail.note,
-        date: moment(bloodPressureDetail.date).format("MMMM Do YYYY"),
+        date: moment(bloodPressureDetail.date).format("YYYY-MM-DD"),
       });
     }
   }, [bloodPressureDetail]);
@@ -69,14 +70,11 @@ const FormBloodPressure = (props) => {
       note: form.note,
       date: form.date,
     };
-    props.addBloodPressure(data);
-    setForm({
-      systolic: "",
-      diastolic: "",
-      pulse: "",
-      note: "",
-      date: currentTime,
-    });
+    if (bloodPressureDetail && bloodpId) {
+      props.updateBloodPressure(bloodpId, data, navigate);
+    } else {
+      props.addBloodPressure(data);
+    }
   };
   return (
     <div className={style.add_record_form_container}>
@@ -130,9 +128,8 @@ const FormBloodPressure = (props) => {
                   onChange={onInputChange}
                   name="date"
                   labelName="Date"
-                  type={bloodPressureDetail ? "text" : "datetime-local"}
+                  type="date"
                   err={errors.date}
-                  disabled={true}
                 />
                 <NoteField
                   labelName="Note"
@@ -147,7 +144,7 @@ const FormBloodPressure = (props) => {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className={style.add_btn}>
-                      <button className="btn btn-primary mb-2">Add</button>
+                      <button className="btn mb-2">Submit</button>
                     </div>
                   </div>
                 </div>
@@ -173,4 +170,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   addBloodPressure,
   getBloodPressureDetailById,
+  updateBloodPressure,
 })(FormBloodPressure);

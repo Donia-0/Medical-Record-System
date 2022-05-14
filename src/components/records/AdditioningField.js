@@ -12,6 +12,8 @@ const AdditioningField = ({
   err,
   pattern,
   disabled,
+  onFocus,
+  onBlur,
 }) => {
   return (
     <div className={`row ${style.field}`}>
@@ -20,6 +22,8 @@ const AdditioningField = ({
       </div>
       <div className="col-lg-12 col-sm-12">
         <input
+          onBlur={onBlur}
+          onFocus={onFocus}
           value={value}
           onChange={onChange}
           name={name}

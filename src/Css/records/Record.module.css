@@ -105,7 +105,8 @@
 }
 .add_record_form form select:focus,
 .add_record_form form input:focus,
-.add_record_form form textarea:focus {
+.add_record_form form textarea:focus,
+.add_record_form form .add_btn button:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
 }

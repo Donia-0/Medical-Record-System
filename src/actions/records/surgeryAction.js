@@ -1,5 +1,10 @@
 import axios from "axios";
-import { GET_ERRORS, GET_SURGERY, LOADING } from "./../types";
+import {
+  GET_DETAIL_SURGERY,
+  GET_ERRORS,
+  GET_SURGERY,
+  LOADING,
+} from "./../types";
 import { toast } from "react-toastify";
 toast.configure();
 export const addSurgery = (userData) => async (dispatch) => {
@@ -32,3 +37,37 @@ export const getAllSurgery = () => async (dispatch) => {
     });
   } catch (error) {}
 };
+
+export const getSurgeryDetailById = (id) => async (dispatch) => {
+  dispatch(loading());
+  try {
+    const response = await axios.get(
+      `http://localhost:5000/records/surgery/${id}`
+    );
+    dispatch({
+      type: GET_DETAIL_SURGERY,
+      payload: response.data,
+    });
+  } catch (error) {}
+};
+export const loading = () => {
+  return {
+    type: LOADING,
+  };
+};
+
+export const updateSurgery =
+  (id, updatedData, navigate) => async (dispatch) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:5000/records//surgery/edit/${id}`,
+        updatedData
+      );
+      navigate("/records/surgery");
+    } catch (error) {
+      dispatch({
+        type: GET_ERRORS,
+        payload: error.response.data.errors,
+      });
+    }
+  };

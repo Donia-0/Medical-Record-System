@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Fields from "../Fields";
 import { connect } from "react-redux";
-import { addSurgery } from "../../../actions/records/surgeryAction";
+import {
+  addSurgery,
+  getSurgeryDetailById,
+  updateSurgery,
+} from "../../../actions/records/surgeryAction";
+import { useNavigate } from "react-router-dom";
+import moment from "moment-timezone";
 import { PropTypes } from "prop-types";
 import AdditioningField from "../AdditioningField";
 import style from "../../../Css/records/Record.module.css";
@@ -13,8 +19,13 @@ const FormSurgery = (props) => {
   useEffect(() => {
     AOS.init();
   }, []);
-  const { surgeryId } = useParams();
 
+  useEffect(() => {
+    setErrors({});
+    props.getSurgeryDetailById(surgeryId);
+  }, []);
+  const { surgeryDetail } = props.surgery;
+  const { surgeryId } = useParams();
   const [form, setForm] = useState({
     name: "",
     doctorName: "",
@@ -22,6 +33,18 @@ const FormSurgery = (props) => {
     date: "",
   });
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (surgeryDetail && surgeryId) {
+      setForm({
+        name: surgeryDetail.name,
+        doctorName: surgeryDetail.doctorName,
+        location: surgeryDetail.location,
+        date: moment(surgeryDetail.date).format("YYYY-MM-DD"),
+      });
+    }
+  }, [surgeryDetail]);
   const onInputChange = (e) => {
     const value = e.target.value;
     setForm({
@@ -37,7 +60,11 @@ const FormSurgery = (props) => {
       location: form.location,
       date: form.date,
     };
-    props.addSurgery(newSurgery);
+    if (surgeryDetail && surgeryId) {
+      props.updateSurgery(surgeryId, newSurgery, navigate);
+    } else {
+      props.addSurgery(newSurgery);
+    }
   };
   useEffect(() => {
     setErrors({});
@@ -114,11 +141,17 @@ const FormSurgery = (props) => {
 FormSurgery.prototype = {
   addSurgery: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
+  getSurgeryDetailById: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
+  updateSurgery: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  newSurgery: state.newSurgery,
   errors: state.errors,
+  surgery: state.surgery,
 });
-export default connect(mapStateToProps, { addSurgery })(FormSurgery);
+export default connect(mapStateToProps, {
+  addSurgery,
+  getSurgeryDetailById,
+  updateSurgery,
+})(FormSurgery);

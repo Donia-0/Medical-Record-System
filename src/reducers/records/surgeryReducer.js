@@ -1,8 +1,14 @@
-import { LOADING, GET_SURGERY, CLEAR_RECORDS } from "./../../actions/types";
+import {
+  LOADING,
+  GET_SURGERY,
+  CLEAR_RECORDS,
+  GET_DETAIL_SURGERY,
+} from "./../../actions/types";
 
 const initialState = {
   surgeries: [],
   loading: false,
+  surgeryDetail: {},
 };
 
 export default function (state = initialState, action) {
@@ -23,6 +29,13 @@ export default function (state = initialState, action) {
         ...state,
         surgeries: [],
         loading: false,
+      };
+    case GET_DETAIL_SURGERY:
+      return {
+        ...state,
+        surgeries: [],
+        loading: false,
+        surgeryDetail: action.payload,
       };
     default:
       return state;

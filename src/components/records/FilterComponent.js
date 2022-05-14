@@ -2,7 +2,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
-
+import style from "../../Css/records/ViewRecord.module.css";
 const Input = styled.input.attrs((props) => ({
   type: "text",
   size: props.small ? 5 : undefined,
@@ -34,15 +34,15 @@ const ClearButton = styled.button`
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
   <>
     <input
-      className="filter-examination-input"
+      className={style.filter_input}
       id="search"
       type="text"
       placeholder="Filter table data..."
       value={filterText}
       onChange={onFilter}
     />
-    <div className="filter-examination-btn">
-      <button type="button" className="btn btn-primary" onClick={onClear}>
+    <div className={style.filter_button}>
+      <button type="button" className="btn" onClick={onClear}>
         <FontAwesomeIcon icon={faXmark} />
       </button>
     </div>

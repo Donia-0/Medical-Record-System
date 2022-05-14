@@ -64,7 +64,7 @@ const Table = (props) => {
         <div className="row">
           <div className="col-lg-12">
             <div className={style.add_view_btn}>
-              <Link to={props.link} type="button" className="btn btn-primary">
+              <Link to={props.link} type="button" className="btn">
                 <FontAwesomeIcon icon={faPlus} /> Add
               </Link>
             </div>

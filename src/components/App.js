@@ -125,7 +125,7 @@ const App = () => {
                 element={<FormSurgery header="Add Surgery" />}
               />
               <Route
-                path="surgery/:surgeryId"
+                path="surgery/edit/:surgeryId"
                 element={<FormSurgery header="Update Surgery" />}
               />
               <Route path="bloodpreasure">

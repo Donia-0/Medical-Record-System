@@ -50,3 +50,19 @@ export const loading = () => {
     type: LOADING,
   };
 };
+
+export const updateBloodPressure =
+  (id, updatedData, navigate) => async (dispatch) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:5000/records/BloodPressure/edit/${id}`,
+        updatedData
+      );
+      navigate("/records/bloodpreasure");
+    } catch (error) {
+      dispatch({
+        type: GET_ERRORS,
+        payload: error.response.data.errors,
+      });
+    }
+  };

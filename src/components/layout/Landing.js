@@ -79,12 +79,12 @@ const Landing = () => {
         </div>
       </section>
       {/* <!-- ***** Home Parallax Start ***** --> */}
-      <section class="mini" id="work-process">
-        <div class="mini-content">
-          <div class="container">
-            <div class="row">
-              <div class="offset-lg-3 col-lg-6">
-                <div class="info">
+      <section className="mini" id="work-process">
+        <div className="mini-content">
+          <div className="container">
+            <div className="row">
+              <div className="offset-lg-3 col-lg-6">
+                <div className="info">
                   <h1>Work Process</h1>
                   <p>
                     Aenean nec tempor metus. Maecenas ligula dolor, commodo in
@@ -94,9 +94,9 @@ const Landing = () => {
               </div>
             </div>{" "}
             {/* <!-- ***** Mini Box Start ***** --> */}
-            <div class="row">
-              <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+            <div className="row">
+              <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                <a href="#" className="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -104,8 +104,8 @@ const Landing = () => {
                   <span>Godard pabst prism fam cliche.</span>
                 </a>
               </div>
-              <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+              <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                <a href="#" className="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -113,8 +113,8 @@ const Landing = () => {
                   <span>Godard pabst prism fam cliche.</span>
                 </a>
               </div>
-              <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+              <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                <a href="#" className="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -122,8 +122,8 @@ const Landing = () => {
                   <span>Godard pabst prism fam cliche.</span>
                 </a>
               </div>
-              <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+              <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                <a href="#" className="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -131,8 +131,8 @@ const Landing = () => {
                   <span>Godard pabst prism fam cliche.</span>
                 </a>
               </div>
-              <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+              <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                <a href="#" className="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -140,8 +140,8 @@ const Landing = () => {
                   <span>Godard pabst prism fam cliche.</span>
                 </a>
               </div>
-              <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+              <div className="col-lg-2 col-md-3 col-sm-6 col-6">
+                <a href="#" className="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -156,17 +156,17 @@ const Landing = () => {
       </section>
       {/* <!-- ***** Home Parallax End ***** --> */}
       {/* <!-- ***** Testimonials Start ***** --> */}
-      <section class="section" id="testimonials">
-        <div class="container">
+      <section className="section" id="testimonials">
+        <div className="container">
           {/* <!-- ***** Section Title Start ***** --> */}
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="center-heading">
-                <h2 class="section-title">What do they say?</h2>
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="center-heading">
+                <h2 className="section-title">What do they say?</h2>
               </div>
             </div>
-            <div class="offset-lg-3 col-lg-6">
-              <div class="center-text text-center">
+            <div className="offset-lg-3 col-lg-6">
+              <div className="center-text text-center">
                 <p>
                   Donec tempus, sem non rutrum imperdiet, lectus orci fringilla
                   nulla, at accumsan elit eros a turpis. Ut sagittis lectus
@@ -177,11 +177,11 @@ const Landing = () => {
           </div>
           {/* <!-- ***** Section Title End ***** --> */}
 
-          <div class="row">
+          <div className="row">
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="team-item">
-                <div class="team-content">
+            <div className="col-lg-4 col-md-6 col-sm-12">
+              <div className="team-item">
+                <div className="team-content">
                   <i>
                     <img src="assets/images/testimonial-icon.png" alt="" />
                   </i>
@@ -190,11 +190,11 @@ const Landing = () => {
                     imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
                     molestie.
                   </p>
-                  <div class="user-image">
+                  <div className="user-image">
                     <img src="http://placehold.it/60x60" alt="" />
                   </div>
-                  <div class="team-info">
-                    <h3 class="user-name">Catherine Soft</h3>
+                  <div className="team-info">
+                    <h3 className="user-name">Catherine Soft</h3>
                     <span>Managing Director</span>
                   </div>
                 </div>
@@ -203,9 +203,9 @@ const Landing = () => {
             {/* <!-- ***** Testimonials Item End ***** --> */}
 
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="team-item">
-                <div class="team-content">
+            <div className="col-lg-4 col-md-6 col-sm-12">
+              <div className="team-item">
+                <div className="team-content">
                   <i>
                     <img src="assets/images/testimonial-icon.png" alt="" />
                   </i>
@@ -214,11 +214,11 @@ const Landing = () => {
                     imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
                     molestie.
                   </p>
-                  <div class="user-image">
+                  <div className="user-image">
                     <img src="http://placehold.it/60x60" alt="" />
                   </div>
-                  <div class="team-info">
-                    <h3 class="user-name">Kelvin Wood</h3>
+                  <div className="team-info">
+                    <h3 className="user-name">Kelvin Wood</h3>
                     <span>Digital Marketer</span>
                   </div>
                 </div>
@@ -227,9 +227,9 @@ const Landing = () => {
             {/* <!-- ***** Testimonials Item End ***** --> */}
 
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="team-item">
-                <div class="team-content">
+            <div className="col-lg-4 col-md-6 col-sm-12">
+              <div className="team-item">
+                <div className="team-content">
                   <i>
                     <img src="assets/images/testimonial-icon.png" alt="" />
                   </i>
@@ -238,11 +238,11 @@ const Landing = () => {
                     lorem. Cras quis est non ante ultrices molestie. Ut vehicula
                     et diam at aliquam.
                   </p>
-                  <div class="user-image">
+                  <div className="user-image">
                     <img src="http://placehold.it/60x60" alt="" />
                   </div>
-                  <div class="team-info">
-                    <h3 class="user-name">David Martin</h3>
+                  <div className="team-info">
+                    <h3 className="user-name">David Martin</h3>
                     <span>Website Manager</span>
                   </div>
                 </div>
@@ -254,30 +254,30 @@ const Landing = () => {
       </section>
       {/* <!-- ***** Testimonials End ***** --> */}
       {/* <!-- ***** Counter Parallax Start ***** --> */}
-      <section class="counter">
-        <div class="content">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item decoration-bottom">
+      <section className="counter">
+        <div className="content">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-3 col-md-6 col-sm-12">
+                <div className="count-item decoration-bottom">
                   <strong>126</strong>
                   <span>Projects</span>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item decoration-top">
+              <div className="col-lg-3 col-md-6 col-sm-12">
+                <div className="count-item decoration-top">
                   <strong>63</strong>
                   <span>Happy Clients</span>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item decoration-bottom">
+              <div className="col-lg-3 col-md-6 col-sm-12">
+                <div className="count-item decoration-bottom">
                   <strong>18</strong>
                   <span>Awards Wins</span>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item">
+              <div className="col-lg-3 col-md-6 col-sm-12">
+                <div className="count-item">
                   <strong>27</strong>
                   <span>Countries</span>
                 </div>
@@ -313,9 +313,9 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="hr"></div>
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="hr"></div>
               </div>
             </div>
           </div>

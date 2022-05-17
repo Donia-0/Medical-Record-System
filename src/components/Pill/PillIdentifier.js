@@ -3,6 +3,9 @@ import style from "../../Css/Pill/Pill.module.css";
 import SelectionField from "./SelectionField";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import SearchDrugResult from "./SearchDrugResult";
 
 const PillIdentifier = (props) => {
   useEffect(() => {
@@ -69,6 +72,7 @@ const PillIdentifier = (props) => {
   ];
 
   const ListOfShapes = [
+    "PENTAGON (5 SIDED)",
     "PENTAGON (5 SIDED)",
     "DIAMOND",
     "CAPSULE",
@@ -143,7 +147,26 @@ const PillIdentifier = (props) => {
           </div>
         </div>
       </div>
-      <div className="col-lg-12 col-md-12 col-sm-12">
+      <div className={style.ResultCards}>
+        <div className="row">
+          <SearchDrugResult
+            MedecineName="abilify"
+            MedecineIngredient="ARIPIPRAZOLE15mg"
+            MedecineDescription="abilify (aripiprazole is an antipsychotic medication. it works by changing the actions of chemicals in the brain. abilify is used to treat the symptoms of psychotic conditions such as schizophrenia and bipolar i disorder (manic depression). it is not known if aripiprazole is safe or effective in children younger than 13 with schizophrenia, or children younger than 10 with bipolar disorder. abilify is also used together with other medicines to treat major depressive disorder in adults. abilify is also used in children 6 years or older who have tourette's disorder, or symptoms of autistic disorder (irritability, aggression, mood swings, temper tantrums, and self-injury)."
+          />
+          <SearchDrugResult
+            MedecineName="abilify"
+            MedecineIngredient="ARIPIPRAZOLE15mg"
+            MedecineDescription="ccupril (quinapril) is an ace inhibitor. ace stands for angiotensin converting enzyme. accupril is used to treat high blood pressure (hypertension). lowering blood pressure may lower your risk of a stroke or heart attack. accupril is also used together with other medications to treat heart failure."
+          />
+          <SearchDrugResult
+            MedecineName="abilify"
+            MedecineIngredient="ARIPIPRAZOLE15mg"
+            MedecineDescription="abilify (aripiprazole is an antipsychotic medication. it works by changing the actions of chemicals in the brain. abilify is used to treat the symptoms of psychotic conditions such as schizophrenia and bipolar i disorder (manic depression). it is not known if aripiprazole is safe or effective in children younger than 13 with schizophrenia, or children younger than 10 with bipolar disorder. abilify is also used together with other medicines to treat major depressive disorder in adults. abilify is also used in children 6 years or older who have tourette's disorder, or symptoms of autistic disorder (irritability, aggression, mood swings, temper tantrums, and self-injury)."
+          />
+        </div>
+      </div>
+      {/* <div className="col-lg-12 col-md-12 col-sm-12">
         <div className={style.textheader}>
           <h1>How to use our Pill identifier to view drug images?</h1>
         </div>
@@ -224,67 +247,8 @@ const PillIdentifier = (props) => {
             </div>
           </div>
         </div>
-        {/* <div className={style.info}>
-          <h2>Why it's important to identify pills, using a pill ID tool?</h2>
-          <p>
-            It's important to be informed with what pills may in your home.
-            Periodically check your medicine cabinet for expired prescriptions.
-            If you're unsure what the pills in your medicine cabinet are, use
-            our pill identifier with pictures, to determine the pill's name and
-            use.
-          </p>
-          <h2>
-            What if you don't find any pill images when using our pill
-            identifier?
-          </h2>
-          <p>
-            If you don't find any pill images, when using our drug identifier,
-            you can always take the medication to a pharmacist to have them help
-            you identify it. Though this is more time consuming, it will help
-            you identify pills that may be left in your medicine cabinet. If you
-            need to dispose of medications, prescription drop off locations can
-            be found through your local law enforcement.
-          </p>
-          <div className="steps ">
-            <h3>Safety tips for storing medications</h3>
-            <div className="row">
-              <div className="col-lg-6">
-                <ul>
-                  <li>
-                    Be sure to store your medications in a cool, dry place
-                  </li>
-                  <li>
-                    Heat and moisture from your shower or bath can damage
-                    medicines, making them less potent or causing them to go bad
-                    before the expiration date
-                  </li>
-                  <li>
-                    Don't store medications by the stove or any type of hot
-                    appliance
-                  </li>
-                  <li>Always keep medicine in its original container</li>
-                </ul>
-              </div>
-              <div className="col-lg-6">
-                <ul>
-                  <li>
-                    Take the cotton ball out of the medicine bottle. It pulls
-                    moisture into the bottle
-                  </li>
-                  <li>
-                    Ask your pharmacists if your medication has specific storage
-                    instructions
-                  </li>
-                  <li>
-                    Store medication out of reach and sight of children and with
-                    a child latch or lock
-                  </li>
-                </ul>
-              </div> */}
-        {/* </div> */}
-        {/* </div> */}
-        {/* </div> */}
-      </div>
+       
+      </div> */}
     </div>
   );
 };

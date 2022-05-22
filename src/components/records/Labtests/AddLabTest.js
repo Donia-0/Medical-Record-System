@@ -44,7 +44,7 @@ const AddLabTest = (props) => {
       <div className={style.labtest_rules}>
         <p>Keep your medical documents in one place : </p>
         <ul>
-          <li>Enter the test Testname.</li>
+          <li>Enter the Test name.</li>
           <li>Choose documents (Make sure it's ".jpg").</li>
           <li>Enter other info.</li>
           <li>Save.</li>

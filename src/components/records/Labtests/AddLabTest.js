@@ -5,9 +5,6 @@ import { connect } from "react-redux";
 import { addLabtest } from "../../../actions/records/LabtestAction";
 import AdditioningField from "../AdditioningField";
 import RegisterInput from "../../Authentication/RegisterInput";
-import { faCapsules } from "@fortawesome/free-solid-svg-icons";
-// import { fasolidfamemo } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NoteField from "../NoteField";
 import moment from "moment-timezone";
 

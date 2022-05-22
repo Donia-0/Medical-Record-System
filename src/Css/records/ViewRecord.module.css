@@ -139,3 +139,45 @@
   border-radius: 10px;
   border: none;
 }
+
+.accordion_body {
+  display: flex;
+  justify-content: center;
+}
+.accordion_img {
+  background-image: url("../../images/light-color.png");
+    /* width: 70%;
+    background-repeat: round;
+    height: 200px; */
+    width: 100%;
+    background-size: contain;
+    /* background-repeat: round; */
+    background-repeat: no-repeat;
+    height: 200px;
+    background-position: center;
+  }
+
+  .lab_test_information_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .lab_test_label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #307b8c
+  }
+
+  .lab_test_name button {
+    color: #307b8c !important;
+    font-weight: bold;
+    background-color: white !important;
+  }
+  
+  .lab_test_name button:focus {
+    border-color: #307b8c;
+    box-shadow: 0 0 0 0.25rem rgba(48, 123, 140, 25%);
+    background-color:rgba(48, 123, 140, 25%);
+  }
+  

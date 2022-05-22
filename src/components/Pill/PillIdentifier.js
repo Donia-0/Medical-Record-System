@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import style from "../../Css/Pill/Pill.module.css";
 import SelectionField from "./SelectionField";
 import AOS from "aos";
@@ -8,6 +8,7 @@ import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import SearchDrugResult from "./SearchDrugResult";
 
 const PillIdentifier = (props) => {
+  const [search, setSearch] = useState(false);
   useEffect(() => {
     AOS.init();
   }, []);
@@ -138,7 +139,14 @@ const PillIdentifier = (props) => {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className={style.add_btn}>
-                      <button className="btn btn-primary mb-2">Search</button>
+                      <button
+                        className="btn btn-primary mb-2"
+                        onClick={() => {
+                          setSearch(true);
+                        }}
+                      >
+                        Search
+                      </button>
                     </div>
                   </div>
                 </div>

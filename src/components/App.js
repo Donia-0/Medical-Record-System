@@ -34,7 +34,8 @@ import ViewPrescription from "./records/examination/prescription/ViewPrescriptio
 import AddAllergy from "./records/Allergy/AddAllergy";
 import Allergy from "./records/Allergy/Allergy";
 import PillIdentifier from "./Pill/PillIdentifier";
-import AddLabTest from "./records/Labtests/AddLabTest";
+import AddLabTest from "./records/LabTests/AddLabTest";
+import ViewLabTests from "./records/LabTests/ViewLabTests";
 
 //check for token
 if (localStorage.token) {
@@ -110,7 +111,7 @@ const App = () => {
                 path="prescriptions/edit/:prescriptionId"
                 element={<FormPrescription header="Update Prescription" />}
               />
-              <Route path="Addlabtest" element={<AddLabTest />} />
+              <Route path="addlabtest" element={<AddLabTest />} />
               {/* <Route
                 path="updateprescription"
                 element={<Updateprescription />}
@@ -136,6 +137,7 @@ const App = () => {
                 </Route>
               </Route>
               <Route path="allergy" element={<Allergy />} />
+              <Route path="labtests" element={<ViewLabTests />} />
             </Route>
             <Route path="admin" element={<Admin />} />
             <Route path="/" element={<Layout />}>

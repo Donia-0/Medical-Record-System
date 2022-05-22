@@ -18,4 +18,6 @@ export const CLEAR_PATIENT_PROFILE = "CLEAR_PATIENT_PROFILE";
 export const GET_ALLERGIES = "GET_ALLERGIES";
 export const GET_DETAIL_ALLERGY = "GET_DETAIL_ALLERGY";
 export const CLEAR_RECORDS = "CLEAR_RECORDS";
+export const GET_LABTEST = "GET_LABTEST";
+
 //bloodPressure

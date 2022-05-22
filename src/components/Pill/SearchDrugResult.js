@@ -25,6 +25,7 @@ const SearchDrugResult = ({
           <p className="card-text"> {MedecineDescription}</p>
         </div>
       </div>
+      //{" "}
     </div>
   );
 };

@@ -16,6 +16,7 @@ const ViewLabTests = (props) => {
   return (
     <div
       className={style.view}
+      style={{ marginLeft: "0" }}
       data-aos="zoom-in-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="1000"

@@ -12,20 +12,20 @@ const LabTest = ({ eventKey, labTestName, labTestImage, date, note }) => {
           <div className="row">
             <div className="col-lg-12">
               <div className={style.lab_test_information_container}>
-                <div className="col-lg-2">
+                <div className="col-lg-1">
                   <div className={style.lab_test_label}>Date:</div>
                 </div>
-                <div className="col-lg-10">
+                <div className="col-lg-11">
                   <div className={style.lab_test_information}>{date}</div>
                 </div>
               </div>
             </div>
             <div className="col-lg-12">
               <div className={style.lab_test_information_container}>
-                <div className="col-lg-2">
+                <div className="col-lg-1">
                   <div className={style.lab_test_label}>Note:</div>
                 </div>
-                <div className="col-lg-10">
+                <div className="col-lg-11">
                   <div className={style.lab_test_information}>{note}</div>
                 </div>
               </div>

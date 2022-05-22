@@ -6,7 +6,11 @@
     margin: auto;
    margin-top: 30px;
    margin-bottom: 30px;
-    color: #2a7f82;
+  color: #2a7f82;
+  border: 1px solid #307b8c;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px -10px #307b8c;
 }
 
 .labtest_rules ul{
@@ -16,11 +20,11 @@
     color: gray;
 }
 .add_record_form_container {
-    height: calc(100vh - 61.7px);
+    /* height: calc(100vh - 61.7px); */
     display: flex;
     justify-content: center;
-
     flex-wrap: wrap;
+    margin-bottom: 30px;
   }
   .add_record {
     width: 60%;

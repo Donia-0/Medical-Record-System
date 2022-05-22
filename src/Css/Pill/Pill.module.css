@@ -3,11 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
   }
   .add_pill {
     width: 60%;
     margin-top: 50px;
+  
   }
   .pill_container_header {
     display: flex;
@@ -148,4 +150,15 @@
   .info h3{
     text-align: center;
     color: #307b8c;
+  }
+  .ResultCards{
+    margin-top: 40px;
+  }
+  .drug_result_card{
+    width: 90%;
+    margin: auto;
+    padding: 0;
+    border: 0px;
+    cursor: auto;
+    height: fit-content;
   }

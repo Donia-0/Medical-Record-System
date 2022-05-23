@@ -12,7 +12,14 @@ import style from "../../../Css/records/ViewRecord.module.css";
 const BloodChart = (props) => {
   const { bloodPressure, loading } = props.bloodpressures;
   useEffect(() => {
-    props.getBloodPressure();
+    if (localStorage.patientId) {
+      const userData = {
+        patientId: localStorage.getItem("patientId"),
+      };
+      props.getBloodPressure(userData);
+    } else {
+      props.getBloodPressure();
+    }
   }, []);
 
   var days = [];

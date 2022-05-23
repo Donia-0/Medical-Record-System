@@ -12,6 +12,7 @@ export const registerUser = (userData, navigate) => async (dispatch) => {
       "http://localhost:5000/user/register",
       userData
     );
+    // navigate("/auth/login");
   } catch (error) {
     dispatch({
       type: GET_ERRORS,

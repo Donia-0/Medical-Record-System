@@ -5,6 +5,8 @@ import style from "../../Css/Navbar.module.css";
 import {
   faCapsules,
   faRightFromBracket,
+  faRotateLeft,
+  faUserDoctor,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clearCurrentProfile } from "./../../actions/profileAction";
@@ -15,12 +17,19 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-
   const onLogoutClick = (e) => {
     e.preventDefault();
     props.logoutUser(navigate);
+    localStorage.removeItem("patientId");
+    localStorage.removeItem("patientName");
     props.clearCurrentProfile();
   };
+  const onClickChange = () => {
+    localStorage.removeItem("patientId");
+    localStorage.removeItem("patientName");
+    window.location.reload();
+  };
+  const { role } = props.auth.user;
   return (
     <nav
       className={`${style.navbar_own_style} navbar navbar-expand-lg navbar-light`}
@@ -34,7 +43,20 @@ const Navbar = (props) => {
         </a>
       </div>
       <div className={`container-fluid`}>
-        <SearchBar />
+        {!localStorage.patientId ? (
+          role === 1 ? (
+            <SearchBar />
+          ) : null
+        ) : (
+          <div
+            className="text-center"
+            style={{ color: "white", textAlign: "end" }}
+          >
+            <strong>
+              Now you can see {localStorage.getItem("patientName")}'s Records
+            </strong>
+          </div>
+        )}
       </div>
 
       <button
@@ -51,6 +73,25 @@ const Navbar = (props) => {
 
       <div className="navbar-collapse collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto">
+          {localStorage.patientId ? (
+            <li
+              style={{ width: "200px", cursor: "pointer" }}
+              className={`nav-item ${style.width_nav_item}`}
+            >
+              <span
+                className={`nav-link ${style.nav_link_own_style}`}
+                aria-current="page"
+                href="#billidentifier"
+                onClick={onClickChange}
+              >
+                <FontAwesomeIcon
+                  icon={faRotateLeft}
+                  style={{ marginRight: "5px" }}
+                />
+                Back To My Records
+              </span>
+            </li>
+          ) : null}
           <li className={`nav-item ${style.width_nav_item}`}>
             <Link
               to="/pillIdentifier"

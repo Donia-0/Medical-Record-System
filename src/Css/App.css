@@ -1229,11 +1229,11 @@ parallax & home seperator
 }
 
 .mini:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 140%;
   height: 140%;
-  opacity: .95;
+  opacity: 0.95;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -1306,8 +1306,6 @@ parallax & home seperator
   transition: all 0.3s ease 0s;
   text-align: center;
   margin-left: 15px;
-
-
 }
 
 .mini .mini-content .mini-box:hover {
@@ -1315,12 +1313,12 @@ parallax & home seperator
 }
 
 .mini .mini-content .mini-box:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   background: #fff;
   width: 100%;
-  opacity: .15;
+  opacity: 0.15;
   height: 100%;
   bottom: -10px;
   left: 0px;
@@ -1340,7 +1338,7 @@ parallax & home seperator
   font-weight: 400;
   font-size: 14px;
   color: #777;
-  letter-spacing: .75px;
+  letter-spacing: 0.75px;
 }
 
 .mini .mini-content .mini-box strong {
@@ -1352,10 +1350,9 @@ parallax & home seperator
   margin-bottom: 5px;
   margin-top: 20px;
 }
-.content{
+.content {
   background: linear-gradient(45deg, #012e40 10%, #3ca6a6 90%);
   margin-top: 50px;
-
 }
 .counter {
   overflow: hidden;
@@ -1363,11 +1360,11 @@ parallax & home seperator
 }
 
 .counter:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 140%;
   height: 140%;
-  opacity: .90;
+  opacity: 0.9;
   /* background-image: url(../images/fun-facts-bg.png); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -1395,7 +1392,7 @@ parallax & home seperator
 }
 
 .counter .content .count-item.decoration-bottom:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 70%;
   height: 32px;
@@ -1413,7 +1410,7 @@ parallax & home seperator
 }
 
 .counter .content .count-item.decoration-top:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 70%;
   height: 32px;
@@ -1499,14 +1496,14 @@ team
 --------------------------------------------- 
 */
 
-.center-heading{
+.center-heading {
   margin-top: 60px;
   text-align: center;
 }
 
 .team-item {
   background: #fff;
-  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   position: relative;
   margin-bottom: 30px;
@@ -1523,7 +1520,7 @@ team
   margin-left: 25px;
   margin-top: 25px;
   font-size: 30px;
-  color: #4E47DE;
+  color: #4e47de;
   text-align: center;
 }
 

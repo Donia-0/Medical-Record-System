@@ -32,13 +32,14 @@ export const addExamination = (userData) => async (dispatch) => {
   }
 };
 
-export const getExaminations = () => async (dispatch) => {
+export const getExaminations = (userId) => async (dispatch) => {
   dispatch({
     type: LOADING,
   });
   try {
-    const response = await axios.get(
-      "http://localhost:5000/records/examinations"
+    const response = await axios.post(
+      "http://localhost:5000/records/examinations",
+      userId
     );
     dispatch({
       type: GET_EXAMINATION,

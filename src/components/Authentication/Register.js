@@ -79,6 +79,7 @@ const Register = (props) => {
       };
     }
     props.registerUser(user, navigate);
+    console.log("hello", user);
   };
   const onPrevSubClick = (e, stepNumber) => {
     setStep(`step${stepNumber}`);

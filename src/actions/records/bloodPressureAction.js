@@ -21,11 +21,12 @@ export const addBloodPressure = (userData, navigate) => async (dispatch) => {
     });
   }
 };
-export const getBloodPressure = () => async (dispatch) => {
+export const getBloodPressure = (userId) => async (dispatch) => {
   dispatch(loading());
   try {
-    const response = await axios.get(
-      "http://localhost:5000/records/BloodPressure"
+    const response = await axios.post(
+      "http://localhost:5000/records/BloodPressure",
+      userId
     );
     dispatch({
       type: GET_BLOODPRESSURE,

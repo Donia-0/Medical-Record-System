@@ -62,3 +62,15 @@
   pointer-events: none;
   color: #aaa;
 }
+.has_search .reset {
+  position: absolute;
+  z-index: 99999;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  color: #aaa;
+  right: 35%;
+  cursor: pointer;
+}

@@ -19,5 +19,7 @@ export const GET_ALLERGIES = "GET_ALLERGIES";
 export const GET_DETAIL_ALLERGY = "GET_DETAIL_ALLERGY";
 export const CLEAR_RECORDS = "CLEAR_RECORDS";
 export const GET_DETAIL_SURGERY = "GET_DETAIL_SURGERY";
+export const PATIENT_RECORD = "PATIENT_RECORD";
+export const NOT_FOUND = "NOT_FOUND";
 
 //bloodPressure

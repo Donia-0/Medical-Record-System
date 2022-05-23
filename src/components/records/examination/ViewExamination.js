@@ -1,17 +1,18 @@
 import { faFilter, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
-import FilterModal from "./../FilterModal";
+import FilterModal from "../FilterModal";
 import data from "../data";
 import { Link } from "react-router-dom";
 import style from "../../../Css/records/ViewRecord.module.css";
-import Table from "./../Table";
+import Table from "../Table";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { faEdit, faEye, faXmark } from "@fortawesome/free-solid-svg-icons";
 import PrescriptionView from "./PrescriptionView";
 import { getExaminations } from "../../../actions/records/examinationAction";
-const Examination = (props) => {
+import moment from "moment-timezone";
+const ViewExamination = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const clickhandler = (name) => console.log("delete", name);
   const columns = [
@@ -29,11 +30,7 @@ const Examination = (props) => {
       grow: 2,
       wrap: true,
     },
-    {
-      name: "Date",
-      selector: (row) => row.date,
-      sortable: true,
-    },
+
     {
       name: "Note",
       selector: (row) => row.note,
@@ -41,7 +38,12 @@ const Examination = (props) => {
     },
     {
       name: "Dr Name",
-      selector: (row) => row.DrName,
+      selector: (row) => row.doctorId.name,
+      sortable: true,
+    },
+    {
+      name: "Date",
+      selector: (row) => moment(row.date).format("MMMM-D-YYYY"),
       sortable: true,
     },
     {
@@ -102,10 +104,17 @@ const Examination = (props) => {
       },
     },
   ];
-  const { examinations } = props.examination.Examination;
-
+  const { examinations, loading } = props.examination.Examination;
+  console.log(examinations);
   useEffect(() => {
-    props.getExaminations();
+    if (localStorage.patientId) {
+      const userData = {
+        patientId: localStorage.getItem("patientId"),
+      };
+      props.getExaminations(userData);
+    } else {
+      props.getExaminations();
+    }
   }, []);
   return (
     <div className="examination">
@@ -116,10 +125,7 @@ const Examination = (props) => {
             <div className="row">
               <div className="col-lg-6 col-md-12 col-sm-12">
                 <div className={style.examination_filer_button}>
-                  <button
-                    className="btn-primary"
-                    onClick={() => setModalShow(true)}
-                  >
+                  <button className="btn" onClick={() => setModalShow(true)}>
                     <FontAwesomeIcon icon={faFilter} /> Add filter
                   </button>
 
@@ -133,55 +139,17 @@ const Examination = (props) => {
           </div>
         </div>
       </div>
-      {/* <div className={style.view_data}>
-        <div className="row">
-          <div className="col-lg-12">
-            <div className={style.add_view_btn}>
-              <Link
-                to="./addExamination"
-                type="button"
-                className="btn btn-primary"
-              >
-                <FontAwesomeIcon icon={faPlus} /> Add
-              </Link>
-            </div>
-          </div>
-          <div className="col-lg-12 col-md-12 col-sm-12">
-            <div>
-              <ExaminationTable data={data} click={clickhandler} />
-            </div>
-          </div>
-        </div>
-      </div> <div className={style.view_data}>
-        <div className="row">
-          <div className="col-lg-12">
-            <div className={style.add_view_btn}>
-              <Link
-                to="./addExamination"
-                type="button"
-                className="btn btn-primary"
-              >
-                <FontAwesomeIcon icon={faPlus} /> Add
-              </Link>
-            </div>
-          </div>
-          <div className="col-lg-12 col-md-12 col-sm-12">
-            <div>
-              <ExaminationTable data={data} click={clickhandler} />
-            </div>
-          </div>
-        </div>
-      </div> */}
+
       <Table
         link="./addexamination"
         columns={columns}
-        data={examinations}
+        data={!examinations ? [] : examinations}
         click={clickhandler}
       />
     </div>
   );
 };
-Examination.propTypes = {
+ViewExamination.propTypes = {
   auth: PropTypes.object.isRequired,
 };
 
@@ -189,4 +157,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
   examination: state.examination,
 });
-export default connect(mapStateToProps, { getExaminations })(Examination);
+export default connect(mapStateToProps, { getExaminations })(ViewExamination);

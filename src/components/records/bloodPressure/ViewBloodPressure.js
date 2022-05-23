@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
 import bloodpreasureImage from "../../../images/records/bloodpressure/bloodp.png";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getBloodPressure } from "../../../actions/records/bloodPressureAction";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChartBar, faPlus } from "@fortawesome/free-solid-svg-icons";
-import style from "../../../Css/records/ViewRecord.module.css";
 import columns from "./BloodPressureColumns";
 import Table from "../Table";
 
@@ -14,7 +10,15 @@ const Viewbloodp = (props) => {
   const clickhandler = (name) => console.log("delete", name);
   const { bloodPressure, loading } = props.bloodpressures;
   useEffect(() => {
-    props.getBloodPressure();
+    if (localStorage.patientId) {
+      console.log("hello");
+      const userData = {
+        patientId: localStorage.getItem("patientId"),
+      };
+      props.getBloodPressure(userData);
+    } else {
+      props.getBloodPressure();
+    }
   }, []);
   const onClink = () => {
     console.log("delete");
@@ -42,5 +46,6 @@ Viewbloodp.propTypes = {
 const mapStateToProps = (state) => ({
   auth: state.auth,
   bloodpressures: state.bloodpressures,
+  patient: state.patient,
 });
 export default connect(mapStateToProps, { getBloodPressure })(Viewbloodp);

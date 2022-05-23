@@ -1,0 +1,8 @@
+.input_access {
+  margin-right: 5px;
+}
+
+.input_access input:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}

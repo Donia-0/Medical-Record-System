@@ -13,7 +13,7 @@ import jwt_decode from "jwt-decode";
 import Profile from "./user/Profile";
 import Landing from "./layout/Landing";
 import FormBloodPressure from "./records/bloodPressure/FormBloodPressure";
-import Examination from "./records/examination/Examination";
+import ViewExamination from "./records/examination/ViewExamination";
 import FormPrescription from "./records/examination/prescription/FormPrescription";
 import FormExamination from "./records/examination/FormExamination";
 import FormGlucoseMeasure from "./records/glucose/FormGlucoseMeasure";
@@ -91,7 +91,7 @@ const App = () => {
                 }
               />
 
-              <Route path="examination" element={<Examination />} />
+              <Route path="examination" element={<ViewExamination />} />
               <Route
                 path="examination/addExamination"
                 element={<FormExamination header="Add Examination" />}

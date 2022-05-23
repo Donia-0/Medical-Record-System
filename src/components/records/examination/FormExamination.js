@@ -15,6 +15,7 @@ const FormExamination = (props) => {
     diagnosis: "",
     symptoms: "",
     note: "",
+    userId: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -30,13 +31,13 @@ const FormExamination = (props) => {
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const newExamination = {
+    var newExamination = {
       diagnosis: form.diagnosis,
       symptoms: form.symptoms,
       note: form.note,
+      userId: localStorage.getItem("patientId"),
     };
     props.addExamination(newExamination);
-    console.log(newExamination);
   };
   useEffect(() => {
     setErrors({});

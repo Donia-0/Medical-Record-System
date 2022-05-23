@@ -37,7 +37,7 @@ const Table = (props) => {
       />
     );
   }, [filterText, resetPaginationToggle]);
-
+  console.log(window.location.pathname === "/records/examination");
   return (
     <div
       className={style.view}

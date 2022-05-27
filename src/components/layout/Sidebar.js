@@ -41,6 +41,10 @@ const Sidebar = () => {
       <NavLink to="/records/prescriptions" className={style.a_section}>
         Prescriptions
       </NavLink>
+
+      <NavLink to="/records/labtests" className={style.a_section}>
+        Lab Tests
+      </NavLink>
     </div>
   );
 };

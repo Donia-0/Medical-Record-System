@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
-import RegisterInput from "./RegisterInput";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  faUser,
-  faLock,
-  faAt,
-  faIdCard,
-  faPhoneFlip,
-  faUserDoctor,
-} from "@fortawesome/free-solid-svg-icons";
 import "react-toastify/dist/ReactToastify.css";
 import { connect } from "react-redux";
 import { registerUser } from "./../../actions/authAction";

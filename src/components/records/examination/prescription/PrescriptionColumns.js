@@ -3,11 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import style from "../../../../Css/records/ViewRecord.module.css";
 import { Link } from "react-router-dom";
+import moment from "moment-timezone";
 
 const columns = [
   {
+    name: "Diagnosis",
+    selector: (row) => row.examinationId.diagnosis,
+    sortable: true,
+  },
+  {
     name: "Drug",
-    selector: (row) => row.drug,
+    selector: (row) => row.drugName,
     sortable: true,
     grow: 1,
     wrap: true,
@@ -20,14 +26,10 @@ const columns = [
   },
   {
     name: "Date",
-    selector: (row) => row.date,
+    selector: (row) => moment(row.examinationId.date).format("MMM-D-YYYY"),
     sortable: true,
   },
-  {
-    name: "Dr Name",
-    selector: (row) => row.DrName,
-    sortable: true,
-  },
+
   {
     name: "Note",
     selector: (row) => row.note,

@@ -3,12 +3,14 @@ import {
   CLEAR_RECORDS,
   GET_EXAMINATION,
   LOADING,
+  GET_DETAIL_EXAMINATION,
 } from "./../../actions/types";
 
 const initialState = {
   newExamination: {},
   Examination: [],
   loading: false,
+  examinationDetail: {},
 };
 
 export default function (state = initialState, action) {
@@ -34,6 +36,12 @@ export default function (state = initialState, action) {
         Examination: [],
         loading: false,
         newExamination: {},
+      };
+    case GET_DETAIL_EXAMINATION:
+      return {
+        ...state,
+        loading: false,
+        examinationDetail: action.payload,
       };
     default:
       return state;

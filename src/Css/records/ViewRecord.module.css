@@ -63,11 +63,12 @@
   padding: 0.2px 6px;
 }
 
-.view_prescription_btn button,
-.view_prescription_btn button:hover {
+.pres_btns button,
+.pres_btns button:hover {
   background-color: #307b8c;
   border-color: #307b8c;
   padding: 1.2px 4px;
+  margin-right: 2px;
 }
 .view_prescription_btn .tooltiptext {
   visibility: hidden;
@@ -80,7 +81,7 @@
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: 50%;
+  left: 34%;
   bottom: 95%;
   margin-left: -60px;
   opacity: 0;
@@ -178,4 +179,58 @@
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #2a7f82 !important;
   outline: none;
+}
+
+.accordion_img {
+  background-image: url("../../images/light-color.png");
+  /* width: 70%;
+    background-repeat: round;
+    height: 200px; */
+  width: 100%;
+  background-size: contain;
+  /* background-repeat: round; */
+  background-repeat: no-repeat;
+  height: 200px;
+  background-position: center;
+}
+
+.lab_test_information_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.lab_test_label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #307b8c;
+}
+
+.lab_test_name button {
+  color: #307b8c !important;
+  font-weight: bold;
+  background-color: white !important;
+}
+
+.lab_test_name button:focus {
+  border-color: #307b8c;
+  box-shadow: 0 0 0 0.25rem rgba(48, 123, 140, 25%);
+  background-color: rgba(48, 123, 140, 25%);
+}
+
+.pres_btns {
+  display: inline;
+}
+
+.add_pres_in_view {
+  background-color: #307b8c !important;
+  border-color: #307b8c !important;
+  padding: 1.2px 5px !important;
+  color: white !important;
+  margin-left: 5px !important;
+}
+
+.add_pres_in_view:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%) !important;
+  border-color: #3ea9ad !important;
 }

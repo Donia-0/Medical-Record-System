@@ -6,16 +6,10 @@ import RequestTable from "./RequestTable";
 const Admin = () => {
   const clickhandler = (name) => console.log("delete", name);
   return (
-    <div className="content">
-      <div className="row">
-        <div className="nav col-lg-12">
-          <Navbar />
-        </div>
-      </div>
-      <div className="table">
-        <div className="request-table col-lg-12">
-          <RequestTable data={data} click={clickhandler} />
-        </div>
+    <div className="admin">
+      <Navbar />
+      <div className="requests" style={{ marginTop: "100px" }}>
+        <RequestTable data={data} click={clickhandler} />
       </div>
     </div>
   );

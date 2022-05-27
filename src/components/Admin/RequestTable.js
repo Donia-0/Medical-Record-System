@@ -3,7 +3,9 @@ import DataTable from "react-data-table-component";
 import FilterComponent from "../records/FilterComponent";
 import RequestsView from "./RequestsView";
 // import PrescriptionView from "../records/PrescriptionView";
-
+import style from "../../Css/Admin.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faEye, faTimes } from "@fortawesome/free-solid-svg-icons";
 const RequestTable = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
 
@@ -12,105 +14,82 @@ const RequestTable = (props) => {
       name: "Name",
       selector: (row) => row.name,
       sortable: true,
-      grow: 1,
       wrap: true,
     },
     {
       name: "Specialization",
       selector: (row) => row.name,
       sortable: true,
-      grow: 1,
       wrap: true,
     },
     {
       name: "Email",
       selector: (row) => row.name,
       sortable: true,
-      grow: 1,
       wrap: true,
     },
     {
       name: "Phone",
       selector: (row) => row.name,
       sortable: true,
-      grow: 1,
       wrap: true,
     },
     {
-      name: " ",
+      name: "",
       button: true,
       ignoreRowClick: true,
       allowOverflow: true,
+      grow: 3,
 
       cell: (row) => {
         return (
-          <div className="show-request-btn">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => {
-                row.showModal = true;
-                setModalShow(true);
-              }}
-            >
-              Show
-            </button>
-            {row.showModal ? (
-              <RequestsView
-                show={modalShow}
-                onHide={() => {
-                  row.showModal = false;
-
-                  setModalShow(false);
+          <div className={style.requests_btn}>
+            <div className={style.btns_req}>
+              <button
+                type="button"
+                className={`btn ${style.show}`}
+                onClick={() => {
+                  row.showModal = true;
+                  setModalShow(true);
                 }}
-              />
-            ) : null}
-          </div>
-        );
-      },
-    },
-    {
-      name: " ",
-      button: true,
-      ignoreRowClick: true,
-      allowOverflow: true,
+              >
+                Show
+              </button>
+            </div>
+            <div className={style.btns_req}>
+              <button
+                type="button"
+                className={`btn ${style.accept}`}
+                onClick={() => {
+                  row.showModal = true;
+                  setModalShow(true);
+                }}
+              >
+                Accpet
+              </button>
+              {row.showModal ? (
+                <RequestsView
+                  show={modalShow}
+                  onHide={() => {
+                    row.showModal = false;
 
-      cell: (row) => {
-        return (
-          <div className="accept-request-btn">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => {
-                row.showModal = true;
-                setModalShow(true);
-              }}
-            >
-              Accept
-            </button>
-          </div>
-        );
-      },
-    },
-    {
-      name: " ",
-      button: true,
-      ignoreRowClick: true,
-      allowOverflow: true,
-
-      cell: (row) => {
-        return (
-          <div className="decline-request-btn">
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => {
-                row.showModal = true;
-                setModalShow(true);
-              }}
-            >
-              Decline
-            </button>
+                    setModalShow(false);
+                  }}
+                />
+              ) : null}
+            </div>
+            <div className={style.btns_req}>
+              <button
+                type="button"
+                className={`btn ${style.decline}`}
+                onClick={() => {
+                  row.showModal = true;
+                  setModalShow(true);
+                }}
+              >
+                Decline
+              </button>
+            </div>
           </div>
         );
       },

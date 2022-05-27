@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getPrescriptionForEachExamination } from "../../../actions/records/pescriptionaction";
 
-function PrescriptionView(props) {
-  const prescriptions = [
-    { name: "mnsfnk", dose: 2 },
-    { name: "mnsfnk", dose: 3 },
-  ];
+const PrescriptionView = (props) => {
+  const { prescriptionsForEachExamination } = props.prescription;
 
-  const renderedPrescription = prescriptions.map((index) => {
+  useEffect(() => {
+    const userData = {
+      examinationId: props.examId,
+    };
+    props.getPrescriptionForEachExamination(userData);
+  }, []);
+  const renderedPrescription = prescriptionsForEachExamination.map((pres) => {
     return (
-      <div className="prescription-view">
+      <div key={pres._id} className="prescription-view">
         <div className="row form-container">
           <div className="col-lg-6">
             <div className="prescription-container">
               <div className="formlabel col-lg-3 col-md-12 col-sm-12">
-                <label>Name: </label>
+                <label>Name:</label>
               </div>
               <div className="col-lg-9 col-sm-12">
                 <input
@@ -22,7 +28,7 @@ function PrescriptionView(props) {
                   className="form-control"
                   type="text"
                   disabled
-                  placeholder={index.name}
+                  value={pres.drugName}
                 />
               </div>
             </div>
@@ -38,7 +44,7 @@ function PrescriptionView(props) {
                   className="form-control"
                   type="text"
                   disabled
-                  placeholder={index.dose}
+                  value={pres.dose}
                 />
               </div>
             </div>
@@ -49,14 +55,15 @@ function PrescriptionView(props) {
   });
   return (
     <Modal
-      {...props}
+      show={props.show}
+      onHide={props.onHide}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Prescriptions
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>{renderedPrescription}</Modal.Body>
@@ -67,6 +74,14 @@ function PrescriptionView(props) {
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
-export default PrescriptionView;
+PrescriptionView.propTypes = {
+  getPrescriptionForEachExamination: PropTypes.func.isRequired,
+};
+const mapStateToProps = (state) => ({
+  prescription: state.prescription,
+});
+export default connect(mapStateToProps, { getPrescriptionForEachExamination })(
+  PrescriptionView
+);

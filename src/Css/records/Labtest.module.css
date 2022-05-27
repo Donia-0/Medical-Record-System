@@ -1,0 +1,108 @@
+
+.labtest_rules {
+    font-weight: bold;
+    font-size: 30px;
+    width: 55%;
+    margin: auto;
+   margin-top: 30px;
+   margin-bottom: 30px;
+  color: #2a7f82;
+  border: 1px solid #307b8c;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px -10px #307b8c;
+}
+
+.labtest_rules ul{
+    list-style: auto;
+    font-size: 20px;
+    font-weight: bold;
+    color: gray;
+}
+.add_record_form_container {
+    /* height: calc(100vh - 61.7px); */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .add_record {
+    width: 60%;
+  }
+  .record_container_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #307b8c;
+    position: relative;
+  }
+  .add_record_header {
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+  }
+  /* .record_img_container {
+    height: 110px;
+  
+    border-bottom: 2px solid #2a7f82;
+    position: relative;
+    margin: inherit;
+  } */
+  
+  .record_img {
+    position: absolute;
+    top: 48%;
+    left: 13%;
+    height: 100%;
+  }
+  
+  .record_img_container .record_img img {
+    height: 90%;
+  }
+  
+  .add_record_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #def2f3cf;
+    border-radius: 0px 0px 15px 15px;
+  }
+  .add_btn button {
+    width: 100%;
+    background-color: #307b8c;
+    color: #def2f3;
+    border-color: #307b8c;
+    transition: all 1s;
+    font-weight: bold;
+  }
+  .add_btn button:hover {
+    background-color: white;
+    color: #2a7f82;
+    border-color: #3ea9ad;
+  }
+  
+  .field {
+    margin-bottom: 20px;
+  }
+  .field .formlabel {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 10px;
+    color: #2a7f82;
+    font-weight: bold;
+  }
+  
+  .add_record_form form {
+    width: 45%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .add_record_form form select:focus,
+  .add_record_form form input:focus,
+  .add_record_form form textarea:focus {
+    box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+    border-color: #3ea9ad;
+  }
+  

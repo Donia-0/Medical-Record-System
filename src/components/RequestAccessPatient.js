@@ -18,8 +18,7 @@ function RequestsView(props) {
     props.verified(req);
     props.onSubmitClick();
   };
-  console.log(props.loading, props.user);
-
+  console.log(props.user);
   return (
     <Modal
       {...props}
@@ -46,9 +45,9 @@ function RequestsView(props) {
           )}
         </Modal.Title>
       </Modal.Header>
-      {!props.user && !props.loading ? null : (
+      {!props.user ? null : (
         <div>
-          {/* <Modal.Body>
+          <Modal.Body>
             <div className="request-access-view">
               <div className="row">
                 <div className="col-lg-12 col-md-12 col-sm-12">
@@ -59,8 +58,8 @@ function RequestsView(props) {
                 </div>
               </div>
             </div>
-          </Modal.Body> */}
-          {/* <Modal.Footer>
+          </Modal.Body>
+          <Modal.Footer>
             {props.sent === "true" ? (
               <div className="row">
                 <div className={`col-lg-8 ${style.input_access}`}>
@@ -89,7 +88,7 @@ function RequestsView(props) {
                 Request
               </Button>
             )}
-          </Modal.Footer> */}
+          </Modal.Footer>
         </div>
       )}
     </Modal>

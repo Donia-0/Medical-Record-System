@@ -81,7 +81,8 @@
   transition: all 1s;
   font-weight: bold;
 }
-.add_btn button:hover {
+.add_btn button:hover,
+.btns_pres .btn_addRemove_pres:hover {
   background-color: white;
   color: #2a7f82;
   border-color: #3ea9ad;
@@ -106,7 +107,17 @@
 .add_record_form form select:focus,
 .add_record_form form input:focus,
 .add_record_form form textarea:focus,
-.add_record_form form .add_btn button:focus {
+.add_record_form form .add_btn button:focus,
+.btns_pres .btn_addRemove_pres:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
+}
+
+.btns_pres {
+  margin-bottom: 5px;
+}
+.btns_pres .btn_addRemove_pres {
+  background-color: #307b8c;
+  color: white;
+  margin-right: 6px;
 }

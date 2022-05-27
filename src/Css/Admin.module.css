@@ -1,0 +1,23 @@
+.requests_btn .btns_req {
+  display: inline;
+  margin-right: 8px;
+  color: #fff;
+}
+.requests_btn .btns_req button {
+  background-color: #2a7f82;
+  color: #fff;
+}
+.requests_btn .btns_req .show {
+  padding: 1.2px 4px;
+}
+.requests_btn .btns_req .accept {
+  padding: 1.2px 4px;
+}
+.requests_btn .btns_req .decline {
+  padding: 1.2px 6px;
+}
+
+.requests_btn .btns_req button:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}

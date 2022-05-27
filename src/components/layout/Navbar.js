@@ -14,7 +14,7 @@ import { logoutUser } from "./../../actions/authAction";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { clearPatientProfile } from "../../actions/PatientAction";
 const Navbar = (props) => {
   const navigate = useNavigate();
   const onLogoutClick = (e) => {
@@ -23,10 +23,12 @@ const Navbar = (props) => {
     localStorage.removeItem("patientId");
     localStorage.removeItem("patientName");
     props.clearCurrentProfile();
+    props.clearPatientProfile();
   };
   const onClickChange = () => {
     localStorage.removeItem("patientId");
     localStorage.removeItem("patientName");
+    props.clearPatientProfile();
     window.location.reload();
   };
   const { role } = props.auth.user;
@@ -129,6 +131,8 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { logoutUser, clearCurrentProfile })(
-  Navbar
-);
+export default connect(mapStateToProps, {
+  logoutUser,
+  clearCurrentProfile,
+  clearPatientProfile,
+})(Navbar);

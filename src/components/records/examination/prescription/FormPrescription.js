@@ -8,31 +8,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import AdditioningField from "../../AdditioningField";
 import { useParams } from "react-router";
-
+import style from "../../../../Css/records/Record.module.css";
+import AOS from "aos";
 const FormPrescription = (props) => {
-  const { prescriptionId } = useParams();
-  const [inputList, setInputList] = useState([
-    { drug: "", dose: "", note: "" },
-  ]);
+  const { examId } = useParams();
+  const [form, setForm] = useState({
+    drugName: "",
+    dose: "",
+    note: "",
+  });
+  const [inputList, setInputList] = useState([form]);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
-  // handle click event of the Remove button
   const handleRemoveClick = (index) => {
     const list = [...inputList];
     list.splice(index, 1);
     setInputList(list);
   };
 
-  // handle click event of the Add button
   const handleAddClick = () => {
-    setInputList([...inputList, { drug: "", dose: "", note: "" }]);
+    setInputList([...inputList, form]);
+    setForm({ drugName: "", dose: "", note: "" });
   };
-
-  const [form, setForm] = useState({
-    drugName: "",
-    dose: "",
-    note: "",
-  });
-
   const onInputChange = (evt) => {
     const value = evt.target.value;
     setForm({
@@ -42,36 +41,56 @@ const FormPrescription = (props) => {
   };
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const data = {
+    var data = {
       drugName: form.drugName,
       dose: form.dose,
       note: form.note,
+      userId: localStorage.getItem("patientId"),
     };
+
+    if (examId) {
+      data = {
+        ...data,
+        examinationId: examId,
+      };
+    } else {
+      data = {
+        ...data,
+        examinationId: props.examination.newExamination.newExamination._id,
+      };
+    }
+
     props.prescriptionAdd(data);
   };
   return (
     <div
       className={
         inputList.length > 1
-          ? "additions-container child-height"
-          : "additions-container"
+          ? `${style.add_record_form_container} child-height`
+          : `${style.add_record_form_container}`
       }
     >
-      <div className="add-prescription">
-        <div className="row prescripton-form">
+      <div className={style.add_record}>
+        <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
-            <div className="pres-container">
-              <span className="pres-header">{props.header}</span>
+            <div className={style.record_container_header}>
+              <span className={style.add_record_header}>{props.header}</span>
             </div>
           </div>
           <div className="col-lg-12 col-md-12 col-sm-12">
-            <div className="pres-form">
-              <form className="form-group" onSubmit={onFormSubmit}>
+            <div className={style.add_record_form}>
+              <form
+                className="form-group"
+                data-aos="fade-right"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1000"
+                onSubmit={onFormSubmit}
+              >
                 {inputList.map((x, i) => {
                   return (
-                    <div>
+                    <div key={i}>
                       <AdditioningField
-                        value={form.drug}
+                        value={form.drugName}
                         onChange={onInputChange}
                         name="drugName"
                         labelName="Drug"
@@ -86,33 +105,6 @@ const FormPrescription = (props) => {
                         type="number"
                         placeholder="Enter dose "
                       />
-                      {/* <div className="row form-container">
-                      <div className="formlabel col-lg-12 col-md-12 col-sm-12">
-                        <label>Drug: </label>
-                      </div>
-                      <div className="col-lg-12 col-sm-12">
-                        <input
-                          name="drugName"
-                          className="form-control"
-                          type="text"
-                          placeholder="Enter drug name"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                    <div className="row form-container">
-                      <div className="formlabel col-lg-12 col-md-12 col-sm-12">
-                        <label>Dose: </label>
-                      </div>
-                      <div className="col-lg-12 col-sm-12">
-                        <input
-                          name="dose"
-                          className="form-control"
-                          type="number"
-                          placeholder="Enter dose"
-                        />
-                      </div>
-                    </div> */}
                       <div className="row form-container">
                         <div className="formlabel col-lg-12">
                           <label htmlFor="note">Note:</label>
@@ -130,11 +122,11 @@ const FormPrescription = (props) => {
                         </div>
                       </div>
                       <div className="row">
-                        <div className="add-btns">
-                          <div className="col-lg-12 col-md-12 col-sm-12 add-remove-pres">
+                        <div className="col-lg-12 col-md-12 col-sm-12">
+                          <div className={style.btns_pres}>
                             {inputList.length !== 1 && (
                               <button
-                                className="btn btn-primary mb-2"
+                                className={`btn ${style.btn_addRemove_pres}`}
                                 onClick={() => handleRemoveClick(i)}
                               >
                                 <FontAwesomeIcon icon={faTrash} />
@@ -143,7 +135,7 @@ const FormPrescription = (props) => {
                             {inputList.length - 1 === i && (
                               <button
                                 onClick={handleAddClick}
-                                className="btn btn-primary mb-2"
+                                className={`btn ${style.btn_addRemove_pres}`}
                               >
                                 <FontAwesomeIcon icon={faPlus} />
                               </button>
@@ -155,8 +147,10 @@ const FormPrescription = (props) => {
                   );
                 })}
                 <div className="row">
-                  <div className="col-lg-12 col-md-12 col-sm-12 submit-pres">
-                    <button className="btn btn-primary mb-2">Add</button>
+                  <div className="col-lg-12">
+                    <div className={style.add_btn}>
+                      <button className="btn">Submit</button>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -174,5 +168,6 @@ FormPrescription.prototype = {
 const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors,
+  examination: state.examination,
 });
 export default connect(mapStateToProps, { prescriptionAdd })(FormPrescription);

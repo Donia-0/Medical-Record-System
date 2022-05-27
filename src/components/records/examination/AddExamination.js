@@ -2,43 +2,27 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { connect } from "react-redux";
-import {
-  addExamination,
-  getExaminationDetailById,
-} from "../../../actions/records/examinationAction";
+import { addExamination } from "../../../actions/records/examinationAction";
 import { PropTypes } from "prop-types";
 import AdditioningField from "../AdditioningField";
 import NoteField from "../NoteField";
 import style from "../../../Css/records/Record.module.css";
+import image from "../../../images/records/bloodpressure/bloodp.png";
 import { useParams } from "react-router";
-import { useNavigate } from "react-router-dom";
-
-const FormExamination = (props) => {
-  const navigate = useNavigate();
-
+import isEmpty from "./../../../validation/isEmpty";
+const AddExamination = (props) => {
   const { examId } = useParams();
 
   const [form, setForm] = useState({
     diagnosis: "",
     symptoms: "",
     note: "",
-    userId: "",
   });
+
   const [errors, setErrors] = useState({});
   useEffect(() => {
     AOS.init();
-    props.getExaminationDetailById(examId);
   }, []);
-  const { examinationDetail } = props.examination;
-  useEffect(() => {
-    if (examinationDetail && examId) {
-      setForm({
-        diagnosis: examinationDetail.diagnosis,
-        symptoms: examinationDetail.symptoms,
-        note: examinationDetail.note,
-      });
-    }
-  }, [examinationDetail]);
   const onInputChange = (e) => {
     const value = e.target.value;
     setForm({
@@ -46,18 +30,16 @@ const FormExamination = (props) => {
       [e.target.name]: value,
     });
   };
-
   const onFormSubmit = (e) => {
     e.preventDefault();
-    var newExamination = {
+    const newExamination = {
       diagnosis: form.diagnosis,
       symptoms: form.symptoms,
       note: form.note,
-      userId: localStorage.getItem("patientId"),
     };
-    props.addExamination(newExamination, navigate);
+    props.addExamination(newExamination);
+    console.log(newExamination);
   };
-
   useEffect(() => {
     setErrors({});
     setErrors(props.errors);
@@ -124,18 +106,14 @@ const FormExamination = (props) => {
     </div>
   );
 };
-FormExamination.prototype = {
+AddExamination.prototype = {
   addExamination: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-  getExaminationDetailById: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
   examination: state.examination,
   errors: state.errors,
 });
-export default connect(mapStateToProps, {
-  addExamination,
-  getExaminationDetailById,
-})(FormExamination);
+export default connect(mapStateToProps, { addExamination })(AddExamination);

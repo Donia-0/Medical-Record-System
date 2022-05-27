@@ -14,6 +14,9 @@ const AdditioningField = ({
   disabled,
   onFocus,
   onBlur,
+  multiple,
+  file,
+  noteFile,
 }) => {
   return (
     <div className={`row ${style.field}`}>
@@ -34,7 +37,13 @@ const AdditioningField = ({
           placeholder={placeholder}
           pattern={pattern}
           disabled={disabled}
+          multiple={multiple}
         />
+        {file === "yes" ? (
+          <div id="textExample1" className="form-text">
+            {noteFile}
+          </div>
+        ) : null}
         {err && <div className="invalid-feedback">{err}</div>}
       </div>
     </div>

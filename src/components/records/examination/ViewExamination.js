@@ -14,7 +14,11 @@ import { getExaminations } from "../../../actions/records/examinationAction";
 import moment from "moment-timezone";
 const ViewExamination = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalShowPres, setModalShowPres] = React.useState(false);
   const clickhandler = (name) => console.log("delete", name);
+  const onPrescriptionViewClick = (presId) => {
+    console.log(presId);
+  };
   const columns = [
     {
       name: "Diagnosis",
@@ -53,30 +57,48 @@ const ViewExamination = (props) => {
       allowOverflow: true,
       cell: (row) => {
         return (
-          <div className={style.view_prescription_btn}>
-            <span className={style.tooltiptext}>
-              Click To Show Prescription
-            </span>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => {
-                row.showModal = true;
-                setModalShow(true);
-              }}
+          <div className={style.prescriptions_btns}>
+            <div
+              className={`${style.view_prescription_btn} ${style.pres_btns}`}
             >
-              <FontAwesomeIcon icon={faEye} />
-            </button>
-            {row.showModal ? (
-              <PrescriptionView
-                show={modalShow}
-                onHide={() => {
-                  row.showModal = false;
-
-                  setModalShow(false);
+              <span className={style.tooltiptext}>
+                Click To Show Prescription
+              </span>
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => {
+                  row.modalShowPres = true;
+                  setModalShowPres(true);
+                  onPrescriptionViewClick(row._id);
                 }}
-              />
-            ) : null}
+              >
+                <FontAwesomeIcon icon={faEye} />
+              </button>
+              {row.modalShowPres ? (
+                <PrescriptionView
+                  examId={row._id}
+                  show={modalShowPres}
+                  onHide={() => {
+                    row.modalShowPres = false;
+                    setModalShowPres(false);
+                  }}
+                />
+              ) : null}
+            </div>
+            <div className={`${style.pres_btns}`}>
+              <Link
+                to={`/records/prescriptions/addprescription/${row._id}`}
+                className={`btn ${style.add_pres_in_view}`}
+                onClick={() => {
+                  row.modalShowPres = true;
+                  setModalShowPres(true);
+                  onPrescriptionViewClick(row._id);
+                }}
+              >
+                <FontAwesomeIcon icon={faPlus} />
+              </Link>
+            </div>
           </div>
         );
       },
@@ -90,7 +112,7 @@ const ViewExamination = (props) => {
         return (
           <div className={style.edit_delete_btns}>
             <div className={style.edit_btn}>
-              <Link to={`./${row.id}`} type="button" className="btn">
+              <Link to={`./${row._id}`} type="button" className="btn">
                 <FontAwesomeIcon icon={faEdit} />
               </Link>
             </div>
@@ -104,8 +126,8 @@ const ViewExamination = (props) => {
       },
     },
   ];
+
   const { examinations, loading } = props.examination.Examination;
-  console.log(examinations);
   useEffect(() => {
     if (localStorage.patientId) {
       const userData = {

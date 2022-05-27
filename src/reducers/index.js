@@ -8,6 +8,7 @@ import bloodpressureReducer from "./records/bloodpressureReducer";
 import examinationReducer from "./records/examinationReducer";
 import glucoseReducer from "./records/glucoseReducer";
 import surgeryReducer from "./records/surgeryReducer";
+import prescriptionReducer from "./records/prescriptionReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -19,4 +20,5 @@ export default combineReducers({
   surgery: surgeryReducer,
   patient: patientReducer,
   allergy: allergyReducer,
+  prescription: prescriptionReducer,
 });

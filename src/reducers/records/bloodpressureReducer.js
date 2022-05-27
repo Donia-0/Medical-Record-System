@@ -3,6 +3,7 @@ import {
   GET_BLOODPRESSURE,
   GET_DETAIL_BLOODPRESSURE,
   CLEAR_RECORDS,
+  CLEAR_CURRENT_PROFILE,
 } from "./../../actions/types";
 
 const initialState = {
@@ -36,6 +37,13 @@ export default function (state = initialState, action) {
         bloodPressure: [],
         loading: false,
         bloodPressureDetail: {},
+      };
+    case CLEAR_CURRENT_PROFILE:
+      return {
+        ...state,
+        bloodPressure: [],
+        loading: false,
+        bloodPressureDetai: {},
       };
     default:
       return state;

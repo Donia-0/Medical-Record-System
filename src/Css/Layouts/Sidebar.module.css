@@ -32,3 +32,22 @@
   left: 0;
   opacity: 30%;
 }
+
+.sidebar_navlink_content {
+      display: flex;
+      align-items: center;
+}
+
+.sidebar_navlink_content_img {
+  width: 15%;
+    margin-right: 10px;
+}
+
+.sidebar_navlink_content_img img {
+  width: 100%;
+}
+
+.sidebar_navlink_daily {
+  display: flex;
+  align-items: center;
+}

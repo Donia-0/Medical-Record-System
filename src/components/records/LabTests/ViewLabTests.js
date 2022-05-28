@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import { Accordion } from "react-bootstrap";
 import background from "../../../images/card3.jpg";
 import LabTest from "./LabTest";
+import labTestImage from "../../../images/x-ray.png";
 const ViewLabTests = (props) => {
   useEffect(() => {
     AOS.init();
@@ -23,7 +24,10 @@ const ViewLabTests = (props) => {
     >
       <div className="row">
         <div className="col-lg-12 col-md-12 col-sm-12">
-          <div className={style.view_header}>Lab Tests</div>
+          <div className={style.view_header}>
+            <img src={labTestImage} />
+            Lab Tests
+          </div>
         </div>
       </div>
       <div className={style.view_data}>

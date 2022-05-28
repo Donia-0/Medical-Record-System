@@ -4,6 +4,7 @@ import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import columns from "./SurgeryColumns";
 import Table from "./../Table";
+import surgeryImage from "../../../images/surgury.png";
 
 const Surgery = (props) => {
   const { surgeries, loading } = props.surgery;
@@ -16,10 +17,12 @@ const Surgery = (props) => {
   return (
     <Table
       link="./addsurgery"
+      img={surgeryImage}
       columns={columns}
       data={surgeries}
       click={clickhandler}
       PageName="Surgery"
+      haveImage={true}
     />
   );
 };

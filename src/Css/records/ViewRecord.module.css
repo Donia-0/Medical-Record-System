@@ -129,10 +129,19 @@
 }
 
 .examination_filter_header {
-  font-weight: bold;
-  font-size: 25px;
+  display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 40px;
+  /* font-weight: bold;
+  font-size: 25px; */
   padding-bottom: 10px;
   color: #2a7f82;
+}
+
+.examination_filter_header img {
+  width: 50px;
+  margin-right: 15px;
 }
 
 .examination_filer_button button {
@@ -181,17 +190,26 @@
   outline: none;
 }
 
+.lab_test_images {
+  display: flex;
+  justify-content: center;
+}
+
 .accordion_img {
-  background-image: url("../../images/light-color.png");
+  /* background-image: url("../../images/light-color.png"); */
   /* width: 70%;
     background-repeat: round;
     height: 200px; */
-  width: 100%;
-  background-size: contain;
+  width: 70%;
+  /* background-size: contain; */
   /* background-repeat: round; */
-  background-repeat: no-repeat;
-  height: 200px;
-  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* height: 200px; */
+  /* background-position: center; */
+}
+
+.accordion_img img {
+  width: 100%;
 }
 
 .lab_test_information_container {

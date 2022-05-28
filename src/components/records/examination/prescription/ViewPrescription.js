@@ -4,6 +4,7 @@ import Table from "./../../Table";
 import { getPrescriptions } from "../../../../actions/records/pescriptionaction";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import prescriptionImage from "../../../../images/medicine.png";
 const ViewPrescription = (props) => {
   const clickhandler = (name) => console.log("delete", name);
   const prescriptionTest = [
@@ -110,10 +111,12 @@ const ViewPrescription = (props) => {
   return (
     <Table
       link="./addprescription"
+      img={prescriptionImage}
       columns={columns}
       data={prescriptions}
       click={clickhandler}
       PageName="Prescriptions"
+      haveImage={true}
     />
   );
 };

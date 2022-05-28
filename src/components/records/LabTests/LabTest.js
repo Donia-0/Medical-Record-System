@@ -33,10 +33,11 @@ const LabTest = ({ eventKey, labTestName, labTestImage, date, note }) => {
             <div className="col-lg-12">
               <div className="row">
                 <div className="col-lg-4">
-                  <div
-                    className={style.accordion_img}
-                    style={{ backgroundImage: `url(${labTestImage})` }}
-                  ></div>
+                  <div className={style.lab_test_images}>
+                    <div className={style.accordion_img}>
+                      <img src={labTestImage} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,5 +1,5 @@
 .add_pill_form_container {
-    height: calc(100vh - 61.7px);
+    /* height: calc(100vh - 61.7px); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
   }
   .add_pill {
     width: 60%;
-    margin-top: 50px;
+    margin-top: 40px;
   
   }
   .pill_container_header {
@@ -153,6 +153,7 @@
   }
   .ResultCards{
     margin-top: 40px;
+    margin-bottom: 40px;
   }
   .drug_result_card{
     width: 90%;

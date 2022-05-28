@@ -12,6 +12,7 @@ import { faEdit, faEye, faXmark } from "@fortawesome/free-solid-svg-icons";
 import PrescriptionView from "./PrescriptionView";
 import { getExaminations } from "../../../actions/records/examinationAction";
 import moment from "moment-timezone";
+import examinationImage from "../../../images/examination.png";
 const ViewExamination = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShowPres, setModalShowPres] = React.useState(false);
@@ -141,11 +142,14 @@ const ViewExamination = (props) => {
   return (
     <div className="examination">
       <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12">
+        <div className="col-lg-12 col-md-12 col-sm-12 text-center">
           <div className={style.examination_filter}>
-            <div className={style.examination_filter_header}>Examination</div>
+            <div className={style.examination_filter_header}>
+              <img src={examinationImage} />
+              Examination
+            </div>
             <div className="row">
-              <div className="col-lg-6 col-md-12 col-sm-12">
+              <div className="col-lg-12 col-md-12 col-sm-12 text-center">
                 <div className={style.examination_filer_button}>
                   <button className="btn" onClick={() => setModalShow(true)}>
                     <FontAwesomeIcon icon={faFilter} /> Add filter

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import {
   addExamination,
   getExaminationDetailById,
+  updateExamination,
 } from "../../../actions/records/examinationAction";
 import { PropTypes } from "prop-types";
 import AdditioningField from "../AdditioningField";
@@ -55,7 +56,11 @@ const FormExamination = (props) => {
       note: form.note,
       userId: localStorage.getItem("patientId"),
     };
-    props.addExamination(newExamination, navigate);
+    if (examinationDetail && examId) {
+      props.updateExamination(examId, newExamination, navigate);
+    } else {
+      props.addExamination(newExamination, navigate);
+    }
   };
 
   useEffect(() => {
@@ -129,6 +134,7 @@ FormExamination.prototype = {
   errors: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   getExaminationDetailById: PropTypes.func.isRequired,
+  updateExamination: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
@@ -138,4 +144,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   addExamination,
   getExaminationDetailById,
+  updateExamination,
 })(FormExamination);

@@ -8,7 +8,7 @@ const AdditioningField = ({
   placeholder,
   name,
   onChange,
-  value,
+  value = "",
   err,
   pattern,
   disabled,

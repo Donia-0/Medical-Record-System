@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Fields from "../../Fields";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { toast } from "react-toastify";
-import { prescriptionAdd } from "../../../../actions/records/pescriptionaction";
+import {
+  prescriptionAdd,
+  getPrescriptionById,
+  updatePrescription,
+} from "../../../../actions/records/pescriptionaction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import AdditioningField from "../../AdditioningField";
 import { useParams } from "react-router";
 import style from "../../../../Css/records/Record.module.css";
 import AOS from "aos";
+import { useNavigate } from "react-router-dom";
 const FormPrescription = (props) => {
-  const { examId } = useParams();
+  const navigate = useNavigate();
+
+  const { examId, prescriptionId } = useParams();
   const [form, setForm] = useState({
     drugName: "",
     dose: "",
@@ -20,7 +25,19 @@ const FormPrescription = (props) => {
   const [inputList, setInputList] = useState([form]);
   useEffect(() => {
     AOS.init();
+    props.getPrescriptionById(prescriptionId);
   }, []);
+
+  const { prescriptionDetail } = props.prescription;
+  useEffect(() => {
+    if (prescriptionDetail && prescriptionId) {
+      setForm({
+        drugName: prescriptionDetail.drugName,
+        dose: prescriptionDetail.dose,
+        note: prescriptionDetail.note,
+      });
+    }
+  }, [prescriptionDetail]);
 
   const handleRemoveClick = (index) => {
     const list = [...inputList];
@@ -48,19 +65,22 @@ const FormPrescription = (props) => {
       userId: localStorage.getItem("patientId"),
     };
 
-    if (examId) {
-      data = {
-        ...data,
-        examinationId: examId,
-      };
+    if (prescriptionDetail && prescriptionId) {
+      props.updatePrescription(prescriptionId, data, navigate);
     } else {
-      data = {
-        ...data,
-        examinationId: props.examination.newExamination.newExamination._id,
-      };
+      if (examId) {
+        data = {
+          ...data,
+          examinationId: examId,
+        };
+      } else {
+        data = {
+          ...data,
+          examinationId: props.examination.newExamination.newExamination._id,
+        };
+      }
+      props.prescriptionAdd(data);
     }
-
-    props.prescriptionAdd(data);
   };
   return (
     <div
@@ -164,10 +184,17 @@ const FormPrescription = (props) => {
 
 FormPrescription.prototype = {
   prescriptionAdd: PropTypes.func.isRequired,
+  updatePrescription: PropTypes.func.isRequired,
+  getPrescriptionById: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors,
   examination: state.examination,
+  prescription: state.prescription,
 });
-export default connect(mapStateToProps, { prescriptionAdd })(FormPrescription);
+export default connect(mapStateToProps, {
+  prescriptionAdd,
+  getPrescriptionById,
+  updatePrescription,
+})(FormPrescription);

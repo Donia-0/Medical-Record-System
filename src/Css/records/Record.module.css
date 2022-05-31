@@ -5,6 +5,25 @@
   align-items: center;
   flex-wrap: wrap;
 }
+@media screen and (min-width: 660px) and (max-width: 790px) {
+  .add_record_form_container {
+    height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+}
+@media screen and (min-width: 500px) and (max-width: 661px) {
+  .add_record_form_container {
+    height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
 .add_record {
   width: 60%;
 }

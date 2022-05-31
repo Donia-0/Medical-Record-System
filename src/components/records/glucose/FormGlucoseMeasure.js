@@ -90,9 +90,8 @@ const FormGlucoseMeasure = (props) => {
                   >
                     <option>Choose</option>
                     <option value="rabdom-bs">Random blood suger</option>
-                    <option value="fasting-bs">Fasting blood suger</option>
-                    <option value="post-prandial-bs">
-                      Post prandial blood suger (2hr)
+                    <option value="fasting-bs">
+                      Glycated Haemoglobin (HbA1c)
                     </option>
                   </select>
                 </div>

@@ -125,7 +125,6 @@ const PillIdentifier = (props) => {
               >
                 <div className={`row ${style.field}`}>
                   <SelectionField
-                    style={{ marginRight: "10px" }}
                     labelName="Color"
                     options={renderedColors}
                     selectName="Choose Color"
@@ -170,92 +169,60 @@ const PillIdentifier = (props) => {
           <SearchDrugResult
             MedecineName="abilify"
             MedecineIngredient="ARIPIPRAZOLE15mg"
+            MedecineDescription="ccupril (quinapril) is an ace inhibitor. ace stands for angiotensin converting enzyme. accupril is used to treat high blood pressure (hypertension). lowering blood pressure may lower your risk of a stroke or heart attack. accupril is also used together with other medications to treat heart failure."
+          />
+          <SearchDrugResult
+            MedecineName="abilify"
+            MedecineIngredient="ARIPIPRAZOLE15mg"
             MedecineDescription="abilify (aripiprazole is an antipsychotic medication. it works by changing the actions of chemicals in the brain. abilify is used to treat the symptoms of psychotic conditions such as schizophrenia and bipolar i disorder (manic depression). it is not known if aripiprazole is safe or effective in children younger than 13 with schizophrenia, or children younger than 10 with bipolar disorder. abilify is also used together with other medicines to treat major depressive disorder in adults. abilify is also used in children 6 years or older who have tourette's disorder, or symptoms of autistic disorder (irritability, aggression, mood swings, temper tantrums, and self-injury)."
           />
         </div>
       </div>
-      {/* <div className="col-lg-12 col-md-12 col-sm-12">
-        <div className={style.textheader}>
-          <h1>How to use our Pill identifier to view drug images?</h1>
-        </div>
-        <div className={style.textparagraph}>
-          <p style={{ marginTop: "10px" }}>
-            Using pill finder to find drug images is pretty simple and
-            straightforward. You can easily identify pills and view pill images
-            a number of ways.
-          </p>
-        </div>
-        <div className={style.cards}>
-          <div class="row">
-            <div class="col-sm-6">
-              <div className={style.cardStyle}>
-                <div
-                  class="card text-center"
-                  style={{
-                    width: "80%",
-                    height: "80%",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
+      {/* <div className={style.pill_identifier_instructions}>
+        <div className="col-lg-12 col-md-12 col-sm-12">
+          <div className={style.textheader}>
+            <h1>How to use our Pill identifier to view drug images?</h1>
+          </div>
+          <div className={style.textparagraph}>
+            <p>
+              Using pill finder to find drug images is pretty simple and
+              straightforward. You can easily identify pills and view pill
+              images a number of ways.
+            </p>
+          </div>
+          <div className={style.cards}>
+            <div className="row">
+              <div className="col-sm-6">
+                <div className={style.cardStyle}>
                   <div
-                    class="card-body"
-                    style={{
-                      padding: "0",
-                      display: "flex",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                    }}
+                    className={`${style.instructions_card} card text-center`}
                   >
-                    <h5
-                      class="card-title"
-                      style={{ color: "#307b8c", fontWeight: "bold" }}
-                    >
-                      Color
-                    </h5>
-                    <p class="card-text" style={{ fontWeight: "500" }}>
-                      Used to search for pill image by pill color.
-                    </p>
+                    <div className={style.instructions_card_body}>
+                      <h5 className={style.instructions_card_title}>Color</h5>
+                      <p className={style.instructions_card_text}>
+                        Used to search for pill image by pill color.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6">
-              <div className={style.cardStyle}>
-                <div
-                  class="card text-center"
-                  style={{
-                    width: "80%",
-                    height: "80%",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
+              <div className="col-sm-6">
+                <div className={style.cardStyle}>
                   <div
-                    class="card-body"
-                    style={{
-                      padding: "0",
-                      display: "flex",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                    }}
+                    className={`${style.instructions_card} card text-center`}
                   >
-                    <h5
-                      class="card-title"
-                      style={{ color: "#307b8c", fontWeight: "bold" }}
-                    >
-                      Shape
-                    </h5>
-                    <p class="card-text" style={{ fontWeight: "500" }}>
-                      Used to search for pill image by the shape of the pill.
-                    </p>
+                    <div className={style.instructions_card_body}>
+                      <h5 className={style.instructions_card_title}>Shape</h5>
+                      <p className={style.instructions_card_text}>
+                        Used to search for pill image by the shape of the pill.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-       
       </div> */}
     </div>
   );

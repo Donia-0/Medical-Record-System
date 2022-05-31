@@ -1,3 +1,85 @@
+@media screen and (max-width: 1200px) {
+  .cardStyle {
+    height: 100% !important;
+  }
+
+  .add_pill, .pill_identifier_instructions {
+    width: 65% !important;
+  }
+
+  .ResultCards {
+    width: 68% !important;
+  }
+
+  .result_card_title {
+    font-size: 18px !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  .add_pill, .pill_identifier_instructions {
+    width: 70% !important;
+  }
+
+  .add_pill {
+    margin-top: 25px !important;
+  }
+
+  .textheader h1 {
+    font-size: 26px !important;
+  }
+
+  .pill_identifier_instructions {
+    margin-bottom: 25px !important;
+  }
+
+  .ResultCards {
+    width: 72% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .add_pill, .pill_identifier_instructions {
+    width: 80% !important;
+  }
+
+  .textheader h1 {
+    font-size: 23px !important;
+  }
+
+  .ResultCards {
+    width: 80% !important;
+  }
+
+  .drug_result_card {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .select_container {
+    margin-right: 0 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .field {
+    margin-bottom: 10px !important;
+  }
+
+  .add_pill, .pill_identifier_instructions {
+    width: 90% !important;
+  }
+
+  .instructions_card {
+    width: 70% !important;
+  }
+
+  .pill_identifier_instructions {
+    padding: 15px !important;
+  }
+
+  .ResultCards {
+    width: 90% !important;
+  }
+}
+
 .add_pill_form_container {
     /* height: calc(100vh - 61.7px); */
     display: flex;
@@ -121,17 +203,57 @@
     display: flex;
     justify-content: center;
   }
+
+  .cardStyle .instructions_card {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    cursor: auto;
+    border: 1px solid #307b8c;
+    box-shadow: 10px 10px 10px -10px #307b8c;
+  }
+
+  .cardStyle .instructions_card .instructions_card_body {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+    }
+
+    .cardStyle .instructions_card .instructions_card_body .instructions_card_title {
+      color: #307b8c; 
+      font-weight: bold;
+    }
+
+    .cardStyle .instructions_card .instructions_card_body .instructions_card_text {
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
   .textheader{
     color: #307b8c;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     margin-top: 20px;
-    text-align: center;
+    /* text-align: center; */
+  }
+
+  .textheader h1 {
+    font-size: 30px;
+    font-weight: bold;
   }
   .textparagraph{
-    color: #307b8c;
-    display: flex;
-    justify-content: center;
+    /* color: #307b8c; */
+    /* display: flex;
+    justify-content: center; */
+    color: #777;
+    margin-bottom: 25px;
+  }
+
+  .textparagraph p {
+    margin-top: 15px;
+    margin-left: 5px;
   }
   .cards{
     display: flex;
@@ -154,12 +276,62 @@
   .ResultCards{
     margin-top: 40px;
     margin-bottom: 40px;
+    width: 62%;
   }
   .drug_result_card{
-    width: 90%;
+    width: 95%;
     margin: auto;
+    margin-bottom: 15px;
     padding: 0;
     border: 0px;
     cursor: auto;
     height: fit-content;
+  }
+
+  .accordion-item:last-of-type .accordion-button.collapsed,
+  .accordion-item:first-of-type .accordion-button {
+    border-radius: 0;
+  }
+
+  .accord_item button {
+    margin-top: 10px !important;
+    padding: 10px 5px !important;
+    z-index: 0 !important;
+    font-weight: 500;
+    color: #307b8c;
+  }
+
+  .accord_item {
+    border: none !important;
+  }
+
+  .accord_item button:focus {
+    border-color: white !important;
+    box-shadow: 0 0 0 0.25rem white;
+  }
+
+  .accord_item button:hover {
+    z-index: 0 !important;
+  }
+
+  .pill_identifier_instructions {
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #2a7f82;
+    border: 1px solid #307b8c;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px -10px #307b8c;
+  }
+
+  .select_container {
+    margin-right: 10px;
+  }
+
+  .result_card_header {
+    background-color: #307b8c;
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
   }

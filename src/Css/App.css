@@ -1916,3 +1916,9 @@ team
   flex-grow: 1;
   text-align: center;
 }
+
+.accordion-button:not(.collapsed) {
+  color: #307b8c !important;
+  background-color: #def2f3cf !important;
+  transition: 700ms ease-in-out !important;
+}

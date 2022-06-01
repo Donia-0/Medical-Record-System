@@ -74,7 +74,7 @@ const Navbar = (props) => {
       </button>
 
       <div className="navbar-collapse collapse" id="navbarNav">
-        <ul className="navbar-nav ms-auto">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           {localStorage.patientId ? (
             <li
               style={{ width: "200px", cursor: "pointer" }}

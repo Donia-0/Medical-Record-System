@@ -1,3 +1,32 @@
+@media screen and (min-width: 791px) and (max-width: 990px) {
+  .labtest_rules {
+    margin-top: 70px !important;
+    width: 75% !important;
+  }
+  .add_record {
+    width: 75% !important;
+  }
+  .add_record_form form {
+    width: 65% !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (min-width: 150px) and (max-width: 790px) {
+  .labtest_rules {
+    width: 80% !important;
+    margin-top: 70px!important;
+  }
+  .add_record {
+    width: 80% !important;
+  }
+  .add_record_form form {
+    width:70% !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
 
 .labtest_rules {
     font-weight: bold;

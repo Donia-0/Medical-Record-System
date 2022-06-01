@@ -8,7 +8,6 @@ import common from "../../Css/Common.module.css";
 const Doctor = ({ form, step, onChange, onClick }) => {
   return (
     <div>
-      (
       <div
         className={
           step === "doctor" ? `${common.remove_dis_none}` : `${common.dis_none}`
@@ -45,7 +44,6 @@ const Doctor = ({ form, step, onChange, onClick }) => {
         />
         <PrevSubBtns onClick={onClick} />
       </div>
-      )
     </div>
   );
 };

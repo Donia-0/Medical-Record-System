@@ -23,7 +23,9 @@ const SearchDrugResult = ({
             <Accordion.Item eventKey="0" className={style.accord_item}>
               <Accordion.Header>View More Details</Accordion.Header>
               <Accordion.Body>
-                <p className="card-text"> Description: {MedecineDescription}</p>
+                <p className={`${style.result_card_text} "card-text"`}>
+                  Description: {MedecineDescription}
+                </p>
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>

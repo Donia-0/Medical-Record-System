@@ -1,7 +1,7 @@
 import React from "react";
 
-import section1 from "../../images/section1.png";
-import section2 from "../../images/light-color.png";
+import section1 from "../../images/doctor.png";
+import section2 from "../../images/medical-history.png";
 import Cards from "./Cards";
 import {
   faFolderPlus,
@@ -100,7 +100,7 @@ const Landing = () => {
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
-                  <strong>Get Ideas</strong>
+                  <strong> Ideas</strong>
                   <span>Godard pabst prism fam cliche.</span>
                 </a>
               </div>
@@ -109,7 +109,7 @@ const Landing = () => {
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
-                  <strong>Sketch Up</strong>
+                  <strong>Sketch</strong>
                   <span>Godard pabst prism fam cliche.</span>
                 </a>
               </div>
@@ -293,7 +293,7 @@ const Landing = () => {
             <div className="row">
               <div className="col-lg-5 col-md-12 col-sm-12 align-self-center">
                 <img
-                  src={section2}
+                  src={section1}
                   className="rounded img-fluid d-block mx-auto"
                 />
               </div>
@@ -344,7 +344,7 @@ const Landing = () => {
               <div className="col-lg-1"></div>
               <div className="col-lg-5 col-md-12 col-sm-12 align-self-center">
                 <img
-                  src={section1}
+                  src={section2}
                   className="rounded img-fluid d-block mx-auto"
                 />
               </div>

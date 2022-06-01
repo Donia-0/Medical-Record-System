@@ -44,7 +44,7 @@ const Layout = () => {
           <div className="row">
             <div
               className={`col-lg-6 col-md-12 col-sm-3 ${
-                windowDimensions.width > 995
+                windowDimensions.width > 780
                   ? `${common.dis_none} ${style.alin_right}`
                   : `${style.alin_right}`
               }`}

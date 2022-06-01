@@ -335,3 +335,8 @@
     color: white;
     border-radius: 10px 10px 0 0 !important;
   }
+
+
+  .result_card_text {
+    z-index: 0 !important;
+  }

@@ -1917,8 +1917,43 @@ team
   text-align: center;
 }
 
+/* accordion component */
+
 .accordion-button:not(.collapsed) {
   color: #307b8c !important;
   background-color: #def2f3cf !important;
   transition: 700ms ease-in-out !important;
+}
+
+/* Steps component */
+
+.indexedStep {
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexedStep.accomplished {
+  background-color: #3ea9ad
+}
+
+.test {
+  position: absolute;
+  margin-top: 40px;
+  white-space: nowrap;
+}
+
+.steps {
+  margin-bottom: 35px;
+  padding: 0px 25px;
+}
+
+.RSPBprogressBar .RSPBprogression {
+  background: #3ea9ad !important;
 }

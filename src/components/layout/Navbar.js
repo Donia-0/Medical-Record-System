@@ -4,9 +4,10 @@ import SearchBar from "../user/SearchBar";
 import style from "../../Css/Navbar.module.css";
 import {
   faCapsules,
+  faCircleNotch,
   faRightFromBracket,
   faRotateLeft,
-  faUserDoctor,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clearCurrentProfile } from "./../../actions/profileAction";
@@ -31,7 +32,22 @@ const Navbar = (props) => {
     props.clearPatientProfile();
     window.location.reload();
   };
-  const { role } = props.auth.user;
+  const searchBarCondition = () => {
+    if (role == 1 && isActive) {
+      return <SearchBar />;
+    }
+    if (role == 1 && !isActive) {
+      return (
+        <div className="pending-request" style={{ color: "#FFF" }}>
+          <FontAwesomeIcon icon={faCircleNotch} />
+          <strong style={{ marginLeft: "10px" }}>
+            Your Request to be a doctor is under review
+          </strong>
+        </div>
+      );
+    }
+  };
+  const { role, isActive } = props.auth.user;
   return (
     <nav
       className={`${style.navbar_own_style} navbar navbar-expand-lg navbar-light`}
@@ -45,8 +61,9 @@ const Navbar = (props) => {
         </a>
       </div>
       <div className={`container-fluid`}>
-        {!localStorage.patientId ? (
-          role === 1 ? (
+        {searchBarCondition()}
+        {/* {!localStorage.patientId ? (
+          role == 1 && isActive == true ? (
             <SearchBar />
           ) : null
         ) : (
@@ -58,7 +75,7 @@ const Navbar = (props) => {
               Now you can see {localStorage.getItem("patientName")}'s Records
             </strong>
           </div>
-        )}
+        )} */}
       </div>
 
       <button

@@ -5,96 +5,18 @@ import { getPrescriptions } from "../../../../actions/records/pescriptionaction"
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import prescriptionImage from "../../../../images/medicine.png";
+import ConditionalView from "../../ConditionalView";
 const ViewPrescription = (props) => {
   const clickhandler = (name) => console.log("delete", name);
   const prescriptionTest = [
     {
+      diagnosis: "hhh",
       drug: "panadol",
       dose: "No",
       date: "sadasd",
       note: "yaraaab",
       DrName: "Ahmed",
       id: 3,
-    },
-    {
-      drug: "panadol",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Ahmed",
-      id: 3,
-    },
-    {
-      drug: "panadol",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Ahmed",
-      id: 3,
-    },
-    {
-      drug: "brufin",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Ahmed",
-      id: 1,
-    },
-    {
-      drug: "brufin",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Ahmed",
-      id: 1,
-    },
-    {
-      drug: "brufin",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Ahmed",
-      id: 1,
-    },
-    {
-      drug: "ay nela",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Hussein",
-      id: 2,
-    },
-    {
-      drug: "ay nela",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Hussein",
-      id: 2,
-    },
-    {
-      drug: "ay nela",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Hussein",
-      id: 2,
-    },
-    {
-      drug: "ay nela",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Hussein",
-      id: 2,
-    },
-    {
-      drug: "ay nela",
-      dose: "No",
-      date: "sadasd",
-      note: "yaraaab",
-      DrName: "Hussein",
-      id: 2,
     },
   ];
   useEffect(() => {
@@ -112,7 +34,7 @@ const ViewPrescription = (props) => {
     <Table
       link="./addprescription"
       img={prescriptionImage}
-      columns={columns}
+      columns={ConditionalView(columns)}
       data={prescriptions}
       click={clickhandler}
       PageName="Prescriptions"

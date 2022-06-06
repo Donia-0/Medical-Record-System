@@ -11,13 +11,35 @@ import AdditioningField from "../AdditioningField";
 import NoteField from "../NoteField";
 import style from "../../../Css/records/Record.module.css";
 import { useParams } from "react-router";
+import {
+  addGlucose,
+  getGlucoseDetailById,
+  updateGlucose,
+} from "../../../actions/records/glucoseAction";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 const FormGlucoseMeasure = (props) => {
+  const { glucoseId } = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     AOS.init();
+    props.getGlucoseDetailById(glucoseId);
   }, []);
+
+  const { glucoseDetail } = props.glucose;
+  useEffect(() => {
+    if (glucoseDetail && glucoseId) {
+      setForm({
+        type: glucoseDetail.type,
+        result: glucoseDetail.result,
+        note: glucoseDetail.note,
+        date: moment(glucoseDetail.date).format("YYYY-MM-DD"),
+      });
+    }
+  }, [glucoseDetail]);
+
   const [errors, setErrors] = useState({});
   const [form, setForm] = useState({
     type: "",
@@ -44,7 +66,11 @@ const FormGlucoseMeasure = (props) => {
       date: form.date,
       note: form.note,
     };
-    props.addGlucose(newGlucose);
+    if (glucoseDetail && glucoseId) {
+      props.updateGlucose(glucoseId, newGlucose, navigate);
+    } else {
+      props.addGlucose(newGlucose, navigate);
+    }
   };
   return (
     <div className={style.add_record_form_container}>
@@ -81,7 +107,10 @@ const FormGlucoseMeasure = (props) => {
                 </div>
                 <div className="col-lg-9 col-sm-12">
                   <select
+                    value={form.type}
+                    onChange={onInputChange}
                     className="form-select"
+                    name="type"
                     style={{
                       width: "133%",
                       marginBottom: "8px",
@@ -89,8 +118,10 @@ const FormGlucoseMeasure = (props) => {
                     }}
                   >
                     <option>Choose</option>
-                    <option value="rabdom-bs">Random blood suger</option>
-                    <option value="fasting-bs">
+                    <option value="Random blood suger">
+                      Random blood suger
+                    </option>
+                    <option value="Glycated Haemoglobin (HbA1c)">
                       Glycated Haemoglobin (HbA1c)
                     </option>
                   </select>
@@ -138,17 +169,20 @@ const FormGlucoseMeasure = (props) => {
   );
 };
 FormGlucoseMeasure.prototype = {
-  addBloodPressure: PropTypes.func.isRequired,
+  addGlucose: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
-  getBloodPressureDetailById: PropTypes.func.isRequired,
+  glucose: PropTypes.object.isRequired,
+  getGlucoseDetailById: PropTypes.func.isRequired,
+  updateGlucose: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors,
-  bloodpressures: state.bloodpressures,
+  glucose: state.glucose,
 });
 export default connect(mapStateToProps, {
-  addBloodPressure,
-  getBloodPressureDetailById,
+  addGlucose,
+  getGlucoseDetailById,
+  updateGlucose,
 })(FormGlucoseMeasure);

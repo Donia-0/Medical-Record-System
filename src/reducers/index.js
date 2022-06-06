@@ -9,7 +9,7 @@ import examinationReducer from "./records/examinationReducer";
 import glucoseReducer from "./records/glucoseReducer";
 import surgeryReducer from "./records/surgeryReducer";
 import prescriptionReducer from "./records/prescriptionReducer";
-
+import adminReducer from "./adminReducer";
 export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
@@ -21,4 +21,5 @@ export default combineReducers({
   patient: patientReducer,
   allergy: allergyReducer,
   prescription: prescriptionReducer,
+  admin: adminReducer,
 });

@@ -10,10 +10,14 @@
   width: 10%;
   background-color: white;
   left: 180px;
+  overflow: hidden;
 }
+
 .profile_img .profile_span_img img {
   width: 100%;
+  position: relative;
 }
+
 .profile_img .profile_span_name {
   position: absolute;
   bottom: 0;

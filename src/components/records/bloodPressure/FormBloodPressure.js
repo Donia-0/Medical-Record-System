@@ -73,7 +73,8 @@ const FormBloodPressure = (props) => {
     if (bloodPressureDetail && bloodpId) {
       props.updateBloodPressure(bloodpId, data, navigate);
     } else {
-      props.addBloodPressure(data);
+      console.log(data);
+      props.addBloodPressure(data, navigate);
     }
   };
   return (

@@ -11,7 +11,6 @@ const Viewbloodp = (props) => {
   const { bloodPressure, loading } = props.bloodpressures;
   useEffect(() => {
     if (localStorage.patientId) {
-      console.log("hello");
       const userData = {
         patientId: localStorage.getItem("patientId"),
       };
@@ -20,14 +19,15 @@ const Viewbloodp = (props) => {
       props.getBloodPressure();
     }
   }, []);
-  const onClink = () => {
+  const Click = () => {
     console.log("delete");
   };
+
   return (
     <Table
       link="./addbloodpressure"
       img={bloodpreasureImage}
-      columns={columns(onClink)}
+      columns={columns(Click)}
       data={bloodPressure}
       click={clickhandler}
       PageName="Blood Pressure Measurements"

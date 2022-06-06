@@ -5,12 +5,21 @@ import { getGlucose } from "../../../actions/records/glucoseAction";
 import columns from "./GlucoseColumns";
 import Table from "./../Table";
 import glucoseImage from "../../../images/glucose.png";
+import { useParams } from "react-router";
 
 const Viewglucose = (props) => {
   const clickhandler = (name) => console.log("delete", name);
   const { glucose } = props.glucose;
+
   useEffect(() => {
-    props.getGlucose();
+    if (localStorage.patientId) {
+      const userData = {
+        patientId: localStorage.getItem("patientId"),
+      };
+      props.getGlucose(userData);
+    } else {
+      props.getGlucose();
+    }
   }, []);
   return (
     <Table

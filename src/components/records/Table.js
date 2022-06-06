@@ -7,6 +7,8 @@ import { faChartBar, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 const Table = (props) => {
   useEffect(() => {
     AOS.init();
@@ -37,6 +39,43 @@ const Table = (props) => {
       />
     );
   }, [filterText, resetPaginationToggle]);
+  const conditions = () => {
+    if (localStorage.patientId === undefined) {
+      if (
+        window.location.pathname === "/records/bloodpreasure" ||
+        window.location.pathname === "/records/glucose"
+      ) {
+        return (
+          <div className="col-lg-12">
+            <div className={style.add_view_btn}>
+              <Link to={props.link} type="button" className="btn">
+                <FontAwesomeIcon icon={faPlus} /> Add
+              </Link>
+            </div>
+          </div>
+        );
+      } else {
+        return null;
+      }
+    } else if (localStorage.patientId !== undefined) {
+      if (
+        window.location.pathname === "/records/bloodpreasure" ||
+        window.location.pathname === "/records/glucose"
+      ) {
+        return null;
+      } else {
+        return (
+          <div className="col-lg-12">
+            <div className={style.add_view_btn}>
+              <Link to={props.link} type="button" className="btn">
+                <FontAwesomeIcon icon={faPlus} /> Add
+              </Link>
+            </div>
+          </div>
+        );
+      }
+    }
+  };
   return (
     <div
       className={style.view}
@@ -61,19 +100,13 @@ const Table = (props) => {
       </div>
       <div className={style.view_data}>
         <div className="row">
-          <div className="col-lg-12">
-            <div className={style.add_view_btn}>
-              <Link to={props.link} type="button" className="btn">
-                <FontAwesomeIcon icon={faPlus} /> Add
-              </Link>
-            </div>
-          </div>
+          {conditions()}
+
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className={style.view_table}>
               <DataTable
                 columns={props.columns}
                 data={filteredItems}
-                defaultSortField="name"
                 striped
                 pagination
                 subHeader
@@ -87,4 +120,7 @@ const Table = (props) => {
   );
 };
 
-export default Table;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+export default connect(mapStateToProps)(Table);

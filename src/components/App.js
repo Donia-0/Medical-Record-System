@@ -87,7 +87,7 @@ const App = () => {
                 }
               />
               <Route
-                path="glucose/edit/:glucoseID"
+                path="glucose/edit/:glucoseId"
                 element={
                   <FormGlucoseMeasure header="Update Glucose Measurement" />
                 }

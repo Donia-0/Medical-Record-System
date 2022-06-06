@@ -1,11 +1,9 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import FilterComponent from "../records/FilterComponent";
 import RequestsView from "./RequestsView";
-// import PrescriptionView from "../records/PrescriptionView";
 import style from "../../Css/Admin.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faEye, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 const RequestTable = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
 
@@ -18,19 +16,19 @@ const RequestTable = (props) => {
     },
     {
       name: "Specialization",
-      selector: (row) => row.name,
+      selector: (row) => row.specialization,
       sortable: true,
       wrap: true,
     },
     {
       name: "Email",
-      selector: (row) => row.name,
+      selector: (row) => row.email,
       sortable: true,
       wrap: true,
     },
     {
       name: "Phone",
-      selector: (row) => row.name,
+      selector: (row) => row.phone,
       sortable: true,
       wrap: true,
     },
@@ -56,52 +54,26 @@ const RequestTable = (props) => {
                 Show
               </button>
             </div>
-            <div className={style.btns_req}>
-              <button
-                type="button"
-                className={`btn ${style.accept}`}
-                onClick={() => {
-                  row.showModal = true;
-                  setModalShow(true);
-                }}
-              >
-                Accpet
-              </button>
-              {row.showModal ? (
-                <RequestsView
-                  show={modalShow}
-                  onHide={() => {
-                    row.showModal = false;
+            {row.showModal ? (
+              <RequestsView
+                req_id={row._id}
+                show={modalShow}
+                onHide={() => {
+                  row.showModal = false;
 
-                    setModalShow(false);
-                  }}
-                />
-              ) : null}
-            </div>
-            <div className={style.btns_req}>
-              <button
-                type="button"
-                className={`btn ${style.decline}`}
-                onClick={() => {
-                  row.showModal = true;
-                  setModalShow(true);
+                  setModalShow(false);
                 }}
-              >
-                Decline
-              </button>
-            </div>
+              />
+            ) : null}
           </div>
         );
       },
     },
   ];
-
   const [filterText, setFilterText] = React.useState("");
   const [resetPaginationToggle, setResetPaginationToggle] =
     React.useState(false);
-  // const filteredItems = data.filter(
-  //   item => item.name && item.name.includes(filterText)
-  // );
+
   const filteredItems = props.data.filter(
     (item) =>
       JSON.stringify(item).toLowerCase().indexOf(filterText.toLowerCase()) !==

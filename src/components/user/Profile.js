@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import male from "../../images/male.png";
-import female from "../../images/female.png";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
 import { getCurrentProfile, updateUser } from "./../../actions/profileAction";
@@ -77,12 +75,15 @@ const Profile = (props) => {
       <div>
         <div className={style.profile_img}>
           <span className={style.profile_span_img}>
-            <img src={form.gender === "female" ? female : male} />
+            <img
+              className="rounded-circle"
+              src={`http://localhost:5000/user/avatar/${profile.myProfile._id}`}
+              alt={profile.myProfile.name}
+            />
           </span>
           <span className={style.profile_span_name}>{form.name}</span>
           {profile.myProfile.role === 1 ? (
             <span className={style.profile_span_spec}>
-              {" "}
               / {form.specialization}
             </span>
           ) : null}

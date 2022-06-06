@@ -1,8 +1,14 @@
-import { CLEAR_RECORDS, GET_GLUCOSE, LOADING } from "./../../actions/types";
+import {
+  CLEAR_RECORDS,
+  GET_GLUCOSE,
+  LOADING,
+  GET_DETAIL_GLUCOSE,
+} from "./../../actions/types";
 
 const initialState = {
   glucose: [],
   loading: false,
+  glucoseDetail: {},
 };
 
 export default function (state = initialState, action) {
@@ -23,6 +29,12 @@ export default function (state = initialState, action) {
         ...state,
         glucose: [],
         loading: false,
+      };
+    case GET_DETAIL_GLUCOSE:
+      return {
+        ...state,
+        loading: false,
+        glucoseDetail: action.payload,
       };
     default:
       return state;

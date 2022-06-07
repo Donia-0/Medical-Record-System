@@ -858,6 +858,9 @@ features
   margin-bottom: 15px;
   border-radius: 50%;
 }
+.card img{
+  width: 50%;
+}
 .card .icon .svg-inline--fa {
   font-size: 50px;
   color: #206d76;
@@ -910,21 +913,34 @@ features
   margin-top: 90px;
   margin-bottom: 70px;
 }
+.section-container img{
+  width: 63%;
+}
 .section-text {
   align-self: center;
+
 }
 .section-title {
   margin-bottom: 30px;
   color: #008b8b;
   font-weight: bold;
+  margin-top: 50px;
 }
-.left-text {
+.right-text , .left-text{
   font-weight: 400;
   font-size: 16px;
   color: #008b8b;
   line-height: 28px;
   letter-spacing: 1px;
 }
+/* .left-text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #008b8b;
+  line-height: 28px;
+  letter-spacing: 1px;
+} */
+
 /* -==========================================addprescription ========================================*/
 
 .pres-container,
@@ -1268,6 +1284,7 @@ parallax & home seperator
   margin-bottom: 40px;
   display: block;
   text-decoration: none;
+
 }
 
 .mini .mini-content .info h1 {
@@ -1288,9 +1305,7 @@ parallax & home seperator
   font-size: 15px;
 }
 
-.mini .mini-content .info p span {
-  text-decoration: none;
-}
+
 
 .mini .mini-content .mini-box {
   display: block;
@@ -1306,6 +1321,7 @@ parallax & home seperator
   transition: all 0.3s ease 0s;
   text-align: center;
   margin-left: 15px;
+  text-decoration: none;
 }
 
 .mini .mini-content .mini-box:hover {
@@ -1330,9 +1346,10 @@ parallax & home seperator
 .mini .mini-content .mini-box i {
   display: block;
   font-size: 20px;
-  margin-bottom: 15px;
 }
-
+.mini .mini-content .mini-box img{
+ width: 50%;
+}
 .mini .mini-content .mini-box span {
   display: block;
   font-weight: 400;
@@ -1343,12 +1360,13 @@ parallax & home seperator
 
 .mini .mini-content .mini-box strong {
   display: block;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 17px;
-  color: #1e1e1e;
+  color: #2a7f82;
   letter-spacing: 0.25px;
   margin-bottom: 5px;
-  margin-top: 20px;
+  margin-top: 7px;
+
 }
 .content {
   background: linear-gradient(45deg, #012e40 10%, #3ca6a6 90%);
@@ -1537,6 +1555,9 @@ team
   transition: all 0.3s ease 0s;
   margin-left: 25px;
   float: left;
+}
+.team-item .user-image img {
+  width: 100%;
 }
 
 .team-item .team-content {

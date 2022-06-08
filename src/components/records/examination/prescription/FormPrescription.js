@@ -27,7 +27,12 @@ const FormPrescription = (props) => {
     AOS.init();
     props.getPrescriptionById(prescriptionId);
   }, []);
-
+  const { isAuhtenticated, user } = props.auth;
+  useEffect(() => {
+    if (user.role != 1) {
+      navigate("/notfound");
+    }
+  }, []);
   const { prescriptionDetail } = props.prescription;
   useEffect(() => {
     if (prescriptionDetail && prescriptionId) {

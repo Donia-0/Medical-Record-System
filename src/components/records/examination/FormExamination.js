@@ -26,6 +26,12 @@ const FormExamination = (props) => {
     userId: "",
   });
   const [errors, setErrors] = useState({});
+  const { isAuhtenticated, user } = props.auth;
+  useEffect(() => {
+    if (user.role != 1) {
+      navigate("/notfound");
+    }
+  }, []);
   useEffect(() => {
     AOS.init();
     props.getExaminationDetailById(examId);

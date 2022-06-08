@@ -101,6 +101,7 @@ const Register = (props) => {
   };
   const onFileChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.files[0] });
+    console.log(e.target.files[0]);
   };
   return (
     <div>

@@ -32,16 +32,45 @@ const Navbar = (props) => {
     props.clearPatientProfile();
     window.location.reload();
   };
+
+  const loggedInUser = (
+    <>
+      <li className={`nav-item ${style.width_nav_item}`}>
+        <Link
+          to="/pillIdentifier"
+          className={`nav-link ${style.nav_link_own_style}`}
+          aria-current="page"
+          href="#billidentifier"
+        >
+          <FontAwesomeIcon icon={faCapsules} style={{ marginRight: "5px" }} />
+          Pill identifier
+        </Link>
+      </li>
+    </>
+  );
   const searchBarCondition = () => {
-    if (role == 1 && isActive) {
-      return <SearchBar />;
-    }
-    if (role == 1 && !isActive) {
+    if (!localStorage.patientId) {
+      if (role == 1 && isActive) {
+        return <SearchBar />;
+      }
+      if (role == 1 && !isActive) {
+        return (
+          <div className="pending-request" style={{ color: "#FFF" }}>
+            <FontAwesomeIcon icon={faCircleNotch} />
+            <strong style={{ marginLeft: "10px" }}>
+              Your Request to be a doctor is under review
+            </strong>
+          </div>
+        );
+      }
+    } else {
       return (
-        <div className="pending-request" style={{ color: "#FFF" }}>
-          <FontAwesomeIcon icon={faCircleNotch} />
-          <strong style={{ marginLeft: "10px" }}>
-            Your Request to be a doctor is under review
+        <div
+          className="text-center"
+          style={{ color: "white", textAlign: "end" }}
+        >
+          <strong>
+            Now you can see {localStorage.getItem("patientName")}'s Records
           </strong>
         </div>
       );
@@ -111,20 +140,7 @@ const Navbar = (props) => {
               </span>
             </li>
           ) : null}
-          <li className={`nav-item ${style.width_nav_item}`}>
-            <Link
-              to="/pillIdentifier"
-              className={`nav-link ${style.nav_link_own_style}`}
-              aria-current="page"
-              href="#billidentifier"
-            >
-              <FontAwesomeIcon
-                icon={faCapsules}
-                style={{ marginRight: "5px" }}
-              />
-              Pill identifier
-            </Link>
-          </li>
+          {role != 2 ? loggedInUser : null}
           <li className={`nav-item ${style.width_nav_item}`}>
             <a
               className={`nav-link ${style.nav_link_own_style}`}

@@ -31,12 +31,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 import ViewPrescription from "./records/examination/prescription/ViewPrescription";
-import AddAllergy from "./records/Allergy/AddAllergy";
 import Allergy from "./records/Allergy/Allergy";
 import PillIdentifier from "./Pill/PillIdentifier";
 import AddLabTest from "./records/LabTests/AddLabTest";
 import ViewLabTests from "./records/LabTests/ViewLabTests";
-
+import { connect } from "react-redux";
+import NotFound from "./NotFound";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -147,6 +147,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route path="pillidentifier" element={<PillIdentifier />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </Provider>

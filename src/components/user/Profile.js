@@ -103,7 +103,7 @@ const Profile = (props) => {
             <span className={style.edit_switch_note}>Switch To Edit</span>
             <form action="">
               <div className="row">
-                <div className="col-lg-12 col-md-8 col-sm-12">
+                <div className="col-lg-12 col-md-12 col-sm-12">
                   <ProfileEditInput
                     value={form.email}
                     name="email"
@@ -114,7 +114,7 @@ const Profile = (props) => {
                     onChange={onInputChange}
                   />
                 </div>
-                <div className="col-lg-12 col-md-8 col-sm-12">
+                <div className="col-lg-12 col-md-12 col-sm-12">
                   <ProfileEditInput
                     value={form.phone}
                     name="phone"
@@ -125,7 +125,7 @@ const Profile = (props) => {
                     onChange={onInputChange}
                   />
                 </div>
-                <div className="col-lg-12 col-md-8 col-sm-12">
+                <div className="col-lg-12 col-md-12 col-sm-12">
                   <ProfileEditInput
                     value={
                       edit === false
@@ -142,7 +142,7 @@ const Profile = (props) => {
                     onChange={onInputChange}
                   />
                 </div>
-                <div className="col-lg-12 col-md-8 col-sm-12">
+                <div className="col-lg-12 col-md-12 col-sm-12">
                   <ProfileEditInput
                     value={form.gender}
                     name="gender"
@@ -153,9 +153,9 @@ const Profile = (props) => {
                     onChange={onInputChange}
                   />
                 </div>
-                <div className="col-lg-12 col-md-8 col-sm-12">
-                  <div className={`row ${style.btn_edit}`}>
-                    <div className="col-lg-6">
+                <div className="col-lg-12 col-md-12 col-sm-12">
+                  <div className={style.profile_btns}>
+                    <div className={style.btn_edit}>
                       <div className={style.btn_edit_change_password}>
                         {edit === true ? (
                           <button
@@ -174,14 +174,15 @@ const Profile = (props) => {
                         onHide={() => setModalShow(false)}
                       />
                     </div>
-                    <div className="col-lg-6">
-                      <div className={style.btn_edit_save}>
-                        {edit === true ? (
-                          <button onClick={onSaveClick} className="btn">
-                            Save
-                          </button>
-                        ) : null}
-                      </div>
+                    <div
+                      className={style.btn_edit_save}
+                      style={{ justifyContent: "right" }}
+                    >
+                      {edit === true ? (
+                        <button onClick={onSaveClick} className="btn">
+                          Save
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 </div>

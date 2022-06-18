@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import style from "../../Css/records/Record.module.css";
+import moment from "moment-timezone";
 
 const AdditioningField = ({
   labelName,
@@ -8,7 +9,7 @@ const AdditioningField = ({
   placeholder,
   name,
   onChange,
-  value = "",
+  value,
   err,
   pattern,
   disabled,
@@ -37,6 +38,7 @@ const AdditioningField = ({
           placeholder={placeholder}
           pattern={pattern}
           disabled={disabled}
+          max={type === "date" ? moment().format("yyyy-MM-DD") : null}
           multiple={multiple}
         />
         {file === "yes" ? (

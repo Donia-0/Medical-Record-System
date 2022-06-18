@@ -37,6 +37,7 @@ import AddLabTest from "./records/LabTests/AddLabTest";
 import ViewLabTests from "./records/LabTests/ViewLabTests";
 import { connect } from "react-redux";
 import NotFound from "./NotFound";
+import Symptoms from "./Symptoms";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -116,13 +117,6 @@ const App = () => {
                 element={<FormPrescription header="Add Prescription" />}
               />
               <Route path="addlabtest" element={<AddLabTest />} />
-              {/* <Route
-                path="updateprescription"
-                element={<Updateprescription />}
-              />
-              <Route path="ViewBloodPressure" element={<ViewBloodPressure />} />
-              <Route path="viewall" element={<ViewPrescription />} />
-              /> */}
               <Route path="prescriptions" element={<ViewPrescription />} />
               <Route path="Viewglucose" element={<Viewglucose />} />
               <Route path="addsurgery" element={<FormSurgery />} />
@@ -146,7 +140,9 @@ const App = () => {
             <Route path="admin" element={<Admin />} />
             <Route path="/" element={<Layout />}>
               <Route path="pillidentifier" element={<PillIdentifier />} />
+              <Route path="checksymptoms" element={<Symptoms />} />
             </Route>
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

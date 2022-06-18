@@ -20,12 +20,15 @@ export const addLabtest = (userData) => async (dispatch) => {
     });
   }
 };
-export const getAllTests = () => async (dispatch) => {
+export const getAllTests = (userId) => async (dispatch) => {
   dispatch({
     type: LOADING,
   });
   try {
-    const response = await axios.get("http://localhost:5000/records/labtests");
+    const response = await axios.post(
+      "http://localhost:5000/records/labtests",
+      userId
+    );
     dispatch({
       type: GET_LABTEST,
       payload: response.data,

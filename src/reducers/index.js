@@ -10,6 +10,7 @@ import glucoseReducer from "./records/glucoseReducer";
 import surgeryReducer from "./records/surgeryReducer";
 import prescriptionReducer from "./records/prescriptionReducer";
 import adminReducer from "./adminReducer";
+import labtestReducer from "./records/labtestReducer";
 export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
@@ -21,5 +22,6 @@ export default combineReducers({
   patient: patientReducer,
   allergy: allergyReducer,
   prescription: prescriptionReducer,
+  labtest: labtestReducer,
   admin: adminReducer,
 });

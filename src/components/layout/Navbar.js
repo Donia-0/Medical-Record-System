@@ -89,7 +89,9 @@ const Navbar = (props) => {
           </div>
         </a>
       </div>
-      <div className={`container-fluid`}>
+      <div
+        className={`${style.search_container} ${style.search_patient_bar} container-fluid`}
+      >
         {searchBarCondition()}
         {/* {!localStorage.patientId ? (
           role == 1 && isActive == true ? (

@@ -22,7 +22,7 @@ const AcceptTerm = (props) => {
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide} className="popup-close">
+        <Button onClick={props.onClick} className="popup-close">
           Accept
         </Button>
         <Button onClick={props.onHide} className="popup-close">

@@ -1,0 +1,42 @@
+.symptomsbtns {
+  margin-top: 10px;
+}
+.symptomsbtns button {
+  margin-right: 5px;
+  background-color: #307b8c;
+  color: #def2f3;
+  border-color: #307b8c;
+  transition: all 1s;
+  font-weight: bold;
+}
+.symptomsbtns button:hover {
+  background-color: white;
+  color: #2a7f82;
+  border-color: #3ea9ad;
+}
+.input:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}
+.select {
+  display: flex;
+  justify-content: center;
+}
+.symptoms {
+  margin-top: 50px;
+}
+.list {
+  padding: 20px;
+}
+.list li {
+  margin-top: 5px;
+  background-color: #def2f3cf;
+}
+
+.list p {
+  border-bottom: #3ea9ad solid 1px;
+  width: fit-content;
+  padding-bottom: 12px;
+  font-size: 15px;
+  color: #307b8c;
+}

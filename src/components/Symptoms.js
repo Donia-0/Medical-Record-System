@@ -181,7 +181,9 @@ const Symptoms = () => {
         console.error(error);
       });
   };
-
+  if (data[index] && data[index].min) {
+    console.log(data[index], "****", data[index].min);
+  }
   if (data[index] && choice) {
     console.log(data[index].name, " ****** ", choice.value);
   }

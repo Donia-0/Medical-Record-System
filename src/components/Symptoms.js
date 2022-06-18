@@ -6,12 +6,15 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import AcceptTerm from "./CheckSymptoms/AcceptTerm";
 const Symptoms = () => {
   const [index, setIndex] = useState("");
   const [choice, setChoice] = useState("");
   const [arr, setArr] = useState([]);
   const [isAccept, setIsAccept] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
   useEffect(() => {
+    setModalShow(true);
     const options = {
       method: "GET",
       url: "https://endlessmedicalapi1.p.rapidapi.com/InitSession",
@@ -196,6 +199,7 @@ const Symptoms = () => {
           Accept terms
         </div>
       )}
+      <AcceptTerm show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 };

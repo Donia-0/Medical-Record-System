@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/light-color.png";
 import SearchBar from "../user/SearchBar";
 import style from "../../Css/Navbar.module.css";
 import {
   faCapsules,
+  faCaretDown,
   faCircleNotch,
+  faListCheck,
   faRightFromBracket,
   faRotateLeft,
   faSpinner,
@@ -16,6 +18,7 @@ import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { clearPatientProfile } from "../../actions/PatientAction";
+import AcceptTerm from "../CheckSymptoms/AcceptTerm";
 const Navbar = (props) => {
   const navigate = useNavigate();
   const onLogoutClick = (e) => {
@@ -36,7 +39,7 @@ const Navbar = (props) => {
   const loggedInUser = (
     <>
       <li className={`nav-item ${style.width_nav_item}`}>
-        <Link
+        {/* <Link
           to="/pillIdentifier"
           className={`nav-link ${style.nav_link_own_style}`}
           aria-current="page"
@@ -44,7 +47,53 @@ const Navbar = (props) => {
         >
           <FontAwesomeIcon icon={faCapsules} style={{ marginRight: "5px" }} />
           Pill identifier
-        </Link>
+        </Link> */}
+        <div className="dropdown">
+          <a
+            className={`nav-link dropdown-toggle ${style.nav_link_own_style} ${style.features_dropdown}`}
+            href="#"
+            role="button"
+            id="features"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Features
+            <div className={style.features_dropdown_icon}>
+              <FontAwesomeIcon icon={faCaretDown} />
+            </div>
+          </a>
+
+          <ul className="dropdown-menu" aria-labelledby="features">
+            <li>
+              <Link
+                to="/checksymptoms"
+                className={`nav-link ${style.features_dropdown_item}`}
+                aria-current="page"
+                href="#checksymptoms"
+              >
+                <FontAwesomeIcon
+                  icon={faListCheck}
+                  style={{ marginRight: "5px" }}
+                />
+                Check symptoms
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/pillIdentifier"
+                className={`nav-link ${style.features_dropdown_item}`}
+                aria-current="page"
+                href="#pillidentifier"
+              >
+                <FontAwesomeIcon
+                  icon={faCapsules}
+                  style={{ marginRight: "5px" }}
+                />
+                Pill identifier
+              </Link>
+            </li>
+          </ul>
+        </div>
       </li>
     </>
   );

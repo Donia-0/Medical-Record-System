@@ -1923,6 +1923,11 @@ team
   color: #307b8c !important;
   background-color: #def2f3cf !important;
   transition: 700ms ease-in-out !important;
+  
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) !important;
 }
 
 /* Steps component */

@@ -12,9 +12,10 @@ const AddLabTest = (props) => {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   const currentTime = moment().tz(timezone).format("yyyy-MM-DDThh:mm");
   const [form, setForm] = useState({
-    name: "",
+    title: "",
     date: currentTime,
     note: "",
+    laptestsImg: [],
   });
 
   const [errors, setErrors] = useState({});
@@ -28,17 +29,25 @@ const AddLabTest = (props) => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     setErrors({});
-    const newLabtest = {
-      name: form.name,
-      note: form.note,
-      date: form.date,
-    };
-    props.addLabtest(newLabtest);
+
+    const labtest = new FormData();
+    labtest.append("title", form.title);
+    labtest.append("note", form.note);
+    labtest.append("date", form.date);
+    for (let i = 0; i < form.laptestsImg.length; i++) {
+      labtest.append(`laptestsImg${[]}`, form.laptestsImg[i]);
+    }
+    console.log(form);
+    props.addLabtest(labtest);
   };
   useEffect(() => {
     setErrors({});
     setErrors(props.errors);
   }, [props.errors]);
+  const onFileChange = (e) => {
+    setForm({ ...form, laptestsImg: e.target.files });
+    console.log([...e.target.files]);
+  };
   return (
     <div className={style.Add_labtest}>
       <div className={style.labtest_rules}>
@@ -46,6 +55,7 @@ const AddLabTest = (props) => {
         <ul>
           <li>Enter the Test name.</li>
           <li>Choose documents (Make sure it's ".jpg").</li>
+          <li>From one to three images.</li>
           <li>Enter other info.</li>
           <li>Save.</li>
         </ul>
@@ -64,16 +74,15 @@ const AddLabTest = (props) => {
                   <AdditioningField
                     value={form.name}
                     onChange={onInputChange}
-                    name="name"
+                    name="title"
                     labelName="Test Name"
                     type="input"
                     placeholder="Add Test name"
                     err={errors.name}
                   />
                   <AdditioningField
-                    value={form.nationalIdImg}
-                    onChange={onInputChange}
-                    name="test photo"
+                    onChange={onFileChange}
+                    name="laptestsImg"
                     type="file"
                     file="yes"
                     noteFile="Please upload your Lab Test Photo"

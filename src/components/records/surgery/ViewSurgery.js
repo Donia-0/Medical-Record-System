@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import columns from "./SurgeryColumns";
 import Table from "./../Table";
 import surgeryImage from "../../../images/surgury.png";
+import ConditionalView from "../ConditionalView";
 
 const Surgery = (props) => {
   const { surgeries, loading } = props.surgery;
@@ -18,7 +19,7 @@ const Surgery = (props) => {
     <Table
       link="./addsurgery"
       img={surgeryImage}
-      columns={columns}
+      columns={ConditionalView(columns)}
       data={surgeries}
       click={clickhandler}
       PageName="Surgery"

@@ -7,13 +7,19 @@ import {
 } from "./../types";
 import { toast } from "react-toastify";
 toast.configure();
+const toastNavigate = (msg, navigate) => {
+  toast.success(msg, { autoClose: 1500 });
+  setTimeout(() => {
+    navigate("/records/bloodpreasure");
+  }, 2000);
+};
 export const addBloodPressure = (userData, navigate) => async (dispatch) => {
   try {
     const response = await axios.post(
       "http://localhost:5000/records/addBloodPressure",
       userData
     );
-    toast.success("Successfully");
+    toastNavigate("Successfully Inserted", navigate);
   } catch (error) {
     dispatch({
       type: GET_ERRORS,
@@ -59,7 +65,7 @@ export const updateBloodPressure =
         `http://localhost:5000/records/BloodPressure/edit/${id}`,
         updatedData
       );
-      navigate("/records/bloodpreasure");
+      toastNavigate("Successfully Updated", navigate);
     } catch (error) {
       dispatch({
         type: GET_ERRORS,

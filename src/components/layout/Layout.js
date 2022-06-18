@@ -7,6 +7,8 @@ import { Outlet } from "react-router-dom";
 import Loading from "../Loading";
 import style from "../../Css/Layouts/Layout.module.css";
 import common from "../../Css/Common.module.css";
+import SearchBar from "../user/SearchBar";
+
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -41,20 +43,16 @@ const Layout = () => {
       ) : (
         <div className={style.layout}>
           <Navbar />
-          <div className="row">
+          <div className={`row ${style.small_layout}`}>
             <div
-              className={`col-lg-6 col-md-12 col-sm-3 ${
-                windowDimensions.width > 780
-                  ? `${common.dis_none} ${style.alin_right}`
-                  : `${style.alin_right}`
+              className={`col-lg-6 col-md-12 col-sm-12 ${
+                windowDimensions.width > 720
+                  ? `${common.dis_none} ${common.align_right}`
+                  : `${common.align_right}`
               }`}
             >
-              <input
-                type="text"
-                className="form-control"
-                style={{ width: "86%", display: "inline-block" }}
-                placeholder="Search Term"
-              />
+              <SearchBar />
+
               <button
                 className={style.div_toggler}
                 type="button"
@@ -63,6 +61,7 @@ const Layout = () => {
                 aria-controls="sidebar"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                style={{ display: "inline-block" }}
               >
                 <span className={style.btn_toggle}>
                   <FontAwesomeIcon icon={faSort} />

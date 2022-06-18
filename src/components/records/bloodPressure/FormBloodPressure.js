@@ -61,6 +61,12 @@ const FormBloodPressure = (props) => {
       [evt.target.name]: value,
     });
   };
+  const { isAuhtenticated, user } = props.auth;
+  useEffect(() => {
+    if (localStorage.patientId) {
+      navigate("/notfound");
+    }
+  }, []);
   const onFormSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -73,7 +79,8 @@ const FormBloodPressure = (props) => {
     if (bloodPressureDetail && bloodpId) {
       props.updateBloodPressure(bloodpId, data, navigate);
     } else {
-      props.addBloodPressure(data);
+      console.log(data);
+      props.addBloodPressure(data, navigate);
     }
   };
   return (

@@ -4,7 +4,7 @@ import { faUser, faAt } from "@fortawesome/free-solid-svg-icons";
 import style from "../../Css/Authentication/Auth.module.css";
 import common from "../../Css/Common.module.css";
 
-const Patient = ({ step, form, onChange, onClick }) => {
+const Patient = ({ step, form, onChange, onClick, onFileChange }) => {
   return (
     <div>
       <div
@@ -35,6 +35,14 @@ const Patient = ({ step, form, onChange, onClick }) => {
           isHasIcon="yes"
           icon={faAt}
         />
+        <RegisterInput
+          // value={form.profileImg}
+          onChange={onFileChange}
+          name="profileImg"
+          type="file"
+          file="yes"
+          noteFile="Please upload your photo"
+        />
 
         <div className="input-group">
           <div className="input-group-prepend">
@@ -46,6 +54,7 @@ const Patient = ({ step, form, onChange, onClick }) => {
               Birthdate
             </label>
           </div>
+
           <RegisterInput
             value={form.birthdate}
             onChange={onChange}

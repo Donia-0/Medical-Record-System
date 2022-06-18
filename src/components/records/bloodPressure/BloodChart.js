@@ -27,6 +27,7 @@ const BloodChart = (props) => {
   var diastolic = [];
   var pulse = [];
   const arr = bloodPressure.sort().slice(0, 7);
+  console.log(arr);
   arr.forEach((element) => {
     const found = days.find(
       (day) => day === getDayName(dateFormat(element.date))
@@ -38,6 +39,7 @@ const BloodChart = (props) => {
       pulse.push(element.pulse);
     }
   });
+  console.log(days.reverse());
   const data = {
     labels: days.reverse(),
     datasets: [

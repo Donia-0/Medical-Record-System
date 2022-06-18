@@ -1,3 +1,140 @@
+@media screen and (max-width: 500px) {
+  .profile_img .profile_span_img {
+    bottom: -40px !important;
+    width: 20% !important;
+    /* left: 65px !important; */
+    left: 50px !important;
+  }
+
+  .profile_img .profile_span_name {
+    /* left: 170px !important; */
+    left: 155px !important;
+    font-size: 17px !important;
+    width: 32% !important;
+  }
+  .profile_img .profile_span_spec {
+    /* left: 290px !important; */
+    left: 275px !important;
+    font-size: 14px !important;
+    width: 30% !important;
+  }
+  .profile .profile_info {
+    margin-top: 75px !important;
+  }
+
+  .profile .profile_info .profile_form {
+    width: 90% !important;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 576px) {
+  .profile_img .profile_span_img {
+    bottom: -40px !important;
+    width: 15% !important;
+    left: 65px !important;
+  }
+
+  .profile_img .profile_span_name {
+    left: 170px !important;
+    font-size: 17px !important;
+    width: 32% !important;
+  }
+  .profile_img .profile_span_spec {
+    left: 290px !important;
+    font-size: 14px !important;
+    width: 30% !important;
+  }
+  .profile .profile_info {
+    margin-top: 75px !important;
+  }
+
+  .profile .profile_info .profile_form {
+    width: 75% !important;
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 780px) {
+  .profile_img .profile_span_img {
+    bottom: -40px !important;
+    width: 16% !important;
+    left: 80px !important;
+  }
+  .profile_img .profile_span_name {
+    left: 210px !important;
+    font-size: 20px !important;
+    width: 25% !important;
+  }
+  .profile_img .profile_span_spec {
+    left: 350px !important;
+  }
+  .profile .profile_info {
+    margin-top: 70px !important;
+  }
+  .profile .profile_info .profile_form {
+    width: 70% !important;
+  }
+}
+
+@media screen and (min-width: 830px) and (max-width: 990px) {
+  .profile_img .profile_span_img {
+    bottom: -40px !important;
+    width: 12% !important;
+    left: 80px !important;
+  }
+  .profile_img .profile_span_name {
+    left: 210px !important;
+    font-size: 20px !important;
+    width: 25% !important;
+  }
+  .profile_img .profile_span_spec {
+    left: 350px !important;
+  }
+  .profile .profile_info {
+    margin-top: 70px !important;
+  }
+  .profile .profile_info .profile_form {
+    width: 60% !important;
+  }
+}
+
+@media screen and (min-width: 781px) and (max-width: 991px) {
+  .profile_img .profile_span_img {
+    bottom: -46px !important;
+    width: 13% !important;
+    left: 80px !important;
+  }
+  .profile_img .profile_span_name {
+    left: 210px !important;
+    font-size: 20px !important;
+    width: 25% !important;
+  }
+  .profile_img .profile_span_spec {
+    left: 350px !important;
+  }
+  .profile .profile_info {
+    margin-top: 85px !important;
+  }
+  .profile .profile_info .profile_form {
+    width: 60% !important;
+  }
+}
+@media screen and (min-width: 995px) and (max-width: 1200px) {
+  .profile_img .profile_span_img {
+    width: 12% !important;
+  }
+  .profile_img .profile_span_name {
+    left: 320px !important;
+  }
+  .profile_img .profile_span_spec {
+    left: 470px;
+  }
+  .profile .profile_info {
+    margin-top: 70px !important;
+  }
+  .profile .profile_info .profile_form {
+    width: 50% !important;
+  }
+}
 .profile .profile_img {
   height: 100px;
   border-bottom: 1px solid black;
@@ -10,10 +147,14 @@
   width: 10%;
   background-color: white;
   left: 180px;
+  overflow: hidden;
 }
+
 .profile_img .profile_span_img img {
   width: 100%;
+  position: relative;
 }
+
 .profile_img .profile_span_name {
   position: absolute;
   bottom: 0;
@@ -78,16 +219,22 @@
   margin-top: 10px;
 }
 
-.profile .profile_form .btn_edit {
+.profile_btns {
+  display: flex;
   margin-top: 20px;
+  justify-content: space-between;
 }
-.profile .profile_form .btn_edit button {
+
+.profile .profile_form .btn_edit {
+  /* margin-top: 20px; */
+}
+.profile .profile_form .profile_btns button {
   background-color: #307b8c;
   position: relative;
   color: white;
   transition: all 0.5s;
 }
-.profile .profile_form .btn_edit button:focus {
+.profile .profile_form .profile_btns button:focus {
   box-shadow: 0 0 0 0.15rem #3ca6a6;
 }
 .profile .profile_form .btn_edit button:hover,
@@ -95,7 +242,11 @@
   background-color: #3ca6a6;
 }
 .profile .profile_form .btn_edit .btn_edit_save {
-  text-align: end;
+  /* text-align: end; */
+  /* display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%; */
 }
 
 .profile .profile_form form input,
@@ -110,6 +261,13 @@
 .edit_input input:focus {
   box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
   border-color: #3ea9ad;
+}
+
+.btn_edit_change_password {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
 }
 
 .change_password {

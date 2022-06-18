@@ -2,6 +2,14 @@
   margin-top: 60px;
 }
 
+@media screen and (max-width: 721px) {
+  .layout .small_layout {
+    margin-top: 70px;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+}
+
 .div_toggler {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
@@ -25,9 +33,11 @@
 }
 .sidenav {
   height: 97vh;
-  width: 16.66666%;
+  /* width: 16.66666%;
   position: fixed;
-  top: 61px;
+  top: 61px; */
+  position: sticky;
+  top: 61.7px;
   background: linear-gradient(to bottom, #012e40, #3ca6a6);
   padding-top: 10px;
 }

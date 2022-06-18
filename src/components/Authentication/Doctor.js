@@ -5,7 +5,7 @@ import RegisterInput from "./RegisterInput";
 import style from "../../Css/Authentication/Auth.module.css";
 import common from "../../Css/Common.module.css";
 
-const Doctor = ({ form, step, onChange, onClick }) => {
+const Doctor = ({ form, step, onChange, onClick, onFileChange }) => {
   return (
     <div>
       <div
@@ -26,17 +26,15 @@ const Doctor = ({ form, step, onChange, onClick }) => {
         />
 
         <RegisterInput
-          value={form.nationalIdImg}
-          onChange={onChange}
-          name="nationalIdImg"
+          onChange={onFileChange}
+          name="nationalImg"
           type="file"
           file="yes"
           noteFile="Please upload your national id image"
         />
 
         <RegisterInput
-          value={form.syndicateImg}
-          onChange={onChange}
+          onChange={onFileChange}
           name="syndicateImg"
           type="file"
           file="yes"

@@ -2,6 +2,9 @@ import {
   GET_PRESCRIPTION,
   LOADING,
   GET_PRESCRIPTION_FOR_EACH_EXAMINATION,
+  GET_DETAIL_PRESCRIPTION,
+  CLEAR_RECORDS,
+  CLEAR_CURRENT_PROFILE,
 } from "../../actions/types";
 
 const initialState = {
@@ -9,6 +12,7 @@ const initialState = {
   loading: false,
   prescriptionDetail: {},
   prescriptionsForEachExamination: [],
+  prescriptionDetail: {},
 };
 
 export default function (state = initialState, action) {
@@ -30,7 +34,26 @@ export default function (state = initialState, action) {
         loading: false,
         prescriptionsForEachExamination: action.payload,
       };
-
+    case GET_DETAIL_PRESCRIPTION:
+      return {
+        ...state,
+        loading: false,
+        prescriptionDetail: action.payload,
+      };
+    case CLEAR_RECORDS:
+      return {
+        ...state,
+        prescriptions: [],
+        loading: false,
+        prescriptionDetail: {},
+      };
+    case CLEAR_CURRENT_PROFILE:
+      return {
+        ...state,
+        prescriptions: [],
+        loading: false,
+        prescriptionDetail: {},
+      };
     default:
       return state;
   }

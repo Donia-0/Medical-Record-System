@@ -4,7 +4,7 @@ import {
   ADD_EXAMINATION,
   LOADING,
   GET_EXAMINATION,
-  GET_DETAIL_EXAMINATION, 
+  GET_DETAIL_EXAMINATION,
 } from "./../types";
 
 import { toast } from "react-toastify";
@@ -86,3 +86,19 @@ export const getExaminationDetailById = (id) => async (dispatch) => {
     });
   } catch (error) {}
 };
+
+export const updateExamination =
+  (id, updatedData, navigate) => async (dispatch) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:5000/records/examination/edit/${id}`,
+        updatedData
+      );
+      navigate("/records/examination");
+    } catch (error) {
+      dispatch({
+        type: GET_ERRORS,
+        payload: error.response.data.errors,
+      });
+    }
+  };

@@ -13,6 +13,7 @@ import PrescriptionView from "./PrescriptionView";
 import { getExaminations } from "../../../actions/records/examinationAction";
 import moment from "moment-timezone";
 import examinationImage from "../../../images/examination.png";
+import ConditionalView from "../ConditionalView";
 const ViewExamination = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShowPres, setModalShowPres] = React.useState(false);
@@ -87,19 +88,21 @@ const ViewExamination = (props) => {
                 />
               ) : null}
             </div>
-            <div className={`${style.pres_btns}`}>
-              <Link
-                to={`/records/prescriptions/addprescription/${row._id}`}
-                className={`btn ${style.add_pres_in_view}`}
-                onClick={() => {
-                  row.modalShowPres = true;
-                  setModalShowPres(true);
-                  onPrescriptionViewClick(row._id);
-                }}
-              >
-                <FontAwesomeIcon icon={faPlus} />
-              </Link>
-            </div>
+            {localStorage.patientId ? (
+              <div className={`${style.pres_btns}`}>
+                <Link
+                  to={`/records/prescriptions/addprescription/${row._id}`}
+                  className={`btn ${style.add_pres_in_view}`}
+                  onClick={() => {
+                    row.modalShowPres = true;
+                    setModalShowPres(true);
+                    onPrescriptionViewClick(row._id);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                </Link>
+              </div>
+            ) : null}
           </div>
         );
       },
@@ -139,6 +142,7 @@ const ViewExamination = (props) => {
       props.getExaminations();
     }
   }, []);
+
   return (
     <div className="examination">
       <div className="row">
@@ -168,7 +172,7 @@ const ViewExamination = (props) => {
 
       <Table
         link="./addexamination"
-        columns={columns}
+        columns={ConditionalView(columns)}
         data={!examinations ? [] : examinations}
         click={clickhandler}
       />

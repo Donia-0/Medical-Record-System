@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import style from "../../../Css/records/ViewRecord.module.css";
 import { Accordion } from "react-bootstrap";
-const LabTest = ({ eventKey, labTestName, labTestImage, date, note }) => {
+const LabTest = ({ eventKey, labTestName, labTestImages, date, note, id }) => {
   return (
     <div className="col-lg-12 col-md-12 col-sm-12">
       <Accordion.Item eventKey={eventKey}>
         <Accordion.Header className={style.lab_test_name}>
-          {labTestName}
+          Lab Test Name : {labTestName.toUpperCase()}
         </Accordion.Header>
         <Accordion.Body>
           <div className="row">
@@ -32,12 +32,21 @@ const LabTest = ({ eventKey, labTestName, labTestImage, date, note }) => {
             </div>
             <div className="col-lg-12">
               <div className="row">
-                <div className="col-lg-4">
-                  <div className={style.lab_test_images}>
-                    <div className={style.accordion_img}>
-                      <img src={labTestImage} />
-                    </div>
-                  </div>
+                <div className={style.lab_test_images}>
+                  {labTestImages.map((value, index) => {
+                    return (
+                      <div
+                        className="col-lg-4"
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <div className={style.accordion_img}>
+                          <img
+                            src={`http://localhost:5000/records/images/${id}/${index}`}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

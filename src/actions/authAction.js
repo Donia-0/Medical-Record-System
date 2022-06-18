@@ -12,7 +12,10 @@ export const registerUser = (userData, navigate) => async (dispatch) => {
       "http://localhost:5000/user/register",
       userData
     );
-    // navigate("/auth/login");
+    toast.success("Successfully...Welcome To Our Site");
+    setTimeout(() => {
+      navigate("/auth/login");
+    }, 1500);
   } catch (error) {
     dispatch({
       type: GET_ERRORS,

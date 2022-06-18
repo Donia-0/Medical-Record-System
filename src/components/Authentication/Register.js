@@ -26,13 +26,19 @@ const Register = (props) => {
     gender: "",
     birthdate: "",
     specialization: "",
-    nationalIdImg: "",
+    nationalImg: "",
     syndicateImg: "",
     role: 0,
+    profileImg: "",
   });
   useEffect(() => {
     AOS.init();
   });
+  useEffect(() => {
+    if (isChecked === true) {
+      setForm({ ...form, role: 1 });
+    }
+  }, [isChecked]);
   useEffect(() => {
     if (props.auth.isAuhtenticated) {
       navigate("/user/profile");
@@ -52,30 +58,30 @@ const Register = (props) => {
   };
   const onFormSubmit = async (evt) => {
     evt.preventDefault();
-    var user = {
-      name: form.name,
-      email: form.email,
-      password: form.password,
-      confirmPassword: form.confirmPassword,
-      nationalId: form.nationalId,
-      phone: form.phone,
-      gender: form.gender,
-      birthdate: form.birthdate,
-      role: 0,
-    };
+    const user = new FormData();
+    user.append("name", form.name);
+    user.append("email", form.email);
+    user.append("password", form.password);
+    user.append("confirmPassword", form.confirmPassword);
+    user.append("nationalId", form.nationalId);
+    user.append("phone", form.phone);
+    user.append("gender", form.gender);
+    user.append("birthdate", form.birthdate);
+    user.append("profileImg", form.profileImg);
     setProgress(progress + (100 / 3) * 2);
+
     if (isChecked === true) {
-      user = {
-        ...user,
-        specialization: form.specialization,
-        nationalIdImg: form.nationalIdImg,
-        syndicateImg: form.syndicateImg,
-        role: 1,
-      };
+      console.log("check");
+      setForm({ ...form, role: 1 });
+      user.append("specialization", form.specialization);
+      user.append("nationalImg", form.nationalImg);
+      user.append("syndicateImg", form.syndicateImg);
       setProgress(progress + 100 / 3);
     }
+    user.append("role", form.role);
+
+    console.log(form.role);
     props.registerUser(user, navigate);
-    console.log("hello", user);
   };
   const onPrevSubClick = (e, stepNumber) => {
     setStep(`step${stepNumber}`);
@@ -93,7 +99,10 @@ const Register = (props) => {
     setStep("step2");
     setProgress(progress + 100 / 3);
   };
-  const { user } = props.auth;
+  const onFileChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.files[0] });
+    console.log(e.target.files[0]);
+  };
   return (
     <div>
       <div className="steps" data-aos="flip-left" data-aos-duration="1500">
@@ -102,6 +111,7 @@ const Register = (props) => {
       <form onSubmit={onFormSubmit}>
         <Patient
           onChange={onInputChange}
+          onFileChange={onFileChange}
           step={step}
           form={form}
           onClick={onNextClick}
@@ -117,6 +127,7 @@ const Register = (props) => {
         <Doctor
           step={step}
           form={form}
+          onFileChange={onFileChange}
           onChange={onInputChange}
           onClick={(e) => onPrevSubClick(e, 2)}
         />

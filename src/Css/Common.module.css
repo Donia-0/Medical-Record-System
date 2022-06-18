@@ -3,9 +3,7 @@
   transition: "all 10s";
 }
 .align_right {
-  text-align: center;
-  margin-bottom: 6px;
-  margin-top: 6px;
+  text-align: right;
 }
 .remove_dis_none {
   display: "";

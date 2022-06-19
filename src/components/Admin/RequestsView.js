@@ -26,7 +26,7 @@ const RequestsView = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {!user ? null : user.name + " needs to be a doctor"}
+          {!user ? null : user.name + " wants to be a doctor"}
         </Modal.Title>
       </Modal.Header>
       {!user ? null : (
@@ -64,6 +64,7 @@ const RequestsView = (props) => {
                 <div className="requests-imgs">
                   <div className="card">
                     <img
+                      style={{ width: "100%", height: "200px" }}
                       className="card-img-top"
                       src={`http://localhost:5000/user/syndicateImg/${user._id}`}
                       alt="Card image cap"
@@ -78,6 +79,7 @@ const RequestsView = (props) => {
                 <div className="requests-imgs">
                   <div className="card">
                     <img
+                      style={{ width: "100%", height: "200px" }}
                       className="card-img-top"
                       src={`http://localhost:5000/user/nationalImg/${user._id}`}
                       alt="Card image cap"

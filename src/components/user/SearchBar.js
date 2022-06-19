@@ -38,11 +38,11 @@ const SearchBar = (props) => {
     setSearchItem("");
     props.clearPatientProfile();
   };
-  useEffect(() => {
-    if (searchItem.length < 14) {
-      props.clearPatientProfile();
-    }
-  }, [searchItem]);
+  // useEffect(() => {
+  //   if (searchItem.length < 14) {
+  //     props.clearPatientProfile();
+  //   }
+  // }, [searchItem]);
   const { patientProfile, loading } = props.patient;
   return (
     <div className={style.search_user}>
@@ -51,9 +51,9 @@ const SearchBar = (props) => {
           <span className={`${style.form_control_navbar}`}>
             <FontAwesomeIcon icon={faSearch} />
           </span>
-          {/* <span onClick={onReserClick} className={`${style.reset}`}>
+          <span onClick={onReserClick} className={`${style.reset}`}>
             <FontAwesomeIcon icon={faRefresh} />
-          </span> */}
+          </span>
           <input
             value={searchItem}
             onChange={onInputChange}

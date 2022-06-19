@@ -13,7 +13,7 @@ import { Accordion } from "react-bootstrap";
 const Symptoms = () => {
   const [index, setIndex] = useState("");
   const [choice, setChoice] = useState("");
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState();
   const [arr, setArr] = useState([]);
   const [isAccept, setIsAccept] = useState(false);
   const [modalShow, setModalShow] = useState(false);
@@ -83,8 +83,9 @@ const Symptoms = () => {
     setIndex("");
     setValue("");
   };
+
   const onAnalyzeClick = (e) => {
-    const options = {
+    const options2 = {
       method: "GET",
       url: "https://endlessmedicalapi1.p.rapidapi.com/Analyze",
       params: { SessionID: localStorage.SessionID },
@@ -93,11 +94,27 @@ const Symptoms = () => {
         "X-RapidAPI-Host": "endlessmedicalapi1.p.rapidapi.com",
       },
     };
-
+    const options = {
+      method: "GET",
+      url: "http://api.endlessmedical.com/v1/dx/GetSuggestedSpecializations",
+      params: { SessionID: localStorage.SessionID, NumberOfResults: "4" },
+      headers: {
+        "X-RapidAPI-Key": "3dcb6b0fccmshb6c7d2cc50dc96bp1c828ejsne2c170656d7c",
+        "X-RapidAPI-Host": "endlessmedicalapi1.p.rapidapi.com",
+      },
+    };
+    axios
+      .request(options2)
+      .then(function (response) {
+        setAnalyze(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
     axios
       .request(options)
       .then(function (response) {
-        setAnalyze(response.data);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -106,10 +123,10 @@ const Symptoms = () => {
   const Choose = (
     <div className={style.select}>
       <form onSubmit={(e) => e.preventDefault()}>
-        <Box sx={{ minWidth: 520 }}>
+        <Box sx={{ minWidth: 320 }}>
           <FormControl
             variant="standard"
-            sx={{ m: 1, minWidth: 520, maxWidth: 520 }}
+            sx={{ m: 1, minWidth: 320, maxWidth: 320 }}
           >
             <InputLabel id="demo-simple-select-standard-label">
               Select Symptoms
@@ -170,9 +187,13 @@ const Symptoms = () => {
                 className={`${style.input} form-control`}
                 onChange={onInChange}
                 value={value}
-                placeholder="Write Here"
+                placeholder={`Default value is ${data[index].default}`}
                 type="number"
               />
+              <div id="textExample1" className="form-text">
+                {data[index].name} must be between {data[index].min} and{" "}
+                {data[index].max}
+              </div>
             </Box>
           )
         ) : null}
@@ -213,46 +234,57 @@ const Symptoms = () => {
       });
     setModalShow(false);
   };
-  console.log(analyze);
+  var analysisData;
+  if (analyze.length !== 0) {
+    analysisData = analyze.Diseases.map((e, index) => {
+      return (
+        <div className={style.diseases}>
+          <ul class="list-group">
+            <li style={{ display: "block" }} class="list-group-item">
+              {Object.keys(e).toString()} -{" "}
+              <span> {(Object.values(e).toString() * 100).toFixed(2)}%</span>
+              <div style={{ width: Object.values(e).toString() * 100 }}></div>
+            </li>
+          </ul>
+        </div>
+      );
+    });
+  }
+
   return (
     <div className={style.symptoms}>
-      <div className="row">
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          {isAccept ? (
-            <div>{Choose}</div>
-          ) : (
-            <AcceptTerm
-              onClick={onAcceptClick}
-              show={modalShow}
-              onHide={(e) => setModalShow(false)}
-            />
-          )}
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12">
-          <div className={style.list}>
-            <p>Your selected symptoms</p>
-            <ul class="list-group">
-              {arr.map((ele) => (
-                <li style={{ display: "block" }} class="list-group-item">
-                  {ele.name} : your answer is <strong>{ele.value}</strong>
-                </li>
-              ))}
-            </ul>
+      {isAccept ? (
+        <div className="row">
+          <div className="col-lg-6 col-md-6 col-sm-12">
+            {analyze.length !== 0 ? (
+              <div style={{ padding: "25px" }}>
+                <p>possible diseases</p>
+                {analysisData}
+              </div>
+            ) : (
+              Choose
+            )}
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-12">
+            <div className={style.list}>
+              <p>Your selected symptoms</p>
+              <ul class="list-group">
+                {arr.map((ele) => (
+                  <li style={{ display: "block" }} class="list-group-item">
+                    {ele.name} : your answer is <strong>{ele.value}</strong>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      {/* <div className="test">
-        {!analyze
-          ? analyze.Diseases.map((ele, index) => {
-              <Accordion>
-                <Accordion.Item eventKey={index}>
-                  <Accordion.Header>{ele[0]}</Accordion.Header>
-                  <Accordion.Body></Accordion.Body>
-                </Accordion.Item>
-              </Accordion>;
-            })
-          : null}
-      </div> */}
+      ) : (
+        <AcceptTerm
+          onClick={onAcceptClick}
+          show={modalShow}
+          onHide={(e) => setModalShow(false)}
+        />
+      )}
     </div>
   );
 };

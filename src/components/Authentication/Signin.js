@@ -29,11 +29,11 @@ const Signin = (props) => {
       email: form.email,
       password: form.password,
     };
-    props.loginUser(loginUser);
+    props.loginUser(loginUser, navigate);
   };
 
   useEffect(() => {
-    if (props.auth.isAuhtenticated) {
+    if (props.auth.isAuhtenticated && props.auth.user.role != 2) {
       navigate("/user/profile");
     }
   }, [props.auth.isAuhtenticated]);

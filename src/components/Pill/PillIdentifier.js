@@ -55,6 +55,8 @@ const PillIdentifier = (props) => {
             MedecineName={result.name}
             MedecineIngredient={result.ingredient}
             MedecineDescription={result.description}
+            MedecineColor={result.color}
+            MedecineShape={result.shape}
           />
         </div>
       </div>

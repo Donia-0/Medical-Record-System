@@ -35,6 +35,10 @@
   .ResultCards {
     width: 72% !important;
   }
+
+  .add_pill_form form {
+    width: 60% !important;
+}
 }
 @media screen and (max-width: 768px) {
   .add_pill, .pill_identifier_instructions {
@@ -59,9 +63,9 @@
     margin-bottom: 10px !important;
   }
 
-  .field {
+  /* .field {
     margin-bottom: 10px !important;
-  }
+  } */
 
   .add_pill, .pill_identifier_instructions {
     width: 90% !important;
@@ -163,7 +167,7 @@
     justify-content: center;
   }
   .add_btn button {
-    width: 50%;
+    width: 100%;
     background-color: #307b8c;
     color: #def2f3;
     border-color: #307b8c;
@@ -176,9 +180,9 @@
     border-color: #3ea9ad;
   }
   
-  .field {
+  /* .field {
     margin-bottom: 20px;
-  }
+  } */
   .field .formlabel {
     display: flex;
     justify-content: start;
@@ -188,7 +192,7 @@
   }
   
   .add_pill_form form {
-    width: 70%;
+    width: 45%;
     margin-top: 30px;
     margin-bottom: 30px;
   }

@@ -7,6 +7,8 @@ const SearchDrugResult = ({
   MedecineName,
   MedecineIngredient,
   MedecineDescription,
+  MedecineColor,
+  MedecineShape,
   eventKey,
 }) => {
   return (
@@ -18,6 +20,12 @@ const SearchDrugResult = ({
         <div className="card-body">
           <h5 className={`${style.result_card_title} card-title`}>
             Ingredient : {MedecineIngredient}
+          </h5>
+          <h5 className={`${style.result_card_title} card-title`}>
+            Color : {MedecineColor}
+          </h5>
+          <h5 className={`${style.result_card_title} card-title`}>
+            Shape : {MedecineShape}
           </h5>
           <Accordion>
             <Accordion.Item eventKey="0" className={style.accord_item}>

@@ -51,18 +51,22 @@ const ViewLabTests = (props) => {
           <div className="col-lg-12 col-md-12 col-sm-12">
             <Accordion>
               <div className="row">
-                {labTests.map((lab, index) => {
-                  return (
-                    <LabTest
-                      id={lab._id}
-                      eventKey={index}
-                      labTestName={lab.title}
-                      labTestImages={lab.files}
-                      date={moment(lab.date).format("yyyy-MM-DD")}
-                      note={lab.note}
-                    />
-                  );
-                })}
+                {labTests.length !== 0 ? (
+                  labTests.map((lab, index) => {
+                    return (
+                      <LabTest
+                        id={lab._id}
+                        eventKey={index}
+                        labTestName={lab.title}
+                        labTestImages={lab.files}
+                        date={moment(lab.date).format("yyyy-MM-DD")}
+                        note={lab.note}
+                      />
+                    );
+                  })
+                ) : (
+                  <div className="text-center">there no labtests yet</div>
+                )}
               </div>
             </Accordion>
           </div>

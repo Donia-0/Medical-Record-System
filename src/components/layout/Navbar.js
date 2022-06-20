@@ -57,7 +57,7 @@ const Navbar = (props) => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Features
+            Services
             <div className={style.features_dropdown_icon}>
               <FontAwesomeIcon icon={faCaretDown} />
             </div>

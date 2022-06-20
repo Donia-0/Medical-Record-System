@@ -18,7 +18,6 @@ function RequestsView(props) {
     props.verified(req);
     props.onSubmitClick();
   };
-  console.log(props.user);
   return (
     <Modal
       {...props}

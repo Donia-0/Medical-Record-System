@@ -38,6 +38,7 @@ import ViewLabTests from "./records/LabTests/ViewLabTests";
 import { connect } from "react-redux";
 import NotFound from "./NotFound";
 import Symptoms from "./Symptoms";
+import Rerequest from "./user/Rerequest";
 //check for token
 if (localStorage.token) {
   //set auth token header auth
@@ -69,6 +70,7 @@ const App = () => {
             </Route>
             <Route path="/user" element={<Layout />}>
               <Route path="profile" element={<Profile />} />
+              <Route path="resend" element={<Rerequest />} />
             </Route>
             <Route path="/records" element={<Layout />}>
               <Route path="bloodpreasure" element={<ViewBloodPressure />} />

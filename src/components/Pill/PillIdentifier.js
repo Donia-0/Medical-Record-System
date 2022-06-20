@@ -19,19 +19,11 @@ const PillIdentifier = (props) => {
 
   useEffect(() => {
     const search = async () => {
-      const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
-        params: {
-          action: "query",
-          list: "search",
-          origin: "*",
-          format: "json",
-          srsearch: term,
-        },
-      });
-
-      setResults(data.query.search);
+      const { data } = await axios.get(
+        `http://localhost:5000/example/drug/${term}`
+      );
+      setResults(data);
     };
-
     if (term && !results.length) {
       search();
     } else {
@@ -46,22 +38,23 @@ const PillIdentifier = (props) => {
       };
     }
   }, [term]);
-
-  const renderedResults = results.map((result) => {
-    return (
-      <div key={result.pageid} className={style.ResultCards}>
-        <div className="row">
-          <SearchDrugResult
-            MedecineName={result.name}
-            MedecineIngredient={result.ingredient}
-            MedecineDescription={result.description}
-            MedecineColor={result.color}
-            MedecineShape={result.shape}
-          />
-        </div>
+  const renderedResults = (
+    <div className={style.ResultCards}>
+      <div className="row">
+        {results.map((result) => {
+          return (
+            <SearchDrugResult
+              MedecineName={result.medicine_name}
+              MedecineIngredient={result.medicine_ingredients}
+              MedecineDescription={result.medicine_description}
+              MedecineColor={result.medicine_color.toLowerCase()}
+              MedecineShape={result.medicine_shape.toLowerCase()}
+            />
+          );
+        })}
       </div>
-    );
-  });
+    </div>
+  );
 
   return (
     <div className={style.add_pill_form_container}>
@@ -89,50 +82,13 @@ const PillIdentifier = (props) => {
                   onChange={(e) => setTerm(e.target.value)}
                   value={term}
                 />
-                {/* <div className="row">
-                  <div className="col-lg-12">
-                    <div className={style.add_btn}>
-                      <button
-                        className="btn btn-primary mb-2"
-                        onClick={() => {
-                          setSearch(true);
-                        }}
-                      >
-                        Search
-                      </button>
-                    </div>
-                  </div>
-                </div> */}
               </form>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className={style.ResultCards}>
-        <div className="row">
-          <SearchDrugResult
-            MedecineName="abilify"
-            MedecineIngredient="ARIPIPRAZOLE15mg"
-            MedecineDescription="abilify (aripiprazole is an antipsychotic medication. it works by changing the actions of chemicals in the brain. abilify is used to treat the symptoms of psychotic conditions such as schizophrenia and bipolar i disorder (manic depression). it is not known if aripiprazole is safe or effective in children younger than 13 with schizophrenia, or children younger than 10 with bipolar disorder. abilify is also used together with other medicines to treat major depressive disorder in adults. abilify is also used in children 6 years or older who have tourette's disorder, or symptoms of autistic disorder (irritability, aggression, mood swings, temper tantrums, and self-injury)."
-          />
-          <SearchDrugResult
-            MedecineName="abilify"
-            MedecineIngredient="ARIPIPRAZOLE15mg"
-            MedecineDescription="ccupril (quinapril) is an ace inhibitor. ace stands for angiotensin converting enzyme. accupril is used to treat high blood pressure (hypertension). lowering blood pressure may lower your risk of a stroke or heart attack. accupril is also used together with other medications to treat heart failure."
-          />
-          <SearchDrugResult
-            MedecineName="abilify"
-            MedecineIngredient="ARIPIPRAZOLE15mg"
-            MedecineDescription="ccupril (quinapril) is an ace inhibitor. ace stands for angiotensin converting enzyme. accupril is used to treat high blood pressure (hypertension). lowering blood pressure may lower your risk of a stroke or heart attack. accupril is also used together with other medications to treat heart failure."
-          />
-          <SearchDrugResult
-            MedecineName="abilify"
-            MedecineIngredient="ARIPIPRAZOLE15mg"
-            MedecineDescription="abilify (aripiprazole is an antipsychotic medication. it works by changing the actions of chemicals in the brain. abilify is used to treat the symptoms of psychotic conditions such as schizophrenia and bipolar i disorder (manic depression). it is not known if aripiprazole is safe or effective in children younger than 13 with schizophrenia, or children younger than 10 with bipolar disorder. abilify is also used together with other medicines to treat major depressive disorder in adults. abilify is also used in children 6 years or older who have tourette's disorder, or symptoms of autistic disorder (irritability, aggression, mood swings, temper tantrums, and self-injury)."
-          />
-        </div>
-      </div> */}
-      {results ? (
+
+      {results.length === 0 ? (
         <div className={style.pill_identifier_instructions}>
           <div className="col-lg-12 col-md-12 col-sm-12">
             <div className={style.textheader}>
@@ -172,7 +128,7 @@ const PillIdentifier = (props) => {
           </div>
         </div>
       ) : (
-        { renderedResults }
+        <> {renderedResults}</>
       )}
     </div>
   );

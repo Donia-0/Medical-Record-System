@@ -18,6 +18,8 @@ const RegisterInput = (props) => {
             placeholder={props.placeholder}
             onChange={props.onChange}
             value={props.value}
+            min={props.type === "date" ? "1950-01-01" : null}
+            max={props.type === "date" ? "2012-12-31" : null}
           />
         </div>
         {props.file === "yes" ? (

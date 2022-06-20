@@ -3,7 +3,8 @@
     height: 100% !important;
   }
 
-  .add_pill, .pill_identifier_instructions {
+  .add_pill,
+  .pill_identifier_instructions {
     width: 65% !important;
   }
 
@@ -12,11 +13,12 @@
   }
 
   .result_card_title {
-    font-size: 18px !important;
+    font-size: 15px !important;
   }
 }
 @media screen and (max-width: 992px) {
-  .add_pill, .pill_identifier_instructions {
+  .add_pill,
+  .pill_identifier_instructions {
     width: 70% !important;
   }
 
@@ -38,10 +40,11 @@
 
   .add_pill_form form {
     width: 60% !important;
-}
+  }
 }
 @media screen and (max-width: 768px) {
-  .add_pill, .pill_identifier_instructions {
+  .add_pill,
+  .pill_identifier_instructions {
     width: 80% !important;
   }
 
@@ -67,7 +70,8 @@
     margin-bottom: 10px !important;
   } */
 
-  .add_pill, .pill_identifier_instructions {
+  .add_pill,
+  .pill_identifier_instructions {
     width: 90% !important;
   }
 
@@ -85,262 +89,262 @@
 }
 
 .add_pill_form_container {
-    /* height: calc(100vh - 61.7px); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: column;
-  }
-  .add_pill {
-    width: 60%;
-    margin-top: 40px;
-  
-  }
-  .pill_container_header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 55px;
-    border-radius: 10px 10px 0px 0px;
-    background-color: #307b8c;
-    position: relative;
-  }
-  .add_pill_header {
-    font-weight: bold;
-    color: white;
-    font-size: 25px;
-  }
-  /* .pill_img_container {
+  /* height: calc(100vh - 61.7px); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.add_pill {
+  width: 60%;
+  margin-top: 40px;
+}
+.pill_container_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #307b8c;
+  position: relative;
+}
+.add_pill_header {
+  font-weight: bold;
+  color: white;
+  font-size: 25px;
+}
+/* .pill_img_container {
     height: 110px;
   
     border-bottom: 2px solid #2a7f82;
     position: relative;
     margin: inherit;
   } */
-  
-  .pill_img {
-    position: absolute;
-    top: 48%;
-    left: 13%;
-    height: 100%;
-  }
-  
-  .pill_img_container .pill_img img {
-    height: 90%;
-  }
-  
-  .add_pill_form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #def2f3cf;
-    border-radius: 0px 0px 15px 15px;
-  }
-  .allergy_list_container {
-    display: flex;
-    background-color: #def2f3cf;
-    border-radius: 0px 0px 15px 15px;
-    padding: 20px 20px 10px;
-  }
-  .allergy_list_container div {
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .single_allergy {
-    width: 50%;
-    display: flex;
-    justify-content: start;
-    font-size: 20px;
-    align-items: center;
-  }
-  
-  .allergy_list_container .allergy_icon {
-    margin-right: 5px;
-    margin-top: 5px;
-    font-size: 12px;
-  }
-  .add_btn {
-      display: flex;
-    justify-content: center;
-  }
-  .add_btn button {
-    width: 100%;
-    background-color: #307b8c;
-    color: #def2f3;
-    border-color: #307b8c;
-    transition: all 1s;
-    font-weight: bold;
-  }
-  .add_btn button:hover {
-    background-color: white;
-    color: #2a7f82;
-    border-color: #3ea9ad;
-  }
-  
-  /* .field {
+
+.pill_img {
+  position: absolute;
+  top: 48%;
+  left: 13%;
+  height: 100%;
+}
+.result_card_title {
+  font-size: 15px;
+}
+.pill_img_container .pill_img img {
+  height: 90%;
+}
+
+.add_pill_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #def2f3cf;
+  border-radius: 0px 0px 15px 15px;
+}
+.allergy_list_container {
+  display: flex;
+  background-color: #def2f3cf;
+  border-radius: 0px 0px 15px 15px;
+  padding: 20px 20px 10px;
+}
+.allergy_list_container div {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single_allergy {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  font-size: 20px;
+  align-items: center;
+}
+
+.allergy_list_container .allergy_icon {
+  margin-right: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.add_btn {
+  display: flex;
+  justify-content: center;
+}
+.add_btn button {
+  width: 100%;
+  background-color: #307b8c;
+  color: #def2f3;
+  border-color: #307b8c;
+  transition: all 1s;
+  font-weight: bold;
+}
+.add_btn button:hover {
+  background-color: white;
+  color: #2a7f82;
+  border-color: #3ea9ad;
+}
+
+/* .field {
     margin-bottom: 20px;
   } */
-  .field .formlabel {
-    display: flex;
-    justify-content: start;
-    margin-bottom: 10px;
-    color: #2a7f82;
-    font-weight: bold;
-  }
-  
-  .add_pill_form form {
-    width: 45%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .add_pill_form form select:focus,
-  .add_pill_form form input:focus,
-  .add_pill_form form textarea:focus,
-  .add_pill_form form .add_btn button:focus {
-    box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
-    border-color: #3ea9ad;
-  }
-  .cardStyle{
-    display: flex;
-    justify-content: center;
-  }
+.field .formlabel {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 10px;
+  color: #2a7f82;
+  font-weight: bold;
+}
 
-  .cardStyle .instructions_card {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    cursor: auto;
-    border: 1px solid #307b8c;
-    box-shadow: 10px 10px 10px -10px #307b8c;
-  }
+.add_pill_form form {
+  width: 45%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.add_pill_form form select:focus,
+.add_pill_form form input:focus,
+.add_pill_form form textarea:focus,
+.add_pill_form form .add_btn button:focus {
+  box-shadow: 0 0 0 3px rgb(62 169 173 / 50%);
+  border-color: #3ea9ad;
+}
+.cardStyle {
+  display: flex;
+  justify-content: center;
+}
 
-  .cardStyle .instructions_card .instructions_card_body {
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column
-    }
+.cardStyle .instructions_card {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  cursor: auto;
+  border: 1px solid #307b8c;
+  box-shadow: 10px 10px 10px -10px #307b8c;
+}
 
-    .cardStyle .instructions_card .instructions_card_body .instructions_card_title {
-      color: #307b8c; 
-      font-weight: bold;
-    }
+.cardStyle .instructions_card .instructions_card_body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-    .cardStyle .instructions_card .instructions_card_body .instructions_card_text {
-      font-weight: 500;
-      margin-bottom: 0;
-    }
+.cardStyle .instructions_card .instructions_card_body .instructions_card_title {
+  color: #307b8c;
+  font-weight: bold;
+}
 
-  .textheader{
-    color: #307b8c;
-    /* display: flex;
+.cardStyle .instructions_card .instructions_card_body .instructions_card_text {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.textheader {
+  color: #307b8c;
+  /* display: flex;
     justify-content: center; */
-    margin-top: 20px;
-    /* text-align: center; */
-  }
+  margin-top: 20px;
+  /* text-align: center; */
+}
 
-  .textheader h1 {
-    font-size: 30px;
-    font-weight: bold;
-  }
-  .textparagraph{
-    /* color: #307b8c; */
-    /* display: flex;
+.textheader h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+.textparagraph {
+  /* color: #307b8c; */
+  /* display: flex;
     justify-content: center; */
-    color: #777;
-    margin-bottom: 25px;
-  }
+  color: #777;
+  margin-bottom: 25px;
+}
 
-  .textparagraph p {
-    margin-top: 15px;
-    margin-left: 5px;
-  }
-  .cards{
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-  .info{
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 70px;
-  }
-  .info h2{
-    color: #307b8c;
-    text-decoration: dashed;
-  }
-  .info h3{
-    text-align: center;
-    color: #307b8c;
-  }
-  .ResultCards{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    width: 62%;
-  }
-  .drug_result_card{
-    width: 95%;
-    margin: auto;
-    margin-bottom: 15px;
-    padding: 0;
-    border: 0px;
-    cursor: auto;
-    height: fit-content;
-  }
+.textparagraph p {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.info {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 70px;
+}
+.info h2 {
+  color: #307b8c;
+  text-decoration: dashed;
+}
+.info h3 {
+  text-align: center;
+  color: #307b8c;
+}
+.ResultCards {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 62%;
+}
+.drug_result_card {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 0;
+  border: 0px;
+  cursor: auto;
+  height: fit-content;
+}
 
-  .accordion-item:last-of-type .accordion-button.collapsed,
-  .accordion-item:first-of-type .accordion-button {
-    border-radius: 0;
-  }
+.accordion-item:last-of-type .accordion-button.collapsed,
+.accordion-item:first-of-type .accordion-button {
+  border-radius: 0;
+}
 
-  .accord_item button {
-    margin-top: 10px !important;
-    padding: 10px 5px !important;
-    z-index: 0 !important;
-    font-weight: 500;
-    color: #307b8c;
-  }
+.accord_item button {
+  margin-top: 10px !important;
+  padding: 10px 5px !important;
+  z-index: 0 !important;
+  font-weight: 500;
+  color: #307b8c;
+}
 
-  .accord_item {
-    border: none !important;
-  }
+.accord_item {
+  border: none !important;
+}
 
-  .accord_item button:focus {
-    border-color: white !important;
-    box-shadow: 0 0 0 0.25rem white;
-  }
+.accord_item button:focus {
+  border-color: white !important;
+  box-shadow: 0 0 0 0.25rem white;
+}
 
-  .accord_item button:hover {
-    z-index: 0 !important;
-  }
+.accord_item button:hover {
+  z-index: 0 !important;
+}
 
-  .pill_identifier_instructions {
-    width: 60%;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: #2a7f82;
-    border: 1px solid #307b8c;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px -10px #307b8c;
-  }
+.pill_identifier_instructions {
+  width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #2a7f82;
+  border: 1px solid #307b8c;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px -10px #307b8c;
+}
 
-  .select_container {
-    margin-right: 10px;
-  }
+.select_container {
+  margin-right: 10px;
+}
 
-  .result_card_header {
-    background-color: #307b8c;
-    color: white;
-    border-radius: 10px 10px 0 0 !important;
-  }
+.result_card_header {
+  background-color: #307b8c;
+  color: white;
+  border-radius: 10px 10px 0 0 !important;
+}
 
-
-  .result_card_text {
-    z-index: 0 !important;
-  }
+.result_card_text {
+  z-index: 0 !important;
+}

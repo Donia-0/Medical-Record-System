@@ -19,20 +19,24 @@ const SearchDrugResult = ({
         </h5>
         <div className="card-body">
           <h5 className={`${style.result_card_title} card-title`}>
-            Ingredient : {MedecineIngredient}
+            <strong style={{ color: "#307b8c" }}> Color: </strong>
+            {MedecineColor}
           </h5>
           <h5 className={`${style.result_card_title} card-title`}>
-            Color : {MedecineColor}
-          </h5>
-          <h5 className={`${style.result_card_title} card-title`}>
-            Shape : {MedecineShape}
+            <strong style={{ color: "#307b8c" }}> Shape: </strong>
+            {MedecineShape}
           </h5>
           <Accordion>
             <Accordion.Item eventKey="0" className={style.accord_item}>
               <Accordion.Header>View More Details</Accordion.Header>
               <Accordion.Body>
                 <p className={`${style.result_card_text} "card-text"`}>
-                  Description: {MedecineDescription}
+                  <strong style={{ color: "#307b8c" }}> Ingredient: </strong>
+                  {MedecineIngredient}
+                </p>
+                <p className={`${style.result_card_text} "card-text"`}>
+                  <strong style={{ color: "#307b8c" }}> Description: </strong>:
+                  {MedecineDescription}
                 </p>
               </Accordion.Body>
             </Accordion.Item>

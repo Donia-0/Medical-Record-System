@@ -38,11 +38,11 @@ const SearchBar = (props) => {
     setSearchItem("");
     props.clearPatientProfile();
   };
-  useEffect(() => {
-    if (searchItem.length < 14) {
-      props.clearPatientProfile();
-    }
-  }, [searchItem]);
+  // useEffect(() => {
+  //   if (searchItem.length < 14) {
+  //     props.clearPatientProfile();
+  //   }
+  // }, [searchItem]);
   const { patientProfile, loading } = props.patient;
   return (
     <div className={style.search_user}>

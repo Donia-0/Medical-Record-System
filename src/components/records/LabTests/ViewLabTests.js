@@ -9,11 +9,16 @@ import { Accordion } from "react-bootstrap";
 import background from "../../../images/card3.jpg";
 import LabTest from "./LabTest";
 import labTestImage from "../../../images/x-ray.png";
+import { connect } from "react-redux";
+import { getAllTests } from "../../../actions/records/LabtestAction";
+import moment from "moment-timezone";
 const ViewLabTests = (props) => {
+  const { labTests } = props.labtest;
+  console.log(labTests);
   useEffect(() => {
     AOS.init();
+    props.getAllTests();
   }, []);
-
   return (
     <div
       className={style.view}
@@ -46,34 +51,18 @@ const ViewLabTests = (props) => {
           <div className="col-lg-12 col-md-12 col-sm-12">
             <Accordion>
               <div className="row">
-                <LabTest
-                  eventKey="0"
-                  labTestName="Accordion Item #1"
-                  labTestImage={background}
-                  date="17/6/1999"
-                  note="fkfnerigioerngm"
-                />
-                <LabTest
-                  eventKey="1"
-                  labTestName="Accordion Item #2"
-                  labTestImage={background}
-                  date="17/6/1999"
-                  note="fkfnerigioerngm"
-                />
-                <LabTest
-                  eventKey="3"
-                  labTestName="Accordion Item #3"
-                  labTestImage={background}
-                  date="17/6/1999"
-                  note="fkfnerigioerngm"
-                />
-                <LabTest
-                  eventKey="4"
-                  labTestName="Accordion Item #4"
-                  labTestImage={background}
-                  date="17/6/1999"
-                  note="fkfnerigioerngm"
-                />
+                {labTests.map((lab, index) => {
+                  return (
+                    <LabTest
+                      id={lab._id}
+                      eventKey={index}
+                      labTestName={lab.title}
+                      labTestImages={lab.files}
+                      date={moment(lab.date).format("yyyy-MM-DD")}
+                      note={lab.note}
+                    />
+                  );
+                })}
               </div>
             </Accordion>
           </div>
@@ -82,5 +71,8 @@ const ViewLabTests = (props) => {
     </div>
   );
 };
+const mapStateToMap = (state) => ({
+  labtest: state.labtest,
+});
 
-export default ViewLabTests;
+export default connect(mapStateToMap, { getAllTests })(ViewLabTests);

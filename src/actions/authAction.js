@@ -25,20 +25,20 @@ export const registerUser = (userData, navigate) => async (dispatch) => {
     toArray.map((err) => {
       toast.error(err, {
         position: toast.POSITION.TOP_CENTER,
-        autoClose: 5000,
+        autoClose: 1500,
       });
     });
   }
 };
 // Login - get user token
-export const loginUser = (userData) => async (dispatch) => {
+export const loginUser = (userData, navigate) => async (dispatch) => {
   try {
     const response = await axios.post(
       "http://localhost:5000/user/login",
       userData
     );
     //save to localstorage
-    const { token } = response.data;
+    const { token, user } = response.data;
     // set to ls
     localStorage.setItem("token", token);
     // set token to authentication header
@@ -47,6 +47,11 @@ export const loginUser = (userData) => async (dispatch) => {
     const decoded = jwt_decode(token);
     //set current user
     dispatch(setCurrentUser(decoded));
+    if (user.role == 2) {
+      navigate("/admin");
+    } else {
+      navigate("/user/profile");
+    }
   } catch (error) {
     dispatch({
       type: GET_ERRORS,
@@ -56,7 +61,7 @@ export const loginUser = (userData) => async (dispatch) => {
     toArray.map((err) => {
       toast.error(err, {
         position: toast.POSITION.TOP_CENTER,
-        autoClose: 5000,
+        autoClose: 1500,
       });
     });
   }

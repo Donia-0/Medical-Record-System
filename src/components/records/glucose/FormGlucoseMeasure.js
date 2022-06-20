@@ -47,6 +47,12 @@ const FormGlucoseMeasure = (props) => {
     date: "",
     note: "",
   });
+  const { isAuhtenticated, user } = props.auth;
+  useEffect(() => {
+    if (localStorage.patientId) {
+      navigate("/notfound");
+    }
+  }, []);
   useEffect(() => {
     setErrors({});
     setErrors(props.errors);
@@ -105,11 +111,11 @@ const FormGlucoseMeasure = (props) => {
                     Type{" "}
                   </label>
                 </div>
-                <div className="col-lg-9 col-sm-12">
+                <div className="col-lg-12 col-sm-12">
                   <select
                     value={form.type}
                     onChange={onInputChange}
-                    className="form-select"
+                    className={`form-select ${style.select}`}
                     name="type"
                     style={{
                       width: "133%",

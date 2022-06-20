@@ -1,0 +1,13 @@
+.not_found {
+  margin-top: 130px;
+  text-align: center;
+}
+
+.not_found img {
+  width: 57%;
+}
+
+.not_found .text {
+  margin-top: 20px;
+  text-align: center;
+}

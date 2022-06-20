@@ -15,8 +15,11 @@ import discuss from "../../images/meeting.png";
 import revise from "../../images/revise.png";
 import approve from "../../images/checked.png";
 import launch from "../../images/rocket.png";
-import profile from "../../images/profile.png";
-
+// import profile from "../../images/profile.png";
+import hussien from "../../images/hussien.jpg";
+import Z3fr from "../../images/z3fr.jpg";
+import adham from "../../images/adham.jpg";
+import amen from "../../images/amen.jpg";
 const Landing = () => {
   return (
     <div>
@@ -94,8 +97,8 @@ const Landing = () => {
                 <div className="info">
                   <h1>Work Process</h1>
                   <p>
-                    Aenean nec tempor metus. Maecenas ligula dolor, commodo in
-                    imperdiet interdum, vehicula ut ex. Donec ante diam.
+                    How we made screening more easier for the doctor and
+                    patients.
                   </p>
                 </div>
               </div>
@@ -108,7 +111,7 @@ const Landing = () => {
                     <img src={ideas} />
                   </i>
                   <strong>Ideas</strong>
-                  <span>Godard pabst prism fam cliche.</span>
+                  <span>put together a lot of ideas.</span>
                 </a>
               </div>
               <div className="col-lg-2 col-md-3 col-sm-6 col-6">
@@ -117,7 +120,7 @@ const Landing = () => {
                     <img src={sketch} />
                   </i>
                   <strong>Sketchup</strong>
-                  <span>Godard pabst prism fam cliche.</span>
+                  <span>Design our thoughts.</span>
                 </a>
               </div>
               <div className="col-lg-2 col-md-3 col-sm-6 col-6">
@@ -126,7 +129,7 @@ const Landing = () => {
                     <img src={discuss} />
                   </i>
                   <strong>Discuss</strong>
-                  <span>Godard pabst prism fam cliche.</span>
+                  <span>Having many discussesions.</span>
                 </a>
               </div>
               <div className="col-lg-2 col-md-3 col-sm-6 col-6">
@@ -135,7 +138,7 @@ const Landing = () => {
                     <img src={revise} />
                   </i>
                   <strong>Revise</strong>
-                  <span>Godard pabst prism fam cliche.</span>
+                  <span>Is it right or wrong?</span>
                 </a>
               </div>
               <div className="col-lg-2 col-md-3 col-sm-6 col-6">
@@ -144,7 +147,7 @@ const Landing = () => {
                     <img src={approve} />
                   </i>
                   <strong>Approve</strong>
-                  <span>Godard pabst prism fam cliche.</span>
+                  <span>get approve of our work.</span>
                 </a>
               </div>
               <div className="col-lg-2 col-md-3 col-sm-6 col-6">
@@ -153,7 +156,7 @@ const Landing = () => {
                     <img src={launch} />
                   </i>
                   <strong>Launch</strong>
-                  <span>Godard pabst prism fam cliche.</span>
+                  <span>Launch our efforts to others.</span>
                 </a>
               </div>
             </div>
@@ -181,9 +184,9 @@ const Landing = () => {
                 </div>
                 <div className="right-text">
                   <p>
-                    Nullam sit amet purus libero. Etiam ullamcorper nisl ut
-                    augue blandit, at finibus leo efficitur. Nam gravida purus
-                    non sapien auctor, ut aliquam magna ullamcorper.
+                    We can help the doctor see the patient's medical records,
+                    labtests and vital measurements. So it will be more easier
+                    for the doctor to add his diagnoses and prescriptions.
                   </p>
                 </div>
               </div>
@@ -203,14 +206,16 @@ const Landing = () => {
             <div className="row">
               <div className="col-lg-6 col-md-12 col-sm-12 section-text ">
                 <div className="left-heading">
-                  <h2 className="section-title">Watch your medical records!</h2>
+                  <h2 className="section-title">
+                    Keep updated with your medical records.
+                  </h2>
                 </div>
                 <div className="left-text">
                   <p>
-                    Aenean pretium, ipsum et porttitor auctor, metus ipsum
-                    iaculis nisi, a bibendum lectus libero vitae urna. Sed id
-                    leo eu dolor luctus congue sed eget ipsum. Nunc nec luctus
-                    libero. Etiam quis dolor elit.
+                    Every one has medical records in his life , but who can
+                    remember all of them? Our system does it . We'll always keep
+                    you updated with your medical records and help you to be
+                    aware of all of your medicines.
                   </p>
                 </div>
               </div>
@@ -274,9 +279,8 @@ const Landing = () => {
             <div className="offset-lg-3 col-lg-6">
               <div className="center-text text-center">
                 <p>
-                  Donec tempus, sem non rutrum imperdiet, lectus orci fringilla
-                  nulla, at accumsan elit eros a turpis. Ut sagittis lectus
-                  libero.
+                  Some opinions about our site, how it works and how was
+                  important to improve it by adding more features.
                 </p>
               </div>
             </div>
@@ -285,7 +289,7 @@ const Landing = () => {
 
           <div className="row">
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="team-item">
                 <div className="team-content">
                   {/* <i>
@@ -297,10 +301,33 @@ const Landing = () => {
                     molestie.
                   </p>
                   <div className="user-image">
-                    <img src={profile} />
+                    <img src={adham} />
                   </div>
                   <div className="team-info">
-                    <h3 className="user-name">Catherine Soft</h3>
+                    <h3 className="user-name">Adham Mohamed</h3>
+                    <span>BackEnd developer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <!-- ***** Testimonials Item End ***** --> */}
+            {/* <!-- ***** Testimonials Item Start ***** --> */}
+            <div className="col-lg-3 col-md-6 col-sm-12">
+              <div className="team-item">
+                <div className="team-content">
+                  {/* <i>
+                    <img src="assets/images/testimonial-icon.png" alt="" />
+                  </i> */}
+                  <p>
+                    Integer molestie aliquam gravida. Nullam nec arcu finibus,
+                    imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
+                    molestie.
+                  </p>
+                  <div className="user-image">
+                    <img src={amen} />
+                  </div>
+                  <div className="team-info">
+                    <h3 className="user-name">Abdelrhman Amen</h3>
                     <span>Managing Director</span>
                   </div>
                 </div>
@@ -309,7 +336,7 @@ const Landing = () => {
             {/* <!-- ***** Testimonials Item End ***** --> */}
 
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="team-item">
                 <div className="team-content">
                   {/* <i>
@@ -321,11 +348,11 @@ const Landing = () => {
                     molestie.
                   </p>
                   <div className="user-image">
-                    <img src={profile} />
+                    <img src={Z3fr} />
                   </div>
                   <div className="team-info">
-                    <h3 className="user-name">Kelvin Wood</h3>
-                    <span>Digital Marketer</span>
+                    <h3 className="user-name">Abdelrhman Sherif</h3>
+                    <span>BackEnd developer</span>
                   </div>
                 </div>
               </div>
@@ -333,22 +360,22 @@ const Landing = () => {
             {/* <!-- ***** Testimonials Item End ***** --> */}
 
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="team-item">
                 <div className="team-content ">
                   {/* <i>
                     <img src="assets/images/testimonial-icon.png" alt="" />
                   </i> */}
                   <p>
-                    Quisque diam odio, maximus ac consectetur eu, auctor non
-                    lorem. Cras quis est non ante ultrices molestie. Ut vehicula
-                    et diam at aliquam.
+                    Integer molestie aliquam gravida. Nullam nec arcu finibus,
+                    imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
+                    molestie.
                   </p>
                   <div className="user-image">
-                    <img src={profile} />
+                    <img src={hussien} />
                   </div>
                   <div className="team-info">
-                    <h3 className="user-name">David Martin</h3>
+                    <h3 className="user-name">Hussien Salah</h3>
                     <span>Website Manager</span>
                   </div>
                 </div>

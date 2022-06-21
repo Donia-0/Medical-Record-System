@@ -4,6 +4,8 @@ import moment from "moment-timezone";
 import React, { useMemo } from "react";
 import style from "../../../Css/records/ViewRecord.module.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const columns = (onClick) => [
   {
     name: "Systolic",
@@ -41,7 +43,9 @@ const columns = (onClick) => [
     ignoreRowClick: true,
     allowOverflow: true,
     cell: (row) => {
-      return (
+      return localStorage.patientId ? (
+        "not authorized for edit or delete"
+      ) : (
         <div className={style.edit_delete_btns}>
           <div className={style.edit_btn}>
             <Link to={`./edit/${row._id}`} type="button" className="btn">
@@ -49,7 +53,13 @@ const columns = (onClick) => [
             </Link>
           </div>
           <div className={style.delete_btn}>
-            <button onClick={onClick} type="button" className="btn">
+            <button
+              onClick={() => {
+                onClick(row._id);
+              }}
+              type="button"
+              className="btn"
+            >
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>

@@ -5,7 +5,7 @@ import style from "../../../Css/records/ViewRecord.module.css";
 import { Link } from "react-router-dom";
 import dateFormat from "./../../../utils/dateFormat";
 
-const columns = [
+const columns = (onClick) => [
   {
     name: "Type",
     selector: (row) => row.type,
@@ -34,7 +34,9 @@ const columns = [
     ignoreRowClick: true,
     allowOverflow: true,
     cell: (row) => {
-      return (
+      return localStorage.patientId ? (
+        "not authorized for edit or delete"
+      ) : (
         <div className={style.edit_delete_btns}>
           <div className={style.edit_btn}>
             <Link to={`./edit/${row._id}`} type="button" className="btn">
@@ -42,7 +44,13 @@ const columns = [
             </Link>
           </div>
           <div className={style.delete_btn}>
-            <button type="button" className="btn">
+            <button
+              onClick={() => {
+                onClick(row._id);
+              }}
+              type="button"
+              className="btn"
+            >
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>

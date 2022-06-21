@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import bloodpreasureImage from "../../../images/records/bloodpressure/bloodp.png";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getBloodPressure } from "../../../actions/records/bloodPressureAction";
+import {
+  getBloodPressure,
+  deleteBloodPressure,
+} from "../../../actions/records/bloodPressureAction";
 import columns from "./BloodPressureColumns";
 import Table from "../Table";
 
@@ -27,7 +30,7 @@ const Viewbloodp = (props) => {
     <Table
       link="./addbloodpressure"
       img={bloodpreasureImage}
-      columns={columns(Click)}
+      columns={columns(props.deleteBloodPressure)}
       data={bloodPressure}
       click={clickhandler}
       PageName="Blood Pressure Measurements"
@@ -41,6 +44,7 @@ const Viewbloodp = (props) => {
 Viewbloodp.propTypes = {
   auth: PropTypes.object.isRequired,
   getBloodPressure: PropTypes.func.isRequired,
+  deleteBloodPressure: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -48,4 +52,7 @@ const mapStateToProps = (state) => ({
   bloodpressures: state.bloodpressures,
   patient: state.patient,
 });
-export default connect(mapStateToProps, { getBloodPressure })(Viewbloodp);
+export default connect(mapStateToProps, {
+  getBloodPressure,
+  deleteBloodPressure,
+})(Viewbloodp);

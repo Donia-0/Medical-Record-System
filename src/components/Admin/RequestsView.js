@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import RequestsViewField from "./RequestsViewField";
 import bloodpreasure from "../../images/records/bloodpressure/bloodp.png";
-import { getRequestDetail, acceptRequest } from "../../actions/adminAction";
+import {
+  getRequestDetail,
+  acceptRequest,
+  rejectRequest,
+} from "../../actions/adminAction";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import moment from "moment-timezone";
@@ -15,6 +19,9 @@ const RequestsView = (props) => {
   const { user } = props.admin.requestDetail;
   const onAcceptClick = () => {
     props.acceptRequest(props.req_id);
+  };
+  const onDeclineClick = () => {
+    props.rejectRequest(props.req_id);
   };
   return (
     <Modal
@@ -106,7 +113,11 @@ const RequestsView = (props) => {
             </button>
           </div>
           <div className={style.btns_req}>
-            <button type="button" className={`btn ${style.decline}`}>
+            <button
+              onClick={onDeclineClick}
+              type="button"
+              className={`btn ${style.decline}`}
+            >
               Decline
             </button>
           </div>
@@ -119,10 +130,13 @@ const RequestsView = (props) => {
 RequestsView.propTypes = {
   getRequestDetail: PropTypes.func.isRequired,
   acceptRequest: PropTypes.func.isRequired,
+  rejectRequest: PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
   admin: state.admin,
 });
-export default connect(mapStateToProps, { getRequestDetail, acceptRequest })(
-  RequestsView
-);
+export default connect(mapStateToProps, {
+  getRequestDetail,
+  acceptRequest,
+  rejectRequest,
+})(RequestsView);

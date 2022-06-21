@@ -12,6 +12,7 @@ import labTestImage from "../../../images/x-ray.png";
 import { connect } from "react-redux";
 import { getAllTests } from "../../../actions/records/LabtestAction";
 import moment from "moment-timezone";
+
 const ViewLabTests = (props) => {
   const { labTests } = props.labtest;
   console.log(labTests);
@@ -47,17 +48,19 @@ const ViewLabTests = (props) => {
       </div>
       <div className={style.view_data}>
         <div className="row">
-          <div className="col-lg-12">
-            <div className={style.add_view_btn}>
-              <Link
-                to="/records/addlabtest"
-                type="button"
-                className="btn btn-primary"
-              >
-                <FontAwesomeIcon icon={faPlus} /> Add
-              </Link>
+          {localStorage.patientId ? null : (
+            <div className="col-lg-12">
+              <div className={style.add_view_btn}>
+                <Link
+                  to="/records/addlabtest"
+                  type="button"
+                  className="btn btn-primary"
+                >
+                  <FontAwesomeIcon icon={faPlus} /> Add
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
           <div className="col-lg-12 col-md-12 col-sm-12">
             <Accordion>
               <div className="row">

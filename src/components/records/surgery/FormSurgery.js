@@ -59,6 +59,7 @@ const FormSurgery = (props) => {
       doctorName: form.doctorName,
       location: form.location,
       date: form.date,
+      userId: localStorage.getItem("patientId"),
     };
     if (surgeryDetail && surgeryId) {
       props.updateSurgery(surgeryId, newSurgery, navigate);

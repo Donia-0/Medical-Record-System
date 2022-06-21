@@ -162,7 +162,7 @@ const FormGlucoseMeasure = (props) => {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className={style.add_btn}>
-                      <button className="btn btn-primary mb-2">Submit</button>
+                      <button className="btn mb-2">Submit</button>
                     </div>
                   </div>
                 </div>

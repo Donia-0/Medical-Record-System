@@ -109,7 +109,7 @@ const AddLabTest = (props) => {
                   <div className="row">
                     <div className="col-lg-12">
                       <div className={style.add_btn}>
-                        <button className="btn btn-primary mb-2">Save</button>
+                        <button className="btn mb-2">Save</button>
                       </div>
                     </div>
                   </div>

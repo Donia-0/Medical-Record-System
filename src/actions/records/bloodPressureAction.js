@@ -6,6 +6,7 @@ import {
   LOADING,
 } from "./../types";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 toast.configure();
 const toastNavigate = (msg, navigate) => {
   toast.success(msg, { autoClose: 1500 });
@@ -73,3 +74,15 @@ export const updateBloodPressure =
       });
     }
   };
+
+export const deleteBloodPressure = (id, navigate) => async (dispatch) => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:5000/records/BloodPressure/delete/${id}`
+    );
+    toast.success("Successfully Deleted", { autoClose: 1500 });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  } catch (error) {}
+};

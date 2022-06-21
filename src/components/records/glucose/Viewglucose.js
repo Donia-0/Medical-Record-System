@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getGlucose } from "../../../actions/records/glucoseAction";
+import {
+  getGlucose,
+  deleteGlucose,
+} from "../../../actions/records/glucoseAction";
 import columns from "./GlucoseColumns";
 import Table from "./../Table";
 import glucoseImage from "../../../images/glucose.png";
@@ -26,7 +29,7 @@ const Viewglucose = (props) => {
       link="./addglucose"
       img={glucoseImage}
       haveImage={true}
-      columns={columns}
+      columns={columns(props.deleteGlucose)}
       data={glucose}
       click={clickhandler}
       PageName="Glucose Measurements"
@@ -36,9 +39,12 @@ const Viewglucose = (props) => {
 Viewglucose.propTypes = {
   auth: PropTypes.object.isRequired,
   glucose: PropTypes.object.isRequired,
+  deleteGlucose: PropTypes.object.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
   glucose: state.glucose,
 });
-export default connect(mapStateToProps, { getGlucose })(Viewglucose);
+export default connect(mapStateToProps, { getGlucose, deleteGlucose })(
+  Viewglucose
+);

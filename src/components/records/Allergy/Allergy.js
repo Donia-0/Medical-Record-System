@@ -39,9 +39,11 @@ const Allergy = (props) => {
       className={style.add_record_form_container}
       style={{ flexDirection: "column" }}
     >
-      <div className={style.add_record} style={{ marginTop: "20px" }}>
-        <AddAllergy />
-      </div>
+      {localStorage.patientId ? (
+        <div className={style.add_record} style={{ marginTop: "20px" }}>
+          <AddAllergy />
+        </div>
+      ) : null}
       <div className={style.add_record} style={{ marginTop: "20px" }}>
         <ViewAllergy />
       </div>

@@ -22,6 +22,7 @@ const AddAllergy = (props) => {
     setErrors({});
     const newAllergy = {
       name: form.name,
+      userId: localStorage.patientId,
     };
     props.addAllergy(newAllergy);
     setTimeout(() => {

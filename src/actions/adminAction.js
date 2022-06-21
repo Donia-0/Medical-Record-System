@@ -5,7 +5,8 @@ import {
   LOADING,
   ACCEPT_USER_REQUEST,
 } from "./types";
-
+import { toast } from "react-toastify";
+toast.configure();
 export const getRequests = () => async (dispatch) => {
   try {
     const response = await axios.get("http://localhost:5000/admin/allRequests");
@@ -39,5 +40,21 @@ export const acceptRequest = (id) => async (dispatch) => {
       type: ACCEPT_USER_REQUEST,
       payload: response.data,
     });
+    toast.success("Successfully accepted", { autoClose: 1500 });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  } catch (error) {}
+};
+
+export const rejectRequest = (id) => async (dispatch) => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:5000/admin/rejectRequest/${id}`
+    );
+    toast.success("Successfully rejected", { autoClose: 1500 });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   } catch (error) {}
 };

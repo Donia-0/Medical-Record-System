@@ -75,3 +75,15 @@ export const updateGlucose =
       });
     }
   };
+
+export const deleteGlucose = (id, navigate) => async (dispatch) => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:5000/records/glucose/delete/${id}`
+    );
+    toast.success("Successfully Deleted", { autoClose: 1500 });
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  } catch (error) {}
+};

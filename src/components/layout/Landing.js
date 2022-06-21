@@ -15,11 +15,13 @@ import discuss from "../../images/meeting.png";
 import revise from "../../images/revise.png";
 import approve from "../../images/checked.png";
 import launch from "../../images/rocket.png";
-// import profile from "../../images/profile.png";
 import hussien from "../../images/hussien.jpg";
 import Z3fr from "../../images/z3fr.jpg";
 import adham from "../../images/adham.jpg";
 import amen from "../../images/amen.jpg";
+import Donia from "../../images/Donia.jpg";
+import zozo from "../../images/Zozo.jpg";
+
 const Landing = () => {
   return (
     <div>
@@ -289,7 +291,7 @@ const Landing = () => {
 
           <div className="row">
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="team-item">
                 <div className="team-content">
                   {/* <i>
@@ -312,7 +314,7 @@ const Landing = () => {
             </div>
             {/* <!-- ***** Testimonials Item End ***** --> */}
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="team-item">
                 <div className="team-content">
                   {/* <i>
@@ -336,7 +338,7 @@ const Landing = () => {
             {/* <!-- ***** Testimonials Item End ***** --> */}
 
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="team-item">
                 <div className="team-content">
                   {/* <i>
@@ -358,9 +360,58 @@ const Landing = () => {
               </div>
             </div>
             {/* <!-- ***** Testimonials Item End ***** --> */}
+          </div>
+
+          <div className="row">
+            {/* <!-- ***** Testimonials Item Start ***** --> */}
+            <div className="col-lg-4 col-md-6 col-sm-12">
+              <div className="team-item">
+                <div className="team-content">
+                  {/* <i>
+                    <img src="assets/images/testimonial-icon.png" alt="" />
+                  </i> */}
+                  <p>
+                    Integer molestie aliquam gravida. Nullam nec arcu finibus,
+                    imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
+                    molestie.
+                  </p>
+                  <div className="user-image">
+                    <img src={Donia} />
+                  </div>
+                  <div className="team-info">
+                    <h3 className="user-name">Donia Walid</h3>
+                    <span>FrontEnd developer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <!-- ***** Testimonials Item End ***** --> */}
+            {/* <!-- ***** Testimonials Item Start ***** --> */}
+            <div className="col-lg-4 col-md-6 col-sm-12">
+              <div className="team-item">
+                <div className="team-content">
+                  {/* <i>
+                    <img src="assets/images/testimonial-icon.png" alt="" />
+                  </i> */}
+                  <p>
+                    Integer molestie aliquam gravida. Nullam nec arcu finibus,
+                    imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
+                    molestie.
+                  </p>
+                  <div className="user-image">
+                    <img src={zozo} />
+                  </div>
+                  <div className="team-info">
+                    <h3 className="user-name">Zeinab Nabil</h3>
+                    <span>FrontEnd developer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <!-- ***** Testimonials Item End ***** --> */}
 
             {/* <!-- ***** Testimonials Item Start ***** --> */}
-            <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="team-item">
                 <div className="team-content ">
                   {/* <i>

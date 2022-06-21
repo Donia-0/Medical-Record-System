@@ -17,7 +17,17 @@ const ViewLabTests = (props) => {
   console.log(labTests);
   useEffect(() => {
     AOS.init();
-    props.getAllTests();
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.patientId) {
+      const userData = {
+        patientId: localStorage.getItem("patientId"),
+      };
+      props.getAllTests(userData);
+    } else {
+      props.getAllTests();
+    }
   }, []);
   return (
     <div

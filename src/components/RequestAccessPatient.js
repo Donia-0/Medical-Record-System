@@ -52,7 +52,6 @@ function RequestsView(props) {
                 <div className="col-lg-12 col-md-12 col-sm-12">
                   <div className="request-access-body">
                     <div>E-mail: {props.user.email}</div>
-                    <div>Age: {props.user.date}</div>
                   </div>
                 </div>
               </div>

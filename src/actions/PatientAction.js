@@ -5,6 +5,9 @@ import {
   CLEAR_PATIENT_PROFILE,
   PATIENT_RECORD,
 } from "./types";
+import { toast } from "react-toastify";
+
+toast.configure();
 
 export const searchPatient = (user) => async (dispatch) => {
   dispatch({
@@ -31,9 +34,15 @@ export const verified = (userData) => async (dispatch) => {
       "http://localhost:5000/doctor/verify",
       userData
     );
-    localStorage.setItem("patientId", response.data.id);
-    localStorage.setItem("patientName", response.data.name);
-    window.location.reload();
+    console.log(response);
+    if (response.data.verify === false) {
+      toast.error("Wrong Code", { autoClose: 1500 });
+    } else {
+      localStorage.setItem("patientId", response.data.id);
+      localStorage.setItem("patientName", response.data.name);
+      window.location.reload();
+    }
+
     dispatch({
       type: PATIENT_RECORD,
       payload: response.data,
